@@ -60,10 +60,11 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug',#representing the list of SQL queries executed in the request
+                'django.template.context_processors.request',#This sets the request variable in the context
+                'django.contrib.auth.context_processors.auth',#This sets the user variable in the request.
+                'django.contrib.messages.context_processors.messages',#This sets a messages variable in the context 
+                'cart.context_processors.cart',#this is custom context_processors for cart 
             ],
         },
     },

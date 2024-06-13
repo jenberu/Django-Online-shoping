@@ -40,7 +40,7 @@ class Cart:
         if product_id in self.cart:
             del self.cart[product_id] 
             self.save()   
-    def __iter__(self):
+    def __iter__(self):# this is a built-in method in Python that is used to define an iterable object
          """ 
    Iterate over the 
    items in the cart and get the products
@@ -54,7 +54,7 @@ class Cart:
          for item in cart.values():
              item['price']=Decimal(item['price'])
              item['total_price']=item['price']*item['quantity']
-             yield item   
+             yield item # making it possible to iterate over the cart items directly   
     def __len__(self):
         return sum(item['quantity'] for  item in self.cart.values())
     def get_total_price(self):
