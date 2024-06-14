@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from cart.cart import Cart
 from .forms import OrderCreateForm
-from .models import OrderItem
-
+from .models import OrderItem ,Order
+from  django.contrib.admin.views.decorators import staff_member_required
 def order_create(request):
     cart=Cart(request)
     if request.method=='POST':
@@ -21,4 +21,8 @@ def order_create(request):
     else:
         form=OrderCreateForm()
         return render(request,'orders/order/create.html',{'cart':cart,'form':form})
+@staff_member_required
+def admin_order_detail(request,order_id):
+    order=get_object_or_404(Order,id=order_id)
+    return  render(request, 'orders/order/admindetail.html', {'order': order})   
 
