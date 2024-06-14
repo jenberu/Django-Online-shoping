@@ -6,8 +6,10 @@ from shop.models import Product
 class Cart:
     def __init__(self,request):
 
-
+         #note the  session data is stored as a dictionary
+         #access the session using request.session
         self.session=request.session
+        #The get() method returns the value for a key of dictionary if it exists, otherwise it returns None 
         cart=self.session.get(settings.CART_SESSION_ID)
         if not cart:
             #save an empty cart in the ssesion
@@ -23,12 +25,14 @@ class Cart:
         product_id=str(product.id)
         
         if product_id not in self.cart:
+            # assign the nested dectionary for cart[product_id] key
             self.cart[product_id]={
                 'quantity':0,
                 'price':str(product.price)
             }       
         if override_quantity:
-            self.cart[product_id]['quantity'] = quantity
+
+            self.cart[product_id]['quantity'] = quantity #it is nested dictionary
         else:
             self.cart[product_id]['quantity']+=quantity
         self.save()  
@@ -39,12 +43,14 @@ class Cart:
         product_id=str(product.id)
         if product_id in self.cart:
             del self.cart[product_id] 
-            self.save()   
-    def __iter__(self):# this is a built-in method in Python that is used to define an iterable object
+            self.save()  
+
+
+    def __iter__(self):   # this is a built-in method in Python that is used to define an iterable object
          """ 
-   Iterate over the 
-   items in the cart and get the products
-    from the database.
+         the __iter__(self) method in a class is useful when you want to define 
+         how instances of that class should be iterated over
+  
  """
          product_ids=self.cart.keys()
          products=Product.objects.filter(id__in=product_ids)
