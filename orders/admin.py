@@ -4,6 +4,7 @@ import csv
 import datetime
 from django.http import HttpResponse
 from django.urls import reverse
+from django.utils.html import mark_safe
 
 class OrderItemInline(admin.TabularInline):#An inline allows you to include a model on the same edit page as its related model.
      model=OrderItem
@@ -30,10 +31,12 @@ def export_to_csv(modeladmin,request,queryset):
           return response  
      export_to_csv.short_description = 'Export to CSV File'
 #add a link to each Order object on the list display page of the administration site
-def order_detail(obj):
+def order_detail(obj):#obj refers to the model instance
      url = reverse('orders:admin_order_detail', args=[obj.id])
      return mark_safe(f'<a href="{url}">View</a>')
-
+     """Django escapes HTML output by default. 
+       You have to use the mark_safe function 
+       to avoid auto-escaping."""
 
 
 @admin.register(Order)
@@ -49,7 +52,8 @@ class  OrderAdmin(admin.ModelAdmin):
  'city',
  'paid',
  'created',
- 'updated'
+ 'updated',
+  order_detail,#this add the above link to display on admin interface 
  ]
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
