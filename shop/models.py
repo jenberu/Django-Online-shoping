@@ -3,7 +3,7 @@ from django.urls import reverse
 class Category(models.Model):
     name=models.CharField(max_length=200)
     slug=models.SlugField(max_length=200,unique=True) #t o build beautiful URLs
-
+    has_sub_catagory=models.BooleanField(default=False)
     class Meta:
         ordering=['name']
         indexes=[models.Index(fields=['name']),]
@@ -13,9 +13,26 @@ class Category(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category', args=[self.slug])
+class SubCategory(models.Model):
+    category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, unique=True)
+    class Meta:
+        ordering=['name']
+        indexes=[models.Index(fields=['name']),]
+        verbose_name='subcategory'# specifies the human-readable singular name for the model.
+        verbose_name_plural='subcategories'
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('shop:product_list_by_subcategory', args=[self.slug])    
 
 class Product(models.Model):
     category=models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, related_name='products', null=True, blank=True, on_delete=models.CASCADE)
     name=models.CharField(max_length=200)
     slug=models.SlugField(max_length=200)
     image=models.ImageField(upload_to='products/%y/%m/%d',blank=True)
