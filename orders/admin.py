@@ -37,6 +37,12 @@ def order_detail(obj):#obj refers to the model instance
      """Django escapes HTML output by default. 
        You have to use the mark_safe function 
        to avoid auto-escaping."""
+def order_to_pdf(obj):
+      url = reverse('orders:admin_order_pdf', args=[obj.id])
+      return mark_safe(f'<a href="{url}">PDF</a>')
+order_to_pdf.short_description='create PDF'
+
+
 
 
 @admin.register(Order)
@@ -54,6 +60,7 @@ class  OrderAdmin(admin.ModelAdmin):
  'created',
  'updated',
   order_detail,#this add the above link to display on admin interface 
+  order_to_pdf,
  ]
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
