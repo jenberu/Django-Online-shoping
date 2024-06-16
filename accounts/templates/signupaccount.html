@@ -1,0 +1,21 @@
+<!-- templates/shop/signup.html -->
+
+{% extends "shop/base.html" %}
+{% block title %}
+    Sign Up
+{% endblock %}
+{% block content %}
+<div class="sinupcontainer">
+    <h1>Sign Up</h1>
+    {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form class="sinup-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

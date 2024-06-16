@@ -394,3 +394,42 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+
+
+/* Navigation bar styles */
+.navbar {
+ 
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: blue;
+    padding: 10px 15px;
+    transition: color 0.3s , background-color 0.3s;
+}
+
+.nav-link:hover {
+    border-bottom: yellow;
+    color: #fff;
+}
+
+#profile-image {
+    float: right;
+}
+
+#profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}

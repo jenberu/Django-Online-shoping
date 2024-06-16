@@ -1,0 +1,85 @@
+.sinupcontainer {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sinup-form {
+    margin-top: 20px;
+}
+
+.sinup-form p {
+    margin-bottom: 15px;
+}
+
+.sinup-form  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sinup-form input[type="text"],
+.sinup-form input[type="email"],
+.sinup-form input[type="password"],
+.sinup-form input[type="file"],
+.sinup-form textarea,
+.sinup-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.sinup-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sinup-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.errorlist {
+    color: red;
+    margin-top: 5px;
+}
+/* Custom alert styles */
+.alert {
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}

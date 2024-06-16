@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'orders.apps.OrdersConfig',
+     'accounts',
 
 ]
 
@@ -131,5 +132,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 CART_SESSION_ID = 'cart'
+LOGIN_URL = 'loginaccount'
+"""
+This redirects a user (who is not logged in) to the login page when they attempt to 
+access an authorized page."""
 
 

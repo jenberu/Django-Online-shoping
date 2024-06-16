@@ -27,10 +27,17 @@
             color: #0056b3;
         }
     </style>
+  <script>
+    function hoverEffect(element, color) {
+    element.style.color = color;
+}
+</script>
  <meta charset="utf-8" />
  <title>{% block title %}My shop{% endblock %}</title>
  <link href="{% static "css/bases.css" %}" rel="stylesheet">
   <link href="{% static "css/list.css" %}" rel="stylesheet">
+  <link href="{% static "css/sinupform.css" %}" rel="stylesheet">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -39,8 +46,22 @@
  </head>
  <body>
  <div id="header">
- <a href="/" class="logo"> Bahir Dar City online Shoping
-</a>
+ <a href="/" class="logo"> Bahir Dar City online Shoping</a>
+<nav class="navbar" style="float:right">
+        <div class="navbar-nav ms-auto" >
+            <a class="nav-link" href="#" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">News</a>
+            {% verbatim %}
+            <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Me</a>
+            {% endverbatim %}
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logoutaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Logout</a>
+               
+            {% else %}
+                <a class="nav-link" href="{% url 'loginaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Login</a>
+                <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Sign Up</a>
+            {% endif %}
+        </div>
+    </nav>
 
  </div>
  <div id="subheader">
