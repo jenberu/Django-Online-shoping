@@ -1,14 +1,20 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-"""
+
 class Shop(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200)
+    shopName = models.CharField(max_length=200)
+    adress=models.CharField(max_length=200,default='bahirdar')
+    registration_date=models.DateField(auto_now_add=True)
+    
+
 
     def __str__(self):
-        return self.name"""
+        return self.shopName
 class Category(models.Model):
+    shop = models.ForeignKey(Shop, related_name='categories', on_delete=models.CASCADE,null=True,blank=True)
+
     name=models.CharField(max_length=200)
     slug=models.SlugField(max_length=200,unique=True) #t o build beautiful URLs
     has_sub_catagory=models.BooleanField(default=False)
@@ -41,8 +47,8 @@ class SubCategory(models.Model):
 class Product(models.Model):
     category=models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, related_name='products', null=True, blank=True, on_delete=models.CASCADE)
-   # shop = models.ForeignKey(Shop, related_name='products', on_delete=models.CASCADE)
-
+    shop = models.ForeignKey(Shop, related_name='products', on_delete=models.CASCADE,null=True,blank=True)
+    
     name=models.CharField(max_length=200)
     slug=models.SlugField(max_length=200)
     image=models.ImageField(upload_to='products/%y/%m/%d',blank=True)

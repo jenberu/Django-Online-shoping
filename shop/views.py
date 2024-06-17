@@ -1,6 +1,10 @@
-from django.shortcuts import render , get_object_or_404
+from django.shortcuts import render , get_object_or_404,redirect
 from .models import Product,Category,SubCategory
 from cart.forms import CartAddProductForm
+from .forms import ShopForm
+from django.contrib.auth.models import User,Group
+from django.urls import reverse
+
 
 def product_list(request,category_slug=None,subcategory_slug=None):
     category=None
@@ -32,6 +36,26 @@ def product_detail(request,id,slug):
     cart_product_form = CartAddProductForm()
 
     return render(request,'shop/product/detail.html',{'product':product,'cart_product_form':cart_product_form})
+
+def add_shop(request):
+     if request.method=='GET':
+          form=ShopForm()
+          return render(request,'shop/shops/shopform.html',{'form':form})
+     else:
+          form=ShopForm(request.POST)
+          onwer=get_object_or_404(User,username=request.user.username)
+          if form.is_valid():
+               shop= form.save(commit=False)
+               shop.owner=onwer
+               shop.save()
+               group, created = Group.objects.get_or_create(name='shoponwer')
+               onwer.groups.add(group)
+
+
+
+          return redirect('/admin/')
+
+          
 
 
 
