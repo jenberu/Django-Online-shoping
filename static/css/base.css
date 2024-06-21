@@ -132,7 +132,7 @@ ul.errorlist {
 #header .logo {
     font-family: 'Ubuntu', sans-serif;
     float:left;
-    color:#333;
+    color:hsl(51, 93%, 55%);
     font-size:22px;
     margin-right:10%;
 }

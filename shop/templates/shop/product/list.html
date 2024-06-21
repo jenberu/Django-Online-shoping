@@ -40,10 +40,13 @@
     </div>
 
     <div id="main" class="product-list">
+    {% if search %}
+    <h1> Search Result</h1>
+    {% endif %}
         <h1>
             {% if category %}
                 {{ category.name }}
-            {% else %}
+            {% elif products%}
                 Products
             {% endif %}
         </h1>
@@ -59,7 +62,7 @@
             </div>
        {% endfor %}
     {% else %}
-        <h2 class="noproduct"> {{noproduct}} </h2>
+        <h2 class="noproduct"> Dear <strong>{{user.username}}: </strong> {{noproduct}} </h2>
     {% endif %}
 
     </div>

@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Category,Product,SubCategory,Shop
+from django.utils.html import mark_safe
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display=['name','slug']
@@ -11,7 +13,7 @@ class CategoryAdmin(admin.ModelAdmin):
         return qs.filter(shop__owner=request.user)
 @admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
-    list_display=['name','slug']
+    list_display=['name','category','slug']
     prepopulated_fields={'slug':('name',)} 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -20,7 +22,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
         return qs.filter(category__shop__owner=request.user)
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
-    list_display=['shopName']   
+    list_display=['shopName','owner','adress','registration_date']   
 
 
 
@@ -33,7 +35,7 @@ class PrductAdmin(admin.ModelAdmin):
         'available',
         'created',
         'updated',
-        'image'
+        'image_tag',
     ]
     list_filter=['available','created','updated']
     list_editable=['price', 'available']
@@ -43,6 +45,14 @@ class PrductAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return qs.filter(shop__owner=request.user)
+    
+
+    def image_tag(self, obj):
+        if obj.image:
+            return mark_safe(f'<img src="{obj.image.url}" width="50" height="50" />')
+        return 'No Image'
+    image_tag.short_description = 'Product Image'
+    
 
 
 

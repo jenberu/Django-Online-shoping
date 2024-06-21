@@ -4,6 +4,8 @@ from cart.forms import CartAddProductForm
 from .forms import ShopForm
 from django.contrib.auth.models import User,Group
 from django.urls import reverse
+from django.db import IntegrityError
+
 
 
 def product_list(request,category_slug=None,subcategory_slug=None):
@@ -15,9 +17,9 @@ def product_list(request,category_slug=None,subcategory_slug=None):
             products=Product.objects.filter(available=True ,name__icontains=searchedProduct)
             if products:
                 
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products}) 
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct}) 
             else:
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'noproduct':'there is no such product in our shop'})
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'noproduct':f'There is no  {searchedProduct}  product in our shop'})
     else:
         products=Product.objects.filter(available=True)
     
@@ -43,17 +45,28 @@ def add_shop(request):
           return render(request,'shop/shops/shopform.html',{'form':form})
      else:
           form=ShopForm(request.POST)
-          onwer=get_object_or_404(User,username=request.user.username)
+          
           if form.is_valid():
-               shop= form.save(commit=False)
-               shop.owner=onwer
-               shop.save()
+               try:
+                    onwer=get_object_or_404(User,username=request.user.username)
+
+                    shop= form.save(commit=False)
+                    shop.owner=onwer
+                    shop.save()
+               except IntegrityError:
+                                 return render(request,'shop/shops/shopform.html',{'form':form,'error':'one onwer should register for one shop'})
+
+
                group, created = Group.objects.get_or_create(name='shoponwer')
                onwer.groups.add(group)
+               return redirect('/admin/')
+
+          else:
+             return render(request,'shop/shops/shopform.html',{'form':form,'error':'please enter correct data'})
 
 
 
-          return redirect('/admin/')
+
 
           
 

@@ -13,3 +13,8 @@ class OrderCreateForm(forms.ModelForm):
  'postal_code',
  'city'
  ]
+        
+class UpdateStatusForm(forms.ModelForm):
+    class Meta:
+        model=Order
+        fields=['status']        

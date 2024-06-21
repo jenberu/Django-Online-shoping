@@ -16,6 +16,11 @@
  </ul>
  <p>Total: {{ cart.get_total_price }} Birr</p>
  </div>
+   {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
  <form method="post" class="order-form">
  {{ form.as_p }}
  <p><input type="submit" value="Place order"></p>

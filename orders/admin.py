@@ -33,14 +33,20 @@ def export_to_csv(modeladmin,request,queryset):
 #add a link to each Order object on the list display page of the administration site
 def order_detail(obj):#obj refers to the model instance
      url = reverse('orders:admin_order_detail', args=[obj.id])
-     return mark_safe(f'<a href="{url}">View</a>')
+     return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="view order detial" href="{url}"><i class="fas fa-eye"></i></a>')
      """Django escapes HTML output by default. 
        You have to use the mark_safe function 
        to avoid auto-escaping."""
 def order_to_pdf(obj):
       url = reverse('orders:admin_order_pdf', args=[obj.id])
-      return mark_safe(f'<a href="{url}">PDF</a>')
+      return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="create PDF file" href="{url}"><i class="fas fa-file-pdf"></i></a>')
 order_to_pdf.short_description='create PDF'
+
+def update_status(obj):
+     url=reverse('orders:updateStatus',args=[obj.id])
+     return mark_safe(f'<a  class="btn btn-sm btn-outline-success" title="Edit status" href="{url}"> <i class="fas fa-pen "></i></a>')
+update_status.short_description='update status'
+
 
 
 
@@ -59,8 +65,10 @@ class  OrderAdmin(admin.ModelAdmin):
  'paid',
  'created',
  'updated',
+ 'status',
   order_detail,#this add the above link to display on admin interface 
   order_to_pdf,
+  update_status,
  ]
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]

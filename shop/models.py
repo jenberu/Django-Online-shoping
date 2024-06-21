@@ -1,12 +1,19 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+
+def validate_no_numbers(value):
+    if any(char.isdigit() for char in value):
+        raise ValidationError("This field should not contain numbers.")
 
 class Shop(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     shopName = models.CharField(max_length=200)
-    adress=models.CharField(max_length=200,default='bahirdar')
+    adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
+
+        
     
 
 

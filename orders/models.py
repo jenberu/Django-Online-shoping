@@ -3,6 +3,11 @@ from django.db import models
 
 
 class Order(models.Model):
+    STATUS_CHOICE=[('pending','Pending'),
+                   ('delivered','Delivered'),
+                   ('out of delivery','Out of Delivery'),
+                   ('confirmed','Order Confirmed'),
+                   ]
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
     email=models.EmailField()
@@ -12,6 +17,8 @@ class Order(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     paid=models.BooleanField(default=False)
+    status=models.CharField(max_length=30,choices=STATUS_CHOICE,default='Pending')
+
 
     class Meta:
         ordering = ['-created']
