@@ -6,9 +6,9 @@ class CouponAdmin(admin.ModelAdmin):
     list_display=['code',
                   'valid_from',
                   'valid_to',
-                  'dicount_amount',
+                  'discount_amount',
                   'active' ]
-    list_editable=['dicount_amount']
+    list_editable=['discount_amount']
     
 
 # Register your models here.
