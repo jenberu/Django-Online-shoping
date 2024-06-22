@@ -8,7 +8,7 @@ def validate_no_numbers(value):
         raise ValidationError("This field should not contain numbers.")
 
 class Shop(models.Model):
-    owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    owner = models.OneToOneField(User, on_delete=models.CASCADE,related_name='onwer')
     shopName = models.CharField(max_length=200)
     adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
