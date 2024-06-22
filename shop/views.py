@@ -1,5 +1,5 @@
 from django.shortcuts import render , get_object_or_404,redirect
-from .models import Product,Category,SubCategory
+from .models import Product,Category,SubCategory,Shop
 from cart.forms import CartAddProductForm
 from .forms import ShopForm
 from django.contrib.auth.models import User,Group
@@ -63,7 +63,17 @@ def add_shop(request):
 
           else:
              return render(request,'shop/shops/shopform.html',{'form':form,'error':'please enter correct data'})
+def product_list_for_shop_owner(request):
+      user=get_object_or_404(User,username=request.user.username)
+      shop=Shop.objects.get(owner=user)
+      products=Product.objects.filter(available=True,shop=shop)
+      return render(request,'shop/shops/adminpage.html',{'products':products}) 
 
+
+
+      
+
+      
 
 
 
