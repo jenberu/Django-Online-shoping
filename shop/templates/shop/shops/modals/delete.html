@@ -1,0 +1,17 @@
+{% extends 'shop/shops/modals/baseModal.html' %}
+
+{% block modal-id %} id="deleteModal{{product.pk}}" {% endblock modal-id %}
+
+{% block modal-title %}
+  <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Delete Product
+{% endblock modal-title %}
+
+{% block modal-body %}
+   <div class="text-center text-danger"><i class="far fa-times-circle fa-5x mb-4 mt-2"></i></div>
+   <div class="text-center text-danger"><span> DO YOU WANT TO DELETE THIS Product ??</span>
+  <div class="text-dark mb-3 mt-4">Product: <strong>{{product.name}}</strong></div>
+{% endblock modal-body %}
+
+{% block modal-footer %}
+  <a href="/delete_product/{{product.id}}" class="btn btn-outline-danger btn-sm btn-modal">Delete</a>
+{% endblock modal-footer %}

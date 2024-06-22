@@ -61,20 +61,21 @@
          <td id='responsive-border' label='Upadeted'>{{ product.updated|date:'m/d/Y (H:i)' }}</td>
 
           <td>
-            <a class='btn btn-sm btn-outline-success' title="Edit employee" data-bs-toggle="modal"
-              data-bs-target="#editModal{{employee.pk}}">
+            <a class='btn btn-sm btn-outline-success' title="Edit product" data-bs-toggle="modal"
+              data-bs-target="#editModal{{product.pk}}">
               <i class='fas fa-pen'></i>
             </a>
           </td>
           <td>
-            <a class='btn btn-sm btn-outline-danger' title="Delete employee" data-bs-toggle="modal"
-              data-bs-target="#deleteModal{{employee.pk}}">
+            <a class='btn btn-sm btn-outline-danger' title="Delete product" data-bs-toggle="modal"
+              data-bs-target="#deleteModal{{product.pk}}">
               <i class='fas fa-trash-alt'></i>
             </a>
           </td>
         </tr>
         <!-- ==== include === -->
-       
+        {% include 'shop/shops/modals/delete.html' %}
+
         <!-- Modal -->
        
         {% endfor %}

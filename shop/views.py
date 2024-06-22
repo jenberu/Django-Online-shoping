@@ -5,6 +5,7 @@ from .forms import ShopForm
 from django.contrib.auth.models import User,Group
 from django.urls import reverse
 from django.db import IntegrityError
+from django.contrib import messages
 
 
 
@@ -68,6 +69,14 @@ def product_list_for_shop_owner(request):
       shop=Shop.objects.get(owner=user)
       products=Product.objects.filter(available=True,shop=shop)
       return render(request,'shop/shops/adminpage.html',{'products':products}) 
+def delete_product(request,product_id):
+       product=Product.objects.get(id=product_id)
+       if product !=None:
+             product.delete()
+             messages.success(request, 'Product deleted successfully')
+
+       return redirect('adminhome')
+          
 
 
 
