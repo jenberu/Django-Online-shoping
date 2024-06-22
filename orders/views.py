@@ -9,13 +9,18 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.db import IntegrityError
 
+
 def order_create(request):
     cart=Cart(request)
     if request.method=='POST':
         form=OrderCreateForm(request.POST)
        
         if form.is_valid():
-                order=form.save()
+                order=form.save(commit=False)
+                if cart.coupon:
+                    order.coupon=cart.coupon
+                    order.dicount=cart.coupon.discount_amount
+                order.save()
                 for item in cart:# this intract with cart __iter_ method it calls like cart.__iter__()
                     OrderItem.objects.create(
                                order=order,

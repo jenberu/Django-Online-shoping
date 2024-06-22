@@ -1,4 +1,7 @@
 from django.db import models
+from decimal import Decimal
+from django.core.validators import MinValueValidator,MaxValueValidator
+from coupons.models import Coupon
 
 
 
@@ -8,6 +11,8 @@ class Order(models.Model):
                    ('out of delivery','Out of Delivery'),
                    ('confirmed','Order Confirmed'),
                    ]
+    coupon=models.ForeignKey(Coupon,related_name='orders',null=True,blank=True,on_delete=models.SET_NULL)
+    dicount=models.IntegerField(default=0,validators=[MinValueValidator(0),MaxValueValidator(100)])
     first_name=models.CharField(max_length=50)
     last_name=models.CharField(max_length=50)
     email=models.EmailField()
@@ -25,9 +30,18 @@ class Order(models.Model):
         indexes = [models.Index(fields=['-created']),]
 
     def __str__(self):
-        return f'vOrder {self.id}'
+        return f'Order {self.id}'
     def get_total_cost(self):
+        return self.get_total_cost_before_discount() -self.get_discount()
+    def get_total_cost_before_discount(self):
         return sum(item.get_cost() for item in self.items.all())
+    def get_discount(self):
+        total_cost=self.get_total_cost_before_discount()
+        if self.dicount:
+            return (self.dicount/Decimal(100))*total_cost
+        return Decimal(0)
+
+
 
 class OrderItem(models.Model):
     order=models.ForeignKey(Order,on_delete=models.CASCADE,related_name='items')

@@ -72,5 +72,6 @@ class  OrderAdmin(admin.ModelAdmin):
  ]
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
+    list_per_page=5
 
 # Register your models here.

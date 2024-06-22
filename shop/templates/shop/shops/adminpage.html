@@ -1,0 +1,88 @@
+{% extends 'shop/shops/adminbase.html' %}
+{% block title %}
+      Admin Panal
+{% endblock title %}
+{% block navbar %}
+<i style="color: yellowgreen;" class="fas fa-user-alt"></i>&nbsp;&nbsp;Product List
+{% endblock navbar %}
+{% block content %}
+<div class="container mt-4">
+
+  <div class="input-group input-group-sm">
+    <a
+      class="btn btn-success btn-sm group-btn-sm"
+      style="width: 40px"
+      data-bs-toggle="modal"
+      data-bs-target="#addModal"
+    >
+      <i class="fas fa-plus"></i>
+    </a>
+    <input
+      id="search"
+      type="search"
+      placeholder="Live search ..."
+      aria-label="Search"
+      class="form-control group-btn-sm"
+    />
+    <a
+      href="/"
+      style="width: 40px"
+      class="btn btn-secondary btn-sm group-btn-sm"
+    >
+      <i class="fas fa-sync-alt"></i>
+    </a>
+  </div>
+
+  <div class="table-responsive" style="width: 85%; margin: 0 auto;">
+    <table class="table table-bordered table-hover" id="example" style="text-align: center;">
+      <thead class="table-success">
+        <tr>
+          <th style="width: 7%;">ID</th>
+          <th style="width: 28%;">Name</th>
+          <th style="width: 15%;">Slug</th>
+          <th style="width: 15%;">Price</th>
+          <th style="width: 18%;">Availablity</th>
+          <th style="width: 18%;">Created</th>
+          <th style="width: 15%;">Updated</th>
+          <th style="width: 5%;">Edit</th>
+          <th style="width: 5%;">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- data from backend -->
+        {% for product in products %}
+        <tr>
+          <td id='id'>{{ product.id }}</td>
+          <td id='top-table' label='Name'>{{ product.name }}</td>
+          <td id='responsive-border' label='Slug'>{{ product.slug }}</td>
+          <td id='responsive-border' label='Price'>{{ product.price }}</td>
+          <td id='responsive-border' label='Avaliabilty'>{{ product.available }}</td>
+          <td id='responsive-border' label='Registered'>{{ product.created|date:'m/d/Y (H:i)' }}</td>
+         <td id='responsive-border' label='Upadeted'>{{ product.updated|date:'m/d/Y (H:i)' }}</td>
+
+          <td>
+            <a class='btn btn-sm btn-outline-success' title="Edit employee" data-bs-toggle="modal"
+              data-bs-target="#editModal{{employee.pk}}">
+              <i class='fas fa-pen'></i>
+            </a>
+          </td>
+          <td>
+            <a class='btn btn-sm btn-outline-danger' title="Delete employee" data-bs-toggle="modal"
+              data-bs-target="#deleteModal{{employee.pk}}">
+              <i class='fas fa-trash-alt'></i>
+            </a>
+          </td>
+        </tr>
+        <!-- ==== include === -->
+       
+        <!-- Modal -->
+       
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<br><br><br><b></b>
+{% endblock content %}
