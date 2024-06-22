@@ -30,6 +30,7 @@ class ShopAdmin(admin.ModelAdmin):
 class PrductAdmin(admin.ModelAdmin):
     list_display=[
         'name',
+        'shop',
         'slug',
         'price',
         'available',
@@ -38,7 +39,7 @@ class PrductAdmin(admin.ModelAdmin):
         'image_tag',
     ]
     list_filter=['available','created','updated']
-    list_editable=['price', 'available']
+    list_editable=['shop','price', 'available']
     prepopulated_fields={'slug':('name',)}#this used to  automatically give value of name to  slug 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
