@@ -48,7 +48,7 @@ class SubCategory(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        from django.urls import reverse
+        
         return reverse('shop:product_list_by_subcategory', args=[self.slug])    
 
 class Product(models.Model):

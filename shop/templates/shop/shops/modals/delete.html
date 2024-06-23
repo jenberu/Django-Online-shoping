@@ -13,5 +13,5 @@
 {% endblock modal-body %}
 
 {% block modal-footer %}
-  <a href="/delete_product/{{product.id}}" class="btn btn-outline-danger btn-sm btn-modal">Delete</a>
+  <a href="{% url 'shop:delete_product' product.id %}" class="btn btn-outline-danger btn-sm btn-modal">Delete</a>
 {% endblock modal-footer %}

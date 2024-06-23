@@ -60,6 +60,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',#This sets the user variable in the request.
                 'django.contrib.messages.context_processors.messages',#This sets a messages variable in the context 
                 'cart.context_processors.cart',#this is custom context_processors for cart 
+                'shop.context_processors.shop',
             ],
         },
     },
@@ -124,6 +125,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 CART_SESSION_ID = 'cart'
+SHOP_SESSION_ID = 'shop'
+
 LOGIN_URL = 'loginaccount'
 """
 This redirects a user (who is not logged in) to the login page when they attempt to 

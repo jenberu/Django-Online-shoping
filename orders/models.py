@@ -2,6 +2,7 @@ from django.db import models
 from decimal import Decimal
 from django.core.validators import MinValueValidator,MaxValueValidator
 from coupons.models import Coupon
+from shop.models import Shop
 
 
 
@@ -23,6 +24,7 @@ class Order(models.Model):
     updated=models.DateTimeField(auto_now=True)
     paid=models.BooleanField(default=False)
     status=models.CharField(max_length=30,choices=STATUS_CHOICE,default='Pending')
+    shop=models.ForeignKey(Shop,on_delete=models.CASCADE,related_name='shop',null=True,blank=True)
 
 
     class Meta:

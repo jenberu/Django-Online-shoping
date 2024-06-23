@@ -17,6 +17,8 @@ def order_create(request):
        
         if form.is_valid():
                 order=form.save(commit=False)
+                if cart.get_shop:
+                    order.shop=cart.get_shop
                 if cart.coupon:
                     order.coupon=cart.coupon
                     order.dicount=cart.coupon.discount_amount

@@ -1,8 +1,9 @@
 from django.contrib import admin
+from django.db.models.query import QuerySet
 from .models import Order ,OrderItem
 import csv
 import datetime
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from django.utils.html import mark_safe
 
@@ -54,8 +55,10 @@ update_status.short_description='update status'
 @admin.register(Order)
 class  OrderAdmin(admin.ModelAdmin):
     actions=[export_to_csv]
+    
     list_display = [
 'id',
+'shop',
  'first_name',
  'last_name',
  'email',
@@ -66,12 +69,19 @@ class  OrderAdmin(admin.ModelAdmin):
  'created',
  'updated',
  'status',
+
   order_detail,#this add the above link to display on admin interface 
   order_to_pdf,
   update_status,
- ]
+ ]  
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
     list_per_page=5
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(shop__owner=request.user)
+   
 
 # Register your models here.

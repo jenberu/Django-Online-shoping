@@ -54,6 +54,9 @@ def add_shop(request):
                     shop= form.save(commit=False)
                     shop.owner=onwer
                     shop.save()
+                    request.user.is_staff=True
+                    request.user.save()
+
                except IntegrityError:
                                  return render(request,'shop/shops/shopform.html',{'form':form,'error':'one onwer should register for one shop'})
 
@@ -75,7 +78,7 @@ def delete_product(request,product_id):
              product.delete()
              messages.success(request, 'Product deleted successfully')
 
-       return redirect('adminhome')
+       return redirect('/adminhome/')
           
 
 

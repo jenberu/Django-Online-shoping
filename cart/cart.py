@@ -1,7 +1,8 @@
 from decimal import Decimal
 from django.conf import settings
-from shop.models import Product
+from shop.models import Product,Shop
 from coupons.models import Coupon
+from django.shortcuts import redirect
 
 # Cart class to manage the cart
 class Cart:
@@ -12,12 +13,20 @@ class Cart:
         self.session=request.session
         #The get() method returns the value for a key of dictionary if it exists, otherwise it returns None 
         cart=self.session.get(settings.CART_SESSION_ID)
+        self.shop=self.session.get(settings.SHOP_SESSION_ID)
+
         if not cart:
             #save an empty cart in the ssesion
             cart=self.session[settings.CART_SESSION_ID]={}
         self.cart=cart 
+        if not self.shop:
+            self.shop = {}
+            self.session[settings.SHOP_SESSION_ID] = self.shop
+
+        
         self.coupon_id=self.session.get('coupon_id')
     def add(self,product,quantity=1,override_quantity=False):
+        
         #add product to the cart or update its quantity
 
         """ convert the product ID into a 
@@ -25,19 +34,29 @@ class Cart:
          JSON to serialize session data, 
          and JSON only allows string key names."""
         product_id=str(product.id)
-        
-        if product_id not in self.cart:
+        product_shop = product.shop.shopName
+        if 'shopname' not in self.shop:
+            self.shop['shopname'] = product_shop
+            self.session[settings.SHOP_SESSION_ID] = self.shop
+
+        if self.shop['shopname']==product_shop:
+            if product_id not in self.cart:
             # assign the nested dectionary for cart[product_id] key
-            self.cart[product_id]={
+               self.cart[product_id]={
                 'quantity':0,
                 'price':str(product.price)
-            }       
-        if override_quantity:
-
-            self.cart[product_id]['quantity'] = quantity #it is nested dictionary
+               }       
+            if override_quantity:
+                self.cart[product_id]['quantity'] = quantity #it is nested dictionary
+            else:
+                self.cart[product_id]['quantity']+=quantity
+            self.save()
+            return True
         else:
-            self.cart[product_id]['quantity']+=quantity
-        self.save()  
+            return False
+        
+
+            print('you are allowed to use a cart for only one shop')      
     def save(self):
         self.session.modified=True  
 
@@ -70,6 +89,8 @@ class Cart:
     #clear the cart session
     def clear(self):
         del self.session[settings.CART_SESSION_ID]
+        del self.session[settings.SHOP_SESSION_ID]
+
         self.save()
     @property
     def coupon(self):
@@ -79,6 +100,15 @@ class Cart:
             except Coupon.DoesNotExist:
                 pass
         return None
+    @property
+    def get_shop(self):
+        if self.shop:
+            try:
+                return Shop.objects.get(shopName=self.shop['shopname'])
+            except Shop.DoesNotExist:
+                pass
+    
+    
     def get_discount(self):
         if self.coupon:
             return(self.coupon.discount_amount/Decimal(100))*self.get_total_price()        
