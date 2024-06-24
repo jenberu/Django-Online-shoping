@@ -5,6 +5,8 @@ from shop.models import Product,Shop
 from .cart import Cart
 from .forms import CartAddProductForm
 from coupons.forms import CouponForm
+from coupons.models import Coupon
+
 
 
 @require_POST
@@ -19,7 +21,7 @@ def cart_add(request,product_id):
         if is_add:
            return redirect('cart:cart_detail') 
         else:
-            return render(request, 'cart/detail.html', {'cart': cart,'error':'you should chouck out this cart before requesting the order in other shop'})  
+            return render(request, 'cart/detail.html', {'cart': cart,'error':'you should checkout this cart before requesting the order in other shop'})  
 
            
 @require_POST
@@ -36,8 +38,21 @@ def cart_detail(request):
     cart.clear()
  for item in cart:
     item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'override': True} )
- coupon_apply_form= CouponForm()  
+ coupon_apply_form= CouponForm() 
+ if cart.get_shop:
+    shop=cart.get_shop 
+    try:
+       coupon=Coupon.objects.filter(shop=shop)
+       return render(request, 'cart/detail.html', {'cart': cart,'coupon':coupon,'coupon_apply_form':coupon_apply_form})  
+    except Coupon.DoesNotExist:
+        return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form})  
  return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form})  
+
+
+
+
+
+
 
    
    

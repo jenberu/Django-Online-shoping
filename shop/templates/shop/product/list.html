@@ -59,6 +59,8 @@
                 <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                 <br>
                 {{ product.price }} Birr
+                <br>
+                from <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
             </div>
        {% endfor %}
     {% else %}

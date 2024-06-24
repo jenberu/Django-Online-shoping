@@ -74,13 +74,15 @@ Your shopping cart
 </tr>
         </tbody>
     </table>
+{% if coupon and total_items %}
     <p>Apply for Discount:</p>
-    <div class="applay-for-discount" ></div>
+ <div class="applay-for-discount" ></div>
 <form action="{% url "coupons:apply" %}" method="post" >
  {{ coupon_apply_form }}
  <input type="submit" value="Apply">
  {% csrf_token %}
 </form>
+{% endif %}
     <p class="text-right">
         <a href="{% url 'shop:product_list' %}" class="button light">Continue shopping</a>
         <a href="{% url 'orders:order_create' %}" class="button">Checkout</a>

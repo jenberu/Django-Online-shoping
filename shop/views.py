@@ -9,7 +9,7 @@ from django.contrib import messages
 
 
 
-def product_list(request,category_slug=None,subcategory_slug=None):
+def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     category=None
     subcategory = None
     searchedProduct=request.GET.get('searchProduct')
@@ -31,6 +31,9 @@ def product_list(request,category_slug=None,subcategory_slug=None):
     if subcategory_slug:
          subcategory=get_object_or_404(SubCategory,slug=subcategory_slug)
          products=products.filter(subcategory=subcategory)
+    if shop_id:
+          shop = get_object_or_404(Shop, id=shop_id)
+          products=products.filter(shop=shop,available=True)    
      
     return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products}) 
 
@@ -79,6 +82,13 @@ def delete_product(request,product_id):
              messages.success(request, 'Product deleted successfully')
 
        return redirect('/adminhome/')
+def product_list_for_shop(request,shop_id,category_slug=None,subcategory_slug=None):
+      shop = get_object_or_404(Shop, id=shop_id)
+      products=Product.objects.filter(shop=shop,available=True)
+      return render(request,'shop/product/list.html',{'products':products}) 
+
+
+      
           
 
 
