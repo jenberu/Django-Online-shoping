@@ -31,7 +31,9 @@ def order_create(request):
                                quantity=item['quantity']
                                          )
                 cart.clear()
-                return render(request,'orders/order/created.html', {'order': order})
+                request.session['order_id']=order.id
+                return redirect('payment:paymentprocces')
+               # return render(request,'orders/order/created.html', {'order': order})
         else:
             return render(request, 'orders/order/create.html', {'form':OrderCreateForm, 'error':'please enter valid data  for all fields'})
            
