@@ -23,5 +23,18 @@
         </form>
 
         <p>{{ product.description|linebreaks }}</p>
+
+    </div>
+    <div>
+    <h1>products that bout with this product</h1>
+    <ul>
+     {% for item in orderd_items %}
+       {% if item is not product %}
+       <li><img src="{% if item.image %}{{ item.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ item.name }}">
+        <h1>{{ item.name }}</h1>
+        </li>
+       {% endif %}
+        {% endfor %}
+     </ul>
     </div>
 {% endblock %}

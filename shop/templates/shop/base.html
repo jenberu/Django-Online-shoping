@@ -26,8 +26,9 @@
 </script>
  <meta charset="utf-8" />
  <title>{% block title %}Jemberu's shop{% endblock %}</title>
- <link href="{% static 'css/base.css' %}" rel="stylesheet">
-  <link href="{% static 'css/listpage.css' %}" rel="stylesheet">
+   <link href="{% static 'css/productlist.css' %}" rel="stylesheet">
+
+ <link href="{% static 'css/bases.css' %}" rel="stylesheet">
   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
 
 
@@ -52,6 +53,7 @@
             {% endif %}
             
             <a class="nav-link" href="#" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">News</a>
+            <!-- Anything between {% verbatim %} and {% endverbatim %} will not be executed, but rendered as output instead-->
             {% verbatim %}
             <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Me</a>
             {% endverbatim %}
@@ -77,6 +79,7 @@
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
      Your cart:<a href="{% url 'cart:cart_detail' %}">
+     <!-- Adds a 's' at the end of a value if the total_items value is not 1 -->
      {{ total_items }} item{{ total_items|pluralize }}, {{cart.get_total_price}} Birr
       <a>
     {% elif not order and user.is_authenticated %}
@@ -89,6 +92,7 @@
  {% block content %}
  {% endblock %}
  </div>
+ 
 <footer class="text-center text-lg-start bg-light text-muted mt-4">
         <div class="footer-content">
             <p>&copy; {% now "Y" %} My online shop App. All rights reserved.</p>

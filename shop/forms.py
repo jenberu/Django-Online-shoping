@@ -7,6 +7,7 @@ class ShopForm(ModelForm):
         model=Shop
         fields=['shopName','adress']
         labels={'shopName':('shop Name'),'adress':('Address')}
+        help_texts={'shopName':'enter the name of your business','adress':'enter th address where your shop found'}
 
 class ProductAdminForm(forms.ModelForm):
      class Meta:

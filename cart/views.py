@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404,redirect
 
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import  login_required
 from shop.models import Product,Shop
 from .cart import Cart
 from .forms import CartAddProductForm
@@ -8,7 +9,7 @@ from coupons.forms import CouponForm
 from coupons.models import Coupon
 
 
-
+@login_required
 @require_POST
 def cart_add(request,product_id):
     #shop=get_object_or_404(Shop,shopName=shop_name)

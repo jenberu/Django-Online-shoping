@@ -1,0 +1,9 @@
+asgiref
+Django
+sqlparse
+Pillow
+flower
+celery
+stripe
+python-decouple
+WeasyPrint

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User,Group
 from django.urls import reverse
 from django.db import IntegrityError
 from django.contrib import messages
+from orders.models import OrderItem,Order
 
 
 
@@ -14,13 +15,14 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     subcategory = None
     searchedProduct=request.GET.get('searchProduct')
     categories=Category.objects.all()
+    shops=Shop.objects.all()
     if searchedProduct:
             products=Product.objects.filter(available=True ,name__icontains=searchedProduct)
             if products:
                 
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct}) 
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops}) 
             else:
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'noproduct':f'There is no  {searchedProduct}  product in our shop'})
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':f'There is no  {searchedProduct}  product in our shop'})
     else:
         products=Product.objects.filter(available=True)
     
@@ -35,10 +37,11 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
           shop = get_object_or_404(Shop, id=shop_id)
           products=products.filter(shop=shop,available=True)    
      
-    return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products}) 
+    return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'shops':shops}) 
 
 def product_detail(request,id,slug):
     product=get_object_or_404(Product,id=id,slug=slug,available=True) 
+
     cart_product_form = CartAddProductForm()
 
     return render(request,'shop/product/detail.html',{'product':product,'cart_product_form':cart_product_form})

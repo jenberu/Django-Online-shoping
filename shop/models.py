@@ -12,6 +12,10 @@ class Shop(models.Model):
     shopName = models.CharField(max_length=200)
     adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
+# valid_from=models.DateTimeField()
+   # valid_to=models.DateTimeField()
+   # is_active=models.BooleanField(default=False)
+
     
 
         

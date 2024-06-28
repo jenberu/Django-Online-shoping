@@ -61,7 +61,8 @@ Your shopping cart
  </td>
  <td colspan="4"></td>
  <td class="num neg">
- - {{ cart.get_discount|floatformat:2 }} Birr
+ - {{ cart.get_discount|floatformat:2 }} Birr<!-- floatformat filter rounds a floating-point number to the 
+                                             specified number of decimals, or one, if no decimal argument is specified. -->
  </td>
  </tr>
 {% endif %}

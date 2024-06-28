@@ -1,6 +1,7 @@
 
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
-    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
+     'orders.apps.OrdersConfig',
      'accounts',
      'coupons',
 
@@ -133,3 +135,6 @@ This redirects a user (who is not logged in) to the login page when they attempt
 access an unauthorized page."""
 
 
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_API_VERSION = '2024-04-10'

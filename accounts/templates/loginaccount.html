@@ -17,5 +17,12 @@
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
+    if you have no account <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Sign Up</a>
+
 </div>
+<script>
+    function hoverEffect(element, color) {
+    element.style.color = color;
+}
+</script>
 {% endblock %}

@@ -7,4 +7,4 @@ class UserCreateForm(UserCreationForm):
         super(UserCreateForm, self).__init__(*args, **kwargs)
         for fieldname in ['username', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
-            self.fields[fieldname].widget.attrs.update({'class': 'custom-input'})
+            self.fields[fieldname].widget.attrs.update({'class': 'custom-input',})
