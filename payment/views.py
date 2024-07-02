@@ -4,6 +4,12 @@ from django.conf import settings
 from django.urls import reverse 
 from orders.models import Order
 from decimal import Decimal
+from shop.models import Shop,ShopSubscrioptionPlan
+from datetime import timedelta
+from django.utils import timezone
+from django.http import HttpResponse
+
+
 
 
 stripe.api_key=settings.STRIPE_SECRET_KEY
@@ -12,7 +18,7 @@ stripe.api_version=settings.STRIPE_API_VERSION
 def payment_procces(request):
     #get order_id from from stored session by order_create view
     order_id=request.session.get('order_id')
-    #get order object by this id
+     #get order object by this id
     order=get_object_or_404(Order,id=order_id)
     if request.method=='POST':
         # generate an absolute URI from the URL path
@@ -62,3 +68,74 @@ Using locals() in the render function will include all local variables in the co
  It is often better to explicitly define the context variables you want to pass to the template for clarity and to avoid passing unintended data.
 
 """
+
+def shop_onwer_payemnet_procces(request):
+    #retrive shop_id from session
+    shop_id=request.session.get('shop_id')
+    shop=get_object_or_404(Shop,id=shop_id)
+    if request.method=="POST":
+        
+        success_url = request.build_absolute_uri(reverse('payment:success'))
+        cancel_url = request.build_absolute_uri(reverse('payment:cancel'))
+        plan=request.POST['plan']
+        request.session['plan']=plan
+
+        if plan=='monthly':
+            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='monthly')
+            price=int(shop_sub_plan.price * Decimal('100'))
+
+
+        elif plan=='six_months':
+            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='six_months')
+            price=int(shop_sub_plan.price * Decimal('100'))
+        elif plan=='yearly':
+            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='six_months')
+            price=int(shop_sub_plan.price * Decimal('100'))
+        else:
+             return HttpResponse("Invalid plan", status=400)
+        session=stripe.checkout.Session.create(
+              payment_method_types=['card'],
+              line_items=[{
+                   'price_data': {
+                   'currency': 'etb',
+                    'product_data': {
+                    'name': f'{plan.capitalize()} Subscription for {shop.shopName}',
+                      },
+                   'unit_amount': price,
+                    },
+                 'quantity': 1,
+                   }],
+               mode='payment',
+               success_url=success_url ,
+               cancel_url=cancel_url,
+
+               )
+        return redirect(session.url,code=303)
+        
+    else:
+        return render(request,'payment/onwer_process.html',locals())
+
+
+def onwer_payment_success(request):
+    plan=request.session.get('plan')
+    shop_id=request.session.get('shop_id')
+     #get shop object by this id
+    shop=get_object_or_404(Shop,id=shop_id)
+    if plan=='monthly':
+         duration=timedelta(days=30)
+    elif plan=='six_months':
+            duration=timedelta(days=180)
+    elif plan=='yearly':
+            duration=timedelta(days=365) 
+    shop.activate_shop(duration)  
+   
+
+    return render(request, 'payment/onwer_success.html', {'shop': shop})
+
+def onwer_payment_cancele(request):
+      return render(request, 'payment/onwer_cancel.html')
+     
+ 
+
+
+

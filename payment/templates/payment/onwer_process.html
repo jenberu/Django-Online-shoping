@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Select a Subscription Plan</h2>
+<form method="post" action="{% url 'payment:onwer_payment_procces'%}">
+    <label>
+        <input type="radio" name="plan" value="monthly" required> Monthly - $10
+    </label><br>
+    <label>
+        <input type="radio" name="plan" value="six_months" required> Six Months - $50
+    </label><br>
+    <label>
+        <input type="radio" name="plan" value="yearly" required> Yearly - $90
+    </label><br>
+    <button type="submit">Proceed to Payment</button>
+</form>
+{% endblock %}

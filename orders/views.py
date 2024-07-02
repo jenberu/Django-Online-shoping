@@ -43,7 +43,7 @@ def order_create(request):
 @staff_member_required
 def admin_order_detail(request,order_id):
     order=get_object_or_404(Order,id=order_id)
-    return  render(request, 'orders/order/admindetail.html', {'order': order})   
+    return  render(request, 'admin/orders/order/admindetail.html', {'order': order})   
 @staff_member_required
 def admin_order_pdf(request,order_id):
     order=get_object_or_404(Order,id=order_id)
@@ -65,7 +65,7 @@ def updateStatus(request,order_id):
         if form.is_valid():
             order.status=form.cleaned_data['status']
             order.save()
-            return redirect('/admin/') 
+            return redirect('/admin/orders/order/') 
 
 
 

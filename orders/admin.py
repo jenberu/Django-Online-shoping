@@ -6,6 +6,7 @@ import datetime
 from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from django.utils.html import mark_safe
+from django.template.defaultfilters import truncatechars
 
 class OrderItemInline(admin.TabularInline):#An inline allows you to include a model on the same edit page as its related model.
      model=OrderItem
@@ -49,6 +50,16 @@ def update_status(obj):
 update_status.short_description='update status'
 
 
+def order_payment(obj):
+     url=obj.get_stripe_url()
+     truncated_stripe_id=truncatechars(obj.stripe_id,8)
+     if obj.stripe_id:
+          html=f'<a href="{url}" target="_blank">{truncated_stripe_id}</a>'
+          return mark_safe(html)
+     return ''
+order_payment.short_description='Stripe Payment'
+
+
 
 
 
@@ -66,6 +77,7 @@ class  OrderAdmin(admin.ModelAdmin):
  'postal_code',
  'city',
  'paid',
+ order_payment,
  'created',
  'updated',
  'status',

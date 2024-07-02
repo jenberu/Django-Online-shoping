@@ -2,9 +2,7 @@ import stripe
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-import stripe.webhook
 from orders.models import Order
-
 
 
 @csrf_exempt
@@ -14,7 +12,7 @@ def stripe_webhook(request):
     sig_header=request.META['HTTP_STRIPE_SIGNATURE']
     event=None
     try:
-        event=stripe.webhook.construct_event(
+        event=stripe.Webhook.construct_event(
             payload,sig_header,settings.STRIPE_WEBHOOK_SECRET
         )
     except ValueError as e:
@@ -30,6 +28,8 @@ def stripe_webhook(request):
                 order=Order.objects.get(id=session.client_reference_id)
             except Order.DoesNotExist:
                 return HttpResponse(status=404) 
+            #store the payment intent id to  stripe_id field of the Order object
+            order.stripe_id=session.payment_intent
             order.paid=True
             order.save()   
     #else retturn HTTP 200 ok response

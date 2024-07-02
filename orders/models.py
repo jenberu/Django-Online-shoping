@@ -3,6 +3,8 @@ from decimal import Decimal
 from django.core.validators import MinValueValidator,MaxValueValidator
 from coupons.models import Coupon
 from shop.models import Shop
+from django.conf import settings
+
 
 
 
@@ -25,6 +27,7 @@ class Order(models.Model):
     paid=models.BooleanField(default=False)
     status=models.CharField(max_length=30,choices=STATUS_CHOICE,default='Pending')
     shop=models.ForeignKey(Shop,on_delete=models.CASCADE,related_name='shop',null=True,blank=True)
+    stripe_id=models.CharField(max_length=250,blank=True)
 
 
     class Meta:
@@ -42,6 +45,16 @@ class Order(models.Model):
         if self.dicount:
             return (self.dicount/Decimal(100))*total_cost
         return Decimal(0)
+    # method to return the Stripe dashboard’s URL
+    def get_stripe_url(self):
+        if not self.stripe_id:
+            return ''
+        #differtient the production environment from the test environment.
+        if '_test_' in settings.STRIPE_SECRET_KEY:
+            path='/test/'
+        else:
+            path='/'
+        return f'https://dashboard.stripe.com{path}payments/{self.stripe_id}'       
 
 
 

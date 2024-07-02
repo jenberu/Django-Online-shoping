@@ -37,7 +37,7 @@
   </table>
   
   <form action="{% url "payment:paymentprocces" %}" method="post">
-    <input type="submit" value="Pay now">
+    <input type="submit" style="cursor: pointer;" value="Pay now">
     {% csrf_token %}
   </form>
 {% endblock %}

@@ -8,3 +8,7 @@ stripe
 python-decouple
 WeasyPrint
 django-jazzmin
+redis
+django-rosetta
+django-parler
+django-localflavor

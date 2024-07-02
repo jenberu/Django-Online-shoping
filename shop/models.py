@@ -1,7 +1,10 @@
 from django.db import models
 from django.urls import reverse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+from datetime import timedelta
+
 
 def validate_no_numbers(value):
     if any(char.isdigit() for char in value):
@@ -12,9 +15,28 @@ class Shop(models.Model):
     shopName = models.CharField(max_length=200)
     adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
-# valid_from=models.DateTimeField()
-   # valid_to=models.DateTimeField()
-   # is_active=models.BooleanField(default=False)
+    valid_from=models.DateTimeField(blank=True,null=True)
+    valid_to=models.DateTimeField(blank=True,null=True)
+    is_active=models.BooleanField(default=False)
+
+    def activate_shop(self,duration):
+        self.valid_from=timezone.now()
+        self.valid_to=self.valid_from + duration
+        self.is_active=True
+        self.owner.is_staff=True
+        self.save()
+
+        group, created = Group.objects.get_or_create(name='shoponwer')
+        if not created:
+            self.onwer.groups.add(group)
+        else:
+            self.onwer.groups.add(created)
+
+
+    def deactivate_shop(self):
+        self.is_active=False
+        self.save()  
+
 
     
 
@@ -84,5 +106,11 @@ class Product(models.Model):
 
        
 
-
-
+class ShopSubscrioptionPlan(models.Model):
+    PLAN_CHOICE=[
+        ('monthly'',Monthly'),
+        ('six_months','Six Months'),
+        ('yearly','Yearly'),
+    ]
+    plan_name=models.CharField(max_length=20,choices=PLAN_CHOICE)
+    price=models.DecimalField(max_digits=10,decimal_places=2)

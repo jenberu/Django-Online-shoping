@@ -26,9 +26,9 @@
 </script>
  <meta charset="utf-8" />
  <title>{% block title %}Jemberu's shop{% endblock %}</title>
-   <link href="{% static 'css/productlist.css' %}" rel="stylesheet">
+   <link href="{% static 'css/lists.css' %}" rel="stylesheet">
 
- <link href="{% static 'css/bases.css' %}" rel="stylesheet">
+ <link href="{% static 'css/base.css' %}" rel="stylesheet">
   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
 
 
@@ -39,7 +39,7 @@
  </head>
  <body>
  <div id="header">
- <a href="/" class="logo"> Bahir Dar City online Shoping</a>
+ <a href="/" class="logo"> Link Seller And Buyer</a>
 <nav class="navbar" style="float:right">
         <div class="navbar-nav ms-auto" >
             {% if user.is_authenticated %}
