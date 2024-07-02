@@ -29,9 +29,9 @@ def payment_procces(request):
         for item in order.items.all():
             strip_session_data['line_items'].append(
                 {
-                    'price_date':{
+                    'price_data':{
                         'unit_amount':int(item.price * Decimal('100')),
-                         'currency':'etb',#currency for ethiopia
+                         'currency':'etb',#currency for Ethiopia
                          #: Product-related information:
                          'product_data':{
                              'name':item.product.name,#name of the product
@@ -41,11 +41,12 @@ def payment_procces(request):
                 }
             )
         #call strip Session.create() method to  create stripe checkout session
-        session=stripe.checkout.Session.create(**strip_session_data)
-        #after creating the checkout session, an HTTP redirect with status code 303 is returned to redirect the user to Stripe
-        return redirect(session.url,code=303)
+        # builds and sends the request to the Stripe API
+        stripe_session=stripe.checkout.Session.create(**strip_session_data)
+        #after creating the checkout session, an HTTP redirect with status code 303 is returned to redirect the user to Stripe page
+        return redirect(stripe_session.url,code=303)#redirect to Stripe payment page using the URL from the session object
     else:
-        return render(request,'process.html',locals())
+        return render(request,'payment/process.html',locals())
     
 
 def payment_completed(request):
@@ -54,3 +55,10 @@ def payment_canceled(request):
     return render(request,'canceled.html')
 
 
+#notes
+"""303 status code (See Other) is used to indicate that the client(browser) should perform a GET request to the provided URL
+Using locals() in the render function will include all local variables in the context passed to the template.
+ This can be convenient but may also include unnecessary data. 
+ It is often better to explicitly define the context variables you want to pass to the template for clarity and to avoid passing unintended data.
+
+"""

@@ -60,16 +60,15 @@ def add_shop(request):
                     shop= form.save(commit=False)
                     shop.owner=onwer
                     shop.save()
-                    request.user.is_staff=True
-                    request.user.save()
+                    request.session['shop_id']=shop.id
+                    return redirect('payment:onwer_payment_procces')
+                    
+                   
 
                except IntegrityError:
                                  return render(request,'shop/shops/shopform.html',{'form':form,'error':'one onwer should register for one shop'})
 
 
-               group, created = Group.objects.get_or_create(name='shoponwer')
-               onwer.groups.add(group)
-               return redirect('/admin/')
 
           else:
              return render(request,'shop/shops/shopform.html',{'form':form,'error':'please enter correct data'})

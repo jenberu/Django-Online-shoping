@@ -7,3 +7,4 @@ celery
 stripe
 python-decouple
 WeasyPrint
+django-jazzmin
