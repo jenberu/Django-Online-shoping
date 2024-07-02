@@ -17,7 +17,7 @@
         <button type="submit" class="btn btn-primary">Search</button>
     </div>
 </form>
-<div class="body-contemt">
+<div class="body-content">
     <div id="sidebar">
         <h3>Categories</h3>
         <ul>
@@ -38,7 +38,7 @@
             </li>
         {% endfor %}
     </ul>
-    </div>
+   </div>
 
  <div id="main" class="product-list">
     {% if search %}
@@ -69,7 +69,7 @@
     {% endif %}
 
     </div>
-    <div class="right-bar" style="float:right;">
+    <div class="right-bar">
     <h3>Registed Shops</h3>
      <ul>
      {% for shop in shops %} 
@@ -79,7 +79,7 @@
      {% endfor %}
      </ul>
     </div>
-    </div>
+</div>
 {% endblock %}
  
 
