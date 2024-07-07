@@ -1,5 +1,7 @@
+
 {% extends "shop/base.html" %}
 {% load static %}
+
 {% block title %}
 Your shopping cart 
 {% endblock %}
@@ -76,7 +78,7 @@ Your shopping cart
         </tbody>
     </table>
  <div style="display:flex">   
-{% if coupon and total_items %}
+{% if get_coupon_object and total_items %}
 <p>Apply for Discount:</p>
  <div class="applay-for-discount" >
 <form action="{% url "coupons:apply" %}" method="post" >

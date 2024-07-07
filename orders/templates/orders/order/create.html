@@ -3,24 +3,24 @@
  Checkout
 {% endblock %}
 {% block content %}
- <h1>Checkout</h1>
+ <h1>fill the following form to place an order </h1>
  <div class="order-info">
- <h3>Your order</h3>
- <ul>
-{% for item in cart %}
- <li>
- {{ item.quantity }}x {{ item.product.name }}
- <span>{{ item.total_price }} Birr</span>
- </li>
- {% endfor %}
- {% if cart.coupon %}
- <li>
- "{{ cart.coupon.code }}" ({{ cart.coupon.dicount_amount }}% off)
- <span class="neg">- {{ cart.get_discount|floatformat:2 }} Birr</span>
- </li>
- {% endif %}
- </ul>
-<p>Total: {{ cart.get_total_price_after_discount|floatformat:2 }} Birr</p>
+    <h3>Your order</h3>
+     <ul>
+    {% for item in cart %}
+      <li>
+        {{ item.quantity }}x {{ item.product.name }}
+        <span>{{ item.total_price }} Birr</span>
+      </li>
+   {% endfor %}
+  {% if cart.coupon %}
+    <li>
+      "{{ cart.coupon.code }}" ({{ cart.coupon.dicount_amount }}% off)
+     <span class="neg">- {{ cart.get_discount|floatformat:2 }} Birr</span>
+    </li>
+  {% endif %}
+   </ul>
+   <p>Total: {{ cart.get_total_price_after_discount|floatformat:2 }} Birr</p>
  </div>
    {% if error %}
         <div class="alert alert-danger mt-3" role="alert">

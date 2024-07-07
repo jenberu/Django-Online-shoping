@@ -8,7 +8,10 @@ class ShopForm(ModelForm):
         fields=['shopName','adress']
         labels={'shopName':('shop Name'),'adress':('Address')}
         help_texts={'shopName':'enter the name of your business','adress':'enter th address where your shop found'}
-
+        widgets = {
+            'shopName': forms.TextInput(attrs={'class': 'form-input-control'}),
+            'adress': forms.TextInput(attrs={'class': 'form-input-control'}),
+           }
 class ProductAdminForm(forms.ModelForm):
      class Meta:
         model = Product

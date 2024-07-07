@@ -38,6 +38,10 @@ def order_create(request):
             return render(request, 'orders/order/create.html', {'form':OrderCreateForm, 'error':'please enter valid data  for all fields'})
            
     else:
+        total_items = len(cart)
+        if total_items==0:  
+            return render(request,'cart/detail.html',{'error':'your cart is empity pleace add item to checkout'})
+
         form=OrderCreateForm()
         return render(request,'orders/order/create.html',{'cart':cart,'form':form})
 @staff_member_required

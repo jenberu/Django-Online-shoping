@@ -4,6 +4,7 @@ from django.contrib.auth.models import User,Group
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from datetime import timedelta
+from django.shortcuts  import get_object_or_404
 
 
 def validate_no_numbers(value):
@@ -11,7 +12,7 @@ def validate_no_numbers(value):
         raise ValidationError("This field should not contain numbers.")
 
 class Shop(models.Model):
-    owner = models.OneToOneField(User, on_delete=models.CASCADE,related_name='onwer')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='shop')
     shopName = models.CharField(max_length=200)
     adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
@@ -23,14 +24,17 @@ class Shop(models.Model):
         self.valid_from=timezone.now()
         self.valid_to=self.valid_from + duration
         self.is_active=True
-        self.owner.is_staff=True
         self.save()
+        user=get_object_or_404(User,username=self.owner.username)
+        user.is_staff=True
+        user.save()
+       
 
         group, created = Group.objects.get_or_create(name='shoponwer')
         if not created:
-            self.onwer.groups.add(group)
+            self.owner.groups.add(group)
         else:
-            self.onwer.groups.add(created)
+            self.owner.groups.add(created)
 
 
     def deactivate_shop(self):
@@ -48,7 +52,6 @@ class Shop(models.Model):
         return self.shopName
 class Category(models.Model):
     shop = models.ForeignKey(Shop, related_name='categories', on_delete=models.CASCADE,null=True,blank=True)
-
     name=models.CharField(max_length=200)
     slug=models.SlugField(max_length=200,unique=True) #t o build beautiful URLs
     has_sub_catagory=models.BooleanField(default=False)
@@ -108,9 +111,12 @@ class Product(models.Model):
 
 class ShopSubscrioptionPlan(models.Model):
     PLAN_CHOICE=[
-        ('monthly'',Monthly'),
+        ('monthly','Monthly'),
         ('six_months','Six Months'),
         ('yearly','Yearly'),
     ]
     plan_name=models.CharField(max_length=20,choices=PLAN_CHOICE)
     price=models.DecimalField(max_digits=10,decimal_places=2)
+        
+    def __str__(self):
+        return self.plan_name  

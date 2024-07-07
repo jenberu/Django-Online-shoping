@@ -73,23 +73,31 @@ def shop_onwer_payemnet_procces(request):
     #retrive shop_id from session
     shop_id=request.session.get('shop_id')
     shop=get_object_or_404(Shop,id=shop_id)
+    try:
+         sub_plan_per_month=ShopSubscrioptionPlan.objects.get(plan_name='monthly')
+         sub_plan_per_six_month=ShopSubscrioptionPlan.objects.get(plan_name='six_months')
+         sub_plan_per_six_year=ShopSubscrioptionPlan.objects.get(plan_name='yearly')
+    except ShopSubscrioptionPlan.DoesNotExist:
+         return render(request,'payment/onwer_process.html',{'error':"There is no  such Subscription"})
+             
+
     if request.method=="POST":
         
-        success_url = request.build_absolute_uri(reverse('payment:success'))
-        cancel_url = request.build_absolute_uri(reverse('payment:cancel'))
+        success_url = request.build_absolute_uri(reverse('payment:onwer_completed'))
+        cancel_url = request.build_absolute_uri(reverse('payment:onwer_canceled'))
         plan=request.POST['plan']
         request.session['plan']=plan
 
         if plan=='monthly':
-            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='monthly')
+            shop_sub_plan=sub_plan_per_month
             price=int(shop_sub_plan.price * Decimal('100'))
 
 
         elif plan=='six_months':
-            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='six_months')
+            shop_sub_plan=sub_plan_per_six_month
             price=int(shop_sub_plan.price * Decimal('100'))
         elif plan=='yearly':
-            shop_sub_plan=get_object_or_404(ShopSubscrioptionPlan,plan_name='six_months')
+            shop_sub_plan=sub_plan_per_six_year
             price=int(shop_sub_plan.price * Decimal('100'))
         else:
              return HttpResponse("Invalid plan", status=400)
@@ -113,7 +121,7 @@ def shop_onwer_payemnet_procces(request):
         return redirect(session.url,code=303)
         
     else:
-        return render(request,'payment/onwer_process.html',locals())
+        return render(request,'payment/onwer_process.html',{'sub_plan_per_month':sub_plan_per_month,'sub_plan_per_six_month':sub_plan_per_six_month,'sub_plan_per_six_year':sub_plan_per_six_year})
 
 
 def onwer_payment_success(request):

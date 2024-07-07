@@ -1,16 +1,81 @@
-{% extends "base.html" %}
+{% extends "shop/base.html" %}
+{% block style %}
+<style>
+/* General form styling */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Input styling */
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+/* Button styling */
+button {
+    display: block;
+    width: 50%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+{% endblock %}
+{% block cart %}
+<h2> Dear <b>{{user.username}}</b> your Businuss is registered succussfuly, but it is not active until you complet the payment process
+Pleace  Select a Subscription, what you Plan, to activate your businuss.</h2>{% endblock %}
 {% block content %}
-<h2>Select a Subscription Plan</h2>
+
+ {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
 <form method="post" action="{% url 'payment:onwer_payment_procces'%}">
+
     <label>
-        <input type="radio" name="plan" value="monthly" required> Monthly - $10
+        <input type="radio" name="plan" value="monthly" required> Monthly -   {{sub_plan_per_month.price}} Birr
     </label><br>
     <label>
-        <input type="radio" name="plan" value="six_months" required> Six Months - $50
+        <input type="radio" name="plan" value="six_months" required> Six Months -  {{sub_plan_per_six_month.price}} Birr
     </label><br>
     <label>
-        <input type="radio" name="plan" value="yearly" required> Yearly - $90
+        <input type="radio" name="plan" value="yearly" required> Yearly -  {{sub_plan_per_six_year.price}} Birr
     </label><br>
-    <button type="submit">Proceed to Payment</button>
+    <button type="submit">Proceed to Pay</button>
+     {% csrf_token %}
+
 </form>
 {% endblock %}

@@ -3,6 +3,8 @@ from django.views.decorators.http import require_POST
 from django.utils import timezone
 from .forms import CouponForm
 from .models import Coupon
+from django.contrib import messages
+
 
 @require_POST
 def apply_coupon(request):
@@ -19,6 +21,7 @@ def apply_coupon(request):
         except Coupon.DoesNotExist:
 
             request.session['coupon_id']=None
+
     return redirect('cart:cart_detail')            
 
 

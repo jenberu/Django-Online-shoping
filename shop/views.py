@@ -15,7 +15,7 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     subcategory = None
     searchedProduct=request.GET.get('searchProduct')
     categories=Category.objects.all()
-    shops=Shop.objects.all()
+    shops=Shop.objects.filter(is_active=True)
     if searchedProduct:
             products=Product.objects.filter(available=True ,name__icontains=searchedProduct)
             if products:
@@ -74,7 +74,7 @@ def add_shop(request):
              return render(request,'shop/shops/shopform.html',{'form':form,'error':'please enter correct data'})
 def product_list_for_shop_owner(request):
       user=get_object_or_404(User,username=request.user.username)
-      shop=Shop.objects.get(owner=user)
+      shop=Shop.objects.get(owner=user,is_active=True)
       products=Product.objects.filter(available=True,shop=shop)
       return render(request,'shop/shops/adminpage.html',{'products':products}) 
 def delete_product(request,product_id):

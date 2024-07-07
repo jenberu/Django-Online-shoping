@@ -1,13 +1,16 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
  <head>
+ {% block style %}
+   {% endblock %}
   <style>
        
 
         #header {
              
-            width: 80%;
+            width: 100%;
             height: 100px; /* Adjust the height as needed */
             background-image: url('{% static 'img/logo.jpeg' %}');
             background-size: cover; /* Adjust to 'contain' or 'cover' depending on your needs */
@@ -19,6 +22,7 @@
         }
        
     </style>
+  
   <script>
     function hoverEffect(element, color) {
     element.style.color = color;
@@ -74,9 +78,9 @@
  <div id="subheader">
 
 
- 
- <div class="cart">
-
+ {% block cart %}
+<div class="cart">
+<a href="{% url 'payment:onwer_payment_procces' %}"> check css</a>
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
      Your cart:<a href="{% url 'cart:cart_detail' %}">
@@ -88,6 +92,7 @@
     {% endif %}
   {% endwith %}
  </div>
+{% endblock %}
  </div>
  <div id="content">
  {% block content %}

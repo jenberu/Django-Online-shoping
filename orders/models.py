@@ -25,7 +25,7 @@ class Order(models.Model):
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     paid=models.BooleanField(default=False)
-    status=models.CharField(max_length=30,choices=STATUS_CHOICE,default='Pending')
+    status=models.CharField(max_length=30,choices=STATUS_CHOICE,default=STATUS_CHOICE[0])
     shop=models.ForeignKey(Shop,on_delete=models.CASCADE,related_name='shop',null=True,blank=True)
     stripe_id=models.CharField(max_length=250,blank=True)
 
