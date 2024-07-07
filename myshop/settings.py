@@ -35,6 +35,8 @@ INSTALLED_APPS = [
      'orders.apps.OrdersConfig',
      'accounts',
      'coupons',
+      "rest_framework",
+
 
 ]
 
@@ -106,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Addis_Ababa'
 
 USE_I18N = True
 
