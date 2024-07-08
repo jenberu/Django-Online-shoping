@@ -10,7 +10,6 @@
 
         #header {
              
-            width: 100%;
             height: 100px; /* Adjust the height as needed */
             background-image: url('{% static 'img/logo.jpeg' %}');
             background-size: cover; /* Adjust to 'contain' or 'cover' depending on your needs */
@@ -30,9 +29,9 @@
 </script>
  <meta charset="utf-8" />
  <title>{% block title %}Jemberu's shop{% endblock %}</title>
-   <link href="{% static 'css/lists.css' %}" rel="stylesheet">
+   <link href="{% static 'css/list.css' %}" rel="stylesheet">
 
- <link href="{% static 'css/base.css' %}" rel="stylesheet">
+ <link href="{% static 'css/bases.css' %}" rel="stylesheet">
   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
 
 
@@ -75,7 +74,7 @@
  </div>
  
  
- <div id="subheader">
+<div id="subheader">
 
 
  {% block cart %}

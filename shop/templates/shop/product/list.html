@@ -9,6 +9,46 @@
     {% endif %}
 
 {% endblock %}
+
+{% block style %}
+ <style>
+#right-bar {
+    width:200px;
+    background-color: red;
+    background-color: hsla(0, 9%, 91%, 0.76);
+
+}
+#right-bar ul{
+    margin:0;
+    padding:0;
+}
+
+#right-bar ul li {
+    margin:0;
+    list-style:none;
+    padding:10px 14px;
+}
+
+#right-bar ul li a {
+    display:block;
+    text-decoration:none;
+    list-style-type:lower-greek;
+}
+h1,h2{
+    text-align:center;
+    }
+#right-bar ul li.selected {
+    background:#5993bb;
+    border-radius:4px;
+}
+
+#right-bar ul li.selected a {
+    color:#fff;
+}
+ </style>
+{% endblock %}
+
+
    
 {% block content %}
  <form action="">
@@ -18,7 +58,7 @@
     </div>
 </form>
 <div class="body-content">
-    <div id="sidebar">
+ <div id="sidebar">
         <h3>Categories</h3>
         <ul>
        
@@ -38,7 +78,7 @@
             </li>
         {% endfor %}
     </ul>
-   </div>
+</div>
 
  <div id="main" class="product-list">
     {% if search %}
@@ -48,7 +88,7 @@
             {% if category %}
                 {{ category.name }}
             {% elif products%}
-                Products
+                Products  from {% if shop %}  {{shop.shopName}} {% else %} All registered shops {% endif %}
             {% endif %}
         </h1>
     {% if products %}
@@ -65,20 +105,21 @@
             </div>
        {% endfor %}
     {% else %}
-        <h2 class="noproduct"> Dear <strong>{{user.username}}: </strong> {{noproduct}} </h2>
+        <h2 class="noproduct"> {% if noproduct%}  Dear <strong>{{user.username}}: </strong>{{noproduct}} {% else %}  No products avaliable {% endif %}</h2>
     {% endif %}
 
-    </div>
-    <div class="right-bar">
+</div>
+<div id="right-bar">
     <h3> Shops</h3>
      <ul>
-     {% for shop in shops %} 
-     <li class='selected'>
-     <a href="{% url 'shop:product_list_for_shop' shop.id %}">{{shop.shopName}}</a>
+     {% for sh in shops %} 
+     <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>
+     <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> from  {{sh.adress}}
+     
      </li>
      {% endfor %}
      </ul>
-    </div>
+</div>
 </div>
 {% endblock %}
  

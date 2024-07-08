@@ -13,6 +13,7 @@ from orders.models import OrderItem,Order
 def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     category=None
     subcategory = None
+    shop=None
     searchedProduct=request.GET.get('searchProduct')
     categories=Category.objects.all()
     shops=Shop.objects.filter(is_active=True)
@@ -35,9 +36,10 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
          products=products.filter(subcategory=subcategory)
     if shop_id:
           shop = get_object_or_404(Shop, id=shop_id)
-          products=products.filter(shop=shop,available=True)    
+          products=products.filter(shop=shop,available=True)  
+  
      
-    return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'shops':shops}) 
+    return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'shops':shops,'shop':shop}) 
 
 def product_detail(request,id,slug):
     product=get_object_or_404(Product,id=id,slug=slug,available=True) 

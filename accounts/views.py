@@ -10,22 +10,19 @@ from django.contrib.auth.decorators import  login_required
 
 def signupaccount(request):
  if request.method == 'GET':
-   return render(request, 'signupaccount.html', {'form':UserCreateForm})
+   return render(request, 'signupaccount.html', {'form':UserCreateForm()})
  else:
-   if request.POST['password1'] == request.POST['password2']:
-     try:
-       user = User.objects.create_user(request.POST['username'], password= request.POST['password1']) 
-       user.save()
-       login(request, user)
+     form = UserCreateForm(request.POST)
+     if form.is_valid():
+            try:
+                user = form.save()
+                login(request, user)
+                return redirect('shop:product_list')
+            except IntegrityError:
+               return render(request, 'signupaccount.html', {'form':UserCreateForm(), 'error':'Username already taken. Choose new username.'})
 
-       return redirect('shop:product_list')
-     except IntegrityError:
-            return render(request, 'signupaccount.html', {'form':UserCreateForm, 'error':'Username already taken. Choose new username.'})
-
-       
-   else:
-     
-     return render(request, 'signupaccount.html', {'form':UserCreateForm, 'error':'Passwords do not match'})
+     else:
+         return render(request, 'signupaccount.html', {'form':UserCreateForm(),'error': 'Passwords do not match' if 'password1' in form.errors else 'Please correct the error(s) below.'})
 @login_required
 def logoutaccount(request):
      #call logout and redirect to go back to the home page
