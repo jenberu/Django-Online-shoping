@@ -19,6 +19,7 @@ urlpatterns = [
 
     path('',include('shop.urls',namespace='shop')),
     path('accounts/', include('accounts.urls')),
+    path('news/',include('news.urls')),
 
 
 

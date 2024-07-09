@@ -35,6 +35,7 @@ INSTALLED_APPS = [
      'orders.apps.OrdersConfig',
      'accounts',
      'coupons',
+     'news',
       "rest_framework",
 
 

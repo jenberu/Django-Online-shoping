@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -26,12 +25,15 @@
     function hoverEffect(element, color) {
     element.style.color = color;
 }
+  function confirmUpdateProfile() {
+    return confirm('Do you want to update your profile?');
+    }
 </script>
  <meta charset="utf-8" />
  <title>{% block title %}Jemberu's shop{% endblock %}</title>
    <link href="{% static 'css/list.css' %}" rel="stylesheet">
 
- <link href="{% static 'css/bases.css' %}" rel="stylesheet">
+ <link href="{% static 'css/base.css' %}" rel="stylesheet">
   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
 
 
@@ -56,13 +58,23 @@
             <a class="nav-link" href="{% url 'shop:adminhome' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">your shop</a>
             {% endif %}
             
-            <a class="nav-link" href="#" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">News</a>
+            <a class="nav-link" href="{% url 'news' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">News</a>
             <!-- Anything between {% verbatim %} and {% endverbatim %} will not be executed, but rendered as output instead-->
             {% verbatim %}
             <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Me</a>
             {% endverbatim %}
             {% if user.is_authenticated %}
                 <a class="nav-link" href="{% url 'logoutaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Logout</a>
+                 <div id="profile-image" style="float: right;">
+                           <a class="nav-link" href="#" onclick="return confirmUpdateProfile()" >
+                            {% if user.profile.image %}
+                                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" onclick="openModal()">
+                            {% else %}
+                                <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" onclick="openModal()">
+                            {% endif %}
+                            
+                            </a>
+                        </div>
                
             {% else %}
                 <a class="nav-link" href="{% url 'loginaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Login</a>
@@ -97,7 +109,8 @@
  {% block content %}
  {% endblock %}
  </div>
- 
+  {% include 'updateprofile.html' %}
+
 <footer class="text-center text-lg-start bg-light text-muted mt-4">
         <div class="footer-content">
             <p>&copy; {% now "Y" %} My online shop App. All rights reserved.</p>

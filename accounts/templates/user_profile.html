@@ -1,0 +1,116 @@
+{% extends 'shop/base.html' %}
+{% block style %}
+<style>
+/* Container for the card */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card body styling */
+.card-body {
+  max-width: 500px;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  background-color:lightblue;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  text-align: center;
+  color:black;
+}
+
+/* Error alert styling */
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Form styling */
+form {
+  margin-top: 10px;
+}
+
+/* Form field styling */
+form .form-control {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Submit button styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  width: 50%;
+  align:center;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+
+ .form-label {
+      color:black; 
+    }
+  
+
+</style>
+ {% endblock %}
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Update your profile</h5>
+      {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+          {{ error }}
+        </div>
+      {% endif %}
+      <p class="card-text">
+        <form id="profileImageForm" method="post" action="{% url 'update_profile' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <!-- Render each field with a custom label -->
+          <div class="form-group">
+            <label for="id_first_name" class="form-label form-label-first-name">First Name</label>
+            {{ form.first_name }}
+          </div>
+          <div class="form-group">
+            <label for="id_last_name" class="form-label form-label-last-name">Last Name</label>
+            {{ form.last_name }}
+          </div>
+          <div class="form-group">
+            <label for="id_image" class="form-label form-label-image">Profile Image</label>
+            {{ form.image }}
+          </div>
+          <div class="form-group">
+            <label for="id_bio" class="form-label form-label-bio">Biography</label>
+            {{ form.bio }}
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </p>
+    </div>
+  </div>
+{% endblock content %}

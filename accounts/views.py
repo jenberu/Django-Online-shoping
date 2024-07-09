@@ -4,25 +4,33 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login ,logout,authenticate
 from django.shortcuts import redirect
 from django.db import IntegrityError
-from .forms import UserCreateForm
+from .forms import UserCreateForm,UserProfileForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import  login_required
+from .models import UserProfile
+from django.contrib import messages
+
 
 def signupaccount(request):
  if request.method == 'GET':
    return render(request, 'signupaccount.html', {'form':UserCreateForm()})
  else:
-     form = UserCreateForm(request.POST)
-     if form.is_valid():
+     password1=request.POST['password1']
+     password2=request.POST['password2']
+     username=request.POST['username']
+
+     if password1==password2:
+            
             try:
-                user = form.save()
+                user =User.objects.create(username=username) 
+                user.save()
                 login(request, user)
                 return redirect('shop:product_list')
             except IntegrityError:
                return render(request, 'signupaccount.html', {'form':UserCreateForm(), 'error':'Username already taken. Choose new username.'})
 
      else:
-         return render(request, 'signupaccount.html', {'form':UserCreateForm(),'error': 'Passwords do not match' if 'password1' in form.errors else 'Please correct the error(s) below.'})
+         return render(request, 'signupaccount.html', {'form':UserCreateForm(),'error': 'Passwords do not match'})
 @login_required
 def logoutaccount(request):
      #call logout and redirect to go back to the home page
@@ -39,6 +47,50 @@ def loginaccount(request):
           else:
                login(request,user)
                return redirect('shop:product_list')
+@login_required          
+def update_profile(request):
+    if request.method=='GET':
+        return render(request,'user_profile.html',{'form':UserProfileForm()})
+    else:
+        form=UserProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            user_profile= UserProfile.objects.get(user=request.user)
+            user_profile.first_name=form.cleaned_data['first_name']
+            user_profile.last_name=form.cleaned_data['last_name']
+            user_profile.image=form.cleaned_data['image']
+            user_profile.bio=form.cleaned_data['bio']
+            user_profile.save()
+            return redirect('shop:product_list')
+        else:
+           return render(request,'userprofile.html',{'form':UserProfileForm(),'error':'Pleace Insert correct data'})
+def resset_password(request):
+    if request.method=='GET':
+        return render(request,'pass_resset.html')
+    else:
+        username=request.POST['username']
+        new_password=request.POST['new_password']
+        confirm_password=request.POST['confirm_password']
+        if new_password==confirm_password:
+            try:
+                user=User.objects.get(username=username)
+                user.set_password(new_password)
+                user.save()
+                messages.success(request,'Password has been reset successfully.')
+                return redirect('loginaccount')
+            except User.DoesNotExist:
+                 messages.error(request, 'User with the given username does not exist. ')
+                 return redirect('resset_passowrd')
+        else: 
+          messages.error(request, 'New password and confirm password do not match.')
+          return redirect('resset_passowrd')
+              
+                
+                
+                
+
+            
+
+              
 
 
 

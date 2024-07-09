@@ -117,7 +117,7 @@ ul.errorlist {
 
 
 #header {
-    padding:10px 100px;
+    padding:10px 10px;
     font-size:18px;
     overflow:auto;
 }
@@ -402,8 +402,8 @@ footer {
 
 /* Navigation bar styles */
 .navbar {
- 
-    padding: 10px 20px;
+    background-color: #444;
+    padding-right: 0;
     border-bottom: 1px solid #ddd;
 }
 
