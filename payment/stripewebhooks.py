@@ -3,6 +3,8 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from orders.models import Order
+from shop.models import Product
+from shop.recommender import Recommander
 
 
 @csrf_exempt
@@ -32,6 +34,10 @@ def stripe_webhook(request):
             order.stripe_id=session.payment_intent
             order.paid=True
             order.save()   
+            #store the purchased product to ProductRecommendation model
+            product_ids=order.items.values_list('product_id',flat=True)
+            recommender=Recommander()
+            recommender.products_bought(product_ids)
     #else retturn HTTP 200 ok response
     return HttpResponse(status=200) 
     

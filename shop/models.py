@@ -122,6 +122,6 @@ class ShopSubscrioptionPlan(models.Model):
         return self.plan_name  
     
 class ProductRecommandation(models.Model):
-    product=models.ForeignKey(Product,related_name='recomanadtion',on_delete=models.CASCADE)  
+    product_id=models.IntegerField()  
     purchased_with_product_id=models.IntegerField()  
-    purchased_with_times=models.IntegerField()
+    purchased_with_times=models.IntegerField(default=0)
