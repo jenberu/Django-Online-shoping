@@ -46,6 +46,15 @@ def payment_procces(request):
                     'quantity':item.quantity,
                 }
             )
+        #adding Dicount info to  Stripe 
+        if order.coupon:
+             stripe_coupon=stripe.Coupon.create(name=order.coupon.code,
+                                                percent_off=order.dicount,
+                                                duration='once')
+             # links the coupon to the checkout session
+             strip_session_data['discounts']=[{'coupon':stripe_coupon.id}]
+
+
         #call strip Session.create() method to  create stripe checkout session
         # builds and sends the request to the Stripe API
         stripe_session=stripe.checkout.Session.create(**strip_session_data)
