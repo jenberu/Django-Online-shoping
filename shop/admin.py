@@ -1,6 +1,6 @@
 from typing import Any
 from django.contrib import admin
-from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan
+from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation
 from django.utils.html import mark_safe,format_html ,urlencode
 from .forms import ProductAdminForm
 from django.urls import reverse
@@ -8,6 +8,8 @@ from django.utils import timezone
 
 
 admin.site.register(ShopSubscrioptionPlan)
+admin.site.register(ProductRecommandation)
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display=['name','product_count']

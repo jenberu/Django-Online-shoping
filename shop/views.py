@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.db import IntegrityError
 from django.contrib import messages
 from orders.models import OrderItem,Order
+from .recommender import Recommender
 
 
 
@@ -45,8 +46,10 @@ def product_detail(request,id,slug):
     product=get_object_or_404(Product,id=id,slug=slug,available=True) 
 
     cart_product_form = CartAddProductForm()
+    recommender=Recommender()
+    recommended_products=recommender.get_purchased_products([product])
 
-    return render(request,'shop/product/detail.html',{'product':product,'cart_product_form':cart_product_form})
+    return render(request,'shop/product/detail.html',{'product':product,'cart_product_form':cart_product_form,'recommended_products':recommended_products})
 
 def add_shop(request):
      if request.method=='GET':

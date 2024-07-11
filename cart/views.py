@@ -7,6 +7,8 @@ from .cart import Cart
 from .forms import CartAddProductForm
 from coupons.forms import CouponForm
 from coupons.models import Coupon
+from shop.recommender import Recommender
+
 
 
 @login_required
@@ -40,14 +42,20 @@ def cart_detail(request):
  for item in cart:
     item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'override': True} )
  coupon_apply_form= CouponForm() 
+ recommended_products=None
+ recommender=Recommender()
+ products_in_cart=[item['product'] for item in cart]
+ if products_in_cart:
+
+    recommended_products=recommender.get_purchased_products(products_in_cart)
  if cart.get_shop:
     shop=cart.get_shop 
     try:
        coupon=Coupon.objects.filter(shop=shop)
-       return render(request, 'cart/detail.html', {'cart': cart,'coupon':coupon,'coupon_apply_form':coupon_apply_form})  
+       return render(request, 'cart/detail.html', {'cart': cart,'coupon':coupon,'coupon_apply_form':coupon_apply_form,'recommended_products':recommended_products})  
     except Coupon.DoesNotExist:
-        return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form})  
- return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form})  
+        return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form,'recommended_products':recommended_products})  
+ return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form':coupon_apply_form,'recommended_products':recommended_products})  
 
 
 

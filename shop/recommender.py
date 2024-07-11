@@ -1,7 +1,8 @@
 from .models import Product,ProductRecommandation
 
-class Recommander:
-    def products_bought(self,product_ids):
+class Recommender:
+    def products_bought(self,products):
+        product_ids=[p.id for p in products ]
         for product_id in product_ids:
             for with_id in product_ids:
                 if product_id!=with_id:
@@ -18,11 +19,16 @@ class Recommander:
 
 
         if len(purchased_with_products)==1:
-            suggestions_id=purchased_with_products.purchased_with_product_id
+            if purchased_with_products[0].purchased_with_product_id not in product_ids:
+              suggestions_id=[purchased_with_products[0].purchased_with_product_id]
+            else:
+                return None
+                  
+
         else:
             purchased_with_ids=[p_with.purchased_with_product_id for p_with in purchased_with_products]
             suggestions_id=[ids for ids in purchased_with_ids if ids not in product_ids]
-            suggestions_id=[ids for ids in purchased_with_ids if ids not in product_ids]
+
         suggestions_products=list(Product.objects.filter(id__in=suggestions_id) )
         return suggestions_products   
 
