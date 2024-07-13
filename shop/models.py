@@ -125,3 +125,6 @@ class ProductRecommandation(models.Model):
     product_id=models.IntegerField()  
     purchased_with_product_id=models.IntegerField()  
     purchased_with_times=models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.product_id)

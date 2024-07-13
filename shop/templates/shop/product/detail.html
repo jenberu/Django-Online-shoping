@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content %}
     <div class="product-detail">
-        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}" >
         <h1>Dear <strong>{{user.username}}</strong> Welcome to <strong>{{ product.shop }} </strong></h1>
         <h1>{{ product.name }}</h1>
 

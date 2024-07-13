@@ -8,7 +8,10 @@ from django.utils import timezone
 
 
 admin.site.register(ShopSubscrioptionPlan)
-admin.site.register(ProductRecommandation)
+@admin.register(ProductRecommandation)
+class ProductRecommendatonAdmin(admin.ModelAdmin):
+    list_display=['product_id','purchased_with_product_id','purchased_with_times']
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
