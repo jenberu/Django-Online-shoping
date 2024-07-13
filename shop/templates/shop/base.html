@@ -95,7 +95,7 @@
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
      Your cart:<a href="{% url 'cart:cart_detail' %}">
-     <!-- Adds a 's' at the end of a value if the total_items value is not 1 -->
+     <!-- Add a 's' at the end of a value if the total_items value is not 1 -->
      {{ total_items }} item{{ total_items|pluralize }}, {{cart.get_total_price}} Birr
       <a>
     {% elif not order and user.is_authenticated %}

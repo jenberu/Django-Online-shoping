@@ -8,8 +8,6 @@ from django.contrib.staticfiles import finders
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.db import IntegrityError
-from shop.recommender import Recommender 
-from shop.models import Product
 
 
 def order_create(request):
@@ -25,17 +23,14 @@ def order_create(request):
                     order.coupon=cart.coupon
                     order.dicount=cart.coupon.discount_amount
                 order.save()
-                product_ids=order.items.values_list('product_id')
-                products=Product.objects.filter(id__in=product_ids)
-                recommender=Recommender()
-                recommender.products_bought(products)
+        
                 for item in cart:# this intract with cart __iter_ method it calls like cart.__iter__()
                     OrderItem.objects.create(
                                order=order,
                                product=item['product'],
                                price=item['price'],
                                quantity=item['quantity']
-                                         )
+                                         ) 
                 cart.clear()
                 request.session['order_id']=order.id
                 return redirect('payment:paymentprocces')
