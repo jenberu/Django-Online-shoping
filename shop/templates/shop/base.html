@@ -1,4 +1,4 @@
-{% load static %}
+{% load i18n static %}
 <!DOCTYPE html>
 <html>
  <head>
@@ -30,10 +30,9 @@
     }
 </script>
  <meta charset="utf-8" />
- <title>{% block title %}Jemberu's shop{% endblock %}</title>
+ <title>{% block title %}{% translate "Jemberu's shop "%} {% endblock %}</title>
    <link href="{% static 'css/list.css' %}" rel="stylesheet">
-
- <link href="{% static 'css/bases.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bases.css' %}" rel="stylesheet">
   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
 
 
@@ -44,11 +43,11 @@
  </head>
  <body>
  <div id="header">
- <a href="/" class="logo"> Link Seller And Buyer</a>
+ <a href="/" class="logo">{% translate "Link Seller And Buyer " %}</a>
 <nav class="navbar" style="float:right">
         <div class="navbar-nav ms-auto" >
             {% if user.is_authenticated %}
-            <a class="nav-link" href="{% url 'shop:add_shop' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">register your Business</a>
+            <a class="nav-link" href="{% url 'shop:add_shop' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "register your Business" %}</a>
              {% if user.is_staff %}
                 <a class="nav-link" href="{{ '/admin/' }}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')"> admin page</a>
               {% endif %}
@@ -94,12 +93,18 @@
 <a href="{% url 'payment:onwer_payment_procces' %}"> check css</a>
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
-     Your cart:<a href="{% url 'cart:cart_detail' %}">
+    {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">
      <!-- Add a 's' at the end of a value if the total_items value is not 1 -->
-     {{ total_items }} item{{ total_items|pluralize }}, {{cart.get_total_price}} Birr
+     <!--The count keyword is used to specify the variable that should be used for pluralization. -->
+     {% blocktranslate count items=total_items with total=cart.get_total_price  %}
+       {{items}} item, {{total}} Birr
+       {% plural %}
+         {{items}} items,{{total}} Birr
+       {% endblocktranslate %}
+
       <a>
     {% elif not order and user.is_authenticated %}
-       Your cart is empity
+   {% translate "Your cart is empty." %}
     {% endif %}
   {% endwith %}
  </div>

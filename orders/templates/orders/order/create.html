@@ -1,35 +1,41 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% block title %}
- Checkout
+{% translate "Checkout" %}
 {% endblock %}
 {% block content %}
- <h1>fill the following form to place an order </h1>
+ <h1> {%translate 'please fill the following form to place an order'%}  </h1>
  <div class="order-info">
-    <h3>Your order</h3>
+ <h3>{% translate "Your order" %}</h3>
      <ul>
     {% for item in cart %}
       <li>
         {{ item.quantity }}x {{ item.product.name }}
-        <span>{{ item.total_price }} Birr</span>
+        {% translate 'Birr' as birr%}
+        <span>{{ item.total_price }} {{birr}}</span>
       </li>
    {% endfor %}
   {% if cart.coupon %}
     <li>
-      "{{ cart.coupon.code }}" ({{ cart.coupon.dicount_amount }}% off)
-     <span class="neg">- {{ cart.get_discount|floatformat:2 }} Birr</span>
+
+    {% blocktranslate with code=cart.coupon.code discount=cart.coupon.dicount_amount %}
+      "{{ code }}" ({{ discount }}% off)
+      {% endblocktranslate %}
+     <span class="neg">- {{ cart.get_discount|floatformat:2 }} {{birr}}</span>
     </li>
   {% endif %}
    </ul>
-   <p>Total: {{ cart.get_total_price_after_discount|floatformat:2 }} Birr</p>
+   <p>{%translate 'Total'%}: {{ cart.get_total_price_after_discount|floatformat:2 }} {{birr}}</p>
  </div>
    {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
-            {{ error }}
+           {% blocktranslate%} {{ error }}  {% endblocktranslate %}
+
         </div>
     {% endif %}
  <form method="post" class="order-form">
  {{ form.as_p }}
- <p><input type="submit" value="Place order"></p>
+ <p><input type="submit" value="{%translate 'Place order' %}"></p>
  {% csrf_token %}
  </form>
 {% endblock %}

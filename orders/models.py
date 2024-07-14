@@ -18,8 +18,7 @@ class Order(models.Model):
                    ]
     coupon=models.ForeignKey(Coupon,related_name='orders',null=True,blank=True,on_delete=models.SET_NULL)
     dicount=models.IntegerField(default=0,validators=[MinValueValidator(0),MaxValueValidator(100)])
-    #u can pass the verbose_name as the first positional argument
-    first_name=models.CharField('first name',max_length=50,)
+    first_name=models.CharField(_('first name'),max_length=50,)
     last_name=models.CharField(_('last name'),max_length=50)
     email=models.EmailField(_('e-mail'))
     address=models.CharField(_('address'),max_length=100)

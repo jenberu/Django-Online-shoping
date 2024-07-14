@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-13 22:00+0300\n"
+"POT-Creation-Date: 2024-07-14 20:32+0300\n"
 "PO-Revision-Date: 2024-07-13 22:00+0300\n"
 "Last-Translator: Jemberu Kassie <jemberu0970@gmail.com>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -17,22 +17,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\orders\models.py:23
+#: .\orders\models.py:21
+msgid "first name"
+msgstr "የእርሰዎ ስም"
+
+#: .\orders\models.py:22
 msgid "last name"
-msgstr ""
+msgstr "የአባት ስም "
+
+#: .\orders\models.py:23
+msgid "e-mail"
+msgstr "ኢሜይል"
 
 #: .\orders\models.py:24
-msgid "e-mail"
-msgstr ""
+msgid "address"
+msgstr "አድራሻ "
 
 #: .\orders\models.py:25
-msgid "address"
-msgstr ""
+msgid "postal_code"
+msgstr "የፖስታ ኮድ"
 
 #: .\orders\models.py:26
-msgid "postal_code"
+msgid "city"
+msgstr "ከተማ"
+
+#: .\orders\templates\orders\order\create.html:4
+msgid "Checkout"
 msgstr ""
 
-#: .\orders\models.py:27
-msgid "city"
+#: .\orders\templates\orders\order\create.html:7
+msgid "please fill the following form to place an order"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:9
+msgid "Your order"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:14
+msgid "Birr"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:21
+#, python-format
+msgid ""
+"\n"
+"      \"%(code)s\" (%(discount)s%% off)\n"
+"      "
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:28
+msgid "Total"
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:32
+#, python-format
+msgid " %(error)s  "
+msgstr ""
+
+#: .\orders\templates\orders\order\create.html:38
+msgid "Place order"
+msgstr ""
+
+#: .\orders\templates\orders\order\created.html:4
+#: .\orders\templates\orders\order\created.html:7
+msgid "Thank you"
+msgstr ""
+
+#: .\orders\templates\orders\order\created.html:8
+msgid "Your order has been successfully completed. Your order number is"
 msgstr ""
