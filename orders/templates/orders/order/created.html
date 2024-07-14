@@ -5,6 +5,9 @@
 {% endblock %}
 {% block content %}
  <h1> {%translate  'Thank you' %}</h1>
- <p>{%translate  'Your order has been successfully completed. Your order number is' %}
- <strong>{{ order.id }}</strong>.</p>
+ <p>
+    {% blocktrans with order_id=order.id %}
+    Your order has been successfully completed. Your order number is <strong>{{ order_id }}</strong>.
+    {% endblocktrans %}
+</p>
 {% endblock %}

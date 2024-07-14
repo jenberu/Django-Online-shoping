@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-14 20:32+0300\n"
+"POT-Creation-Date: 2024-07-14 22:12+0300\n"
 "PO-Revision-Date: 2024-07-13 22:00+0300\n"
 "Last-Translator: Jemberu Kassie <jemberu0970@gmail.com>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -43,19 +43,19 @@ msgstr "ከተማ"
 
 #: .\orders\templates\orders\order\create.html:4
 msgid "Checkout"
-msgstr ""
+msgstr "ወደ ክፍያ ይሂዱ"
 
 #: .\orders\templates\orders\order\create.html:7
 msgid "please fill the following form to place an order"
-msgstr ""
+msgstr "ትእዛዘዎን ለመላክ እባከዎ የሚከተለዉን ፎርም ይሙሉ"
 
 #: .\orders\templates\orders\order\create.html:9
 msgid "Your order"
-msgstr ""
+msgstr "የእርሰዎ ትእዛዝ"
 
 #: .\orders\templates\orders\order\create.html:14
 msgid "Birr"
-msgstr ""
+msgstr "ብር"
 
 #: .\orders\templates\orders\order\create.html:21
 #, python-format
@@ -64,25 +64,31 @@ msgid ""
 "      \"%(code)s\" (%(discount)s%% off)\n"
 "      "
 msgstr ""
+"\n"
+"      \"%(code)s\" (%(discount)s%% ቅናሽ)\n"
+"      "
 
 #: .\orders\templates\orders\order\create.html:28
 msgid "Total"
-msgstr ""
-
-#: .\orders\templates\orders\order\create.html:32
-#, python-format
-msgid " %(error)s  "
-msgstr ""
+msgstr "ጠቅላላ"
 
 #: .\orders\templates\orders\order\create.html:38
 msgid "Place order"
-msgstr ""
+msgstr "ትዛዘዎን አስቀምጥ"
 
 #: .\orders\templates\orders\order\created.html:4
 #: .\orders\templates\orders\order\created.html:7
 msgid "Thank you"
-msgstr ""
+msgstr "እናመሰግናለን"
 
-#: .\orders\templates\orders\order\created.html:8
-msgid "Your order has been successfully completed. Your order number is"
+#: .\orders\templates\orders\order\created.html:9
+#, python-format
+msgid ""
+"\n"
+"Your order has been successfully completed. Your order number is <strong>"
+"%(order_id)s</strong>.\n"
+"    "
 msgstr ""
+"\n"
+"ትዕዛዝዎ በተሳካ ሁኔታ ተጠናቋል። የትዕዛዝዎ ቁጥር  <strong>%(order_id)s</strong> ነው።"\n"
+"    "
