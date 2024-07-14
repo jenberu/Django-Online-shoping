@@ -63,15 +63,15 @@ msgstr ""
 
 #: .\shop\templates\shop\product\detail.html:9
 msgid "Welcome to "
-msgstr ""
+msgstr "እንኮን ደህና ምጥ"
 
 #: .\shop\templates\shop\product\detail.html:17
 msgid "Birr"
-msgstr ""
+msgstr "ብር"
 
 #: .\shop\templates\shop\product\detail.html:22
 msgid "Add to cart"
-msgstr "ወደ ዘንቢለዎ "
+msgstr "ወደ ዘንቢለዎ ያክሉ"
 
 #: .\shop\templates\shop\product\detail.html:29
 msgid "Poeple who bought this also bought"
@@ -79,4 +79,4 @@ msgstr "ይህን የገዙ ሰዎች ደግሞ ይህን ገዝተዋል"
 
 #: .\shop\templates\shop\product\list.html:62
 msgid "Categories"
-msgstr ""
+msgstr "ክፍል"

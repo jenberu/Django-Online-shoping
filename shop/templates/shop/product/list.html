@@ -5,7 +5,7 @@
     {% if category %}
         {{ category.name }}
     {% else %}
-        Products
+        {% translate 'Products' %} 
     {% endif %}
 
 {% endblock %}
@@ -53,8 +53,8 @@ h1,h2{
 {% block content %}
  <form action="">
     <div class="mb-3 inline-form">
-        <input type="text" name="searchProduct" class="form-control" placeholder="search for products"/>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
+        <button type="submit" class="btn btn-primary">{% translate 'Search'%}</button>
     </div>
 </form>
 <div class="body-content">
@@ -82,13 +82,19 @@ h1,h2{
 
  <div id="main" class="product-list">
     {% if search %}
-    <h1> Search Result</h1>
+    <h1> {%translate 'Search Result'%}</h1>
     {% endif %}
         <h1>
             {% if category %}
                 {{ category.name }}
             {% elif products%}
-                Products  from {% if shop %}  {{shop.shopName}} {% else %} All registered shops {% endif %}
+              {% if shop %}
+              {% blocktranslate with shop_name=shop.shopName %}
+               Products from {{shop_name}} 
+               {%endblocktranslate%}
+                  {% else %}
+                       {% translate "Products from All registered shops" %}
+                        {% endif %}             
             {% endif %}
         </h1>
     {% if products %}
@@ -100,18 +106,18 @@ h1,h2{
                 <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
                 
                 <br>
-                {{ product.price }} Birr
+                {{ product.price }} {%translate 'Birr'%}
                 <br>
-                from <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
+                {%translate 'from'%} <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
             </div>
        {% endfor %}
     {% else %}
-        <h2 class="noproduct"> {% if noproduct%}  Dear <strong>{{user.username}}: </strong>{{noproduct}} {% else %}  No products avaliable {% endif %}</h2>
+        <h2 class="noproduct"> {% if noproduct%}  {% translate 'Dear'%} <strong>{{user.username}}: </strong>{{noproduct}} {% else %}  {%translate 'No products avaliable'%} {% endif %}</h2>
     {% endif %}
 
 </div>
 <div id="right-bar">
-    <h3> Registered Shops</h3>
+    <h3> {%translate 'Registered Shops' %}</h3>
      <ul>
      {% for sh in shops %} 
      <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>

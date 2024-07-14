@@ -1,12 +1,12 @@
 
 {% extends "shop/base.html" %}
-{% load static %}
+{% load i18n static %}
 
 {% block title %}
-Your shopping cart 
+{% translate 'Your shopping cart' %} 
 {% endblock %}
 {% block content %}
-    <h1>Your shopping cart at <strong>{{cart.shop.shopname}}</strong></h1>
+    <h1>{% translate 'Your shopping cart at' %} <strong>{{cart.shop.shopname}}</strong></h1>
      {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
             {{ error }}
@@ -15,12 +15,12 @@ Your shopping cart
     <table class="cart">
         <thead>
             <tr>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Remove</th>
-                <th>Unit price</th>
-                <th>Price</th>
+                <th>{% translate 'Image' %}</th>
+                <th>{% translate 'Product' %}</th>
+                <th>{% translate 'Quantity' %}</th>
+                <th>{% translate 'Remove' %}</th>
+                <th>{% translate 'Unit price'%}</th>
+                <th>{% translate 'Price' %}</th>
             </tr>
         </thead>
         <tbody>
@@ -36,50 +36,52 @@ Your shopping cart
                         <td> <form action="{% url "cart:cart_add" product.id %}" method="post">
                                  {{ item.update_quantity_form.quantity }}
                                  {{ item.update_quantity_form.override }}
-                                    <input type="submit" value="Update" style="cursor: pointer;">
+                                    <input type="submit" value="{%translate 'Update' %}" style="cursor: pointer;">
                                       {% csrf_token %}
                                           </form>
                         </td>
                         <td>
                             <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-                                <input type="submit" value="Remove" style="cursor: pointer;">
+                                <input type="submit" value="{%translate 'Remove' %}" style="cursor: pointer;">
                                 {% csrf_token %}
                             </form>
+                        {% translate 'Birr' as birr %}
+
                         </td>
-                        <td class="num">{{ item.price }} Birr</td>
-                        <td class="num">{{ item.total_price }} Birr</td>
+                        <td class="num">{{ item.price }} {{birr}}</td>
+                        <td class="num">{{ item.total_price }} {{birr}}</td>
                     </tr>
                 {% endwith %}
             {% endfor %}
-           {% if cart.coupon %}
+  {% if cart.coupon %}
  <tr class="subtotal">
- <td>Subtotal</td>
+ <td> {%translate 'Subtotal' %}</td>
  <td colspan="4"></td>
- <td class="num">{{ cart.get_total_price|floatformat:2 }} Birr</td>
+ <td class="num">{{ cart.get_total_price|floatformat:2 }} {{birr}}</td>
  </tr>
  <tr>
  <td>
- "{{ cart.coupon.code }}" Discount({{ cart.coupon.dicount_amount }}% off)
+ "{{ cart.coupon.code }}"{%translate 'Discount' %} ({{ cart.coupon.dicount_amount }}% off)
  </td>
  <td colspan="4"></td>
  <td class="num neg">
- - {{ cart.get_discount|floatformat:2 }} Birr<!-- floatformat filter rounds a floating-point number to the 
+ - {{ cart.get_discount|floatformat:2 }} {{birr}}<!-- floatformat filter rounds a floating-point number to the 
                                              specified number of decimals, or one, if no decimal argument is specified. -->
  </td>
  </tr>
 {% endif %}
 <tr class="total">
- <td>Total</td>
+ <td>{%translate 'Total' %}</td>
  <td colspan="4"></td>
  <td class="num">
- {{ cart.get_total_price_after_discount|floatformat:2 }} Birr
+ {{ cart.get_total_price_after_discount|floatformat:2 }} {{birr}}
  </td>
 </tr>
         </tbody>
     </table>
 {% if recommended_products %}
  <div class="recommendations cart">
- <h3>People who bought this also bought</h3>
+ <h3>{%translate 'People who bought this also bought' %}</h3>
  {% for p in recommended_products %}
  <div class="item">
  <a href="{{ p.get_absolute_url }}">
@@ -94,7 +96,7 @@ Your shopping cart
 
  <div style="display:flex">   
 {% if get_coupon_object and total_items %}
-<p>Apply for Discount:</p>
+<p>{%translate  'Apply for Discount' %}:</p>
  <div class="applay-for-discount" >
 <form action="{% url "coupons:apply" %}" method="post" >
  {{ coupon_apply_form }}
@@ -105,8 +107,31 @@ Your shopping cart
 {% endif %}
   <div style="margin-left: auto;">
     <p class="text-right">
-        <a href="{% url 'shop:product_list' %}" class="button light">Continue shopping</a>
-        <a href="{% url 'orders:order_create' %}" class="button">Checkout</a>
+        <a href="{% url 'shop:product_list' %}" class="button light">{%translate 'Continue shopping' %}</a>
+        <a href="{% url 'orders:order_create' %}" class="button">{%translate 'Checkout' %}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </a>
     </p>
     </div>
    
