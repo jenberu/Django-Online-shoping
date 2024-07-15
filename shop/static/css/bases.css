@@ -52,10 +52,11 @@ table th, table td {
     font-size:14px;
     padding:10px;
     margin:0;
+    border: 1px solid #ddd;
 }
 
 tbody tr:nth-child(odd) {
-    background:#efefef;
+    background:#ddd6d6c5;
 }
 
 tbody tr.subtotal {
@@ -191,28 +192,72 @@ ul.errorlist {
     float:left;
     text-align:center;
     line-height:1.2;
+
 }
 
 .product-list .item img {
     width:100%;
     margin-bottom:8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.product-list .item img:hover {
+    transform: scale(1.5); /* Adjust scale factor as needed */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow effect on hover */
 }
 
 .product-detail {
     text-align:justify;
 }
+.product-detail_body {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
 
-.product-detail .price {
+.product-detail_image-container {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    margin-left: 50px;
+    position: relative;
+
+ 
+
+}
+
+.image-scroll {
+    width: 100%;
+    height: 100%;
+     position: absolute;
+    animation: scrollImage 10s linear infinite;
+}
+
+.image-scroll img {
+    width: 500px;
+    height: auto;
+}
+
+@keyframes scrollImage {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+.product-detail .product-detail_side-bar .price {
     color:#333;
     font-size:28px;
     font-weight:bold;
 }
 
-.product-detail img {
-    width:40%;
-    float:left;
-    padding:0 20px 20px 0;
-}
+
 
 .product-detail h1 {
     margin-bottom:0;
@@ -230,7 +275,7 @@ ul.errorlist {
     float:right;
     width:300px;
     background:#efefef;
-    padding:10px 20px;
+    padding:10px 20px 10px 5px;
     color:#333;
     border-bottom:4px solid #5993bb;
 }
@@ -243,6 +288,7 @@ ul.errorlist {
     margin:0;
     padding:0;
     font-size:14px;
+    list-style: none;
 }
 
 .order-info p {
@@ -250,16 +296,25 @@ ul.errorlist {
     float:right;
 }
 
-.order-info span {
+.order-info .order-info_body span {
     float:right;
+}
+.order-info  .order-info_body {
+    display: flex;
+}
+.order-info  .order-info_body .order-info_image {
+    margin-right: 10px;
+}
+.order-form{
+    margin-left: 50px;
 }
 
 .neg {
     color:#dc1616;
 }
 
-.languages {
-   float:right;
+#header .languages {
+   float:left;
    padding-top:4px;
    font-size:14px;
 }
@@ -275,11 +330,25 @@ ul.errorlist {
     float:left;
     margin:0 0 0 10px;
     font-size:14px;
+
+}
+.languages ul li a {
+    color: chartreuse;
+    font-weight: bold;
+
+}
+.languages ul li a.selected {
+    background:#f50eb0;
+    border-radius:4px;
+    color: white;
+
 }
 
 .languages p {
     float:left;
     margin:0;
+    color: hwb(340 93% 4%);
+    font-size: medium;
 }
 
 .recommendations {

@@ -1,7 +1,7 @@
 <!-- templates/shop/signup.html -->
-
 {% extends "shop/base.html" %}
-{% block title %}
+{% load i18n  %}
+{% block  title %}
 {% endblock %}
 {% block style %}
 <style>
@@ -90,8 +90,12 @@ button:hover {
 </style>
 {% endblock %}
 {% block content %}
-<h2>Well Come  Dear  <strong>{{request.user}} </strong>  </h2>
-<h1>add your Business</h1>
+<h2> 
+{% blocktranslate with user_name=request.user %}
+Well Come  Dear  <strong>{{user_name}} </strong> 
+{% endblocktranslate %}
+ </h2>
+<h1>{%translate 'add your Business'%} </h1>
  {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
             {{ error }}
@@ -101,15 +105,15 @@ button:hover {
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
-            <label class="form-label-control" for="{{ form.shopName.id_for_label }}">Shop Name</label>
+            <label class="form-label-control" for="{{ form.shopName.id_for_label }}">{%translate 'Business Name'%}</label>
             {{ form.shopName }}
         </div>
         <div class="form-group">
-            <label class="form-label-control" for="{{ form.adress.id_for_label }}">Address</label>
+            <label class="form-label-control" for="{{ form.adress.id_for_label }}">{% translate 'Address'%}</label>
             {{ form.adress }}
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">{% translate 'Submit'%}</button>
         </div>
     </form>
 </div>

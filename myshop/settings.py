@@ -3,6 +3,7 @@
 from pathlib import Path
 from decouple import config
 from django.utils.translation import gettext_lazy as _
+from .am_info import add_am_language_info
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
      'coupons',
      'news',
       "rest_framework",
+      "rosetta",
 
 
 ]
@@ -123,7 +125,7 @@ LANGUAGES=[
 LOCALE_PATHS= [
     BASE_DIR / 'locale',
 ]
-
+add_am_language_info()
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

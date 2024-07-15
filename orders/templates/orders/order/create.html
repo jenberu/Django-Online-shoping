@@ -1,5 +1,5 @@
 {% extends "shop/base.html" %}
-{% load i18n %}
+{% load i18n static %}
 {% block title %}
 {% translate "Checkout" %}
 {% endblock %}
@@ -10,9 +10,17 @@
      <ul>
     {% for item in cart %}
       <li>
-        {{ item.quantity }}x {{ item.product.name }}
+      <div class="order-info_body">
+      <div class="order-info_image">
+      <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="100" height="100">
+        </div>
+        <div class="order-info_dicr">
+        {{ item.quantity }}x <br/>
+         {{ item.product.name }}
+        </div>
         {% translate 'Birr' as birr%}
         <span>{{ item.total_price }} {{birr}}</span>
+        </div>
       </li>
    {% endfor %}
   {% if cart.coupon %}
@@ -33,9 +41,11 @@
 
         </div>
     {% endif %}
+<div class="order-form">    
  <form method="post" class="order-form">
  {{ form.as_p }}
  <p><input type="submit" value="{%translate 'Place order' %}"></p>
  {% csrf_token %}
  </form>
+ </div>
 {% endblock %}
