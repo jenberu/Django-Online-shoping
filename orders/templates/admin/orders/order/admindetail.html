@@ -1,9 +1,11 @@
 {% extends "admin/base_site.html" %}
-
+{% load static %}
 {% block title %}
   Order {{ order.id }} {{ block.super }}
 {% endblock %}
-
+{% block branding %}
+<h1> Order Detail </h1>
+{% endblock %}
 {% block breadcrumbs %}
   <div class="breadcrumbs">
     <a href="{% url "admin:index" %}">Home</a> &rsaquo;

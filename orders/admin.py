@@ -7,10 +7,11 @@ from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
 from django.utils.html import mark_safe
 from django.template.defaultfilters import truncatechars
-
 class OrderItemInline(admin.TabularInline):#An inline allows you to include a model on the same edit page as its related model.
      model=OrderItem
-     raw_id_fields=['product']
+     autocomplete_fields=['product']
+     #raw_id_fields=['product']
+     extra=1#manage the defult displayed row
  #this action function is called when the action is tirged with 3 arguments  
  # arg 1 model admin is the current  current ModelAdmin
  # arg 2 is the current request
@@ -40,18 +41,18 @@ def export_to_csv(modeladmin,request,queryset):
 #add a link to each Order object on the list display page of the administration site
 def order_detail(obj):#obj refers to the model instance
      url = reverse('orders:admin_order_detail', args=[obj.id])
-     return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="view order detial" href="{url}"><i class="fas fa-eye"></i></a>')
+     return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="view order detial" href="{url}">Detail</a>')#<i class="fas fa-eye"></i>
      """Django escapes HTML output by default. 
        You have to use the mark_safe function 
        to avoid auto-escaping."""
 def order_to_pdf(obj):
       url = reverse('orders:admin_order_pdf', args=[obj.id])
-      return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="create PDF file" href="{url}"><i class="fas fa-file-pdf"></i></a>')
+      return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="create PDF file" href="{url}">PDF</a>')#<i class="fas fa-file-pdf"></i>
 order_to_pdf.short_description='create PDF'
 
 def update_status(obj):
      url=reverse('orders:updateStatus',args=[obj.id])
-     return mark_safe(f'<a  class="btn btn-sm btn-outline-success" title="Edit status" href="{url}"> <i class="fas fa-pen "></i></a>')
+     return mark_safe(f'<a  class="btn btn-sm btn-outline-success" title="Edit status" href="{url}"> Update</a>')#<i class="fas fa-pen "></i>
 update_status.short_description='update status'
 
 
@@ -93,6 +94,7 @@ class  OrderAdmin(admin.ModelAdmin):
     list_filter=['paid','created','updated']
     inlines=[OrderItemInline]
     list_per_page=5
+    list_editable=['status']
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:

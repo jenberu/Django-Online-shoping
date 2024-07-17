@@ -90,6 +90,7 @@ class PrductAdmin(admin.ModelAdmin):
     list_display_links=['image_tag','name']
     prepopulated_fields={'slug':('name',)}#this used to  automatically give value of name to  slug 
     list_per_page=5
+    search_fields=['name']
 
     
     def get_queryset(self, request):

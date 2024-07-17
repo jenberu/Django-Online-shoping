@@ -5,6 +5,7 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts  import get_object_or_404
+from django.core.validators import MinValueValidator
 
 
 def validate_no_numbers(value):
@@ -29,7 +30,7 @@ class Shop(models.Model):
         user.is_staff=True
         user.save()
        
-
+      
         group, created = Group.objects.get_or_create(name='shoponwer')
         if not created:
             self.owner.groups.add(group)
@@ -40,14 +41,6 @@ class Shop(models.Model):
     def deactivate_shop(self):
         self.is_active=False
         self.save()  
-
-
-    
-
-        
-    
-
-
     def __str__(self):
         return self.shopName
 class Category(models.Model):
@@ -90,7 +83,10 @@ class Product(models.Model):
     slug=models.SlugField(max_length=200)
     image=models.ImageField(upload_to='products/%y/%m/%d',blank=True)
     description=models.TextField(blank=True)
-    price=models.DecimalField(max_digits=10,decimal_places=2)
+    price=models.DecimalField(max_digits=10,
+                              decimal_places=2,
+                               validators=[MinValueValidator(1,message="the value for this field can't be <= 0")]
+                              )
     available=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
@@ -106,9 +102,6 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
  
-
-       
-
 class ShopSubscrioptionPlan(models.Model):
     PLAN_CHOICE=[
         ('monthly','Monthly'),
