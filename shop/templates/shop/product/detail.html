@@ -11,8 +11,8 @@
 </style>
 {% endblock %}
 {% block content %}
-    <div class="product-detail">
-        <div class="product-detail_body">
+<div class="product-detail">
+     <div class="product-detail_body">
             <div class="product-detail_image-container">
                 <div class="image-scroll">
                     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
@@ -34,7 +34,14 @@
                 </form>
                 <p>{{ product.description|linebreaks }}</p>
             </div>
+          
+         <diV class="product-detail_advertize">
+          <h1>Advertizment<h1>
+
+        </diV>
         </div>
+
+
         {% if recommended_products %}
         <div class="recommendations">
             <h3>{% translate 'Poeple who bought this also bought' %}</h3>
@@ -47,8 +54,8 @@
             </div>
             {% endfor %}
         </div>
-        {% endif %}
-    </div>
+         {% endif %}
+   </div>
 
 
 {% endblock %}
