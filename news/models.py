@@ -13,7 +13,7 @@ class Advertisment(models.Model):
     title=models.CharField(max_length=50)
     image=models.ImageField(blank=True,upload_to='advertisment/image/')  
     description=models.TextField(blank=True)
-    url=models.URLField()
+    url=models.URLField(blank=True)
     start_date=models.DateTimeField()
     end_date=models.DateTimeField()
     active=models.BooleanField(default=True)
