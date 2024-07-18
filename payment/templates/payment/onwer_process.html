@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
 {% block style %}
+{% load i18n %}
 <style>
 /* General form styling */
 form {
@@ -54,8 +55,9 @@ button:hover {
 </style>
 {% endblock %}
 {% block cart %}
-<h2> Dear <b>{{user.username}}</b> your Businuss is registered succussfuly, but it is not active until you complet the payment process
-Pleace  Select a Subscription, what you Plan, to activate your businuss.</h2>{% endblock %}
+<h2>{% blocktranslate with user_name=user.username %} Dear <b>{{user_name}}</b> your Businuss is registered succussfuly, 
+but it is not active until you complet the payment process
+Pleace  Select a Subscription, what you Plan, to activate your businuss.{% endblocktranslate %}</h2>{% endblock %}
 {% block content %}
 
  {% if error %}
@@ -63,18 +65,19 @@ Pleace  Select a Subscription, what you Plan, to activate your businuss.</h2>{% 
             {{ error }}
         </div>
     {% endif %}
+    {% translate 'Birr' as birr%}
 <form method="post" action="{% url 'payment:onwer_payment_procces'%}">
 
     <label>
-        <input type="radio" name="plan" value="monthly" required> Monthly -   {{sub_plan_per_month.price}} Birr
+        <input type="radio" name="plan" value="monthly" required>  {% translate 'Monthly'%} -  {{sub_plan_per_month.price}} {{birr}}
     </label><br>
     <label>
-        <input type="radio" name="plan" value="six_months" required> Six Months -  {{sub_plan_per_six_month.price}} Birr
+        <input type="radio" name="plan" value="six_months" required>  {% translate 'Six Months'%} -  {{sub_plan_per_six_month.price}} {{birr}}
     </label><br>
     <label>
-        <input type="radio" name="plan" value="yearly" required> Yearly -  {{sub_plan_per_six_year.price}} Birr
+        <input type="radio" name="plan" value="yearly" required> {% translate 'Yearly'%} -  {{sub_plan_per_six_year.price}} {{birr}}
     </label><br>
-    <button type="submit">Proceed to Pay</button>
+    <button type="submit"> {% translate 'Proceed to Pay'%}</button>
      {% csrf_token %}
 
 </form>

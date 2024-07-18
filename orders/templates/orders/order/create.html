@@ -10,10 +10,10 @@
      <ul>
     {% for item in cart %}
       <li>
-      <div class="order-info_body">
+    <div class="order-info_body">
       <div class="order-info_image">
       <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="100" height="100">
-        </div>
+      </div>
         <div class="order-info_dicr">
         {{ item.quantity }}x <br/>
          {{ item.product.name }}

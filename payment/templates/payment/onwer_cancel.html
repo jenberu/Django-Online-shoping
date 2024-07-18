@@ -1,5 +1,6 @@
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% block content %}
-<h2>Payment Cancelled</h2>
-<p>Your payment was not successful. Please try again.</p>
+<h2>{%translate 'Payment Cancelled'%}</h2>
+<p>{%translate  'Your payment was not successful. Please try again.'%}</p>
 {% endblock %}

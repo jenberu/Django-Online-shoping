@@ -8,6 +8,7 @@ from .forms import CartAddProductForm
 from coupons.forms import CouponForm
 from coupons.models import Coupon
 from shop.recommender import Recommender
+from django.utils.translation import gettext_lazy as _
 
 
 
@@ -24,7 +25,7 @@ def cart_add(request,product_id):
         if is_add:
            return redirect('cart:cart_detail') 
         else:
-            return render(request, 'cart/detail.html', {'cart': cart,'error':'you should checkout this cart before requesting the order in other shop'})  
+            return render(request, 'cart/detail.html', {'cart': cart,'error':_('you should checkout this cart before requesting the order in other shop')})  
 
            
 @require_POST
@@ -32,6 +33,9 @@ def cart_remove(request,product_id):
     cart=Cart(request)
     product=get_object_or_404(Product,id=product_id)
     cart.remove(product)
+    if len(cart)==0:
+       cart.clear()
+       return redirect('shop:product_list')
     return redirect('cart:cart_detail') 
 
 def cart_detail(request):

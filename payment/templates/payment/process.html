@@ -1,12 +1,12 @@
 {% extends "shop/base.html" %}
-{% load static %}
+{% load static  i18n %}
 
 {% block title %}
-  Pay your order
+  {%translate 'Pay for your order'%}
 {% endblock %}
 
 {% block content %}
-  <h1>Order summary</h1>
+  <h1> {%translate 'Order summary'%}</h1>
   <table class="cart">
     <thead>
       <tr>

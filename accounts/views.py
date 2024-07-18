@@ -9,6 +9,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import  login_required
 from .models import UserProfile
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 
 def signupaccount(request):
@@ -27,10 +28,10 @@ def signupaccount(request):
                 login(request, user)
                 return redirect('shop:product_list')
             except IntegrityError:
-               return render(request, 'signupaccount.html', {'form':UserCreateForm(), 'error':'Username already taken. Choose new username.'})
+               return render(request, 'signupaccount.html', {'form':UserCreateForm(), 'error':_('Username already taken. Choose new username.')})
 
      else:
-         return render(request, 'signupaccount.html', {'form':UserCreateForm(),'error': 'Passwords do not match'})
+         return render(request, 'signupaccount.html', {'form':UserCreateForm(),'error': _('Passwords do not match')})
 @login_required
 def logoutaccount(request):
      #call logout and redirect to go back to the home page
@@ -43,7 +44,7 @@ def loginaccount(request):
      else:
           user=authenticate(request,username=request.POST['username'],password=request.POST['password'])
           if user is None:
-               return render(request,'loginaccount.html', {'form':AuthenticationForm,'error': 'username and password do not match'}) 
+               return render(request,'loginaccount.html', {'form':AuthenticationForm,'error': _('username and password do not match')}) 
           else:
                login(request,user)
                return redirect('shop:product_list')
@@ -62,7 +63,7 @@ def update_profile(request):
             user_profile.save()
             return redirect('shop:product_list')
         else:
-           return render(request,'userprofile.html',{'form':UserProfileForm(),'error':'Pleace Insert correct data'})
+           return render(request,'userprofile.html',{'form':UserProfileForm(),'error':_('Pleace Insert correct data')})
 def resset_password(request):
     if request.method=='GET':
         return render(request,'pass_resset.html')
@@ -75,13 +76,13 @@ def resset_password(request):
                 user=User.objects.get(username=username)
                 user.set_password(new_password)
                 user.save()
-                messages.success(request,'Password has been reset successfully.')
+                messages.success(request,_('Password has been reset successfully.'))
                 return redirect('loginaccount')
             except User.DoesNotExist:
-                 messages.error(request, 'User with the given username does not exist. ')
+                 messages.error(request, _('User with the given username does not exist. '))
                  return redirect('resset_passowrd')
         else: 
-          messages.error(request, 'New password and confirm password do not match.')
+          messages.error(request, _('New password and confirm password do not match.'))
           return redirect('resset_passowrd')
               
                 

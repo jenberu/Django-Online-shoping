@@ -5,6 +5,21 @@
 {% block title %}
 {% translate 'Your shopping cart' %} 
 {% endblock %}
+{% block style %}
+<style>
+.coupoun-input{
+    width:100px;
+    height:30px;
+    border: 0;
+  background: lightgray;
+  color: #666;
+  border-radius: 4px;
+}
+</style>
+
+{% endblock %}
+
+
 {% block content %}
     <h1>{% translate 'Your shopping cart at' %} <strong>{{cart.shop.shopname}}</strong></h1>
      {% if error %}
@@ -53,7 +68,7 @@
                     </tr>
                 {% endwith %}
             {% endfor %}
-  {% if cart.coupon %}
+ {% if cart.coupon %}
  <tr class="subtotal">
  <td> {%translate 'Subtotal' %}</td>
  <td colspan="4"></td>
@@ -77,10 +92,33 @@
  {{ cart.get_total_price_after_discount|floatformat:2 }} {{birr}}
  </td>
 </tr>
-        </tbody>
+    </tbody>
     </table>
+
+<div style="display:flex;" >   
+{% if get_coupon_object and total_items %}
+<div class="applay-for-discount" >
+<form action="{% url "coupons:apply" %}" method="post" >
+<div style="display:flex;">
+ <div> {{ coupon_apply_form }}</div>
+ <div> <input type="submit" value="Apply" style="margin-left:10px;"></div>
+
+ </div>
+ {% csrf_token %}
+</form>
+</div>
+{% endif %}
+<div style="margin-left: auto;">
+    <p class="text-right">
+        <a href="{% url 'shop:product_list' %}" class="button light">{%translate 'Continue shopping' %}</a>
+        <a href="{% url 'orders:order_create' %}" class="button">{%translate 'Checkout' %}
+</a>
+    </p>
+</div>
+   
+</div>   
 {% if recommended_products %}
- <div class="recommendations cart">
+<div class="recommendations cart">
  <h3>{%translate 'People who bought this also bought' %}</h3>
  {% for p in recommended_products %}
  <div class="item">
@@ -94,46 +132,4 @@
  </div>
 {% endif %}
 
- <div style="display:flex">   
-{% if get_coupon_object and total_items %}
-<p>{%translate  'Apply for Discount' %}:</p>
- <div class="applay-for-discount" >
-<form action="{% url "coupons:apply" %}" method="post" >
- {{ coupon_apply_form }}
- <input type="submit" value="Apply" style="margin:10px;">
- {% csrf_token %}
-</form>
-</div>
-{% endif %}
-  <div style="margin-left: auto;">
-    <p class="text-right">
-        <a href="{% url 'shop:product_list' %}" class="button light">{%translate 'Continue shopping' %}</a>
-        <a href="{% url 'orders:order_create' %}" class="button">{%translate 'Checkout' %}
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        </a>
-    </p>
-    </div>
-   
-    </div>
 {% endblock %}

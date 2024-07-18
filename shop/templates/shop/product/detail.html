@@ -57,15 +57,15 @@
 {% endblock %}
 {% block content %}
 <div class="product-detail-wrapper" >
-<div class="product-detail">
+ <div class="product-detail">
      <div class="product-detail_body">
-            <div class="product-detail_image-container">
-                <div class="image-scroll">
+           <div class="product-detail_image-container" >
+                <div  class="image-scroll">
                     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
                 </div>
             </div>
             <div class="product-detail_side-bar">
-                <h1>{% translate 'Dear' %} <strong>{{ user.username }}</strong> {% translate 'Welcome to' %} <strong>{{ product.shop }}</strong></h1>
+                <h1> {% blocktranslate with shopname=product.shop %} Dear Customer, Welcome to <strong>{{shopname}}</strong>{% endblocktranslate %}</h1>
                 <h1>{{ product.name }}</h1>
                 <h2>
                     <a href="{{ product.category.get_absolute_url }}">
@@ -80,10 +80,10 @@
                 </form>
                 <p>{{ product.description|linebreaks }}</p>
             </div>
-          </div>
+     </div>
 
 
-    {% if recommended_products %}
+     {% if recommended_products %}
         <div class="recommendations">
             <h3>{% translate 'Poeple who bought this also bought' %}</h3>
             {% for p in recommended_products %}
@@ -96,9 +96,9 @@
             {% endfor %}
         </div>
          {% endif %}
-   </div>
-<diV class="product-detail_advertize">
-          <h1> ADVERTISEMENT <h1>
+</div>
+ <diV class="product-detail_advertize">
+          <h1> {% 'ADVERTISEMENT' %} <h1>
     
 
 {% if adds %}
@@ -113,22 +113,20 @@
                     <div class="ad-description">{{ ad.description }}</div>
 
                 </a>
-             </div>
+            </div>
           {% endfor %}
           {% endif %}
-           </div>
+        </div>
     {% endfor %}
  {% else %}
         <p>No advertisements available.</p>
        
   {% endif %}
 
-
-  </diV>
-
+</diV>
 
 
-   </div>
+</div>
 <script>
 
 function handleAddsButtonClicked() {
@@ -138,7 +136,9 @@ function handleAddsButtonClicked() {
 
     if (adsContainer) {
         // Set the display style to 'none' to hide the element
-        adsContainer.style.display = 'none';
+        adsContainer.style.visibility= "hidden";
+        
+
        
 
     }
@@ -146,7 +146,10 @@ function handleAddsButtonClicked() {
 
  document.addEventListener('DOMContentLoaded', function() {
         const ads = document.querySelectorAll('.add-item');
+
         let currentIndex = 0;
+      
+          
           // Initial display of the first ad
 
         if (ads.length > 0) {
@@ -154,10 +157,13 @@ function handleAddsButtonClicked() {
             setInterval(showNextAd, 3000); // Change ad every 3 seconds
         }
 
+
         function showNextAd() {
             ads[currentIndex].classList.remove('active');
+
             currentIndex = (currentIndex + 1) % ads.length;
             ads[currentIndex].classList.add('active');
+
         }
 
        

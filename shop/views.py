@@ -9,7 +9,7 @@ from django.contrib import messages
 from orders.models import OrderItem,Order
 from .recommender import Recommender
 from news.models import Advertisment,AddsImage
-
+from django.utils.translation import gettext_lazy as _
 
 
 def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
@@ -25,7 +25,7 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
                 
                  return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops}) 
             else:
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':f'There is no  {searchedProduct}  product in our shop'})
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':_(f'There is no  {searchedProduct}  product in our shop')})
     else:
         products=Product.objects.filter(available=True)
     
@@ -72,12 +72,12 @@ def add_shop(request):
                    
 
                except IntegrityError:
-                                 return render(request,'shop/shops/shopform.html',{'form':form,'error':'one onwer should register for one shop'})
+                                 return render(request,'shop/shops/shopform.html',{'form':form,'error':_('one onwer should register for one shop')})
 
 
 
           else:
-             return render(request,'shop/shops/shopform.html',{'form':form,'error':'please enter correct data'})
+             return render(request,'shop/shops/shopform.html',{'form':form,'error':_('please enter correct data')})
 def product_list_for_shop_owner(request):
       user=get_object_or_404(User,username=request.user.username)
       shop=Shop.objects.get(owner=user,is_active=True)
@@ -87,7 +87,7 @@ def delete_product(request,product_id):
        product=Product.objects.get(id=product_id)
        if product !=None:
              product.delete()
-             messages.success(request, 'Product deleted successfully')
+             messages.success(request, _('Product deleted successfully'))
 
        return redirect('/adminhome/')
 def product_list_for_shop(request,shop_id,category_slug=None,subcategory_slug=None):

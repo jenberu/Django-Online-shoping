@@ -215,6 +215,7 @@ ul.errorlist {
 }
 .product-detail-wrapper{
   display: flex;
+  width: 100%;
 }
 .product-detail {
   text-align: justify;
@@ -225,16 +226,14 @@ ul.errorlist {
 }
 .product-detail_body {
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: space-between;
   margin: 50px 0 20px 0;
-  justify-content: space-between;
-   width: 100%;
   height:auto;
 }
 
  .product-detail_image-container {
-  width: 40%;
+  width: 400px;
   height: 400px;
   overflow: hidden;
   border: 1px solid hsl(252, 33%, 94%);

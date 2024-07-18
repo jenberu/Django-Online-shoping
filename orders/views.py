@@ -8,6 +8,7 @@ from django.contrib.staticfiles import finders
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.db import IntegrityError
+from django.utils.translation import gettext_lazy as _
 
 
 def order_create(request):
@@ -36,12 +37,12 @@ def order_create(request):
                 return redirect('payment:paymentprocces')
                # return render(request,'orders/order/created.html', {'order': order})
         else:
-            return render(request, 'orders/order/create.html', {'form':OrderCreateForm, 'error':'please enter valid data  for all fields'})
+            return render(request, 'orders/order/create.html', {'form':OrderCreateForm, 'error':_('please enter valid data  for all fields')})
            
     else:
         total_items = len(cart)
         if total_items==0:  
-            return render(request,'cart/detail.html',{'error':'your cart is empity pleace add item to checkout'})
+            return render(request,'cart/detail.html',{'error':_('your cart is empity pleace add item to checkout')})
 
         form=OrderCreateForm()
         return render(request,'orders/order/create.html',{'cart':cart,'form':form})
