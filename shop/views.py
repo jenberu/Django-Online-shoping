@@ -8,7 +8,7 @@ from django.db import IntegrityError
 from django.contrib import messages
 from orders.models import OrderItem,Order
 from .recommender import Recommender
-from news.models import Advertisment
+from news.models import Advertisment,AddsImage
 
 
 

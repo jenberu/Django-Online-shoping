@@ -41,10 +41,22 @@
 .add-item.active .ad-description {
     transform: translateY(0);
 }
+#hide-ads-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-size:24;
+    cursor:pointer;
 
+}
+.product-detail_advertize h1{
+    text-align:center;
+}
 </style>
 {% endblock %}
 {% block content %}
+<div class="product-detail-wrapper" >
 <div class="product-detail">
      <div class="product-detail_body">
             <div class="product-detail_image-container">
@@ -68,31 +80,10 @@
                 </form>
                 <p>{{ product.description|linebreaks }}</p>
             </div>
-          
-         <diV class="product-detail_advertize">
-          <h1> Adds <h1>
-    <div class="ad-container">
-    {% if adds %}
-        {% for ad in adds %}
-            <div class="add-item" id="ad-item-{{ forloop.counter }}">
-                <a href="{% if ad.url %}{{ ad.url }}{% else %}# {% endif %}">
-                    <img src="{% if ad.image %}{{ ad.image.url }}{% endif %}" class="ad-image" alt="Ad Image">
-                    <div class="ad-description">{{ ad.description }}</div>
-
-                </a>
-                
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>No advertisements available.</p>
-    {% endif %}
-</div>
-
-        </diV>
-    </div>
+          </div>
 
 
-        {% if recommended_products %}
+    {% if recommended_products %}
         <div class="recommendations">
             <h3>{% translate 'Poeple who bought this also bought' %}</h3>
             {% for p in recommended_products %}
@@ -106,7 +97,53 @@
         </div>
          {% endif %}
    </div>
+<diV class="product-detail_advertize">
+          <h1> ADVERTISEMENT <h1>
+    
+
+{% if adds %}
+   {% for ad in adds %}
+    <div class="ad-container">
+     <button id="hide-ads-btn" class="btn btn-danger" onclick="handleAddsButtonClicked()" title='hide'>X</button>
+     {%if ad.images %}
+        {% for adimg in ad.images.all %}
+            <div class="add-item" id="ad-item-{{ forloop.counter }}">
+                <a href="{% if ad.url %}{{ ad.url }}{% else %}# {% endif %}">
+                    <img src="{% if adimg %}{{ adimg.image.url }}{% endif %}" class="ad-image" alt="Ad Image">
+                    <div class="ad-description">{{ ad.description }}</div>
+
+                </a>
+             </div>
+          {% endfor %}
+          {% endif %}
+           </div>
+    {% endfor %}
+ {% else %}
+        <p>No advertisements available.</p>
+       
+  {% endif %}
+
+
+  </diV>
+
+
+
+   </div>
 <script>
+
+function handleAddsButtonClicked() {
+    // Get the first element with the class 'ad-container'
+    const adsContainer = document.getElementsByClassName('ad-container')[0];
+
+
+    if (adsContainer) {
+        // Set the display style to 'none' to hide the element
+        adsContainer.style.display = 'none';
+       
+
+    }
+}
+
  document.addEventListener('DOMContentLoaded', function() {
         const ads = document.querySelectorAll('.add-item');
         let currentIndex = 0;
