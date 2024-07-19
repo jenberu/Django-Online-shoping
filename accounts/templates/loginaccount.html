@@ -1,6 +1,7 @@
 <!-- templates/shop/signup.html -->
 
 {% extends "shop/base.html" %}
+{% load i18n %}
 {% block style %}
 <style>
 form .form-control {
@@ -11,9 +12,11 @@ form .form-control {
   margin-bottom: 10px;
 }
 .form-body{
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center; 
+  width:50%;
+  margin:0 10px;
 }
 .form-body .form-container{
   border: 1px solid #ddd;
@@ -23,7 +26,7 @@ form .form-control {
   flex-direction:column;
   justify-content: center;
   align-items: center;
-  width:50%;
+  width:100%;
   background-color:lightblue;
   margin-bottom:10px;
 }
@@ -42,13 +45,32 @@ form .form-control {
 .btn-primary:hover {
   background-color: #0056b3;
 }
+.login{
+  display:flex;
+  margin-bottom: 10px;
+}
+.login_advertize{
+  width:25%;
+}
+.login-left{
+  width:25%;
+}
+
 </style>
 {% endblock %}
+{%block searchField%}
+{% endblock %}
+{% block cart %}
+{% endblock %}
+
 
 {% block title %}
    Login
 {% endblock %}
 {% block content %}
+<div class="login">
+<div class="login-left">
+</div>
 <div class="form-body">
 <div class="form-container">
     <h1>Login</h1>
@@ -69,10 +91,63 @@ form .form-control {
 
 </div>
 </div>
+<diV class="login_advertize">
+          <h1> {%translate 'ADVERTISEMENT' %} <h1>
+    
+
+{% if adds %}
+   {% for ad in adds %}
+    <div class="ad-container" id="ad-container-{{ forloop.counter }}">
+     <button class="hide-ads-btn" class="btn btn-danger" onclick="handleAddsButtonClicked({{ forloop.counter }})" title='hide'>X</button>
+     {% if ad.images %}
+        {% for adimg in ad.images.all %}
+            <div class="add-item" id="ad-item-{{ forloop.counter }}">
+                <a href="{% if ad.url %}{{ ad.url }}{% else %}# {% endif %}">
+                    <img src="{% if adimg %}{{ adimg.image.url }}{% endif %}" class="ad-image" alt="Ad Image">
+                    <div class="ad-description">{{ ad.description }}</div>
+                </a>
+            </div>
+        {% endfor %}
+     {% endif %}
+    </div>
+   {% endfor %}
+ {% else %}
+    <p>No advertisements available.</p>
+ {% endif %}
+
+
+</diV>
+</div>
 
 <script>
     function hoverEffect(element, color) {
     element.style.color = color;
 }
+function handleAddsButtonClicked(containerId) {
+    // Get the ad-container with the specific ID
+    const adsContainer = document.getElementById(`ad-container-${containerId}`);
+    if (adsContainer) {
+        adsContainer.style.visibility = 'hidden';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const adContainers = document.querySelectorAll('.ad-container');
+    adContainers.forEach((container, index) => {
+        const ads = container.querySelectorAll('.add-item');
+        let currentIndex = 0;
+
+        function showNextAd() {
+            ads[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % ads.length;
+            ads[currentIndex].classList.add('active');
+        }
+
+        if (ads.length > 0) {
+            ads[0].classList.add('active');
+            setInterval(showNextAd, 3000); // Change ad every 3 seconds
+        }
+    });
+});
 </script>
 {% endblock %}

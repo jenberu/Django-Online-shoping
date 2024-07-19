@@ -4,14 +4,29 @@
 {% block title %}
     Sign Up
 {% endblock %}
+{%block searchField%}
+{% endblock %}
+{% block cart %}
+{% endblock %}
 {% block content %}
 <div class="sinupcontainer">
-    <h1>Sign Up</h1>
+    
     {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
             {{ error }}
         </div>
-    {% endif %}
+         {% endif %}
+      
+        <div>
+          <p>
+        Join us or sign in
+Track your future orders, checkout faster, and sync your favorites. 
+Just enter your email and we’ll send you a special link that will sign you in instantly.
+An account will be automatically created for you if you don’t have one yet.
+        </p>
+        </div>
+   <h1>Sign Up</h1>
+   
     <form class="sinup-form" method="POST">
         {% csrf_token %}
         {{ form.as_p }}

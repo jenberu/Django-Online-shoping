@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-16 00:17+0300\n"
-"PO-Revision-Date: 2024-07-16 00:17+0300\n"
+"POT-Creation-Date: 2024-07-18 23:29+0300\n"
+"PO-Revision-Date: 2024-07-18 23:32+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "Language: am\n"
@@ -19,7 +19,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: .\cart\forms.py:6 .\cart\templates\cart\detail.html:20
+#: .\accounts\views.py:31
+msgid "Username already taken. Choose new username."
+msgstr "ይህ ስም ተይዟል እባከዎ ሌላ ይምረጡ"
+
+#: .\accounts\views.py:34
+msgid "Passwords do not match"
+msgstr "ይለፍ ቃል ተሳስተዋል"
+
+#: .\accounts\views.py:47
+msgid "username and password do not match"
+msgstr "ስም እና ይለፍ ቃል አልተዛመዱም"
+
+#: .\accounts\views.py:66
+msgid "Pleace Insert correct data"
+msgstr "እባከዎ ትክክለኛ መረጃ ያስገቡ"
+
+#: .\accounts\views.py:79
+msgid "Password has been reset successfully."
+msgstr "የይለፍ ቃል በተሳካ ሁኔታ ተቀይሯል"
+
+#: .\accounts\views.py:82
+msgid "User with the given username does not exist. "
+msgstr "በዚ ስም ዩዘር የለም"
+
+#: .\accounts\views.py:85
+msgid "New password and confirm password do not match."
+msgstr "ያስገቡት የይለፍ ቃል ማች አልሆነም"
+
+#: .\cart\forms.py:6 .\cart\templates\cart\detail.html:35
 #: .\orders\templates\orders\order\pdf.html:24
 msgid "Quantity"
 msgstr "ብዛት"
@@ -28,78 +56,79 @@ msgstr "ብዛት"
 msgid "Your shopping cart"
 msgstr "የእርሰዎ ዘንቢል"
 
-#: .\cart\templates\cart\detail.html:9
+#: .\cart\templates\cart\detail.html:24
 msgid "Your shopping cart at"
 msgstr "የእርሰዎ ዘንቢል ከ"
 
-#: .\cart\templates\cart\detail.html:18
+#: .\cart\templates\cart\detail.html:33
 msgid "Image"
 msgstr "ምስል"
 
-#: .\cart\templates\cart\detail.html:19
+#: .\cart\templates\cart\detail.html:34
 #: .\orders\templates\orders\order\pdf.html:22
 msgid "Product"
 msgstr "ምርት"
 
-#: .\cart\templates\cart\detail.html:21 .\cart\templates\cart\detail.html:45
+#: .\cart\templates\cart\detail.html:36 .\cart\templates\cart\detail.html:60
 msgid "Remove"
 msgstr "አስወግድ"
 
-#: .\cart\templates\cart\detail.html:22
+#: .\cart\templates\cart\detail.html:37
 msgid "Unit price"
 msgstr "የአንድ ዋጋ"
 
-#: .\cart\templates\cart\detail.html:23
+#: .\cart\templates\cart\detail.html:38
 #: .\orders\templates\orders\order\pdf.html:23
 msgid "Price"
 msgstr "ዋጋ"
 
-#: .\cart\templates\cart\detail.html:39
+#: .\cart\templates\cart\detail.html:54
 msgid "Update"
 msgstr "ቀይር"
 
-#: .\cart\templates\cart\detail.html:48
-#: .\orders\templates\orders\order\create.html:14
+#: .\cart\templates\cart\detail.html:63
+#: .\orders\templates\orders\order\create.html:21
 #: .\orders\templates\orders\order\pdf.html:29
-#: .\shop\templates\shop\product\detail.html:29
+#: .\shop\templates\shop\product\detail.html:75
 #: .\shop\templates\shop\product\list.html:109
 msgid "Birr"
 msgstr "ብር"
 
-#: .\cart\templates\cart\detail.html:58
+#: .\cart\templates\cart\detail.html:73
 msgid "Subtotal"
 msgstr "ንዑስ አጠቃላይ"
 
-#: .\cart\templates\cart\detail.html:64
+#: .\cart\templates\cart\detail.html:79
 msgid "Discount"
 msgstr "ቅናሽ"
 
-#: .\cart\templates\cart\detail.html:74
-#: .\orders\templates\orders\order\create.html:28
+#: .\cart\templates\cart\detail.html:89
+#: .\orders\templates\orders\order\create.html:36
 #: .\orders\templates\orders\order\pdf.html:39
 msgid "Total"
 msgstr " አጠቃላይ"
 
-#: .\cart\templates\cart\detail.html:84
-msgid "People who bought this also bought"
-msgstr "ይህን የገዙ ሰዎች ይህንም ይገዛሉ"
-
-#: .\cart\templates\cart\detail.html:99
-msgid "Apply for Discount"
-msgstr "ለቅናሽ ያመልክቱ"
-
-#: .\cart\templates\cart\detail.html:110
+#: .\cart\templates\cart\detail.html:113
 msgid "Continue shopping"
 msgstr "መግዛት ይቀጥሉ"
 
-#: .\cart\templates\cart\detail.html:111
+#: .\cart\templates\cart\detail.html:114
 #: .\orders\templates\orders\order\create.html:4
 msgid "Checkout"
 msgstr "ትእዛዘዎን ያስቀምጡ"
 
+#: .\cart\templates\cart\detail.html:122
+msgid "People who bought this also bought"
+msgstr "ይህን የገዙ ሰዎች ይህንም ይገዛሉ"
+
+#: .\cart\views.py:28
+msgid ""
+"you should checkout this cart before requesting the order in other shop"
+msgstr "ወደ ሌላ ሱቅ ከመሄደዎ በፊት መጀመሪያ ይህን  ትእዛዝ ይዘዙ(ባንድ ዘንቢል ከሁለት ሱቅ መግዛት አይችሉም)"
+
 #: .\coupons\forms.py:5
-msgid "Code"
-msgstr "ኮድ"
+msgid "Apply for Discount"
+msgstr "ለቅናሽ ያመልክቱ"
 
 #: .\myshop\settings.py:121
 msgid "English"
@@ -145,7 +174,7 @@ msgstr "ትእዛዘዎን ለማስቀምጥ እባከዎን የሚከተለዉ
 msgid "Your order"
 msgstr "የእርሰዎ ትእዛዝ"
 
-#: .\orders\templates\orders\order\create.html:21
+#: .\orders\templates\orders\order\create.html:29
 #, python-format
 msgid ""
 "\n"
@@ -155,7 +184,7 @@ msgstr ""
 "\n"
 "\"%(code)s\" (%(discount)s%% ቅናሽ)"
 
-#: .\orders\templates\orders\order\create.html:39
+#: .\orders\templates\orders\order\create.html:47
 msgid "Place order"
 msgstr "ትእዘዘዎን ያስቀምጡ"
 
@@ -202,6 +231,14 @@ msgstr "የተከፈለ"
 msgid "Pending payment"
 msgstr "ያልተከፈለበትያልተከፈለበት"
 
+#: .\orders\views.py:40
+msgid "please enter valid data  for all fields"
+msgstr "እባከዎ ትክክለኛ መረጃ ያስገቡ"
+
+#: .\orders\views.py:45
+msgid "your cart is empity pleace add item to checkout"
+msgstr "ዘንቢለዎ ባዶ ነው ፣ ተእዛዝ ለመላክ እቃ ይጨምሩ"
+
 #: .\shop\templates\shop\base.html:33
 msgid "Jemberu's shop "
 msgstr "የጀምበሩ ሱቅ"
@@ -243,24 +280,22 @@ msgstr[1] ""
 msgid "Your cart is empty."
 msgstr "የእርሰዎ ዘምቢል ባዶ ነዉ"
 
-#: .\shop\templates\shop\product\detail.html:22
-#: .\shop\templates\shop\product\list.html:115
-msgid "Dear"
-msgstr "ውድ"
+#: .\shop\templates\shop\product\detail.html:68
+#, python-format
+msgid " Dear Customer, Welcome to <strong>%(shopname)s</strong>"
+msgstr "ዉድ ደንበኛችን እንኳን  <strong>%(user_name)s </strong>  ወደ ደህና መጡ"
 
-#: .\shop\templates\shop\product\detail.html:22
-#, fuzzy
-#| msgid "Welcome to "
-msgid "Welcome to"
-msgstr "እንኳን ደህና መጡ"
-
-#: .\shop\templates\shop\product\detail.html:33
+#: .\shop\templates\shop\product\detail.html:79
 msgid "Add to cart"
 msgstr "ወደ ዘንቢል ጨምር"
 
-#: .\shop\templates\shop\product\detail.html:40
+#: .\shop\templates\shop\product\detail.html:88
 msgid "Poeple who bought this also bought"
 msgstr "ይህን የገዙ ሰዎች ይህንም ይገዛሉ"
+
+#: .\shop\templates\shop\product\detail.html:101
+msgid "ADVERTISEMENT"
+msgstr "ማስታወቂያዎች"
 
 #: .\shop\templates\shop\product\list.html:8
 msgid "Products"
@@ -301,6 +336,10 @@ msgid "from"
 msgstr "ከ"
 
 #: .\shop\templates\shop\product\list.html:115
+msgid "Dear Customer"
+msgstr "ውድ ደንበንበኛችን"
+
+#: .\shop\templates\shop\product\list.html:115
 msgid "No products avaliable"
 msgstr "ምርት የለም"
 
@@ -330,9 +369,57 @@ msgid "Address"
 msgstr "አድራሻ"
 
 #: .\shop\templates\shop\shops\shopform.html:116
+#: .\shop\templates\updateprofile.html:161
 msgid "Submit"
 msgstr "ላክ"
+
+#: .\shop\templates\updateprofile.html:124
+msgid "Update Profile"
+msgstr "መገለጫዎን ይቀይሩ"
 
 #: .\shop\templates\updateprofile.html:131
 msgid "Update your profile"
 msgstr "መገለጫዎን ይቀይሩ"
+
+#: .\shop\templates\updateprofile.html:146
+msgid "First Name"
+msgstr "ስም"
+
+#: .\shop\templates\updateprofile.html:150
+msgid "Last Name"
+msgstr "የአባት ስም"
+
+#: .\shop\templates\updateprofile.html:154
+msgid "Profile Image"
+msgstr "መገለጫ ፎቶ"
+
+#: .\shop\templates\updateprofile.html:158
+msgid "Biography"
+msgstr "ባይዎግራፊ"
+
+#: .\shop\views.py:28
+#, python-format
+msgid "There is no  %(product)s  product in our shop"
+msgstr "%(product)s እምባል ምርት የለም"
+
+#: .\shop\views.py:75
+msgid "one onwer should register for one shop"
+msgstr ""
+
+#: .\shop\views.py:80
+msgid "please enter correct data"
+msgstr "እባከዎ ትክክለኛ ዳታ ያስገቡ"
+
+#: .\shop\views.py:90
+msgid "Product deleted successfully"
+msgstr "በተሳካ ሁኔታ ጠፊቷል"
+
+#~ msgid "Dear"
+#~ msgstr "ውድ"
+
+#~ msgid "Code"
+#~ msgstr "ኮድ"
+
+#, fuzzy
+#~ msgid "Welcome to"
+#~ msgstr "እንኳን ደህና መጡ"

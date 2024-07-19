@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-18 20:44+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\payment\templates\canceled.html:4
+msgid "Payment canceled"
+msgstr ""
+
+#: .\payment\templates\completed.html:3
+msgid "Payment successful"
+msgstr ""
+
+#: .\payment\templates\completed.html:5
+msgid "Your payment was successful"
+msgstr ""
+
+#: .\payment\templates\completed.html:6
+msgid "Your payment has been processed successfully."
+msgstr ""
+
+#: .\payment\templates\payment\onwer_cancel.html:4
+msgid "Payment Cancelled"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_cancel.html:5
+msgid "Your payment was not successful. Please try again."
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:58
+#, python-format
+msgid ""
+" Dear <b>%(user_name)s</b> your Businuss is registered succussfuly, \n"
+"but it is not active until you complet the payment process\n"
+"Pleace  Select a Subscription, what you Plan, to activate your businuss."
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:68
+msgid "Birr"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:72
+msgid "Monthly"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:75
+msgid "Six Months"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:78
+msgid "Yearly"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_process.html:80
+msgid "Proceed to Pay"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_success.html:4
+msgid "Payment Successful"
+msgstr ""
+
+#: .\payment\templates\payment\onwer_success.html:5
+#, python-format
+msgid "Your shop \"%(shop_name)s\" is now active until %(valid_to)s."
+msgstr ""
+
+#: .\payment\templates\payment\process.html:5
+msgid "Pay for your order"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:9
+msgid "Order summary"
+msgstr ""

@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import  login_required
 from .models import UserProfile
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
+from news.models import Advertisment
 
 
 def signupaccount(request):
@@ -38,13 +39,16 @@ def logoutaccount(request):
      logout(request)
      return redirect('shop:product_list')   
 def loginaccount(request):
+     adds=Advertisment.objects.filter(active=True)
+
      if request.method == 'GET':
-          return render(request,'loginaccount.html', {'form':AuthenticationForm}) 
+          
+          return render(request,'loginaccount.html', {'form':AuthenticationForm,'adds':adds}) 
      
      else:
           user=authenticate(request,username=request.POST['username'],password=request.POST['password'])
           if user is None:
-               return render(request,'loginaccount.html', {'form':AuthenticationForm,'error': _('username and password do not match')}) 
+               return render(request,'loginaccount.html', {'form':AuthenticationForm,'adds':adds,'error': _('username and password do not match')}) 
           else:
                login(request,user)
                return redirect('shop:product_list')

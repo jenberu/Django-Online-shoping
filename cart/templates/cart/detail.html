@@ -96,7 +96,7 @@
     </table>
 
 <div style="display:flex;" >   
-{% if get_coupon_object and total_items %}
+{% if get_coupon_object and total_items and not error %}
 <div class="applay-for-discount" >
 <form action="{% url "coupons:apply" %}" method="post" >
 <div style="display:flex;">

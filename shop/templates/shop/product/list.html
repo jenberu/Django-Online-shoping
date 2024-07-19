@@ -16,6 +16,8 @@
     width:200px;
     background-color: red;
     background-color: hsla(0, 9%, 91%, 0.76);
+    overflow-y: auto; /* Enables vertical scrolling */
+
 
 }
 #right-bar ul{
@@ -51,12 +53,7 @@ h1,h2{
 
    
 {% block content %}
- <form action="">
-    <div class="mb-3 inline-form">
-        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
-        <button type="submit" class="btn btn-primary">{% translate 'Search'%}</button>
-    </div>
-</form>
+
 <div class="body-content">
  <div id="sidebar">
         <h3>{% translate 'Categories'%} </h3>
@@ -70,7 +67,7 @@ h1,h2{
                     <ul class="subcategories">
                         {% for sub in c.subcategories.all %}
                             <li class=" {% if subcategory and subcategory.slug == sub.slug %}selected{% endif %}">
-                                <a href="{{ sub.get_absolute_url }}"> <span  class="subcatagorya-element" >{{ sub.name }} </span> </a>
+                                <a href="{{ sub.get_absolute_url }}"> <span  class="subcatagory-element" >{{ sub.name }} </span> </a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -87,8 +84,8 @@ h1,h2{
         <h1>
             {% if category %}
                 {{ category.name }}
-            {% elif products%}
-              {% if shop %}
+            {% elif products and not search%}
+              {% if shop  %}
               {% blocktranslate with shop_name=shop.shopName %}
                Products from {{shop_name}} 
                {%endblocktranslate%}
@@ -98,8 +95,9 @@ h1,h2{
             {% endif %}
         </h1>
     {% if products %}
+    <div id="products-container" >
         {% for product in products %}
-            <div class="item">
+            <div class="product-item" data-date="{{ product.created|date:'Y-m-d H:i:s' }}" data-price="{{ product.price }}" data-name="{{ product.name }}">
                 <a href="{{ product.get_absolute_url }}">
                   <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="200" height="200">
                 </a>
@@ -107,12 +105,15 @@ h1,h2{
                 
                 <br>
                 {{ product.price }} {%translate 'Birr'%}
+                
                 <br>
                 {%translate 'from'%} <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
             </div>
        {% endfor %}
+
+       </div>
     {% else %}
-        <h2 class="noproduct"> {% if noproduct%}  {% translate 'Dear'%} <strong>{{user.username}}: </strong>{{noproduct}} {% else %}  {%translate 'No products avaliable'%} {% endif %}</h2>
+        <h2 class="noproduct"> {% if noproduct%}  {% translate 'Dear Customer'%} {{noproduct}} {% else %}  {%translate 'No products avaliable'%} {% endif %}</h2>
     {% endif %}
 
 </div>
@@ -128,6 +129,13 @@ h1,h2{
      </ul>
 </div>
 </div>
+
+
+
+
+
+
+
 {% endblock %}
  
 

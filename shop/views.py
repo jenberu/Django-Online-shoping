@@ -25,7 +25,7 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
                 
                  return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops}) 
             else:
-                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':_(f'There is no  {searchedProduct}  product in our shop')})
+                 return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':_('There is no  %(product)s  product in our shop')%{'product':searchedProduct}})
     else:
         products=Product.objects.filter(available=True)
     

@@ -3,33 +3,8 @@
 <html>
  <head>
  {% block style %}
-   {% endblock %}
-  <style>
-       
-
-        #header {
-             
-            height: 100px; /* Adjust the height as needed */
-            background-image: url('{% static 'img/logo.jpeg' %}');
-            background-size: cover; /* Adjust to 'contain' or 'cover' depending on your needs */
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 20px auto; /* Adjust the margin as needed */
-
-            
-        }
-     
-    </style>
-  
-  <script>
-    function hoverEffect(element, color) {
-    element.style.color = color;
-}
-  function confirmUpdateProfile() {
-    return confirm('Do you want to update your profile?');
-    }
-</script>
- <meta charset="utf-8" />
+  {% endblock %}
+   <meta charset="utf-8" />
  <title>{% block title %}{% translate "Jemberu's shop "%} {% endblock %}</title>
    <link href="{% static 'css/list.css' %}" rel="stylesheet">
   <link href="{% static 'css/base.css' %}" rel="stylesheet">
@@ -43,7 +18,6 @@
  </head>
  <body>
 <div id="header">
- <a href="/" class="logo">{% translate "Link Seller And Buyer " %}</a>
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
 {% get_language_info_list for LANGUAGES as languages %}
@@ -60,9 +34,41 @@
     {% endfor %}
   </ul>
 </div>
+{%block searchField%}
+<div class="product-search">
+ <form action="{% url 'shop:product_list' %}">
+    <div class="mb-3 inline-form">
+        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
+        <button type="submit" ><i class="fa fa-search"></i></button>
+    </div>
+</form>
+{% block product-sort  %}
 
-<nav class="navbar" style="float:right">
-        <div class="navbar-nav ms-auto" >
+<div class="product-sort">
+    <label for="sort">Sort by:</label>
+    <select name="sort" id="sort">
+        <option value="recommended">We recommended</option>
+        <option value="newest">Newest arrivals</option>
+        <option value="priceLowHigh">Price: Low to High</option>
+        <option value="priceHighLow">Price: High to Low</option>
+        <option value="nameAZ">Name: A to Z</option>
+        <option value="nameZA">Name: Z to A</option>
+    </select>
+</div>
+{% endblock %}
+</div>
+{% endblock %}
+
+
+
+
+<nav class="navbar">
+
+    <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
+
+        <div class="navbar-menu" >
+         <a href="/" class="nav-link">{% translate "Products " %}</a>
+
             {% if user.is_authenticated %}
             <a class="nav-link" href="{% url 'shop:add_shop' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "register your Business" %}</a>
              {% if user.is_staff %}
@@ -79,26 +85,33 @@
             {% verbatim %}
             <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Me</a>
             {% endverbatim %}
-            {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'logoutaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Logout</a>
-                 <div id="profile-image" style="float: right;">
-                           <a class="nav-link" href="#" onclick="return confirmUpdateProfile()" >
-                            {% if user.profile.image %}
-                                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" onclick="openModal()">
-                            {% else %}
-                                <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" onclick="openModal()">
-                            {% endif %}
-                            
-                            </a>
-                        </div>
-               
-            {% else %}
+            {% if not user.is_authenticated %}
+                 
                 <a class="nav-link" href="{% url 'loginaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Login</a>
                 <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Sign Up</a>
             {% endif %}
         </div>
     </nav>
-
+    {% if user.is_authenticated %}
+                 <div id="profile-image" style="float: right;">
+                           <a class="nav-link" href="#"  onclick="toggleDropdown(event)">
+                            {% if user.profile.image %}
+                                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
+                            {% else %}
+                                <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+                            {% endif %}
+                            
+                            </a>
+                         <div id="dropdown-menu" class="dropdown-menu">
+                         <P> </p>
+                          <a href="#" class="dropdown-item" onclick="openModal()">
+                           <i class="fas fa-user-edit"></i>Update Profile</a>
+                           <a href="{% url 'logoutaccount' %}" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i>Logout
+                           </a>
+                         </div>
+                      </div>
+               {% endif %}
  </div>
  
  
@@ -145,5 +158,8 @@
             </div>
         </div>
     </footer>
+
+  <script src="{% static 'js/base.js' %}"></script>
+
  </body>
 </html>

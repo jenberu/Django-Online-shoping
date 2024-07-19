@@ -3,56 +3,11 @@
 {% block title %}
     {{ product.name }}
 {% endblock %}
+{% block product-sort  %}
+{% endblock %}
 {% block style %}
 <style>
- .ad-container {
-            position: relative;
-            width: 300px; /* Set your desired width */
-            height: 250px; /* Set your desired height */
-            overflow: hidden;
-        }
-        .add-item {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .add-item.active {
-            display: block;
-        }
-        .ad-image {
-            width: 100%;
-            height: auto;
-        }
-.ad-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: white;
-    transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
-}
-
-.add-item.active .ad-description {
-    transform: translateY(0);
-}
-#hide-ads-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    font-size:24;
-    cursor:pointer;
-
-}
-.product-detail_advertize h1{
-    text-align:center;
-}
+ 
 </style>
 {% endblock %}
 {% block content %}
@@ -83,7 +38,7 @@
      </div>
 
 
-     {% if recommended_products %}
+{% if recommended_products %}
         <div class="recommendations">
             <h3>{% translate 'Poeple who bought this also bought' %}</h3>
             {% for p in recommended_products %}
@@ -97,78 +52,33 @@
         </div>
          {% endif %}
 </div>
- <diV class="product-detail_advertize">
-          <h1> {% 'ADVERTISEMENT' %} <h1>
-    
+<diV class="product-detail_advertize">
+ <h1> {%translate 'ADVERTISEMENT' %} <h1>
 
 {% if adds %}
    {% for ad in adds %}
-    <div class="ad-container">
-     <button id="hide-ads-btn" class="btn btn-danger" onclick="handleAddsButtonClicked()" title='hide'>X</button>
-     {%if ad.images %}
+    <div class="ad-container" id="ad-container-{{ forloop.counter }}">
+     <button class="hide-ads-btn" class="btn btn-danger" onclick="handleAddsButtonClicked({{ forloop.counter }})" title='hide'>X</button>
+     {% if ad.images %}
         {% for adimg in ad.images.all %}
             <div class="add-item" id="ad-item-{{ forloop.counter }}">
                 <a href="{% if ad.url %}{{ ad.url }}{% else %}# {% endif %}">
                     <img src="{% if adimg %}{{ adimg.image.url }}{% endif %}" class="ad-image" alt="Ad Image">
                     <div class="ad-description">{{ ad.description }}</div>
-
                 </a>
             </div>
-          {% endfor %}
-          {% endif %}
-        </div>
-    {% endfor %}
- {% else %}
-        <p>No advertisements available.</p>
-       
-  {% endif %}
+        {% endfor %}
+     {% endif %}
+    </div>
+   {% endfor %}
+ 
+ {% endif %}
 
 </diV>
-
-
 </div>
-<script>
-
-function handleAddsButtonClicked() {
-    // Get the first element with the class 'ad-container'
-    const adsContainer = document.getElementsByClassName('ad-container')[0];
+<script src="{% static 'js/productdetail.js' %}"></script>
 
 
-    if (adsContainer) {
-        // Set the display style to 'none' to hide the element
-        adsContainer.style.visibility= "hidden";
-        
-
-       
-
-    }
-}
-
- document.addEventListener('DOMContentLoaded', function() {
-        const ads = document.querySelectorAll('.add-item');
-
-        let currentIndex = 0;
-      
-          
-          // Initial display of the first ad
-
-        if (ads.length > 0) {
-            ads[0].classList.add('active');
-            setInterval(showNextAd, 3000); // Change ad every 3 seconds
-        }
-
-
-        function showNextAd() {
-            ads[currentIndex].classList.remove('active');
-
-            currentIndex = (currentIndex + 1) % ads.length;
-            ads[currentIndex].classList.add('active');
-
-        }
-
-       
-    });
-</script>
 
 
 {% endblock %}
