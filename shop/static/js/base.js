@@ -39,7 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         productsContainer.innerHTML = '';
         sortedProducts.forEach(product => productsContainer.appendChild(product));
     }
+
+  
+
+
 });
+
+
+
+
+
+
+
 
 
 function hoverEffect(element, color) {
@@ -85,3 +96,20 @@ function hoverEffect(element, color) {
     document.getElementById('profileModal').style.display = 'none';
 }
   
+
+function filterByShop() {
+    const selectElement = document.getElementById('filter');
+    const selectedValue = selectElement.value;
+    const productsContainer = document.getElementById('products-container'); 
+    const products = Array.from(productsContainer.getElementsByClassName('product-item'));
+    products.forEach(product => {
+        const productShopName = product.dataset.shopname;
+        let isVisible = true;
+        if (selectedValue !== 'all') {
+            isVisible = productShopName === selectedValue;
+        }
+        product.style.display = isVisible ? '' : 'none';
+    });
+
+    
+}

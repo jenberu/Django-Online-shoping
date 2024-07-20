@@ -48,7 +48,7 @@
 
 <div class="product-sort">
     <label for="sort">Sort by:</label>
-    <select name="sort" id="sort">
+    <select name="sort" id="sort" >
         <option value="recommended">We recommended</option>
         <option value="newest">Newest arrivals</option>
         <option value="priceLowHigh">Price: Low to High</option>
@@ -66,7 +66,7 @@
 {% block shop-filter %}
 <div class="product-filter">
     <label for="filter">Filter by Shop:</label>
-    <select name="filter" id="filter">
+    <select name="filter" id="filter" onchange="filterByShop()">
     <option value="all">All</option>
 
      {% for sh in shops %} 

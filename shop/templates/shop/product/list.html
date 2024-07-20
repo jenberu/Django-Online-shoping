@@ -100,7 +100,7 @@ h1,h2{
     {% if products %}
     <div id="products-container">
       {% for product in products %}
-      <div class="product-item" data-date="{{ product.created|date:'Y-m-d H:i:s' }}" data-price="{{ product.price }}" data-name="{{ product.name }}">
+      <div class="product-item" data-date="{{ product.created|date:'Y-m-d H:i:s' }}" data-price="{{ product.price }}" data-name="{{ product.name }}" data-shopname="{{ product.shop.shopName }}">
         <a href="{{ product.get_absolute_url }}">
           <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="200" height="200">
         </a>
