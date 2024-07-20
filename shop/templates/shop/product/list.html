@@ -51,91 +51,84 @@ h1,h2{
 {% endblock %}
 
 
-   
 {% block content %}
-
 <div class="body-content">
- <div id="sidebar">
-        <h3>{% translate 'Categories'%} </h3>
-        <ul>
-       
-        {% for c in categories %}
-            <li class="category-item {% if category and category.slug == c.slug %}selected{% endif %}">
-                <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                
-                {% if c.has_sub_catagory %}
-                    <ul class="subcategories">
-                        {% for sub in c.subcategories.all %}
-                            <li class=" {% if subcategory and subcategory.slug == sub.slug %}selected{% endif %}">
-                                <a href="{{ sub.get_absolute_url }}"> <span  class="subcatagory-element" >{{ sub.name }} </span> </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endfor %}
+
+  <button class="sidebar-toggler" onclick="toggleSidebar()" title="category">☰</button>
+
+  <div id="sidebar">
+
+ <div class="sidebar-menu" >
+    <h3>{% translate 'Categories'%} </h3>
+    <ul>
+      {% for c in categories %}
+      <li class="category-item {% if category and category.slug == c.slug %}selected{% endif %}">
+        <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        {% if c.has_sub_catagory %}
+        <ul class="subcategories">
+          {% for sub in c.subcategories.all %}
+          <li class=" {% if subcategory and subcategory.slug == sub.slug %}selected{% endif %}">
+            <a href="{{ sub.get_absolute_url }}">
+              <span class="subcatagory-element">{{ sub.name }} </span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </li>
+      {% endfor %}
     </ul>
+  </div>
 </div>
-
- <div id="main" class="product-list">
+  <div id="main" class="product-list">
     {% if search %}
-    <h1> {%translate 'Search Result'%}</h1>
+    <h1> {% translate 'Search Result'%}</h1>
     {% endif %}
-        <h1>
-            {% if category %}
-                {{ category.name }}
-            {% elif products and not search%}
-              {% if shop  %}
-              {% blocktranslate with shop_name=shop.shopName %}
-               Products from {{shop_name}} 
-               {%endblocktranslate%}
-                  {% else %}
-                       {% translate "Products from All registered shops" %}
-                        {% endif %}             
-            {% endif %}
-        </h1>
+    <h1>
+      {% if category %}
+      {{ category.name }}
+      {% elif products and not search%}
+      {% if shop %}
+      {% blocktranslate with shop_name=shop.shopName %}
+      Products from {{shop_name}}
+      {% endblocktranslate%}
+      {% else %}
+      {% translate "Products from All registered shops" %}
+      {% endif %}
+      {% endif %}
+    </h1>
     {% if products %}
-    <div id="products-container" >
-        {% for product in products %}
-            <div class="product-item" data-date="{{ product.created|date:'Y-m-d H:i:s' }}" data-price="{{ product.price }}" data-name="{{ product.name }}">
-                <a href="{{ product.get_absolute_url }}">
-                  <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="200" height="200">
-                </a>
-                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                
-                <br>
-                {{ product.price }} {%translate 'Birr'%}
-                
-                <br>
-                {%translate 'from'%} <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
-            </div>
-       {% endfor %}
-
-       </div>
+    <div id="products-container">
+      {% for product in products %}
+      <div class="product-item" data-date="{{ product.created|date:'Y-m-d H:i:s' }}" data-price="{{ product.price }}" data-name="{{ product.name }}">
+        <a href="{{ product.get_absolute_url }}">
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width="200" height="200">
+        </a>
+        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        <br>
+        {{ product.price }} {%translate 'Birr'%}
+        <br>
+        {%translate 'from'%} <a href="{% url 'shop:product_list_for_shop' product.shop.id %}">{{product.shop}}</a>
+      </div>
+      {% endfor %}
+    </div>
     {% else %}
-        <h2 class="noproduct"> {% if noproduct%}  {% translate 'Dear Customer'%} {{noproduct}} {% else %}  {%translate 'No products avaliable'%} {% endif %}</h2>
+    <h2 class="noproduct"> {% if noproduct%} {% translate 'Dear Customer'%} {{noproduct}} {% else %} {%translate 'No products available'%} {% endif %}</h2>
     {% endif %}
+  </div>
 
-</div>
-<div id="right-bar">
+  <div id="right-bar">
     <h3> {%translate 'Registered Shops' %}</h3>
-     <ul>
-     {% for sh in shops %} 
-     <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>
-     <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> from  {{sh.adress}}
-     
-     </li>
-     {% endfor %}
-     </ul>
+    <ul>
+      {% for sh in shops %}
+      <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>
+        <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> from {{sh.adress}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
-</div>
-
-
-
-
-
-
-
 {% endblock %}
+
  
 

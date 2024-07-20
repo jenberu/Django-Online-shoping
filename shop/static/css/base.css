@@ -218,6 +218,18 @@ ul.errorlist {
 .product-sort #sort{
   border: none;
 }
+.product-filter{
+  position: absolute;
+  right: 20%;
+  bottom: 30px;
+}
+.product-filter #filter{
+  border: none;
+}
+.product-filter label{
+  font-size: 20px;
+
+}
 #subheader .cart {
   float: right;
   padding-top: 4px;
@@ -228,7 +240,12 @@ ul.errorlist {
   overflow: auto;
 }
 
-#sidebar {
+#sidebar{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#sidebar .sidebar-menu {
   width: 200px;
   padding: 0 20px 0 0;
   float: left;
@@ -240,7 +257,7 @@ ul.errorlist {
 
 }
 
-#sidebar ul {
+#sidebar .sidebar-menu ul {
   border: 1px solid gray;
   margin: 0;
   padding: 0;
@@ -249,7 +266,7 @@ ul.errorlist {
 
 
 }
-#sidebar h3{
+#sidebar .sidebar-menu h3{
 background-color: green;
 color: white;
 padding-left: 5px;
@@ -261,7 +278,7 @@ border-bottom: 1px solid gray;
 
 }
 
-#sidebar ul li {
+#sidebar .sidebar-menu ul li {
   margin: 0;
   list-style: none;
   padding: 10px 14px;
@@ -269,7 +286,7 @@ border-bottom: 1px solid gray;
 
 }
 
-#sidebar ul li a {
+#sidebar .sidebar-menu ul li a {
   display: block;
 
 }
@@ -288,7 +305,10 @@ border-bottom: 1px solid gray;
   width: 80%;
   overflow: auto;
 }
-
+.product-list #products-container{
+  width:100%;
+  background-color: #ce1c1c;
+}
 .product-list  .product-item {
   width: 20%;
   padding: 10px 40px 10px 0;
@@ -613,12 +633,12 @@ footer {
 
 .navbar-menu {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .nav-link {
 
-  line-height: 40px;
+  line-height: 20px;
   margin-right: 1.5rem;
   font-size: medium;
 }
@@ -638,11 +658,8 @@ footer {
 }
 
 /* Hide Navbar Menu by Default on Small Screens */
-.navbar-menu {
-  display: flex;
-}
 
-.navbar-toggler {
+.navbar-toggler{
   display: none;
   background: none;
   border: none;
@@ -650,41 +667,17 @@ footer {
   font-size: 24px;
   cursor: pointer;
 }
-
+.sidebar-toggler{
+  display: none;
+  background:none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  
+}
 /* Media Queries for Responsive Design */
 
 /* Mobile Devices */
-@media (max-width: 768px) {
-  .navbar-menu {
-    display: none; /* Hide menu by default */
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #333;
-    z-index: 1;
-  }
-
-  .navbar-menu.active {
-    display: flex; /* Show menu when active */
-  }
-
-  .nav-link {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .navbar-toggler {
-    display: block;
-  }
-}
-
-
-
-
-
-
 #profile-image {
   float: right;
   position: absolute;

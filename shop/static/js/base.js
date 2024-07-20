@@ -53,6 +53,11 @@ function hoverEffect(element, color) {
       const menu = document.querySelector('.navbar-menu');
       menu.classList.toggle('active');
     }
+    function toggleSidebar() {
+        const menu = document.querySelector('.sidebar-menu');
+        menu.classList.toggle('active');
+      }
+
 
     function toggleDropdown(event) {
     event.preventDefault();
@@ -78,4 +83,5 @@ function hoverEffect(element, color) {
 
   function closeModal() {
     document.getElementById('profileModal').style.display = 'none';
-  }
+}
+  
