@@ -10,14 +10,14 @@ from orders.models import OrderItem,Order
 from .recommender import Recommender
 from news.models import Advertisment,AddsImage
 from django.utils.translation import gettext_lazy as _
-
-
+from news.tasks import Task
 def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     category=None
     subcategory = None
     shop=None
     searchedProduct=request.GET.get('searchProduct')
     categories=Category.objects.all()
+   
     shops=Shop.objects.filter(is_active=True)
     if searchedProduct:
             products=Product.objects.filter(available=True ,name__icontains=searchedProduct)
@@ -45,6 +45,8 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
 
 def product_detail(request,id,slug):
     product=get_object_or_404(Product,id=id,slug=slug,available=True) 
+    task=Task()
+    task.deactivate_adds()
     adds=Advertisment.objects.filter(active=True)
     cart_product_form = CartAddProductForm()
     recommender=Recommender()

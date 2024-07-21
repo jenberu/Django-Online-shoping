@@ -18,7 +18,7 @@
     <!-- Responsive meta tag -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
- <body>
+<body>
 <div id="header">
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
@@ -36,45 +36,8 @@
     {% endfor %}
   </ul>
 </div>
-{%block searchField%}
-<div class="product-search">
- <form action="{% url 'shop:product_list' %}">
-    <div class="mb-3 inline-form">
-        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
-        <button type="submit" ><i class="fa fa-search"></i></button>
-    </div>
-</form>
-{% block product-sort  %}
-
-<div class="product-sort">
-    <label for="sort">Sort by:</label>
-    <select name="sort" id="sort" >
-        <option value="recommended">We recommended</option>
-        <option value="newest">Newest arrivals</option>
-        <option value="priceLowHigh">Price: Low to High</option>
-        <option value="priceHighLow">Price: High to Low</option>
-        <option value="nameAZ">Name: A to Z</option>
-        <option value="nameZA">Name: Z to A</option>
-    </select>
-</div>
-{% endblock %}
-
-</div>
-{% endblock %}
 
 
-{% block shop-filter %}
-<div class="product-filter">
-    <label for="filter">Filter by Shop:</label>
-    <select name="filter" id="filter" onchange="filterByShop()">
-    <option value="all">All</option>
-
-     {% for sh in shops %} 
-      <option value="{{sh.shopName}}">{{sh.shopName}}</option>
-      {% endfor %}
-      </select>
-</div>
-{% endblock %}
 
 <nav class="navbar">
 
@@ -119,22 +82,58 @@
                          <div id="dropdown-menu" class="dropdown-menu">
                          <P> </p>
                           <a href="#" class="dropdown-item" onclick="openModal()">
-                           <i class="fas fa-user-edit"></i>Update Profile</a>
+                           <i class="fas fa-user-edit"></i>{%translate 'Update Profile'%}</a>
                            <a href="{% url 'logoutaccount' %}" class="dropdown-item">
-                            <i class="fas fa-sign-out-alt"></i>Logout
+                            <i class="fas fa-sign-out-alt"></i>{%translate 'Logout'%}
                            </a>
                          </div>
                       </div>
                {% endif %}
  </div>
- 
- 
+ {%block searchField%}
+ <div class="product-search">
+ <form action="{% url 'shop:product_list' %}">
+    <div class="mb-3 inline-form">
+        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
+        <button type="submit" ><i class="fa fa-search"></i></button>
+    </div>
+</form>
+{% block product-sort  %}
+
+<div class="product-sort">
+    <label for="sort">{%translate 'Sort by'%}:</label>
+    <select name="sort" id="sort" >
+        <option value="recommended">{%translate 'We recommended'%}</option>
+        <option value="newest">{%translate 'Newest arrivals'%}</option>
+        <option value="priceLowHigh">{%translate 'Price: Low to High'%}</option>
+        <option value="priceHighLow">{%translate 'Price: High to Low'%}</option>
+        <option value="nameAZ">{%translate 'Name: A to Z '%}</option>
+        <option value="nameZA">{%translate 'Name: Z to A'%}</option>
+    </select>
+</div>
+{% endblock %}
+{% block shop-filter %}
+<div class="product-filter">
+    <label for="filter">{%translate 'Filter by Shop' %}:</label>
+    <select name="filter" id="filter" onchange="filterByShop()">
+    <option value="all">{%translate 'All'%}</option>
+
+     {% for sh in shops %} 
+      <option value="{{sh.shopName}}">{{sh.shopName}}</option>
+      {% endfor %}
+      </select>
+</div>
+{% endblock %}
+
+</div>
+{% endblock %}
+
+
 <div id="subheader">
 
 
  {% block cart %}
 <div class="cart">
-<a href="{% url 'payment:onwer_payment_procces' %}"> check css</a>
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
     {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">

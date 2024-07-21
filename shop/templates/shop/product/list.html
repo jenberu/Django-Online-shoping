@@ -54,11 +54,11 @@ h1,h2{
 {% block content %}
 <div class="body-content">
 
-  <button class="sidebar-toggler" onclick="toggleSidebar()" title="category">☰</button>
 
   <div id="sidebar">
+  <button class="sidebar-toggler" onclick="toggleSidebar()" title="category">☰</button>
 
- <div class="sidebar-menu" >
+<div class="sidebar-menu" >
     <h3>{% translate 'Categories'%} </h3>
     <ul>
       {% for c in categories %}
@@ -90,10 +90,10 @@ h1,h2{
       {% elif products and not search%}
       {% if shop %}
       {% blocktranslate with shop_name=shop.shopName %}
-      Products from {{shop_name}}
+     </span id="one-shop-pro"> Products from {{shop_name}}</span>
       {% endblocktranslate%}
       {% else %}
-      {% translate "Products from All registered shops" %}
+      <span id="all-pro">{% translate "Products from  All registered shops" %}</span>
       {% endif %}
       {% endif %}
     </h1>
@@ -122,7 +122,7 @@ h1,h2{
     <ul>
       {% for sh in shops %}
       <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>
-        <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> from {{sh.adress}}
+        <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> {%translate 'from'%} {{sh.adress}}
       </li>
       {% endfor %}
     </ul>

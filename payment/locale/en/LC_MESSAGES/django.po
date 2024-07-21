@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-18 20:44+0300\n"
+"POT-Creation-Date: 2024-07-20 22:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,31 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .\payment\templates\canceled.html:4
+#: .\payment\templates\canceled.html:6
 msgid "Payment canceled"
 msgstr ""
 
-#: .\payment\templates\completed.html:3
+#: .\payment\templates\completed.html:5
 msgid "Payment successful"
 msgstr ""
 
-#: .\payment\templates\completed.html:5
+#: .\payment\templates\completed.html:7
 msgid "Your payment was successful"
 msgstr ""
 
-#: .\payment\templates\completed.html:6
+#: .\payment\templates\completed.html:8
 msgid "Your payment has been processed successfully."
 msgstr ""
 
-#: .\payment\templates\payment\onwer_cancel.html:4
+#: .\payment\templates\payment\onwer_cancel.html:6
 msgid "Payment Cancelled"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_cancel.html:5
+#: .\payment\templates\payment\onwer_cancel.html:7
 msgid "Your payment was not successful. Please try again."
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:58
+#: .\payment\templates\payment\onwer_process.html:60
 #, python-format
 msgid ""
 " Dear <b>%(user_name)s</b> your Businuss is registered succussfuly, \n"
@@ -49,39 +49,39 @@ msgid ""
 "Pleace  Select a Subscription, what you Plan, to activate your businuss."
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:68
+#: .\payment\templates\payment\onwer_process.html:70
 msgid "Birr"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:72
+#: .\payment\templates\payment\onwer_process.html:74
 msgid "Monthly"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:75
+#: .\payment\templates\payment\onwer_process.html:77
 msgid "Six Months"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:78
+#: .\payment\templates\payment\onwer_process.html:80
 msgid "Yearly"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:80
+#: .\payment\templates\payment\onwer_process.html:82
 msgid "Proceed to Pay"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_success.html:4
+#: .\payment\templates\payment\onwer_success.html:6
 msgid "Payment Successful"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_success.html:5
+#: .\payment\templates\payment\onwer_success.html:7
 #, python-format
 msgid "Your shop \"%(shop_name)s\" is now active until %(valid_to)s."
 msgstr ""
 
-#: .\payment\templates\payment\process.html:5
+#: .\payment\templates\payment\process.html:6
 msgid "Pay for your order"
 msgstr ""
 
-#: .\payment\templates\payment\process.html:9
+#: .\payment\templates\payment\process.html:10
 msgid "Order summary"
 msgstr ""

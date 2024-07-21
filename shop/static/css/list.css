@@ -1,58 +1,52 @@
 .category-item {
-    position: relative;
-    padding: 10px;
-    background-color: #f8f9fa;
-    color: black;
+  position: relative;
+  padding: 10px;
+  background-color: #f8f9fa;
+  color: black;
 }
 
 .subcategories {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    width: 150px;
-
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  width: 150px;
 }
 
 .category-item:hover .subcategories {
-    display: block;
+  display: block;
 }
 
 .subcategories li {
-    padding: 10px;
-    width: 100%;
+  padding: 10px;
+  width: 100%;
 }
 .subcategories ul li.selected {
-    background:#5993bb;
-    border-radius:4px;
-    display: block;
+  background: #5993bb;
+  border-radius: 4px;
+  display: block;
 }
 .subcategories ul li.selected a {
-    color:#fff;
+  color: #fff;
 }
 
 .subcategories li a {
-    color: lightblue; /* Ensure link color is black */
-    text-decoration: none;
-    
+  color: lightblue; /* Ensure link color is black */
+  text-decoration: none;
 }
-
 
 .selected {
-    font-weight: bold;
+  font-weight: bold;
 }
-.subcatagory-element{
-   color: blue;
-   font-weight: bold;
-   font-size: medium;
+.subcatagory-element {
+  color: blue;
+  font-weight: bold;
+  font-size: medium;
 }
 
-
-.body-content{
-    display: flex;
-    height: calc(100vh - 250px); 
-
-    
+.body-content {
+  display: flex;
+  height: calc(100vh - 250px);
 }

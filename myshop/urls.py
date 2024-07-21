@@ -8,6 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 admin.site.site_header='Shop Admin'
 admin.site.index_title="Admin"
 admin.site.empty_value_display="None"
+admin.site.site_title="Shop Admin"
 
 
 

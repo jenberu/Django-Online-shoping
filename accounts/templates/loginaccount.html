@@ -14,9 +14,8 @@ form .form-control {
 .form-body{
   display: flex;
   justify-content: center;
-  align-items: center; 
   width:50%;
-  margin:0 10px;
+  margin:0 10px 10px 10px;
 }
 .form-body .form-container{
   border: 1px solid #ddd;
@@ -48,9 +47,26 @@ form .form-control {
 .login{
   display:flex;
   margin-bottom: 10px;
+  margin-top:5px;
+  height:calc(100vh - 250px);
 }
 .login_advertize{
   width:25%;
+  height:calc(100vh - 250px);
+
+}
+.login_advertize .ad-container{
+    height:150px;
+
+}
+.login_advertize .ad-container .add-item{
+    height:100%;
+
+}
+.login_advertize .ad-container .add-item img{
+    height:100%;
+    width:100%;
+
 }
 .login-left{
   width:25%;
@@ -95,8 +111,6 @@ form .form-control {
 </div>
 <diV class="login_advertize">
           <h1> {%translate 'ADVERTISEMENT' %} <h1>
-    
-
 {% if adds %}
    {% for ad in adds %}
     <div class="ad-container" id="ad-container-{{ forloop.counter }}">
@@ -119,6 +133,7 @@ form .form-control {
 
 
 </diV>
+
 </div>
 
 <script>

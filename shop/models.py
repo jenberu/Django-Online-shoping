@@ -39,8 +39,9 @@ class Shop(models.Model):
 
 
     def deactivate_shop(self):
-        self.is_active=False
-        self.save()  
+        if self.valid_to < timezone.now():
+           self.is_active=False
+           self.save()  
     def __str__(self):
         return self.shopName
 class Category(models.Model):

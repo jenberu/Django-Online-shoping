@@ -39,19 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         productsContainer.innerHTML = '';
         sortedProducts.forEach(product => productsContainer.appendChild(product));
     }
-
-  
-
-
 });
-
-
-
-
-
-
-
-
 
 function hoverEffect(element, color) {
     element.style.color = color;
@@ -102,14 +90,38 @@ function filterByShop() {
     const selectedValue = selectElement.value;
     const productsContainer = document.getElementById('products-container'); 
     const products = Array.from(productsContainer.getElementsByClassName('product-item'));
-    products.forEach(product => {
+    const oneShopPro = document.getElementById('one-shop-pro');
+    const allShopPro=document.getElementById('all-pro');
+    let anyProductVisible = false;
+       products.forEach(product => {
         const productShopName = product.dataset.shopname;
         let isVisible = true;
         if (selectedValue !== 'all') {
             isVisible = productShopName === selectedValue;
         }
         product.style.display = isVisible ? '' : 'none';
+        if (isVisible) {
+            anyProductVisible = true;
+        }
     });
+    if (anyProductVisible && oneShopPro !== null) {
+        
+        oneShopPro.innerHTML = "Products from " + selectedValue;
+    }
+
+    else if (anyProductVisible && allShopPro !== null) {
+        allShopPro.innerHTML =  "Products from " + selectedValue;
+
+    }
+    else if (!anyProductVisible && oneShopPro !== null) {
+        oneShopPro.innerHTML =  selectedValue + " have no product Yet";
+
+    }
+  
+    else if (!anyProductVisible && allShopPro !== null) {
+        allShopPro.innerHTML =  selectedValue + " have no product Yet";
+
+    }
 
     
 }

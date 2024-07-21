@@ -1,10 +1,11 @@
 from typing import Any
-from django.contrib import admin
+from django.contrib import admin,messages
 from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation
 from django.utils.html import mark_safe,format_html ,urlencode
 from .forms import ProductAdminForm
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.translation import ngettext
 
 
 admin.site.register(ShopSubscrioptionPlan)
@@ -54,17 +55,39 @@ class SubCategoryAdmin(admin.ModelAdmin):
          if db_field.name =='category':
             kwargs['queryset'] = Category.objects.filter(shop__owner=request.user)   
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
+    
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
+    actions=['deactivate_shop']
     list_display=['shopName','owner','adress','registration_date','valid_from','valid_to','is_active']  
     def save_model(self, request, obj, form, change):
         if obj.valid_to < timezone.now():
             obj.is_active=False
         super().save_model(request, obj, form, change)
+        
+    @admin.action(description="Refresh Selected Shops to Deactivate, if the subscription is expired ") 
+    def deactivate_shop(self,request,queryset):
+        for shop in queryset:
+           if shop.valid_to < timezone.now():
+               shop.is_active=False  
+               shop.save()  
+        self.message_user(
+            request,
+            #ngettext for singular and pluralization
+            ngettext(
+            "%d Shop was successfully Refreshed and expired shop is Deactivated ",
+            "%d Shops were successfully Refreshed and expired shops are Deactivated ",
+            len(queryset),
+
+            )
+            %len(queryset),
+            messages.SUCCESS,
+        )       
          
 
 @admin.register(Product)
 class PrductAdmin(admin.ModelAdmin):
+    actions=['disable_avaliablity','enable_avaliablity']
     #override the formfield_for_foreignkey method of ModelAdmin 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if not request.user.is_superuser:
@@ -113,7 +136,32 @@ class PrductAdmin(admin.ModelAdmin):
     def updated_date_time_format(self,product_obj):
         return product_obj.updated.date()
     updated_date_time_format.short_description='updated'
-
+    @admin.action(description='Disable avaliabilty for selected product')
+    def disable_avaliablity(self,request,queryset):
+        updated=queryset.update(available=False)
+        self.message_user(
+            request,
+            ngettext(
+            "%d Product was successfully Disabled it Avaliablity",
+            "%d Products were successfully  Disabled thier Avaliablity",
+            updated,
+        )
+        %updated,
+        messages.SUCCESS,
+        )
+    @admin.action(description='Enable avaliablity for selected products')    
+    def enable_avaliablity(self,request,queryset):
+        updated=queryset.update(available=True)
+        self.message_user(
+            request,
+            ngettext(
+            "%d Product was successfully Enable its Avaliablity",
+            "%d Products were successfully  Enable thier Avaliablity",
+            updated,
+        )
+        %updated,
+        messages.SUCCESS,
+        )    
     
 
 

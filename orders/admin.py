@@ -10,8 +10,8 @@ from django.template.defaultfilters import truncatechars
 class OrderItemInline(admin.TabularInline):#An inline allows you to include a model on the same edit page as its related model.
      model=OrderItem
      autocomplete_fields=['product']
-     #raw_id_fields=['product']
-     extra=1#manage the defult displayed row
+     max_num=0
+     extra=0#manage the defult displayed row
  #this action function is called when the action is tirged with 3 arguments  
  # arg 1 model admin is the current  current ModelAdmin
  # arg 2 is the current request
@@ -36,18 +36,20 @@ def export_to_csv(modeladmin,request,queryset):
                data_row.append(value)  
           writer.writerow(data_row)   
           return response  
-     export_to_csv.short_description = 'Export to CSV File'
-   
+export_to_csv.short_description = 'Export to CSV File'
+#make this action globally available as an action
+admin.site.add_action(export_to_csv)
+
 #add a link to each Order object on the list display page of the administration site
 def order_detail(obj):#obj refers to the model instance
      url = reverse('orders:admin_order_detail', args=[obj.id])
-     return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="view order detial" href="{url}">Detail</a>')#<i class="fas fa-eye"></i>
+     return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="view order detial" href="{url}"><img src="/static/admin/img/icon-viewlink.svg" alt="" width="20" height="20"></a>')#
      """Django escapes HTML output by default. 
        You have to use the mark_safe function 
        to avoid auto-escaping."""
 def order_to_pdf(obj):
       url = reverse('orders:admin_order_pdf', args=[obj.id])
-      return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="create PDF file" href="{url}">PDF</a>')#<i class="fas fa-file-pdf"></i>
+      return mark_safe(f'<a class="btn btn-sm btn-outline-success" title="create PDF file" href="{url}"><i class="fas fa-file-pdf"></i></a>')#<i class="fas fa-file-pdf"></i>
 order_to_pdf.short_description='create PDF'
 
 def update_status(obj):
@@ -65,14 +67,8 @@ def order_payment(obj):
      return ''
 order_payment.short_description='Stripe Payment'
 
-
-
-
-
 @admin.register(Order)
 class  OrderAdmin(admin.ModelAdmin):
-    actions=[export_to_csv]
-    
     list_display = [
 'id',
 'shop',
