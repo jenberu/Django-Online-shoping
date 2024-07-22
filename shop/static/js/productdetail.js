@@ -23,4 +23,5 @@ document.addEventListener('DOMContentLoaded', function() {
             setInterval(showNextAd, 3000); // Change ad every 3 seconds
         }
     });
+    
 });

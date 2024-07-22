@@ -2,6 +2,8 @@ from django import forms
 from .models import Order
 
 class OrderCreateForm(forms.ModelForm):
+
+    
     class Meta:
         model=Order
         fields = [
@@ -11,7 +13,7 @@ class OrderCreateForm(forms.ModelForm):
  'phone_number',
  'address',
  'postal_code',
- 'city'
+ 'city',
  ]
         
 class UpdateStatusForm(forms.ModelForm):

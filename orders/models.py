@@ -31,6 +31,7 @@ class Order(models.Model):
     status=models.CharField(max_length=30,choices=STATUS_CHOICE,default=STATUS_CHOICE[0])
     shop=models.ForeignKey(Shop,on_delete=models.CASCADE,related_name='shop',null=True,blank=True)
     stripe_id=models.CharField(max_length=250,blank=True)
+    delivery_date=models.DateField(blank=True,null=True)
 
 
     class Meta:

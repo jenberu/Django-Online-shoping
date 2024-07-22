@@ -392,11 +392,31 @@ option {
 
 .product-detail .product-detail_side-bar {
   width: 60%;
+  border: 1px solid hsl(252, 33%, 94%);
+
 }
+.cart-product-form{
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+}
+.cart-product-form label{
+  margin: 5px;
+
+}
+.cart-product-form .quantity{
+margin: 5px;
+border-radius: 5px;
+}
+
+
+
 .product-detail .product-detail_side-bar .price {
   color: #333;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
+  border: #007bff;
 }
 
 .product-detail h1 {
@@ -419,7 +439,17 @@ option {
   color: #333;
   border-bottom: 4px solid #5993bb;
 }
-
+#delivery_date{
+  width: 200px;
+  float: right;
+  padding: 10px;
+  background-color: #EEEFEE;
+  margin-bottom: 10px;
+  border:none;
+}
+.order-form label{
+  float: left;
+}
 .order-info h3 {
   color: #5993bb;
 }

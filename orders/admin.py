@@ -54,7 +54,7 @@ order_to_pdf.short_description='create PDF'
 
 def update_status(obj):
      url=reverse('orders:updateStatus',args=[obj.id])
-     return mark_safe(f'<a  class="btn btn-sm btn-outline-success" title="Edit status" href="{url}"> Update</a>')#<i class="fas fa-pen "></i>
+     return mark_safe(f'<a  class="btn btn-sm btn-outline-success" title="Edit status" href="{url}"> <i class="fas fa-pen "></i></a>')#<i class="fas fa-pen "></i>
 update_status.short_description='update status'
 
 
@@ -83,6 +83,7 @@ class  OrderAdmin(admin.ModelAdmin):
  'created',
  'updated',
  'status',
+ 'delivery_date',
   order_detail,#this add the above link to display on admin interface 
   order_to_pdf,
   update_status,

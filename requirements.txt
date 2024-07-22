@@ -12,3 +12,4 @@ redis
 django-rosetta
 django-parler
 django-localflavor
+django-admin-interface

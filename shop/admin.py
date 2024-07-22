@@ -60,6 +60,14 @@ class SubCategoryAdmin(admin.ModelAdmin):
 class ShopAdmin(admin.ModelAdmin):
     actions=['deactivate_shop']
     list_display=['shopName','owner','adress','registration_date','valid_from','valid_to','is_active']  
+
+    def get_actions(self,request):
+        actions=super().get_actions(request)
+        if not request.user.is_superuser:
+            if 'deactivate_shop' in actions:
+                del actions['deactivate_shop']
+        return actions        
+
     def save_model(self, request, obj, form, change):
         if obj.valid_to < timezone.now():
             obj.is_active=False
@@ -84,7 +92,7 @@ class ShopAdmin(admin.ModelAdmin):
             messages.SUCCESS,
         )       
          
-
+      
 @admin.register(Product)
 class PrductAdmin(admin.ModelAdmin):
     actions=['disable_avaliablity','enable_avaliablity']

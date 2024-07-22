@@ -17,7 +17,9 @@ def order_create(request):
         form=OrderCreateForm(request.POST)
        
         if form.is_valid():
+                delivery_date=request.POST['delivery_date']
                 order=form.save(commit=False)
+                order.delivery_date=delivery_date
                 if cart.get_shop:
                     order.shop=cart.get_shop
                 if cart.coupon:

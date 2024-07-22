@@ -1,0 +1,50 @@
+<!-- templates/admin/base_site.html -->
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}
+{% block extrahead %}
+{% endblock %}
+{% block usertools %}
+       {% if has_permission %}
+        <div id="user-tools" style="display:flex;">
+        <div class="user-tools-links" style=padding:15px;'>
+            {% block welcome-msg %}
+                {% translate 'Welcome,' %}
+                <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+            {% endblock %}
+            {% block userlinks %}
+                {% if site_url %}
+                    <a href="{{ site_url }}">{% translate 'View site' %}</a> /
+                {% endif %}
+                {% if user.is_active and user.is_staff %}
+                    {% url 'django-admindocs-docroot' as docsroot %}
+                    {% if docsroot %}
+                        <a href="{{ docsroot }}">{% translate 'Documentation' %}</a> /
+                    {% endif %}
+                {% endif %}
+                {% if user.has_usable_password %}
+                <a href="{% url 'admin:password_change' %}">{% translate 'Change password' %}</a> /
+                {% endif %}
+                <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">{% translate 'Log out' %}</button>
+                </form>
+               <span title='theme color'> {% include "admin/color_theme_toggle.html" %}  </span>
+            {% endblock %}
+            </div>
+            <div class="admin-profile">
+             {% if user.profile.image %}
+                      <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
+                    {% else %}
+                      <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+                     {% endif %}
+             </div>       
+        </div>
+        {% endif %}
+                 
+        {% endblock %}
+
