@@ -20,6 +20,7 @@ class Shop(models.Model):
     valid_from=models.DateTimeField(blank=True,null=True)
     valid_to=models.DateTimeField(blank=True,null=True)
     is_active=models.BooleanField(default=False)
+    contact_number=models.CharField(max_length=15,null=True,blank=True)
     def activate_shop(self,duration):
         self.valid_from=timezone.now()
         self.valid_to=self.valid_from + duration

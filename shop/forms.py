@@ -4,12 +4,13 @@ from .models import Shop,Product,SocialMedia
 class ShopForm(forms.ModelForm):
     class Meta:
         model=Shop
-        fields=['shopName','adress']
-        labels={'shopName':('shop Name'),'adress':('Address')}
+        fields=['shopName','adress','contact_number']
+        labels={'shopName':('shop Name'),'adress':('Address'),'contact_number':('phone number')}
         help_texts={'shopName':'enter the name of your business','adress':'enter th address where your shop found'}
         widgets = {
             'shopName': forms.TextInput(attrs={'class': 'form-input-control'}),
             'adress': forms.TextInput(attrs={'class': 'form-input-control'}),
+            'contact_number':forms.TextInput(attrs={'class': 'form-input-control'}),
            }
 class ProductAdminForm(forms.ModelForm):
      class Meta:

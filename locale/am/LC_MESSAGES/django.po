@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 18:46+0300\n"
+"POT-Creation-Date: 2024-07-23 12:18+0300\n"
 "PO-Revision-Date: 2024-07-20 22:44+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: Amharic <am@li.org>\n"
@@ -274,69 +274,69 @@ msgstr "የጀምበሩ ሱቅ"
 msgid "Language"
 msgstr "ቋንቋ"
 
-#: .\shop\templates\shop\base.html:47
+#: .\shop\templates\shop\base.html:54
 #, fuzzy
 #| msgid "Products "
 msgid "All Products "
 msgstr "ምርት "
 
-#: .\shop\templates\shop\base.html:50
+#: .\shop\templates\shop\base.html:57
 msgid "register your Business"
 msgstr "ቢዝነሰዎን ይመዝገቡ"
 
-#: .\shop\templates\shop\base.html:86 .\shop\templates\updateprofile.html:124
+#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:124
 msgid "Update Profile"
 msgstr "መገለጫዎን ይቀይሩ"
 
-#: .\shop\templates\shop\base.html:88
+#: .\shop\templates\shop\base.html:95
 msgid "Logout"
 msgstr "መውጣት"
 
-#: .\shop\templates\shop\base.html:98
+#: .\shop\templates\shop\base.html:105
 msgid "search for products"
 msgstr "ምርት ፈልግ"
 
-#: .\shop\templates\shop\base.html:105
+#: .\shop\templates\shop\base.html:112
 msgid "Sort by"
 msgstr "ቅደም ተከተል"
 
-#: .\shop\templates\shop\base.html:107
+#: .\shop\templates\shop\base.html:114
 msgid "We recommended"
 msgstr "የኛ ምርጫ"
 
-#: .\shop\templates\shop\base.html:108
+#: .\shop\templates\shop\base.html:115
 msgid "Newest arrivals"
 msgstr "አድስ የገቡ"
 
-#: .\shop\templates\shop\base.html:109
+#: .\shop\templates\shop\base.html:116
 msgid "Price: Low to High"
 msgstr "ዋጋ ከትንሽ ወደ ትልቅ"
 
-#: .\shop\templates\shop\base.html:110
+#: .\shop\templates\shop\base.html:117
 msgid "Price: High to Low"
 msgstr "ዋጋ  ከትልቅ  ወደ ትንሽ"
 
-#: .\shop\templates\shop\base.html:111
+#: .\shop\templates\shop\base.html:118
 msgid "Name: A to Z "
 msgstr "ስም A  ወደ Z"
 
-#: .\shop\templates\shop\base.html:112
+#: .\shop\templates\shop\base.html:119
 msgid "Name: Z to A"
 msgstr "ስም   Z ወደ A"
 
-#: .\shop\templates\shop\base.html:118
+#: .\shop\templates\shop\base.html:125
 msgid "Filter by Shop"
 msgstr " በሱቆች ይፈልጉ"
 
-#: .\shop\templates\shop\base.html:120
+#: .\shop\templates\shop\base.html:127
 msgid "All"
 msgstr "ሁሉንም"
 
-#: .\shop\templates\shop\base.html:140
+#: .\shop\templates\shop\base.html:147
 msgid "Your cart"
 msgstr "የእርሰዎ ዘምቢል"
 
-#: .\shop\templates\shop\base.html:143
+#: .\shop\templates\shop\base.html:150
 #, python-format
 msgid ""
 "\n"
@@ -353,7 +353,7 @@ msgstr[1] ""
 "\n"
 "%(items)s እቃዎች, %(total)s ብር"
 
-#: .\shop\templates\shop\base.html:151
+#: .\shop\templates\shop\base.html:158
 msgid "Your cart is empty."
 msgstr "የእርሰዎ ዘምቢል ባዶ ነዉ"
 
@@ -413,28 +413,120 @@ msgstr "ምርት የለም "
 msgid "Registered Shops"
 msgstr "የተመዘገቡ ሱቆች"
 
-#: .\shop\templates\shop\shops\shopform.html:113
+#: .\shop\templates\shop\shops\shopform.html:15
 #, python-format
 msgid ""
 "\n"
-"Well Come  Dear  <strong>%(user_name)s </strong> \n"
-msgstr ""
+"Well Come  Dear  <strong>%(user_name)s </strong> Fill the Follwing info and "
+"procced to next step \n"
+"to activate your Business\n"
 "\n"
-"እንኳን ደህና መጡ <strong>%(user_name)s </strong>\n"
+msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:126
+#: .\shop\templates\shop\shops\shopform.html:32
+#, fuzzy
+#| msgid "register your Business"
+msgid "How to Register Your Business"
+msgstr "ቢዝነሰዎን ይመዝገቡ"
+
+#: .\shop\templates\shop\shops\shopform.html:33
+msgid "Follow these steps to register your business successfully:"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:35
+msgid "Enter the name of your business. give short and concise name"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:36
+msgid "Provide a address ,where your Businuss Found."
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:37
+msgid "Click on the Submit button to procced for registration."
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:39
+msgid "Benefits of Registering"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:41
+#, fuzzy
+#| msgid "Dear Customer"
+msgid "Reach more customers."
+msgstr "ውድ ደንበንበኛችን"
+
+#: .\shop\templates\shop\shops\shopform.html:42
+#, fuzzy
+#| msgid "register your Business"
+msgid "Increase your sales."
+msgstr "ቢዝነሰዎን ይመዝገቡ"
+
+#: .\shop\templates\shop\shops\shopform.html:43
+msgid "Gain access to special features."
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:45
+msgid "Need Help?"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:46
+msgid "If you have any questions, feel free to contact our support team at"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:51
+msgid "FAQs"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:53
+msgid "Q: What if I don’t have a business name yet?"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:54
+msgid ""
+"A: You can register as an individual seller and update your business name "
+"later."
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:57
+msgid "Q: Can I change my business details later?"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:58
+msgid ""
+"A: Yes, you can update your business details from your Adminstration page."
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:60
+msgid "Terms and Conditions"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:61
+msgid "By registering, you agree to our"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:61
+msgid "terms and conditions"
+msgstr ""
+
+#: .\shop\templates\shop\shops\shopform.html:64
 msgid "add your Business"
 msgstr "ቢዝነሰዎን ይመዝገቡ"
 
-#: .\shop\templates\shop\shops\shopform.html:130
+#: .\shop\templates\shop\shops\shopform.html:68
 msgid "Business Name"
 msgstr "የቢዝነሱ ስም"
 
-#: .\shop\templates\shop\shops\shopform.html:134
+#: .\shop\templates\shop\shops\shopform.html:72
 msgid "Address"
 msgstr "አድራሻ"
 
-#: .\shop\templates\shop\shops\shopform.html:138
+#: .\shop\templates\shop\shops\shopform.html:76
+#, fuzzy
+#| msgid "phone number"
+msgid "Phone Number"
+msgstr "ስልክ ቁጥር"
+
+#: .\shop\templates\shop\shops\shopform.html:80
 #: .\shop\templates\updateprofile.html:161
 msgid "Submit"
 msgstr "ላክ"
@@ -468,34 +560,42 @@ msgstr "%(product)s እምባል ምርት የለም"
 msgid "one onwer should register for one shop"
 msgstr ""
 
-#: .\shop\views.py:82
+#: .\shop\views.py:81
 msgid "please enter correct data"
 msgstr "እባከዎ ትክክለኛ ዳታ ያስገቡ"
 
-#: .\shop\views.py:92
+#: .\shop\views.py:91
 msgid "Product deleted successfully"
 msgstr "በተሳካ ሁኔታ ጠፊቷል"
 
-#: .\templates\admin\base_site.html:16
+#: .\templates\admin\base_site.html:17
 #, fuzzy
 msgid "Welcome,"
 msgstr "እንኳን ደህና መጡ"
 
-#: .\templates\admin\base_site.html:21
+#: .\templates\admin\base_site.html:22
 msgid "View site"
 msgstr ""
 
-#: .\templates\admin\base_site.html:26
+#: .\templates\admin\base_site.html:27
 msgid "Documentation"
 msgstr ""
 
-#: .\templates\admin\base_site.html:30
+#: .\templates\admin\base_site.html:31
 msgid "Change password"
 msgstr ""
 
-#: .\templates\admin\base_site.html:34
+#: .\templates\admin\base_site.html:35
 msgid "Log out"
 msgstr ""
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "Well Come  Dear  <strong>%(user_name)s </strong> \n"
+#~ msgstr ""
+#~ "\n"
+#~ "እንኳን ደህና መጡ <strong>%(user_name)s </strong>\n"
 
 #~ msgid "Link Seller And Buyer "
 #~ msgstr "ሻጭ እና ገዥ"
