@@ -27,7 +27,7 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
             else:
                  return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':_('There is no  %(product)s  product in our shop')%{'product':searchedProduct}})
     else:
-        products=Product.objects.filter(available=True)
+        products=Product.objects.filter(available=True,shop__is_active=True)
     
     
     if category_slug:
@@ -75,7 +75,6 @@ def add_shop(request):
 
                except IntegrityError:
                                  return render(request,'shop/shops/shopform.html',{'form':form,'error':_('one onwer should register for one shop')})
-
 
 
           else:

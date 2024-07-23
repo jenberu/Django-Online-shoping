@@ -7,6 +7,7 @@
 {% endblock %}
 {% block style %}
 <style>
+
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -89,6 +90,18 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+.container-wrapper{
+    display:flex;
+}
+.left-container{
+    width:50%;
+    border:2px solid red;
+}
+.container{
+    width:50%;
+     border:2px solid red;
+
+}
 </style>
 {% endblock %}
 {% block searchField %}
@@ -101,13 +114,16 @@ button:hover {
 Well Come  Dear  <strong>{{user_name}} </strong> 
 {% endblocktranslate %}
  </h2>
-<h1>{%translate 'add your Business'%} </h1>
+
  {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
             {{ error }}
         </div>
     {% endif %}
+ <div class="container-wrapper">  
+ 
 <div class="container mt-4">
+<h1>{%translate 'add your Business'%} </h1>
     <form method="post">
         {% csrf_token %}
         <div class="form-group">
@@ -122,5 +138,8 @@ Well Come  Dear  <strong>{{user_name}} </strong>
             <button type="submit" class="btn btn-primary">{% translate 'Submit'%}</button>
         </div>
     </form>
+</div>
+<div class="left-container"> 
+ </div>
 </div>
 {% endblock %}

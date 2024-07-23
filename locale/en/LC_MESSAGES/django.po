@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-20 22:31+0300\n"
+"POT-Creation-Date: 2024-07-22 18:46+0300\n"
 "PO-Revision-Date: 2024-07-15 16:42+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: English <en@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\accounts\templates\loginaccount.html:97
-#: .\shop\templates\shop\product\detail.html:58
+#: .\accounts\templates\loginaccount.html:113
+#: .\shop\templates\shop\product\detail.html:60
 msgid "ADVERTISEMENT"
 msgstr ""
 
@@ -94,7 +94,7 @@ msgstr ""
 #: .\orders\templates\orders\order\create.html:23
 #: .\orders\templates\orders\order\pdf.html:29
 #: .\shop\templates\shop\product\detail.html:32
-#: .\shop\templates\shop\product\list.html:109
+#: .\shop\templates\shop\product\list.html:115
 msgid "Birr"
 msgstr ""
 
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Apply for Discount"
 msgstr ""
 
-#: .\myshop\settings.py:121
+#: .\myshop\settings.py:124
 msgid "English"
 msgstr ""
 
-#: .\myshop\settings.py:122
+#: .\myshop\settings.py:125
 msgid "Amharic"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgid ""
 "      "
 msgstr ""
 
-#: .\orders\templates\orders\order\create.html:49
+#: .\orders\templates\orders\order\create.html:50
 msgid "Place order"
 msgstr ""
 
@@ -231,13 +231,35 @@ msgstr ""
 msgid "Pending payment"
 msgstr ""
 
-#: .\orders\views.py:40
+#: .\orders\views.py:42
 msgid "please enter valid data  for all fields"
 msgstr ""
 
-#: .\orders\views.py:45
+#: .\orders\views.py:47
 msgid "your cart is empity pleace add item to checkout"
 msgstr ""
+
+#: .\shop\admin.py:127
+#, python-format
+msgid "%d Shop was successfully Refreshed and expired shop is Deactivated "
+msgid_plural ""
+"%d Shops were successfully Refreshed and expired shops are Deactivated "
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\shop\admin.py:194
+#, python-format
+msgid "%d Product was successfully Disabled it Avaliablity"
+msgid_plural "%d Products were successfully  Disabled thier Avaliablity"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\shop\admin.py:207
+#, python-format
+msgid "%d Product was successfully Enable its Avaliablity"
+msgid_plural "%d Products were successfully  Enable thier Avaliablity"
+msgstr[0] ""
+msgstr[1] ""
 
 #: .\shop\templates\shop\base.html:8
 msgid "Jemberu's shop "
@@ -248,66 +270,66 @@ msgid "Language"
 msgstr ""
 
 #: .\shop\templates\shop\base.html:47
-msgid "Products "
+msgid "All Products "
 msgstr ""
 
 #: .\shop\templates\shop\base.html:50
 msgid "register your Business"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:85 .\shop\templates\updateprofile.html:124
+#: .\shop\templates\shop\base.html:86 .\shop\templates\updateprofile.html:124
 msgid "Update Profile"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:87
+#: .\shop\templates\shop\base.html:88
 msgid "Logout"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:97
+#: .\shop\templates\shop\base.html:98
 msgid "search for products"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:104
+#: .\shop\templates\shop\base.html:105
 msgid "Sort by"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:106
+#: .\shop\templates\shop\base.html:107
 msgid "We recommended"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:107
+#: .\shop\templates\shop\base.html:108
 msgid "Newest arrivals"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:108
+#: .\shop\templates\shop\base.html:109
 msgid "Price: Low to High"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:109
+#: .\shop\templates\shop\base.html:110
 msgid "Price: High to Low"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:110
+#: .\shop\templates\shop\base.html:111
 msgid "Name: A to Z "
 msgstr ""
 
-#: .\shop\templates\shop\base.html:111
+#: .\shop\templates\shop\base.html:112
 msgid "Name: Z to A"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:117
+#: .\shop\templates\shop\base.html:118
 msgid "Filter by Shop"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:119
+#: .\shop\templates\shop\base.html:120
 msgid "All"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:139
+#: .\shop\templates\shop\base.html:140
 msgid "Your cart"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:142
+#: .\shop\templates\shop\base.html:143
 #, python-format
 msgid ""
 "\n"
@@ -320,7 +342,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\templates\shop\base.html:150
+#: .\shop\templates\shop\base.html:151
 msgid "Your cart is empty."
 msgstr ""
 
@@ -329,11 +351,11 @@ msgstr ""
 msgid " Dear Customer, Welcome to <strong>%(shopname)s</strong>"
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:36
+#: .\shop\templates\shop\product\detail.html:37
 msgid "Add to cart"
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:45
+#: .\shop\templates\shop\product\detail.html:47
 msgid "Poeple who bought this also bought"
 msgstr ""
 
@@ -341,15 +363,15 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:62
+#: .\shop\templates\shop\product\list.html:68
 msgid "Categories"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:85
+#: .\shop\templates\shop\product\list.html:91
 msgid "Search Result"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:92
+#: .\shop\templates\shop\product\list.html:98
 #, python-format
 msgid ""
 "\n"
@@ -357,47 +379,47 @@ msgid ""
 "      "
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:96
+#: .\shop\templates\shop\product\list.html:102
 msgid "Products from  All registered shops"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:111
-#: .\shop\templates\shop\product\list.html:125
+#: .\shop\templates\shop\product\list.html:117
+#: .\shop\templates\shop\product\list.html:131
 msgid "from"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:116
+#: .\shop\templates\shop\product\list.html:122
 msgid "Dear Customer"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:116
+#: .\shop\templates\shop\product\list.html:122
 msgid "No products available"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:121
+#: .\shop\templates\shop\product\list.html:127
 msgid "Registered Shops"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:100
+#: .\shop\templates\shop\shops\shopform.html:113
 #, python-format
 msgid ""
 "\n"
 "Well Come  Dear  <strong>%(user_name)s </strong> \n"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:104
+#: .\shop\templates\shop\shops\shopform.html:126
 msgid "add your Business"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:114
+#: .\shop\templates\shop\shops\shopform.html:130
 msgid "Business Name"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:118
+#: .\shop\templates\shop\shops\shopform.html:134
 msgid "Address"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:122
+#: .\shop\templates\shop\shops\shopform.html:138
 #: .\shop\templates\updateprofile.html:161
 msgid "Submit"
 msgstr ""
@@ -427,14 +449,34 @@ msgstr ""
 msgid "There is no  %(product)s  product in our shop"
 msgstr ""
 
-#: .\shop\views.py:75
+#: .\shop\views.py:77
 msgid "one onwer should register for one shop"
 msgstr ""
 
-#: .\shop\views.py:80
+#: .\shop\views.py:82
 msgid "please enter correct data"
 msgstr ""
 
-#: .\shop\views.py:90
+#: .\shop\views.py:92
 msgid "Product deleted successfully"
+msgstr ""
+
+#: .\templates\admin\base_site.html:16
+msgid "Welcome,"
+msgstr ""
+
+#: .\templates\admin\base_site.html:21
+msgid "View site"
+msgstr ""
+
+#: .\templates\admin\base_site.html:26
+msgid "Documentation"
+msgstr ""
+
+#: .\templates\admin\base_site.html:30
+msgid "Change password"
+msgstr ""
+
+#: .\templates\admin\base_site.html:34
+msgid "Log out"
 msgstr ""

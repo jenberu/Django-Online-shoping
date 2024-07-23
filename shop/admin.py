@@ -1,8 +1,10 @@
 from typing import Any
 from django.contrib import admin,messages
-from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation
+from django.db.models.query import QuerySet
+from django.http import HttpRequest
+from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation,SocialMedia
 from django.utils.html import mark_safe,format_html ,urlencode
-from .forms import ProductAdminForm
+from .forms import ProductAdminForm,SocialMediaForm
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import ngettext
@@ -55,9 +57,40 @@ class SubCategoryAdmin(admin.ModelAdmin):
          if db_field.name =='category':
             kwargs['queryset'] = Category.objects.filter(shop__owner=request.user)   
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+@admin.register(SocialMedia)
+class SocialMedaiAdmin(admin.ModelAdmin):
+    form = SocialMediaForm
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if not request.user.is_superuser:
+            if db_field.name == 'shop':
+                kwargs['queryset'] = Shop.objects.filter(owner=request.user)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
     
+class SocialMediaInline(admin.TabularInline):
+    model=SocialMedia
+    extra=1
+    def get_queryset(self, request):
+        qs=super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(shop__owner=request.user)
+    def has_change_permission(self, request, obj= None):
+        if request.user.is_superuser:
+            return True
+        if obj:#obj referse to the related object which is shop
+           return request.user == obj.owner
+        return super().has_change_permission(request, obj)
+    def has_add_permission(self, request,obj=None):
+       if request.user.is_superuser:
+            return True
+       if obj and obj.owner == request.user:
+            return True
+       return False
 @admin.register(Shop)
 class ShopAdmin(admin.ModelAdmin):
+    inlines=[SocialMediaInline]
     actions=['deactivate_shop']
     list_display=['shopName','owner','adress','registration_date','valid_from','valid_to','is_active']  
 
@@ -72,6 +105,14 @@ class ShopAdmin(admin.ModelAdmin):
         if obj.valid_to < timezone.now():
             obj.is_active=False
         super().save_model(request, obj, form, change)
+    def get_queryset(self, request):
+         qs= super().get_queryset(request) 
+         if request.user.is_superuser:
+             return qs
+         return qs.filter(owner=request.user)
+
+         
+   
         
     @admin.action(description="Refresh Selected Shops to Deactivate, if the subscription is expired ") 
     def deactivate_shop(self,request,queryset):

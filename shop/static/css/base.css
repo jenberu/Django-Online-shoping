@@ -153,7 +153,11 @@ ul.errorlist {
   color: #007bff;
   text-decoration: none;
 }
-
+#header .site-logo{
+  position: absolute;
+  top:5px;
+  left: 200px;
+}
 /* Product Search Styles */
 .product-search {
   flex: 1;

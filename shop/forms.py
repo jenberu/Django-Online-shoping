@@ -1,5 +1,5 @@
 from django import forms
-from .models import Shop,Product
+from .models import Shop,Product,SocialMedia
 
 class ShopForm(forms.ModelForm):
     class Meta:
@@ -21,3 +21,15 @@ class ProductAdminForm(forms.ModelForm):
         super(ProductAdminForm, self).__init__(*args, **kwargs)
         if user:
             self.fields['shop'].queryset = Shop.objects.filter(owner=user)
+class SocialMediaForm(forms.ModelForm):
+    class Meta:
+        model=SocialMedia        
+        fields=['shop','facebook_url','twitter_url','instagram_url','telegram_url']
+        widgets = {
+            'shop': forms.Select(attrs={'class': 'form-control'}),
+            'facebook_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'if you have'}),
+            'twitter_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'if you have'}),
+            'instagram_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'if you have'}),
+            'telegram_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'if you have'}),
+        }
+

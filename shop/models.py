@@ -20,7 +20,6 @@ class Shop(models.Model):
     valid_from=models.DateTimeField(blank=True,null=True)
     valid_to=models.DateTimeField(blank=True,null=True)
     is_active=models.BooleanField(default=False)
-
     def activate_shop(self,duration):
         self.valid_from=timezone.now()
         self.valid_to=self.valid_from + duration
@@ -44,6 +43,12 @@ class Shop(models.Model):
            self.save()  
     def __str__(self):
         return self.shopName
+class SocialMedia(models.Model):
+    shop=models.OneToOneField(Shop,on_delete=models.CASCADE,related_name='social_media')   
+    facebook_url=models.URLField(blank=True,null=True)
+    twitter_url = models.URLField(blank=True, null=True)
+    instagram_url = models.URLField(blank=True, null=True)
+    telegram_url=models.URLField(blank=True, null=True) 
 class Category(models.Model):
     shop = models.ForeignKey(Shop, related_name='categories', on_delete=models.CASCADE,null=True,blank=True)
     name=models.CharField(max_length=200)

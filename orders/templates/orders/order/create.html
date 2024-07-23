@@ -46,8 +46,7 @@
 <div class="order-form">    
  <form method="post" class="order-form">
  {{ form.as_p }}
- <label for="delivery_date">Delivery Date</label>
-   <input type="date" class="form-control" id="delivery_date" name="delivery_date" placeholder="Select a date">
+ 
  <p><input type="submit" value="{%translate 'Place order' %}"></p>
  {% csrf_token %}
  </form>
