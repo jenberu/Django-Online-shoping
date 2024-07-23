@@ -4,12 +4,33 @@
 
 {% block extrastyle %}
   {{ block.super }}
+  <link rel="stylesheet" href="{% static 'css/admin.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 {% endblock %}
 {% block extrahead %}
-wellcome
 {% endblock %}
+
+
 {% block usertools %}
+<div class="shop-info-wrapper">
+ <div><p> Your Shop Info</p></div>
+ <div class="shop-info" >
+
+ {% for shop in request.user.shop.all%}
+{% if  shop.get_expiration_date  %}
+<div class="shop" >
+<div class="shop-name"><strong>{{ shop.shopName }}</div></strong>
+  {% if shop.get_expiration_date > 0 %}
+ <div class="date-info">{{shop.get_expiration_date}} days left</div>
+ {% else %}
+<div style="background-color:red; width:auto;" class=" date-info">expired</div>
+<a href="{% url 'shop:activate_shop' shop.id %}"> activate</a>
+{% endif %}
+</div>
+{% endif %}
+{% endfor %}
+</div>
+</div>
        {% if has_permission %}
         <div id="user-tools" style="display:flex;">
         <div class="user-tools-links" style=padding:15px;'>
@@ -46,6 +67,7 @@ wellcome
              </div>       
         </div>
         {% endif %}
-                 
+               
         {% endblock %}
 
+  

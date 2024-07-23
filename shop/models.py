@@ -33,7 +33,8 @@ class Shop(models.Model):
       
         group, created = Group.objects.get_or_create(name='shoponwer')
         if not created:
-            self.owner.groups.add(group)
+            if not self.owner.groups.filter(name='shoponwer').exists():
+                self.owner.groups.add(group)
         else:
             self.owner.groups.add(created)
 
@@ -44,6 +45,12 @@ class Shop(models.Model):
            self.save()  
     def __str__(self):
         return self.shopName
+    def get_expiration_date(self):
+        if self.valid_to:
+            left_time = self.valid_to - timezone.now()
+            if left_time.days < 30:
+               return left_time.days
+        return None
 class SocialMedia(models.Model):
     shop=models.OneToOneField(Shop,on_delete=models.CASCADE,related_name='social_media')   
     facebook_url=models.URLField(blank=True,null=True)

@@ -79,6 +79,11 @@ def add_shop(request):
 
           else:
              return render(request,'shop/shops/shopform.html',{'form':form,'error':_('please enter correct data')})
+
+def activate_shop(request,shop_id):
+        request.session['shop_id']=shop_id
+        return redirect('payment:onwer_payment_procces')
+      
 def product_list_for_shop_owner(request):
       user=get_object_or_404(User,username=request.user.username)
       shop=Shop.objects.get(owner=user,is_active=True)

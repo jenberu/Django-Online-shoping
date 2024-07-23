@@ -1,0 +1,38 @@
+.shop-info-wrapper{
+    display: flex;
+}
+.shop-info-wrapper .shop-info{
+    width: auto;
+    display: flex;
+    padding: 10px;
+}
+.shop-info-wrapper .shop-info .shop{
+    width:auto; 
+    border-right:1px solid #ddd6d6c5; 
+    padding:5px;
+}
+@keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-1px, -1px);
+    }
+    40% {
+        transform: translate(-1px, 1px);
+    }
+    60% {
+        transform: translate(1px, 1px);
+    }
+    80% {
+        transform: translate(1px, -1px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.date-info {
+    display: inline-block; /* Ensure the element is inline-block to support transform */
+    animation: vibrate 2s linear infinite;
+}
