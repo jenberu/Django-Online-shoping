@@ -138,9 +138,9 @@
 
 
 <div id="subheader">
-
-
- {% block cart %}
+{% block shop-info %}
+ {%endblock%}
+{% block cart %}
 <div class="cart">
  {% with total_items=cart|length %}
    {% if total_items > 0 and user.is_authenticated %}
@@ -161,6 +161,8 @@
  </div>
 {% endblock %}
  </div>
+
+
  <div id="content">
  {% block content %}
  {% endblock %}

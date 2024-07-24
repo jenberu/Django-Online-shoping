@@ -12,6 +12,34 @@
  
 </style>
 {% endblock %}
+
+{% block shop-info %}
+{% with shop=product.shop %}
+ <div class="shop-info-wrapper">
+
+ {% if shop.social_media %}
+{% translate 'Thank you for choice us, for more info contact us with' %}:&nbsp &nbsp 
+ <div class="shop-info">
+{% if shop.social_media.facebook_url%}
+<a href="{{shop.social_media.facebook_url}}" target="_blank"><i class="fab fa-facebook-f" title="Facbook"></i></a> &nbsp 
+{% endif %}
+
+{% if shop.social_media.telegram_url%}
+<a href="{{ shop.social_media.telegram_url}}" target="_blank"><i class="fab fa-telegram-plane" title="Telegram"></i></a>&nbsp 
+{% endif %}
+
+{% if shop.social_media.twitter_url%}
+<a href="{{shop.social_media.twitter_url}}" target="_blank"><i class="fab fa-twitter" title="Twitter"></i></a>&nbsp 
+{% endif %}
+{% if shop.social_media.instagram_url%}
+<a href="{{shop.social_media.instagram_url}}" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a> </div>
+{% endif%}
+ </div>
+ {% endif %}
+ </div>
+ {% endwith %}
+ {% endblock %}
+
 {% block content %}
 <div class="product-detail-wrapper" >
  <div class="product-detail">

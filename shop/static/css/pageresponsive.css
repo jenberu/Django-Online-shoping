@@ -40,6 +40,30 @@
   .product-detail {
     width: 100%;
   }
+  .shop-order-info{
+    clear: both;
+    width: 100%;
+  }
+  .order-form {
+    width: 50%;
+    margin:10px;
+  }
+  .order-info{
+    width: 30%;
+    padding: 10px;
+  }
+  .order-rapper{
+    padding: auto;
+  }
+  .order-info_body{
+    width: 100%;
+
+  }
+  .order-info_image img{
+    width: 50px;
+    height: 50px;
+
+  }
 }
 /* For tablets and mobile devices */
 @media screen and (max-width: 768px) {

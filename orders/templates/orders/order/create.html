@@ -6,8 +6,9 @@
 {% block shop-filter %}
 {% endblock %}
 {% block content %}
- <h1> {%translate 'please fill the following form to place an order'%}  </h1>
+<div class="order-rapper">
  <div class="order-info">
+ 
  <h3>{% translate "Your order" %}</h3>
      <ul>
     {% for item in cart %}
@@ -36,14 +37,16 @@
   {% endif %}
    </ul>
    <p>{%translate 'Total'%}: {{ cart.get_total_price_after_discount|floatformat:2 }} {{birr}}</p>
- </div>
+</div>
    {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
            {{ error }}  
 
         </div>
     {% endif %}
-<div class="order-form">    
+<div class="order-form">   
+ <h3> {%translate 'fill the following form to place an order'%}  </h3>
+
  <form method="post" class="order-form">
  {{ form.as_p }}
  
@@ -51,5 +54,36 @@
  {% csrf_token %}
  </form>
  </div>
- 
+    <div class="shop-order-info">
+        <h3>{% translate "Shop Information" %}</h3>
+        <strong>{% translate "Contact Information" %}:</strong></p>
+        <p>{% translate "Phone" %}: {{cart.get_shop.contact_number}}</p>
+        <p>{% translate "Email" %}: shop@gmail.com</p>
+<div class="social-mida">     
+ {% with shop=cart.get_shop %}        
+{% if shop.social_media.facebook_url%}
+<a  href="{{shop.social_media.facebook_url}}" target="_blank"><i class="fab fa-facebook-f" title="Facbook"></i></a> &nbsp 
+{% endif %}
+{% if shop.social_media.telegram_url%}
+<a href="{{ shop.social_media.telegram_url}}" target="_blank"><i class="fab fa-telegram-plane" title="Telegram"></i></a>&nbsp 
+{% endif %}
+{% if shop.social_media.twitter_url%}
+<a href="{{shop.social_media.twitter_url}}" target="_blank"><i class="fab fa-twitter" title="Twitter"></i></a>&nbsp 
+{% endif %}
+{% if shop.social_media.instagram_url%}
+<a href="{{shop.social_media.instagram_url}}" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a> </div>
+{% endif%}
+{% endwith %}
+ </div>
+        <p><strong>{% translate "Estimated Delivery Time" %}:</strong></p>
+        <p>{% translate "The time that you have specified in Delvery date field" %}</p>
+        <p><strong>{% translate "Customer Support" %}:</strong></p>
+        <p>{% translate "If you have any questions, please contact our support team." %}</p>
+
+        <p><strong>{% translate "Return Policy" %}:</strong></p>
+        <p>{% translate "You can return any item within 30 days of purchase." %}</p>
+        <p><strong>{% translate "Promotions" %}:</strong></p>
+        <p>{% translate "Check out our latest promotions on our homepage." %}</p>
+    </div>
+ </div>
 {% endblock %}

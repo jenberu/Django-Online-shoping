@@ -141,8 +141,8 @@ ul.errorlist {
 #subheader {
   background: #ececec;
   color: #444;
-  padding: 15px 100px;
   overflow: auto;
+  position: relative;
 }
 
 #header .logo {
@@ -237,6 +237,8 @@ option {
 #subheader .cart {
   float: right;
   padding-top: 4px;
+  margin: 15px 100px;
+ 
 }
 
 #content {
@@ -330,6 +332,19 @@ option {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   z-index: 10; /* Adds a shadow effect on hover */
 }
+.shop-info-wrapper{
+   position: absolute;
+   left:15%;
+   width:fit-content;
+   display: flex;
+   padding: 15px ;
+}
+.shop-info-wrapper .shop-info{
+  height: 100%;
+}
+
+
+
 .product-detail-wrapper {
   display: flex;
   width: 100%;
@@ -432,12 +447,24 @@ border-radius: 5px;
 }
 
 .order-form {
+  margin-left: 30px;
+  width: 30%;
   float: left;
+  color:#333;
+  font-weight: bold;
 }
-
+.order-rapper{
+  padding: 15px;
+}
+.shop-order-info{
+  float: left;
+  width: 35%;
+  margin: 0 15px;
+  color:#333
+}
 .order-info {
   float: right;
-  width: 300px;
+  width: 25%;
   background: #efefef;
   padding: 10px 20px 10px 5px;
   color: #333;
@@ -479,9 +506,7 @@ border-radius: 5px;
 .order-info .order-info_body .order-info_image {
   margin-right: 10px;
 }
-.order-form {
-  margin-left: 50px;
-}
+
 
 .neg {
   color: #dc1616;

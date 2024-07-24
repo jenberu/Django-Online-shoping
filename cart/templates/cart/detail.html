@@ -5,7 +5,7 @@
 {% block title %}
 {% translate 'Your shopping cart' %} 
 {% endblock %}
-{% block shop-filter %}
+{%block searchField%}
 {% endblock %}
 {% block style %}
 <style>
@@ -23,7 +23,7 @@
 
 
 {% block content %}
-    <h1>{% translate 'Your shopping cart at' %} <strong>{{cart.shop.shopname}}</strong></h1>
+    <h1 style="text-align:center;">{% translate 'Your shopping cart at' %} <strong>{{cart.shop.shopname}}</strong></h1>
      {% if error %}
         <div class="alert alert-danger mt-3" role="alert">
             {{ error }}
