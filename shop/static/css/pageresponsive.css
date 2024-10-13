@@ -43,6 +43,8 @@
   .shop-order-info{
     clear: both;
     width: 100%;
+    display: flex;
+
   }
   .order-form {
     width: 50%;
@@ -85,6 +87,12 @@
   .product-list h1 {
     font-size: medium;
   }
+  .shop-order-info{
+    clear: both;
+    width: 100%;
+    display: flex;
+
+  }
 }
 
 /* For smaller mobile devices */
@@ -93,9 +101,34 @@
     width: 100%;
     padding: 10px;
   }
+  .shop-order-info{
+    clear: both;
+    width: 100%;
+    display: flex;
 
+  }
   #sidebar h3,
   #right-bar h3 {
     text-align: center;
+  }
+  
+}
+@media (min-width: 768px)  and (max-width:959px){
+  .shop-order-info{
+    clear: both;
+    width: 100%;
+    display: flex;
+  }
+  #header .site-logo{
+    display: none;
+  }
+  .order-form {
+    width: 50%;
+    margin:10px;
+    border-right:1px solid red ;
+align-items: center;  }
+  .order-info{
+    width: 40%;
+    padding: 10px;
   }
 }

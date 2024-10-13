@@ -3,8 +3,12 @@
 {% block title %}
 {% translate "Checkout" %}
 {% endblock %}
-{% block shop-filter %}
-{% endblock %}
+ {%block searchField%}
+ {% endblock %}
+ {% block style %}
+  <link href="{% static 'css/order_create.css' %}" rel="stylesheet">
+
+ {% endblock %}
 {% block content %}
 <div class="order-rapper">
  <div class="order-info">
@@ -47,15 +51,48 @@
 <div class="order-form">   
  <h3> {%translate 'fill the following form to place an order'%}  </h3>
 
- <form method="post" class="order-form">
- {{ form.as_p }}
- 
+ <form method="post" class="form-inline">
+ <div class="form-group">
+                <label for="id_first_name">First Name</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                <label for="id_last_name">Last Name</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="id_phone_number">Phone Number</label>
+                {{ form.phone_number }}
+            </div>
+            <div class="form-group">
+                <label for="id_address">Address</label>
+                {{ form.address }}
+            </div>
+            <div class="form-group">
+                <label for="id_postal_code">Postal Code</label>
+                {{ form.postal_code }}
+            </div>
+            <div class="form-group">
+                <label for="id_city">City</label>
+                {{ form.city }}
+            </div>
+            <div class="form-group">
+                <label for="id_delivery_date">Delivery Date</label>
+                {{ form.delivery_date }}
+            </div>
+     <div class="form-group text-center">
  <p><input type="submit" value="{%translate 'Place order' %}"></p>
+ </div>
  {% csrf_token %}
  </form>
  </div>
-    <div class="shop-order-info">
-        <h3>{% translate "Shop Information" %}</h3>
+  <div class="shop-order-info">
+ <div class="contact-info">   
+        <h3><strong>{{cart.get_shop.shopName}}</strong> {% translate "shop Information" %}</h3>
         <strong>{% translate "Contact Information" %}:</strong></p>
         <p>{% translate "Phone" %}: {{cart.get_shop.contact_number}}</p>
         <p>{% translate "Email" %}: shop@gmail.com</p>
@@ -77,6 +114,8 @@
  </div>
         <p><strong>{% translate "Estimated Delivery Time" %}:</strong></p>
         <p>{% translate "The time that you have specified in Delvery date field" %}</p>
+         </div>
+      <div class="info-left">
         <p><strong>{% translate "Customer Support" %}:</strong></p>
         <p>{% translate "If you have any questions, please contact our support team." %}</p>
 
@@ -84,6 +123,7 @@
         <p>{% translate "You can return any item within 30 days of purchase." %}</p>
         <p><strong>{% translate "Promotions" %}:</strong></p>
         <p>{% translate "Check out our latest promotions on our homepage." %}</p>
+        </div>
     </div>
  </div>
 {% endblock %}

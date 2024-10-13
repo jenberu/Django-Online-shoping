@@ -194,6 +194,24 @@ ul.errorlist {
 }
 
 @media (max-width: 600px) {
+  .product-search{
+    display: block;
+    height:80px;
+    padding: 10px;
+  }
+  .product-search .inline-form{
+    float: left;
+    width: 40%;
+   
+  }
+  .product-search   .product-filter{
+    float: left;
+  }
+  .product-search .product-filter{
+    clear:both;
+    margin-top: 5px;
+
+  }
   .product-search .inline-form .form-control {
     width: 100%;
   }
@@ -446,66 +464,6 @@ border-radius: 5px;
   margin-top: 10px;
 }
 
-.order-form {
-  margin-left: 30px;
-  width: 30%;
-  float: left;
-  color:#333;
-  font-weight: bold;
-}
-.order-rapper{
-  padding: 15px;
-}
-.shop-order-info{
-  float: left;
-  width: 35%;
-  margin: 0 15px;
-  color:#333
-}
-.order-info {
-  float: right;
-  width: 25%;
-  background: #efefef;
-  padding: 10px 20px 10px 5px;
-  color: #333;
-  border-bottom: 4px solid #5993bb;
-}
-#delivery_date{
-  width: 200px;
-  float: right;
-  padding: 10px;
-  background-color: #EEEFEE;
-  margin-bottom: 10px;
-  border:none;
-}
-.order-form label{
-  float: left;
-}
-.order-info h3 {
-  color: #5993bb;
-}
-
-.order-info ul li {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  list-style: none;
-}
-
-.order-info p {
-  font-weight: bold;
-  float: right;
-}
-
-.order-info .order-info_body span {
-  float: right;
-}
-.order-info .order-info_body {
-  display: flex;
-}
-.order-info .order-info_body .order-info_image {
-  margin-right: 10px;
-}
 
 
 .neg {
@@ -703,6 +661,13 @@ footer {
   width: 100%;
   background: blue;
 }
+.nav-link:hover{
+  font-size:20px;
+  transition-duration: 2s;
+}
+a.nav-link:active{
+  color: pink;
+}
 
 /* Hide Navbar Menu by Default on Small Screens */
 
@@ -823,3 +788,4 @@ footer {
 .product-detail_advertize h1 {
   text-align: center;
 }
+

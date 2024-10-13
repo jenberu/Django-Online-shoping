@@ -46,16 +46,17 @@
                     <tr>
                         <td>
                             <a href="{{ product.get_absolute_url }}">
-                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}" height="200px" width=200px>
+                                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}" height="150px" width=150px>
                             </a>
                         </td>
                         <td>{{ product.name }}</td>
-                        <td> <form action="{% url "cart:cart_add" product.id %}" method="post">
+                        <td> 
+                        <form action="{% url "cart:cart_add" product.id %}" method="post">
                                  {{ item.update_quantity_form.quantity }}
                                  {{ item.update_quantity_form.override }}
                                     <input type="submit" value="{%translate 'Update' %}" style="cursor: pointer;">
                                       {% csrf_token %}
-                                          </form>
+                          </form>
                         </td>
                         <td>
                             <form action="{% url 'cart:cart_remove' product.id %}" method="post">

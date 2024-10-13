@@ -12,17 +12,17 @@ from news.models import Advertisment,AddsImage
 from django.utils.translation import gettext_lazy as _
 from news.tasks import Task
 def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
+    task=Task()
+    task.deactivate_shop()
     category=None
     subcategory = None
     shop=None
     searchedProduct=request.GET.get('searchProduct')
     categories=Category.objects.all()
-   
     shops=Shop.objects.filter(is_active=True)
     if searchedProduct:
             products=Product.objects.filter(available=True ,name__icontains=searchedProduct)
             if products:
-                
                  return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops}) 
             else:
                  return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'search':searchedProduct,'shops':shops,'noproduct':_('There is no  %(product)s  product in our shop')%{'product':searchedProduct}})
@@ -39,8 +39,6 @@ def product_list(request,shop_id=None,category_slug=None,subcategory_slug=None):
     if shop_id:
           shop = get_object_or_404(Shop, id=shop_id)
           products=products.filter(shop=shop,available=True)  
-  
-     
     return render(request,'shop/product/list.html',{'category':category,'categories':categories,'products':products,'shops':shops,'shop':shop}) 
 
 def product_detail(request,id,slug):
@@ -64,15 +62,11 @@ def add_shop(request):
           if form.is_valid():
                try:
                     onwer=get_object_or_404(User,username=request.user.username)
-
                     shop= form.save(commit=False)
                     shop.owner=onwer
                     shop.save()
                     request.session['shop_id']=shop.id
                     return redirect('payment:onwer_payment_procces')
-                    
-                   
-
                except IntegrityError:
                                  return render(request,'shop/shops/shopform.html',{'form':form,'error':_('one onwer should register for one shop')})
 

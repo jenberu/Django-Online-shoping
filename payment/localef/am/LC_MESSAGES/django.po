@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-20 22:18+0300\n"
+"POT-Creation-Date: 2024-10-08 22:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Your payment has been processed successfully."
 msgstr ""
 
-#: .\payment\templates\payment\onwer_cancel.html:6
+#: .\payment\templates\payment\onwer_cancel.html:8
 msgid "Payment Cancelled"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_cancel.html:7
+#: .\payment\templates\payment\onwer_cancel.html:9
 msgid "Your payment was not successful. Please try again."
 msgstr ""
 
@@ -50,6 +50,7 @@ msgid ""
 msgstr ""
 
 #: .\payment\templates\payment\onwer_process.html:70
+#: .\payment\templates\payment\process.html:27
 msgid "Birr"
 msgstr ""
 
@@ -84,4 +85,25 @@ msgstr ""
 
 #: .\payment\templates\payment\process.html:10
 msgid "Order summary"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:14
+msgid "Image"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:15
+msgid "Product"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:16
+msgid "Price"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:17
+msgid "Quantity"
+msgstr ""
+
+#: .\payment\templates\payment\process.html:18
+#: .\payment\templates\payment\process.html:36
+msgid "Total"
 msgstr ""

@@ -29,7 +29,7 @@ to activate your Business
     {% endif %}
  <div class="container-wrapper">  
  <div class="left-container">
-    <h2>{% translate 'How to Register Your Business' %}</h2>
+    <h4>{% translate 'How to Register Your Business' %}</h4>
     <p>{% translate 'Follow these steps to register your business successfully:' %}</p>
     <ol>
         <li>{% translate 'Enter the name of your business. give short and concise name' %}</li>
@@ -42,23 +42,7 @@ to activate your Business
         <li>{% translate 'Increase your sales.' %}</li>
         <li>{% translate 'Gain access to special features.' %}</li>
     </ul>
-    <h3>{% translate 'Need Help?' %}</h3>
-    <p>{% translate 'If you have any questions, feel free to contact our support team at' %} 
-    <br/>
-    <i class="fas fa-envelope"></i> &nbsp &nbsp<a href="mailto:jemberu0970@gmail.com">jemberu0970@gmail.com</a>.
-       <br/> <i class="fas fa-phone"></i><strong>&nbsp &nbsp 0970013586  </strong>
-    </p>
-       <h3>{% translate 'FAQs' %}</h3>
-        <details>
-            <summary>{% translate 'Q: What if I don’t have a business name yet?' %}</summary>
-            <p>{% translate 'A: You can register as an individual seller and update your business name later.' %}</p>
-        </details>
-        <details>
-            <summary>{% translate 'Q: Can I change my business details later?' %}</summary>
-            <p>{% translate 'A: Yes, you can update your business details from your Adminstration page.' %}</p>
-        </details>
-    <h3>{% translate 'Terms and Conditions' %}</h3>
-    <p>{% translate 'By registering, you agree to our' %} <a href="#">{% translate 'terms and conditions' %}</a>.</p>
+ 
 </div>
 <div class="container mt-4">
 <h1>{%translate 'add your Business'%} </h1>
@@ -81,7 +65,25 @@ to activate your Business
         </div>
     </form>
 </div>
-
+   <div class="right-container">
+    <h3>{% translate 'Need Help?' %}</h3>
+    <p>{% translate 'If you have any questions, feel free to contact our support team at' %} 
+    <br/>
+    <i class="fas fa-envelope"></i> &nbsp &nbsp<a href="mailto:jemberu0970@gmail.com">jemberu0970@gmail.com</a>.
+       <br/> <i class="fas fa-phone"></i><strong>&nbsp &nbsp 0970013586  </strong>
+    </p>
+       <h3>{% translate 'FAQs' %}</h3>
+        <details>
+            <summary>{% translate 'Q: What if I don’t have a business name yet?' %}</summary>
+            <p>{% translate 'A: You can register as an individual seller and update your business name later.' %}</p>
+        </details>
+        <details>
+            <summary>{% translate 'Q: Can I change my business details later?' %}</summary>
+            <p>{% translate 'A: Yes, you can update your business details from your Adminstration page.' %}</p>
+        </details>
+    <h3>{% translate 'Terms and Conditions' %}</h3>
+    <p>{% translate 'By registering, you agree to our' %} <a href="#">{% translate 'terms and conditions' %}</a>.</p>
+    </div>
 
 </div>
 {% endblock %}
