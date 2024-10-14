@@ -4,7 +4,7 @@ from .models import UserProfile
 from django.utils.html import mark_safe
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display=['user','first_name','last_name','image_tag']
+    list_display=['user','first_name','last_name','email','image_tag']
     list_filter=['first_name']
     list_per_page=5
 

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 22:19+0300\n"
-"PO-Revision-Date: 2024-10-08 22:36+0300\n"
+"POT-Creation-Date: 2024-10-14 14:40+0300\n"
+"PO-Revision-Date: 2024-10-13 12:35+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: Amharic <am@li.org>\n"
 "Language: am\n"
@@ -18,6 +18,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\accounts\forms.py:21
+msgid "Tell Us about your self"
+msgstr "ስለራስዎ ይንገሩን"
+
+#: .\accounts\forms.py:28 .\shop\templates\updateprofile.html:32
+msgid "First Name"
+msgstr "ስም"
+
+#: .\accounts\forms.py:32 .\shop\templates\updateprofile.html:36
+msgid "Last Name"
+msgstr "የአባት ስም"
+
+#: .\accounts\forms.py:36
+msgid "Email Address if any"
+msgstr "ኢሜል አድራሻ ካለዎት"
 
 #: .\accounts\templates\loginaccount.html:113
 #: .\shop\templates\shop\product\detail.html:88
@@ -36,19 +52,19 @@ msgstr "ይለፍ ቃል ተሳስተዋል"
 msgid "username and password do not match"
 msgstr "ስም እና ይለፍ ቃል አልተዛመዱም"
 
-#: .\accounts\views.py:70
+#: .\accounts\views.py:86
 msgid "Pleace Insert correct data"
 msgstr "እባከዎ ትክክለኛ መረጃ ያስገቡ"
 
-#: .\accounts\views.py:83
+#: .\accounts\views.py:99
 msgid "Password has been reset successfully."
 msgstr "የይለፍ ቃል በተሳካ ሁኔታ ተቀይሯል"
 
-#: .\accounts\views.py:86
+#: .\accounts\views.py:102
 msgid "User with the given username does not exist. "
 msgstr "በዚ ስም ዩዘር የለም"
 
-#: .\accounts\views.py:89
+#: .\accounts\views.py:105
 msgid "New password and confirm password do not match."
 msgstr "ያስገቡት የይለፍ ቃል ማች አልሆነም"
 
@@ -135,8 +151,7 @@ msgid "People who bought this also bought"
 msgstr "ይህን የገዙ ሰዎች ይህንም ይገዛሉ"
 
 #: .\cart\views.py:30
-msgid ""
-"you should checkout this cart before requesting the order in other shop"
+msgid "you should checkout this cart before requesting the order in other shop"
 msgstr "ወደ ሌላ ሱቅ ከመሄደዎ በፊት መጀመሪያ ይህን  ትእዛዝ ይዘዙ(ባንድ ዘንቢል ከሁለት ሱቅ መግዛት አይችሉም)"
 
 #: .\coupons\forms.py:5
@@ -258,7 +273,8 @@ msgstr "እናመሰኛለን"
 #, python-format
 msgid ""
 "\n"
-"    Your order has been successfully completed. Your order number is <strong>%(order_id)s</strong>.\n"
+"    Your order has been successfully completed. Your order number is <strong>"
+"%(order_id)s</strong>.\n"
 "    "
 msgstr ""
 "\n"
@@ -305,7 +321,6 @@ msgid "Payment canceled"
 msgstr "ክፍያዎ አልተሳካም።"
 
 #: .\payment\templates\completed.html:5
-#| msgid "Product deleted successfully"
 msgid "Payment successful"
 msgstr "በተሳካ ሁኔታ ተከፍሏል።"
 
@@ -314,7 +329,6 @@ msgid "Your payment was successful"
 msgstr "በተሳካ ሁኔታ ከፍለዋል"
 
 #: .\payment\templates\completed.html:8
-#| msgid "Password has been reset successfully."
 msgid "Your payment has been processed successfully."
 msgstr "ክፍይዎ በተሰካ ሁኔታ ተከፍሏል።"
 
@@ -333,8 +347,8 @@ msgid ""
 "but it is not active until you complet the payment process\n"
 "Pleace  Select a Subscription, what you Plan, to activate your businuss."
 msgstr ""
-"ውድ<b>%(user_name)s</b>፡ ቢዝነሰዎ በተሳካ ተመዝግቧል። ነገር ግን ክፍያዎን ካልጨረሱ ቢዝነሰዎ አይሰራም!!"
-"  ቢዝነሰዎ  አክቲቭ ሁኖ እንዲሰራ፤ የሚፈሊጉትን ሳብስክሪብሽን ፕላን ይምረጡ።"
+"ውድ<b>%(user_name)s</b>፡ ቢዝነሰዎ በተሳካ ተመዝግቧል። ነገር ግን ክፍያዎን ካልጨረሱ ቢዝነሰዎ አይሰራም!!  "
+"ቢዝነሰዎ  አክቲቭ ሁኖ እንዲሰራ፤ የሚፈሊጉትን ሳብስክሪብሽን ፕላን ይምረጡ።"
 
 #: .\payment\templates\payment\onwer_process.html:74
 msgid "Monthly"
@@ -362,7 +376,6 @@ msgid "Your shop \"%(shop_name)s\" is now active until %(valid_to)s."
 msgstr "የእርስዎ ቢዝነስ \"%(shop_name)s\"  እስከ (valid_to)s. ድረስ  አክቲቭ ነው።"
 
 #: .\payment\templates\payment\process.html:6
-#| msgid "Your order"
 msgid "Pay for your order"
 msgstr "ለትእዛዘዎ ይክፈሉ።"
 
@@ -370,7 +383,7 @@ msgstr "ለትእዛዘዎ ይክፈሉ።"
 msgid "Order summary"
 msgstr "የትእዛዝ ማጠቃለያ "
 
-#: .\shop\admin.py:127
+#: .\shop\admin.py:125
 #, python-format
 msgid "%d Shop was successfully Refreshed and expired shop is Deactivated "
 msgid_plural ""
@@ -378,14 +391,14 @@ msgid_plural ""
 msgstr[0] "%d  ሱቅ በታሰካ ሁኔታ ረፍሪሽ ሁኗል፤ ጊዚ ያለፈበት እንዳይሰራ ሁኗል።"
 msgstr[1] "%d  ሱቅዎች በታሰካ ሁኔታ ረፍሪሽ ሁነዋል፤ ጊዚ ያለፈባቸቅ እንዳይሰሩ ሁነዋል።"
 
-#: .\shop\admin.py:194
+#: .\shop\admin.py:192
 #, python-format
 msgid "%d Product was successfully Disabled it Avaliablity"
 msgid_plural "%d Products were successfully  Disabled thier Avaliablity"
 msgstr[0] "%d ምርት አለመኖሩ ታውቋል።"
 msgstr[1] "%d ምርቶች አለመኖራቸዉ ታውቋል።"
 
-#: .\shop\admin.py:207
+#: .\shop\admin.py:205
 #, python-format
 msgid "%d Product was successfully Enable its Avaliablity"
 msgid_plural "%d Products were successfully  Enable thier Avaliablity"
@@ -401,8 +414,8 @@ msgid "Language"
 msgstr "ቋንቋ"
 
 #: .\shop\templates\shop\base.html:54
-msgid "All Products "
-msgstr "ምርት "
+msgid "Home "
+msgstr "ዋና ገዕ"
 
 #: .\shop\templates\shop\base.html:57
 msgid "register your Business"
@@ -410,7 +423,7 @@ msgstr "ቢዝነሰዎን ይመዝገቡ"
 
 #: .\shop\templates\shop\base.html:59
 msgid "admin page"
-msgstr "አድሚን ፔጅ"
+msgstr "አድሚን ገዕ"
 
 #: .\shop\templates\shop\base.html:64
 msgid "your shop"
@@ -428,7 +441,7 @@ msgstr "ሎጊን"
 msgid "Sign Up"
 msgstr "ሳይን አፕ"
 
-#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:124
+#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:8
 msgid "Update Profile"
 msgstr "መገለጫዎን ይቀይሩ"
 
@@ -565,7 +578,8 @@ msgstr "የተመዘገቡ ሱቆች"
 #, python-format
 msgid ""
 "\n"
-"Well Come  Dear  <strong>%(user_name)s </strong> Fill the Follwing info and procced to next step \n"
+"Well Come  Dear  <strong>%(user_name)s </strong> Fill the Follwing info and "
+"procced to next step \n"
 "to activate your Business\n"
 "\n"
 msgstr ""
@@ -625,7 +639,7 @@ msgid "Phone Number"
 msgstr "ስልክ ቁጥር"
 
 #: .\shop\templates\shop\shops\shopform.html:64
-#: .\shop\templates\updateprofile.html:161
+#: .\shop\templates\updateprofile.html:51
 msgid "Submit"
 msgstr "ላክ"
 
@@ -672,23 +686,19 @@ msgstr "በመመዝገብ ፣"
 msgid "terms and conditions"
 msgstr "ደንብ እና ግዴታዎች"
 
-#: .\shop\templates\updateprofile.html:131
+#: .\shop\templates\updateprofile.html:17
 msgid "Update your profile"
 msgstr "መገለጫዎን ይቀይሩ"
 
-#: .\shop\templates\updateprofile.html:146
-msgid "First Name"
-msgstr "ስም"
+#: .\shop\templates\updateprofile.html:40
+msgid "Email Address"
+msgstr "ኢሜል አድራሻ"
 
-#: .\shop\templates\updateprofile.html:150
-msgid "Last Name"
-msgstr "የአባት ስም"
-
-#: .\shop\templates\updateprofile.html:154
+#: .\shop\templates\updateprofile.html:44
 msgid "Profile Image"
 msgstr "መገለጫ ፎቶ"
 
-#: .\shop\templates\updateprofile.html:158
+#: .\shop\templates\updateprofile.html:48
 msgid "Biography"
 msgstr "ባይዎግራፊ"
 
@@ -728,6 +738,9 @@ msgstr "ፓስዋርድ ቀይር"
 #: .\templates\admin\base_site.html:56
 msgid "Log out"
 msgstr "ይውጡ"
+
+#~ msgid "All Products "
+#~ msgstr "ምርት "
 
 #, python-format
 #~ msgid ""

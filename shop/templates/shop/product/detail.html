@@ -15,9 +15,10 @@
 
 {% block shop-info %}
 {% with shop=product.shop %}
- <div class="shop-info-wrapper">
 
  {% if shop.social_media %}
+  <div class="shop-info-wrapper">
+
 {% translate 'Thank you for choice us, for more info contact us with' %}:&nbsp &nbsp 
  <div class="shop-info">
 {% if shop.social_media.facebook_url%}
@@ -35,8 +36,9 @@
 <a href="{{shop.social_media.instagram_url}}" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a> </div>
 {% endif%}
  </div>
+  </div>
+
  {% endif %}
- </div>
  {% endwith %}
  {% endblock %}
 

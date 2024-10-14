@@ -320,7 +320,7 @@ option {
 
 #main {
   float: left;
-  width: 80%;
+  width: 100%;
   overflow: auto;
 }
 .product-list #products-container {
@@ -356,6 +356,7 @@ option {
    width:fit-content;
    display: flex;
    padding: 15px ;
+   background-color: rgb(211, 220, 221);
 }
 .shop-info-wrapper .shop-info{
   height: 100%;

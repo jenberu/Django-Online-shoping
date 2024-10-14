@@ -18,8 +18,7 @@ class ProductRecommendatonAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display=['name','product_count']
-    prepopulated_fields={'slug':('name',)}
+    list_display=['name','slug','product_count']
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
@@ -46,7 +45,6 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(SubCategory)
 class SubCategoryAdmin(admin.ModelAdmin):
     list_display=['name','category','slug']
-    prepopulated_fields={'slug':('name',)} 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
@@ -152,6 +150,7 @@ class PrductAdmin(admin.ModelAdmin):
         'shop',
         'category',
         'price',
+        'slug',
         'available',
         'created_date_time_format',
         'updated_date_time_format',
@@ -160,7 +159,6 @@ class PrductAdmin(admin.ModelAdmin):
     list_filter=['available','created','updated']
     list_editable=['price', 'available']
     list_display_links=['image_tag','name']
-    prepopulated_fields={'slug':('name',)}#this used to  automatically give value of name to  slug 
     list_per_page=5
     search_fields=['name']
 

@@ -1,4 +1,3 @@
-{% extends 'shop/base.html' %}
 {% block style %}
 <style>
 /* Container for the card */
@@ -99,6 +98,10 @@ form .form-control {
           <div class="form-group">
             <label for="id_last_name" class="form-label form-label-last-name">Last Name</label>
             {{ form.last_name }}
+          </div>
+           <div class="form-group">
+            <label for="id_email" class="form-label form-label-emal">Email Address</label>
+            {{ form.email }}
           </div>
           <div class="form-group">
             <label for="id_image" class="form-label form-label-image">Profile Image</label>

@@ -6,6 +6,7 @@ from django.utils import timezone
 from datetime import timedelta
 from django.shortcuts  import get_object_or_404
 from django.core.validators import MinValueValidator
+from autoslug import AutoSlugField
 
 
 def validate_no_numbers(value):
@@ -15,6 +16,7 @@ def validate_no_numbers(value):
 class Shop(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='shop')
     shopName = models.CharField(max_length=200)
+    logo = models.ImageField(upload_to='shop_logos/', blank=True, null=True)  # Image field for storing the logo
     adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
     registration_date=models.DateField(auto_now_add=True)
     valid_from=models.DateTimeField(blank=True,null=True)
@@ -60,7 +62,7 @@ class SocialMedia(models.Model):
 class Category(models.Model):
     shop = models.ForeignKey(Shop, related_name='categories', on_delete=models.CASCADE,null=True,blank=True)
     name=models.CharField(max_length=200)
-    slug=models.SlugField(max_length=200,unique=True) #t o build beautiful URLs
+    slug = AutoSlugField(populate_from='name', unique=True, always_update=True)
     has_sub_catagory=models.BooleanField(default=False)
     class Meta:
         ordering=['name']
@@ -74,7 +76,7 @@ class Category(models.Model):
 class SubCategory(models.Model):
     category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
+    slug = AutoSlugField(populate_from='name', unique=True, always_update=True)
     class Meta:
         ordering=['name']
         indexes=[models.Index(fields=['name']),]
@@ -92,9 +94,8 @@ class Product(models.Model):
     category=models.ForeignKey(Category,related_name='products',on_delete=models.CASCADE)
     subcategory = models.ForeignKey(SubCategory, related_name='products', null=True, blank=True, on_delete=models.CASCADE)
     shop = models.ForeignKey(Shop, related_name='products', on_delete=models.CASCADE,null=True,blank=True)
-    
     name=models.CharField(max_length=200)
-    slug=models.SlugField(max_length=200)
+    slug = AutoSlugField(populate_from='name', unique=True, always_update=True)
     image=models.ImageField(upload_to='products/%y/%m/%d',blank=True)
     description=models.TextField(blank=True)
     price=models.DecimalField(max_digits=10,

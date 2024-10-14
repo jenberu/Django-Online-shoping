@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-08 22:19+0300\n"
+"POT-Creation-Date: 2024-10-14 14:40+0300\n"
 "PO-Revision-Date: 2024-07-15 16:42+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: English <en@li.org>\n"
@@ -17,6 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\forms.py:21
+msgid "Tell Us about your self"
+msgstr ""
+
+#: .\accounts\forms.py:28 .\shop\templates\updateprofile.html:32
+msgid "First Name"
+msgstr ""
+
+#: .\accounts\forms.py:32 .\shop\templates\updateprofile.html:36
+msgid "Last Name"
+msgstr ""
+
+#: .\accounts\forms.py:36
+msgid "Email Address if any"
+msgstr ""
 
 #: .\accounts\templates\loginaccount.html:113
 #: .\shop\templates\shop\product\detail.html:88
@@ -35,19 +51,19 @@ msgstr ""
 msgid "username and password do not match"
 msgstr ""
 
-#: .\accounts\views.py:70
+#: .\accounts\views.py:86
 msgid "Pleace Insert correct data"
 msgstr ""
 
-#: .\accounts\views.py:83
+#: .\accounts\views.py:99
 msgid "Password has been reset successfully."
 msgstr ""
 
-#: .\accounts\views.py:86
+#: .\accounts\views.py:102
 msgid "User with the given username does not exist. "
 msgstr ""
 
-#: .\accounts\views.py:89
+#: .\accounts\views.py:105
 msgid "New password and confirm password do not match."
 msgstr ""
 
@@ -360,7 +376,7 @@ msgstr ""
 msgid "Order summary"
 msgstr ""
 
-#: .\shop\admin.py:127
+#: .\shop\admin.py:125
 #, python-format
 msgid "%d Shop was successfully Refreshed and expired shop is Deactivated "
 msgid_plural ""
@@ -368,14 +384,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\admin.py:194
+#: .\shop\admin.py:192
 #, python-format
 msgid "%d Product was successfully Disabled it Avaliablity"
 msgid_plural "%d Products were successfully  Disabled thier Avaliablity"
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\admin.py:207
+#: .\shop\admin.py:205
 #, python-format
 msgid "%d Product was successfully Enable its Avaliablity"
 msgid_plural "%d Products were successfully  Enable thier Avaliablity"
@@ -391,7 +407,7 @@ msgid "Language"
 msgstr ""
 
 #: .\shop\templates\shop\base.html:54
-msgid "All Products "
+msgid "Home "
 msgstr ""
 
 #: .\shop\templates\shop\base.html:57
@@ -418,7 +434,7 @@ msgstr ""
 msgid "Sign Up"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:124
+#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:8
 msgid "Update Profile"
 msgstr ""
 
@@ -608,7 +624,7 @@ msgid "Phone Number"
 msgstr ""
 
 #: .\shop\templates\shop\shops\shopform.html:64
-#: .\shop\templates\updateprofile.html:161
+#: .\shop\templates\updateprofile.html:51
 msgid "Submit"
 msgstr ""
 
@@ -655,23 +671,19 @@ msgstr ""
 msgid "terms and conditions"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:131
+#: .\shop\templates\updateprofile.html:17
 msgid "Update your profile"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:146
-msgid "First Name"
+#: .\shop\templates\updateprofile.html:40
+msgid "Email Address"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:150
-msgid "Last Name"
-msgstr ""
-
-#: .\shop\templates\updateprofile.html:154
+#: .\shop\templates\updateprofile.html:44
 msgid "Profile Image"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:158
+#: .\shop\templates\updateprofile.html:48
 msgid "Biography"
 msgstr ""
 

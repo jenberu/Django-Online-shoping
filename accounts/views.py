@@ -59,15 +59,31 @@ def update_profile(request):
     else:
         form=UserProfileForm(request.POST,request.FILES)
         if form.is_valid():
-            user_profile= UserProfile.objects.get(user=request.user)
-            user_profile.first_name=form.cleaned_data['first_name']
-            user_profile.last_name=form.cleaned_data['last_name']
-            user_profile.image=form.cleaned_data['image']
-            user_profile.bio=form.cleaned_data['bio']
-            user_profile.save()
+            user=request.user
+            user.first_name=form.cleaned_data['first_name']
+            user.last_name=form.cleaned_data['last_name']
+            user.email=form.cleaned_data['email']
+            user.save()
+            first_name=form.cleaned_data['first_name']
+            last_name=form.cleaned_data['last_name']
+            email=form.cleaned_data['email']
+            image=form.cleaned_data['image']
+            bio=form.cleaned_data['bio']
+            user_profile,created= UserProfile.objects.get_or_create(user=request.user)
+            if user_profile:
+                user_profile.first_name=first_name
+                user_profile.last_name=last_name
+                user_profile.email=email
+                user_profile.image=image
+                user_profile.bio=bio
+                user_profile.save()
+            else:
+                UserProfile.objects.create(user=request,first_name=first_name,last_name=last_name,
+                                            email=email,image=image,bio=bio)
+            
             return redirect('shop:product_list')
         else:
-           return render(request,'userprofile.html',{'form':UserProfileForm(),'error':_('Pleace Insert correct data')})
+           return render(request,'user_profile.html',{'form':UserProfileForm(),'error':_('Pleace Insert correct data')})
 def resset_password(request):
     if request.method=='GET':
         return render(request,'pass_resset.html')

@@ -59,9 +59,7 @@ h1,h2{
 
 {% block content %}
 <div class="body-content">
-
-
-  <div id="sidebar">
+ <div id="sidebar">
   <button class="sidebar-toggler" onclick="toggleSidebar()" title="category">☰</button>
 
 <div class="sidebar-menu" >
@@ -86,7 +84,27 @@ h1,h2{
     </ul>
   </div>
 </div>
+<div class="product-list-wrapper">
+<div class="shop-logo">
+  <div class="logo-image-slider">
+    {% for shop in shops %}
+      {% if shop.logo %}
+        <img src="{{ shop.logo.url }}" alt="{{ shop.name }} Logo" class="slide" />
+      {% else %}
+        <div class="slide">Shop logo</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <!-- Navigation buttons -->
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+  <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+
+
+
   <div id="main" class="product-list">
+ 
     {% if search %}
     <h1> {% translate 'Search Result'%}</h1>
     {% endif %}
@@ -122,7 +140,7 @@ h1,h2{
     <h2 class="noproduct"> {% if noproduct%} {% translate 'Dear Customer'%} {{noproduct}} {% else %} {%translate 'No products available'%} {% endif %}</h2>
     {% endif %}
   </div>
-
+  </div>
   <div id="right-bar">
     <h3> {%translate 'Registered Shops' %}</h3>
     <ul>
@@ -134,6 +152,8 @@ h1,h2{
     </ul>
   </div>
 </div>
+<script src="{% static 'js/product-list.js' %}"></script>
+
 {% endblock %}
 
  

@@ -66,6 +66,20 @@
     height: 50px;
 
   }
+  .shop-info-wrapper{
+    width: 350px;
+    left: 10px;
+    padding: 5px;
+
+  }
+ 
+  #subheader .cart {
+    float: right;
+    padding-top: 4px;
+    margin: 15px 10px;
+   
+  }
+ 
 }
 /* For tablets and mobile devices */
 @media screen and (max-width: 768px) {
