@@ -58,6 +58,7 @@
 .shop-logo {
   position: relative;
   height: 200px; /* Adjust the height */
+  width: 100%;  /* Ensure it spans the full width */
   overflow: hidden;
 }
 
@@ -66,24 +67,34 @@
   transition: transform 3s ease-in-out;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .slide {
-  min-width: 100%;
+  min-width: 100%; /* Each slide takes up the full width */
+  height: 100%; /* Full height of the container */
+  position: relative;
+  z-index: 1; /* Ensure slides are clickable */
+}
+
+.slide img {
+  width: 100%; /* Ensure images cover the full container */
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure the images fit properly */
+  display: block; /* Ensure block display for the images */
 }
 
 button.prev, button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   font-size: 18px;
   padding: 8px;
   cursor: pointer;
+  z-index: 2; /* Higher than slides to ensure they are on top */
 }
 
 button.prev {
@@ -95,5 +106,6 @@ button.next {
 }
 
 button.prev:hover, button.next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
+

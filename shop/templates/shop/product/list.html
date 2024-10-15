@@ -89,9 +89,13 @@ h1,h2{
   <div class="logo-image-slider">
     {% for shop in shops %}
       {% if shop.logo %}
-        <img src="{{ shop.logo.url }}" alt="{{ shop.name }} Logo" class="slide" />
+      <a href="{% url 'shop:product_list_for_shop' shop.id %}" class="slide">
+        <img src="{{ shop.logo.url }}" alt="{{ shop.name }} Logo" title="{{shop.shopName}}"/>
+      </a>
       {% else %}
-        <div class="slide">Shop logo</div>
+      <div class="slide">
+        Shop logo
+      </div>
       {% endif %}
     {% endfor %}
   </div>
