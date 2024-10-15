@@ -98,10 +98,18 @@ class ShopAdmin(admin.ModelAdmin):
             if 'deactivate_shop' in actions:
                 del actions['deactivate_shop']
         return actions        
-
+        # Override the save_model method to retain specific fields
     def save_model(self, request, obj, form, change):
         if obj.valid_to < timezone.now():
             obj.is_active=False
+
+        if change:
+            original_obj=Shop.objects.get(pk=obj.pk)
+             # Retain the original values for specific fields
+            obj.registration_date = original_obj.registration_date
+            obj.valid_from = original_obj.valid_from
+            obj.valid_to = original_obj.valid_to
+            obj.is_active = original_obj.is_active     
         super().save_model(request, obj, form, change)
     def get_queryset(self, request):
          qs= super().get_queryset(request) 
