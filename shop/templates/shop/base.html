@@ -2,149 +2,126 @@
 <!DOCTYPE html>
 <html>
  <head>
- {% block style %}
-  {% endblock %}
+   {% block style %}{% endblock %}
    <meta charset="utf-8" />
- <title>{% block title %}{% translate "Jemberu's shop "%} {% endblock %}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>{% block title %}{% translate "Jemberu's shop "%} {% endblock %}</title>
+       <!-- Stylesheets -->
    <link href="{% static 'css/list.css' %}" rel="stylesheet">
-  <link href="{% static 'css/base.css' %}" rel="stylesheet">
-  <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
-  <link href="{% static 'css/pageresponsive.css' %}" rel="stylesheet">
-
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Responsive meta tag -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="{% static 'css/base.css' %}" rel="stylesheet">
+   <link href="{% static 'css/sinupform.css' %}" rel="stylesheet">
+   <link href="{% static 'css/pageresponsive.css' %}" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">   
  </head>
-<body>
-<div id="header">
-{% get_current_language as LANGUAGE_CODE %}
-{% get_available_languages as LANGUAGES %}
-{% get_language_info_list for LANGUAGES as languages %}
-<div class="languages">
-  <p>{% translate "Language" %}:</p>
-  <ul class="languages">
-    {% for language in languages %}
-    <li>
-       <a href="#" data-lang-code="{{ language.code }}"
+ <body>
+   <div id="header">
+     <!-- Language Switcher -->
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+    <div class="languages">
+      <p>{% translate "Language" %}:</p>
+      <ul class="languages">
+        {% for language in languages %}
+        <li>
+         <a href="#" data-lang-code="{{ language.code }}"
          {% if language.code == LANGUAGE_CODE %} class="selected"{% endif %}>
-        {{ language.name_local }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+         {{ language.name_local }}
+         </a>
+        </li>
+       {% endfor %}
+     </ul>
+   </div>
 
-<div class="site-logo" style="width: 100px; height: 100px; overflow: hidden; border-radius: 50%;">
-    <video style="width: 100%; height: 100%; object-fit: cover;" autoplay loop muted>
+   <div class="site-logo" style="width: 100px; height: 100px; overflow: hidden; border-radius: 50%;">
+      <video style="width: 100%; height: 100%; object-fit: cover;" autoplay loop muted>
         <source src="{% static 'videos/logo.mp4' %}" type="video/mp4">
         Your browser does not support the video tag.
-    </video>
-</div>
+     </video>
+   </div>
 
 
-
-<nav class="navbar">
-
-    <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
-
-        <div class="navbar-menu" >
+      <!-- Navbar -->
+    <nav class="navbar">
+      <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
+      <div class="navbar-menu" >
          <a href="/" class="nav-link">{% translate "Home " %}</a>
-
-            {% if user.is_authenticated %}
-            <a class="nav-link" href="{% url 'shop:add_shop' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "register your Business" %}</a>
-             {% if user.is_staff %}
-                <a class="nav-link" href="{{ '/admin/' }}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')"> {% translate "admin page" %}</a>
-              {% endif %}
-            {% endif %}
-            {% if user.is_authenticated and user.onwer  %} 
-
-            <a class="nav-link" href="{% url 'shop:adminhome' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "your shop"%}</a>
-            {% endif %}
-            
-            <a class="nav-link" href="{% url 'news' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "News"%}</a>
+          {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'shop:add_shop' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "register your Business" %}</a>
+           {% if user.is_staff %}
+             <a class="nav-link" href="{{ '/admin/' }}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')"> {% translate "admin page" %}</a>
+           {% endif %}
+          {% endif %}
+          {% if user.is_authenticated and user.onwer  %} 
+           <a class="nav-link" href="{% url 'shop:adminhome' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "your shop"%}</a>
+          {% endif %}
+          <a class="nav-link" href="{% url 'news' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "News"%}</a>
             <!-- Anything between {% verbatim %} and {% endverbatim %} will not be executed, but rendered as output instead-->
-            {% verbatim %}
-            <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Developer</a>
-            {% endverbatim %}
-            {% if not user.is_authenticated %}
+          {% verbatim %}
+          <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">About Developer</a>
+          {% endverbatim %}
+          {% if not user.is_authenticated %}
                  
-                <a class="nav-link" href="{% url 'loginaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "Login"%}</a>
-                <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "Sign Up"%}</a>
-            {% endif %}
+           <a class="nav-link" href="{% url 'loginaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "Login"%}</a>
+            <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">{% translate "Sign Up"%}</a>
+          {% endif %}
         </div>
     </nav>
-    {% if user.is_authenticated %}
-                 <div id="profile-image" style="float: right;">
-                           <a class="nav-link" href="#"  onclick="toggleDropdown(event)">
-                            {% if user.profile.image %}
-                                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
-                            {% else %}
-                                <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
-                            {% endif %}
+     {% if user.is_authenticated %}
+     <div id="profile-image" style="float: right;">
+        <a class="nav-link" href="#"  onclick="toggleDropdown(event)">
+         {% if user.profile.image %}
+           <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
+          {% else %}
+           <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+          {% endif %}
                             
-                            </a>
+         </a>
                             
-                         <div id="dropdown-menu" class="dropdown-menu">
-                         <P> </p>
-                          <a href="#" class="dropdown-item" onclick="openModal()">
-                           <i class="fas fa-user-edit"></i>{%translate 'Update Profile'%}</a>
-                           <a href="{% url 'logoutaccount' %}" class="dropdown-item">
-                            <i class="fas fa-sign-out-alt"></i>{%translate 'Logout'%}
-                           </a>
-                         </div>
-                      </div>
-        {% endif %}
- </div>
- {%block searchField%}
- <div class="product-search">
- <form action="{% url 'shop:product_list' %}">
-    <div class="mb-3 inline-form">
-        <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
-        <button type="submit" ><i class="fa fa-search"></i></button>
-    </div>
-</form>
-{% block product-sort  %}
+         <div id="dropdown-menu" class="dropdown-menu">
+            <P>  
+               {% if user.profile.image %}
+                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 150px; height: 100px; border-radius: 50%; cursor: pointer;" >
+                {% else %}
+               <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 100px; height: 100px; border-radius: 50%; cursor: pointer;">
+               {% endif %}
+               </p>
+             <a href="#" class="dropdown-item" onclick="openModal()">
+                <i class="fas fa-user-edit"></i>{%translate 'Update Profile'%}</a>
+              <a href="{% url 'logoutaccount' %}" class="dropdown-item">
+                <i class="fas fa-sign-out-alt"></i>{%translate 'Logout'%}
+              </a>
+          </div>
+      </div>
+    {% endif %}
+   </div>
+    {%block searchField%}
+    <div class="product-search">
+      <form action="{% url 'shop:product_list' %}">
+        <div class="mb-3 inline-form">
+          <input type="text" name="searchProduct" class="form-control" placeholder="{% translate 'search for products'%}"/>
+          <button type="submit" ><i class="fa fa-search"></i></button>
+       </div>
+     </form>
+     {% block product-sort  %}
 
-<div class="product-sort">
-    <label for="sort">{%translate 'Sort by'%}:</label>
-    <select name="sort" id="sort" >
-        <option value="recommended">{%translate 'We recommended'%}</option>
-        <option value="newest">{%translate 'Newest arrivals'%}</option>
-        <option value="priceLowHigh">{%translate 'Price: Low to High'%}</option>
-        <option value="priceHighLow">{%translate 'Price: High to Low'%}</option>
-        <option value="nameAZ">{%translate 'Name: A to Z '%}</option>
-        <option value="nameZA">{%translate 'Name: Z to A'%}</option>
-    </select>
-</div>
-{% endblock %}
-{% block shop-filter %}
-<div class="product-filter">
-    <label for="filter">{%translate 'Filter by Shop' %}:</label>
-    <select name="filter" id="filter" onchange="filterByShop()">
-    <option value="all">{%translate 'All'%}</option>
-
-     {% for sh in shops %} 
-      <option value="{{sh.shopName}}">{{sh.shopName}}</option>
-      {% endfor %}
-      </select>
-</div>
-{% endblock %}
-
-</div>
-{% endblock %}
-
-
-<div id="subheader">
-{% block shop-info %}
- {%endblock%}
-{% block cart %}
-<div class="cart">
- {% with total_items=cart|length %}
-   {% if total_items > 0 and user.is_authenticated %}
-    {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">
+     <div class="product-sort">
+       <label for="sort">{%translate 'Sort by'%}:</label>
+        <select name="sort" id="sort" >
+          <option value="recommended">{%translate 'We recommended'%}</option>
+          <option value="newest">{%translate 'Newest arrivals'%}</option>
+          <option value="priceLowHigh">{%translate 'Price: Low to High'%}</option>
+           <option value="priceHighLow">{%translate 'Price: High to Low'%}</option>
+           <option value="nameAZ">{%translate 'Name: A to Z '%}</option>
+          <option value="nameZA">{%translate 'Name: Z to A'%}</option>
+       </select>
+     </div>
+     {% endblock %}
+     {% block cart %}
+     <div class="cart">
+     {% with total_items=cart|length %}
+     {% if total_items > 0 and user.is_authenticated %}
+     {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">
      <!-- Add a 's' at the end of a value if the total_items value is not 1 -->
      <!--The count keyword is used to specify the variable that should be used for pluralization. -->
      {% blocktranslate count items=total_items with total=cart.get_total_price  %}
@@ -153,23 +130,32 @@
          {{items}} items,{{total}} Birr
        {% endblocktranslate %}
 
-      <a>
-    {% elif not order and user.is_authenticated %}
-   {% translate "Your cart is empty." %}
-    {% endif %}
-  {% endwith %}
- </div>
-{% endblock %}
- </div>
+       <a>
+      {% elif not order and user.is_authenticated %}
+      {% translate "Your cart is empty." %}
+      {% endif %}
+      {% endwith %}
+     </div>
+     {% endblock %}
+
+    </div>
+    {% endblock %}
 
 
- <div id="content">
- {% block content %}
- {% endblock %}
- </div>
-  {% include 'updateprofile.html' %}
+   <div id="subheader">
+   {% block shop-info %}
+   {%endblock%}
 
-<footer class="text-center text-lg-start bg-light text-muted mt-4">
+   </div>
+
+
+   <div id="content">
+    {% block content %}
+    {% endblock %}
+   </div>
+    {% include 'updateprofile.html' %}
+
+   <footer >
         <div class="footer-content">
             <p>&copy; {% now "Y" %} My online shop App. All rights reserved.</p>
 
@@ -182,9 +168,9 @@
         </div>
     </footer>
 
-  <script src="{% static 'js/base.js' %}"></script>
+   <script src="{% static 'js/base.js' %}"></script>
   
 
 
- </body>
+  </body>
 </html>
