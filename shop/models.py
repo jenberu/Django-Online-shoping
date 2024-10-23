@@ -16,8 +16,8 @@ def validate_no_numbers(value):
 class Shop(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,related_name='shop')
     shopName = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to='shop_logos/', blank=True, null=True)  # Image field for storing the logo
-    adress=models.CharField(max_length=200,default='bahirdar',validators=[validate_no_numbers])
+    logo = models.ImageField(upload_to='shop_logos/', blank=True, null=True) 
+    address=models.CharField(max_length=200)
     registration_date=models.DateField(auto_now_add=True)
     valid_from=models.DateTimeField(blank=True,null=True)
     valid_to=models.DateTimeField(blank=True,null=True)

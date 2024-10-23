@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         function sortProducts(criteria) {
-            const productsContainer = document.getElementById('products-container'); // Make sure you have this element to hold the products
-            const products = Array.from(productsContainer.getElementsByClassName('product-item')); // Assuming each product has a class 'product-item'
+            const productsContainer = document.getElementById('products-container'); 
+            // change HTMLCollection in productsContainer to array
+            const products = Array.from(productsContainer.getElementsByClassName('product-item')); 
 
             let sortedProducts;
             switch (criteria) {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sortedProducts.forEach(product => productsContainer.appendChild(product));
         }
     }
-       // Language selection functionality
+       // Language selection functionality by css selector
        var languageLinks = document.querySelectorAll('.languages a[data-lang-code]');
        languageLinks.forEach(function(link) {
            link.addEventListener('click', function(event) {

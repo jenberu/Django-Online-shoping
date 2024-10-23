@@ -383,7 +383,7 @@ option {
 }
 
 .product-list .product-item img:hover {
-  transform: scale(1.2); /* Adjust scale factor as needed */
+  transform: scale(1.1); /* Adjust scale factor as needed */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   z-index: 10; /* Adds a shadow effect on hover */
 }

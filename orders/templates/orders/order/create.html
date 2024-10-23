@@ -51,44 +51,67 @@
 <div class="order-form">   
  <h3> {%translate 'fill the following form to place an order'%}  </h3>
 
- <form method="post" class="form-inline">
- <div class="form-group">
-                <label for="id_first_name">First Name</label>
-                {{ form.first_name }}
-            </div>
-            <div class="form-group">
-                <label for="id_last_name">Last Name</label>
-                {{ form.last_name }}
-            </div>
-            <div class="form-group">
-                <label for="id_email">Email</label>
-                {{ form.email }}
-            </div>
-            <div class="form-group">
-                <label for="id_phone_number">Phone Number</label>
-                {{ form.phone_number }}
-            </div>
-            <div class="form-group">
-                <label for="id_address">Address</label>
-                {{ form.address }}
-            </div>
-            <div class="form-group">
-                <label for="id_postal_code">Postal Code</label>
-                {{ form.postal_code }}
-            </div>
-            <div class="form-group">
-                <label for="id_city">City</label>
-                {{ form.city }}
-            </div>
-            <div class="form-group">
-                <label for="id_delivery_date">Delivery Date</label>
-                {{ form.delivery_date }}
-            </div>
-     <div class="form-group text-center">
- <p><input type="submit" value="{%translate 'Place order' %}"></p>
- </div>
- {% csrf_token %}
- </form>
+ <form method="post" class="form-inline" id="orderForm">
+    {% csrf_token %}
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_first_name">First Name &nbsp<span class="text-danger">*</span>
+</label>
+        {{ form.first_name }}     
+          </div>
+        <div class="text-danger" id="first-name-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_last_name">Last Name &nbsp<span class="text-danger">*</span></label>
+        {{ form.last_name }}</div>
+        <div class="text-danger" id="last-name-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_email">Email </label>
+        {{ form.email }}</div>
+        <div class="text-danger" id="email-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_phone_number">Phone Number &nbsp<span class="text-danger">*</span></label>
+        {{ form.phone_number }}
+        </div>
+        <div class="text-danger" id="phone-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_address">Address  &nbsp<span class="text-danger">*</span></label>
+        {{ form.address }}
+        </div>
+        <div class="text-danger" id="address-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_house_no">House No</label>
+        {{ form.house_no }}
+        </div>
+        <div class="text-danger" id="house-no-error"></div>
+    </div>
+    <div class="form-group">
+    <div class="inline-label-input">
+        <label for="id_city">City  &nbsp<span class="text-danger">*</span></label>
+        {{ form.city }}
+        </div>
+        <div class="text-danger" id="city-error"></div>
+    </div>
+    <div class="form-group">
+       <div class="inline-label-input">
+        <label for="id_delivery_date">Delivery Date  &nbsp<span class="text-danger">*</span></label>
+        {{ form.delivery_date }}
+        </div>
+        <div class="text-danger" id="date-error"></div>
+    </div>
+    <div class="form-group text-center">
+        <p><input type="submit" value="{% translate 'Place order' %}"></p>
+    </div>
+</form>
  </div>
   <div class="shop-order-info">
  <div class="contact-info">   
@@ -126,4 +149,5 @@
         </div>
     </div>
  </div>
+ <script src="{% static 'js/create_order.js' %}"></script>
 {% endblock %}

@@ -10,7 +10,7 @@ class OrderCreateForm(forms.ModelForm):
  'email',
  'phone_number',
  'address',
- 'postal_code',
+ 'house_no',
  'city',
  'delivery_date',
  ]
@@ -21,7 +21,7 @@ class OrderCreateForm(forms.ModelForm):
            'email':forms.EmailInput(attrs={ 'class': 'form-control', 'placeholder': 'Email'}),
            'phone_number':forms.TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Phone Number'}),
             'address':forms.TextInput(attrs={ 'class': 'form-control', 'placeholder': 'adress'}),
-            'postal_code':forms.TextInput(attrs={ 'class': 'form-control', 'placeholder': 'Postal Code'}),
+            'house_no':forms.TextInput(attrs={ 'class': 'form-control', 'placeholder': 'House No if you have'}),
             'city':forms.TextInput(attrs={ 'class': 'form-control', 'placeholder': 'City'}),
 
 

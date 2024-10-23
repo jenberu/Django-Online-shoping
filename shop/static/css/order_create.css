@@ -64,20 +64,20 @@
     margin-right: 10px;
   }
 
-.form-inline .form-group {
+.form-inline .form-group .inline-label-input{
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.form-inline .form-group label {
+.form-inline .form-group .inline-label-input label {
     margin-right: 1rem;
     min-width: 100px; /* Set a fixed width for labels if needed */
 }
 
-.form-inline .form-group input,
-.form-inline .form-group select,
-.form-inline .form-group textarea {
+.form-inline .form-group .inline-label-input input,
+.form-inline .form-group .inline-label-input select,
+.form-inline .form-group .inline-label-input textarea {
     flex: 1;
     max-width: 150px; /* Adjust width as needed */
 }
@@ -86,8 +86,10 @@
   border:none;
   background-color:#ececec;
 }
-.form-group input[type='submit']{
+.form-group  input[type='submit']{
   text-align:center;
+cursor: pointer;  
+border-radius: 5px;
 }
 .form-group.text-center {
     display: flex;
@@ -97,7 +99,6 @@
     margin-top: 20px;
 }
 
-/* Optional: Add some styling to the button */
 button.btn {
-    min-width: 150px; /* Set a minimum width if needed */
+    min-width: 150px; 
 }

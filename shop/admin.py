@@ -90,7 +90,7 @@ class SocialMediaInline(admin.TabularInline):
 class ShopAdmin(admin.ModelAdmin):
     inlines=[SocialMediaInline]
     actions=['deactivate_shop']
-    list_display=['shopName','owner','adress','registration_date','valid_from','valid_to','is_active']  
+    list_display=['shopName','owner','address','registration_date','valid_from','valid_to','is_active']  
 
     def get_actions(self,request):
         actions=super().get_actions(request)

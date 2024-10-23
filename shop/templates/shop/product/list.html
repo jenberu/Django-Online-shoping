@@ -106,7 +106,7 @@
     <ul>
       {% for sh in shops %}
       <li class='{% if shop and shop.id == sh.id %}selected{% endif %}'>
-        <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> {%translate 'from'%} {{sh.adress}}
+        <a href="{% url 'shop:product_list_for_shop' sh.id %}">{{sh.shopName}}</a> {%translate 'from'%} {{sh.address}}
       </li>
       {% endfor %}
     </ul>

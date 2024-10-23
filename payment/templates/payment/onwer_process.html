@@ -1,8 +1,10 @@
+
 {% extends "shop/base.html" %}
+{% load i18n %}
+
  {%block searchField%}
  {% endblock %}
 {% block style %}
-{% load i18n %}
 <style>
 /* General form styling */
 form {
@@ -13,6 +15,7 @@ form {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
 }
 
 /* Header styling */
@@ -51,23 +54,22 @@ button {
 
 button:hover {
     background-color: #0056b3;
+
 }
 
 
 </style>
 {% endblock %}
-{% block cart %}
-<h2>{% blocktranslate with user_name=user.username %} Dear <b>{{user_name}}</b> your Businuss is registered succussfuly, 
-but it is not active until you complet the payment process
-Pleace  Select a Subscription, what you Plan, to activate your businuss.{% endblocktranslate %}</h2>{% endblock %}
-{% block content %}
 
- {% if error %}
-        <div class="alert alert-danger mt-3" role="alert">
-            {{ error }}
-        </div>
-    {% endif %}
-    {% translate 'Birr' as birr%}
+{% block content %}
+<h2>
+{% blocktranslate with user_name=user.username %} 
+Dear <b>{{user_name}}</b>, your business is registered successfully. 
+However, it is not active until you complete the payment process. 
+Please select a subscription plan to activate your business.
+{% endblocktranslate %}
+</h2>
+ {% translate 'Birr' as birr%}
 <form method="post" action="{% url 'payment:onwer_payment_procces'%}">
 
     <label>

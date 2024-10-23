@@ -46,24 +46,34 @@ to activate your Business
 </div>
 <div class="container mt-4">
 <h1>{%translate 'add your Business'%} </h1>
-    <form method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label class="form-label-control" for="{{ form.shopName.id_for_label }}">{%translate 'Business Name'%}</label>
-            {{ form.shopName }}
-        </div>
-        <div class="form-group">
-            <label class="form-label-control" for="{{ form.adress.id_for_label }}">{% translate 'Address'%}</label>
-            {{ form.adress }}
-        </div>
-         <div class="form-group">
-            <label class="form-label-control" for="{{ form.conatct_number.id_for_label }}">{% translate 'Phone Number'%}</label>
-            {{ form.contact_number }}
-        </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">{% translate 'Submit'%}</button>
-        </div>
-    </form>
+   <form method="post" id="shopForm">
+    {% csrf_token %}
+    <div class="form-group">
+        <label class="form-label-control" for="{{ form.shopName.id_for_label }}">
+            {% translate 'Business Name' %}
+        </label>
+        {{ form.shopName }}
+        <div class="text-danger" id="shop-name-error"></div> 
+    </div>
+    <div class="form-group">
+        <label class="form-label-control" for="{{ form.address.id_for_label }}">
+            {% translate 'Address' %}
+        </label>
+        {{ form.address }}
+        <div class="text-danger" id="address-error"></div> 
+    </div>
+    <div class="form-group">
+        <label class="form-label-control" for="{{ form.contact_number.id_for_label }}">
+            {% translate 'Phone Number' %}
+        </label>
+        {{ form.contact_number }}
+        <div class="text-danger" id="contact-number-error"></div> 
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">{% translate 'Submit' %}</button>
+    </div>
+</form>
+
 </div>
    <div class="right-container">
     <h3>{% translate 'Need Help?' %}</h3>
@@ -84,6 +94,7 @@ to activate your Business
     <h3>{% translate 'Terms and Conditions' %}</h3>
     <p>{% translate 'By registering, you agree to our' %} <a href="#">{% translate 'terms and conditions' %}</a>.</p>
     </div>
+<script src="{% static 'js/add_shop_form.js' %}"></script>
 
 </div>
 {% endblock %}

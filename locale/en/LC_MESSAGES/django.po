@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: myshop 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 14:40+0300\n"
+"POT-Creation-Date: 2024-10-23 19:37+0300\n"
 "PO-Revision-Date: 2024-07-15 16:42+0300\n"
 "Last-Translator:   <jember0970@gmail.com>\n"
 "Language-Team: English <en@li.org>\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Tell Us about your self"
 msgstr ""
 
-#: .\accounts\forms.py:28 .\shop\templates\updateprofile.html:32
+#: .\accounts\forms.py:28 .\shop\templates\updateprofile.html:34
 msgid "First Name"
 msgstr ""
 
-#: .\accounts\forms.py:32 .\shop\templates\updateprofile.html:36
+#: .\accounts\forms.py:32 .\shop\templates\updateprofile.html:40
 msgid "Last Name"
 msgstr ""
 
@@ -35,7 +35,7 @@ msgid "Email Address if any"
 msgstr ""
 
 #: .\accounts\templates\loginaccount.html:113
-#: .\shop\templates\shop\product\detail.html:88
+#: .\shop\templates\shop\product\detail.html:90
 msgid "ADVERTISEMENT"
 msgstr ""
 
@@ -113,10 +113,10 @@ msgstr ""
 #: .\cart\templates\cart\detail.html:66
 #: .\orders\templates\orders\order\create.html:28
 #: .\orders\templates\orders\order\pdf.html:29
-#: .\payment\templates\payment\onwer_process.html:70
+#: .\payment\templates\payment\onwer_process.html:72
 #: .\payment\templates\payment\process.html:27
-#: .\shop\templates\shop\product\detail.html:60
-#: .\shop\templates\shop\product\list.html:115
+#: .\shop\templates\shop\product\detail.html:62
+#: .\shop\templates\shop\product\list.html:93
 msgid "Birr"
 msgstr ""
 
@@ -335,27 +335,28 @@ msgstr ""
 msgid "Your payment was not successful. Please try again."
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:60
+#: .\payment\templates\payment\onwer_process.html:66
 #, python-format
 msgid ""
-" Dear <b>%(user_name)s</b> your Businuss is registered succussfuly, \n"
-"but it is not active until you complet the payment process\n"
-"Pleace  Select a Subscription, what you Plan, to activate your businuss."
+" \n"
+"Dear <b>%(user_name)s</b>, your business is registered successfully. \n"
+"However, it is not active until you complete the payment process. \n"
+"Please select a subscription plan to activate your business.\n"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:74
+#: .\payment\templates\payment\onwer_process.html:76
 msgid "Monthly"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:77
+#: .\payment\templates\payment\onwer_process.html:79
 msgid "Six Months"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:80
+#: .\payment\templates\payment\onwer_process.html:82
 msgid "Yearly"
 msgstr ""
 
-#: .\payment\templates\payment\onwer_process.html:82
+#: .\payment\templates\payment\onwer_process.html:84
 msgid "Proceed to Pay"
 msgstr ""
 
@@ -376,7 +377,7 @@ msgstr ""
 msgid "Order summary"
 msgstr ""
 
-#: .\shop\admin.py:125
+#: .\shop\admin.py:133
 #, python-format
 msgid "%d Shop was successfully Refreshed and expired shop is Deactivated "
 msgid_plural ""
@@ -384,14 +385,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\admin.py:192
+#: .\shop\admin.py:200
 #, python-format
 msgid "%d Product was successfully Disabled it Avaliablity"
 msgid_plural "%d Products were successfully  Disabled thier Avaliablity"
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\admin.py:205
+#: .\shop\admin.py:213
 #, python-format
 msgid "%d Product was successfully Enable its Avaliablity"
 msgid_plural "%d Products were successfully  Enable thier Avaliablity"
@@ -402,91 +403,83 @@ msgstr[1] ""
 msgid "Jemberu's shop "
 msgstr ""
 
-#: .\shop\templates\shop\base.html:27
+#: .\shop\templates\shop\base.html:23
 msgid "Language"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:54
+#: .\shop\templates\shop\base.html:48
 msgid "Home "
 msgstr ""
 
-#: .\shop\templates\shop\base.html:57
+#: .\shop\templates\shop\base.html:50
 msgid "register your Business"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:59
+#: .\shop\templates\shop\base.html:52
 msgid "admin page"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:64
+#: .\shop\templates\shop\base.html:56
 msgid "your shop"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:67
+#: .\shop\templates\shop\base.html:58
 msgid "News"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:74
+#: .\shop\templates\shop\base.html:65
 msgid "Login"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:75
+#: .\shop\templates\shop\base.html:66
 msgid "Sign Up"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:93 .\shop\templates\updateprofile.html:8
+#: .\shop\templates\shop\base.html:90 .\shop\templates\updateprofile.html:9
 msgid "Update Profile"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:95
+#: .\shop\templates\shop\base.html:92
 msgid "Logout"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:105
+#: .\shop\templates\shop\base.html:102
 msgid "search for products"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:112
+#: .\shop\templates\shop\base.html:109
 msgid "Sort by"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:114
+#: .\shop\templates\shop\base.html:111
 msgid "We recommended"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:115
+#: .\shop\templates\shop\base.html:112
 msgid "Newest arrivals"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:116
+#: .\shop\templates\shop\base.html:113
 msgid "Price: Low to High"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:117
+#: .\shop\templates\shop\base.html:114
 msgid "Price: High to Low"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:118
+#: .\shop\templates\shop\base.html:115
 msgid "Name: A to Z "
 msgstr ""
 
-#: .\shop\templates\shop\base.html:119
+#: .\shop\templates\shop\base.html:116
 msgid "Name: Z to A"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:125
-msgid "Filter by Shop"
-msgstr ""
-
-#: .\shop\templates\shop\base.html:127
-msgid "All"
-msgstr ""
-
-#: .\shop\templates\shop\base.html:147
+#: .\shop\templates\shop\base.html:124
 msgid "Your cart"
 msgstr ""
 
-#: .\shop\templates\shop\base.html:150
+#: .\shop\templates\shop\base.html:127
 #, python-format
 msgid ""
 "\n"
@@ -499,24 +492,24 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: .\shop\templates\shop\base.html:158
+#: .\shop\templates\shop\base.html:135
 msgid "Your cart is empty."
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:21
+#: .\shop\templates\shop\product\detail.html:22
 msgid "Thank you for choice us, for more info contact us with"
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:53
+#: .\shop\templates\shop\product\detail.html:55
 #, python-format
 msgid " Dear Customer, Welcome to <strong>%(shopname)s</strong>"
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:65
+#: .\shop\templates\shop\product\detail.html:67
 msgid "Add to cart"
 msgstr ""
 
-#: .\shop\templates\shop\product\detail.html:75
+#: .\shop\templates\shop\product\detail.html:77
 msgid "Poeple who bought this also bought"
 msgstr ""
 
@@ -524,15 +517,15 @@ msgstr ""
 msgid "Products"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:68
+#: .\shop\templates\shop\product\list.html:26
 msgid "Categories"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:91
+#: .\shop\templates\shop\product\list.html:69
 msgid "Search Result"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:98
+#: .\shop\templates\shop\product\list.html:76
 #, python-format
 msgid ""
 "\n"
@@ -540,24 +533,24 @@ msgid ""
 "      "
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:102
+#: .\shop\templates\shop\product\list.html:80
 msgid "Products from  All registered shops"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:117
-#: .\shop\templates\shop\product\list.html:131
+#: .\shop\templates\shop\product\list.html:95
+#: .\shop\templates\shop\product\list.html:109
 msgid "from"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:122
+#: .\shop\templates\shop\product\list.html:100
 msgid "Dear Customer"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:122
+#: .\shop\templates\shop\product\list.html:100
 msgid "No products available"
 msgstr ""
 
-#: .\shop\templates\shop\product\list.html:127
+#: .\shop\templates\shop\product\list.html:105
 msgid "Registered Shops"
 msgstr ""
 
@@ -611,79 +604,79 @@ msgstr ""
 msgid "add your Business"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:52
+#: .\shop\templates\shop\shops\shopform.html:53
 msgid "Business Name"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:56
+#: .\shop\templates\shop\shops\shopform.html:60
 msgid "Address"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:60
+#: .\shop\templates\shop\shops\shopform.html:67
 msgid "Phone Number"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:64
-#: .\shop\templates\updateprofile.html:51
+#: .\shop\templates\shop\shops\shopform.html:73
+#: .\shop\templates\updateprofile.html:63
 msgid "Submit"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:69
+#: .\shop\templates\shop\shops\shopform.html:79
 msgid "Need Help?"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:70
+#: .\shop\templates\shop\shops\shopform.html:80
 msgid "If you have any questions, feel free to contact our support team at"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:75
+#: .\shop\templates\shop\shops\shopform.html:85
 msgid "FAQs"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:77
+#: .\shop\templates\shop\shops\shopform.html:87
 msgid "Q: What if I don’t have a business name yet?"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:78
+#: .\shop\templates\shop\shops\shopform.html:88
 msgid ""
 "A: You can register as an individual seller and update your business name "
 "later."
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:81
+#: .\shop\templates\shop\shops\shopform.html:91
 msgid "Q: Can I change my business details later?"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:82
+#: .\shop\templates\shop\shops\shopform.html:92
 msgid ""
 "A: Yes, you can update your business details from your Adminstration page."
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:84
+#: .\shop\templates\shop\shops\shopform.html:94
 msgid "Terms and Conditions"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:85
+#: .\shop\templates\shop\shops\shopform.html:95
 msgid "By registering, you agree to our"
 msgstr ""
 
-#: .\shop\templates\shop\shops\shopform.html:85
+#: .\shop\templates\shop\shops\shopform.html:95
 msgid "terms and conditions"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:17
+#: .\shop\templates\updateprofile.html:18
 msgid "Update your profile"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:40
+#: .\shop\templates\updateprofile.html:46
 msgid "Email Address"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:44
+#: .\shop\templates\updateprofile.html:52
 msgid "Profile Image"
 msgstr ""
 
-#: .\shop\templates\updateprofile.html:48
+#: .\shop\templates\updateprofile.html:58
 msgid "Biography"
 msgstr ""
 
