@@ -44,16 +44,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
        // Language selection functionality by css selector
-       var languageLinks = document.querySelectorAll('.languages a[data-lang-code]');
-       languageLinks.forEach(function(link) {
-           link.addEventListener('click', function(event) {
-               event.preventDefault();
-               var langCode = this.getAttribute('data-lang-code');
+       var languages = document.getElementById('language-select');
+     
+       languages.addEventListener('change', function(event) {
+           var langCode = event.target.value;
                var currentUrl = window.location.pathname;
                var newUrl = '/' + langCode + currentUrl.substring(3); // Skip the current language code in the URL
                window.location.href = newUrl;
            });
-       });
+      
 });
 
 function hoverEffect(element, color) {

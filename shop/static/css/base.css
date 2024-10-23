@@ -193,7 +193,19 @@ ul.errorlist {
 #header .site-logo{
   position: absolute;
   top:5px;
-  left: 200px;
+  left: 30px;
+  background-color: red;
+  display: flex;
+}
+#header .site-logo h1{
+  font-family: impact, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  margin: 5px;
+ 
+
 }
 /* Product Search Styles */
 .product-search {
@@ -383,9 +395,9 @@ option {
 }
 
 .product-list .product-item img:hover {
-  transform: scale(1.1); /* Adjust scale factor as needed */
+  transform: scale(1.1); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 10; /* Adds a shadow effect on hover */
+  z-index: 10; 
 }
 .shop-info-wrapper{
    position: absolute;
@@ -511,6 +523,28 @@ border-radius: 5px;
 #header .languages {
   padding-top: 4px;
   font-size: 14px;
+  margin: 10px 0;
+  display: flex;
+
+}
+
+
+#language-select {
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  background-color: #bee2ca;
+  cursor: pointer;
+  margin-left: 0;
+}
+#language-select option{
+  background-color: white;
+  cursor: pointer;
+
+}
+#language-select option:hover{
+  background-color: white;
+
 }
 
 .languages ul {
@@ -519,7 +553,7 @@ border-radius: 5px;
   padding: 0;
   float: left;
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .languages ul li {
