@@ -72,17 +72,17 @@
 }
 
 .slide {
-  min-width: 100%; /* Each slide takes up the full width */
-  height: 100%; /* Full height of the container */
+  min-width: 100%; 
+  height: 100%; 
   position: relative;
-  z-index: 1; /* Ensure slides are clickable */
+  z-index: 1; 
 }
 
 .slide img {
-  width: 100%; /* Ensure images cover the full container */
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the images fit properly */
-  display: block; /* Ensure block display for the images */
+  object-fit: cover; 
+  display: block;
 }
 
 button.prev, button.next {
@@ -95,7 +95,7 @@ button.prev, button.next {
   font-size: 18px;
   padding: 8px;
   cursor: pointer;
-  z-index: 2; /* Higher than slides to ensure they are on top */
+  z-index: 2; 
 }
 
 button.prev {

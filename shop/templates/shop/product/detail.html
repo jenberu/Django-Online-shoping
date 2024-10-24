@@ -19,23 +19,31 @@
 {% block content %}
  <div class="product-detail">
      <div class="product-detail_body">
-           <div class="product-detail_image-container" >
-                <div  class="image-scroll">
-                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
-                </div>
-                {% if product.images %}
-                <div class="related-iamges">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" 
-                    alt="{{ product.name }}">
+           <div class="product-detail_image-container">
+    <div class="image-scroll">
+        <img id="mainImage" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
+        <button class="previmg" >&#10094;</button>
+         <button class="nextimg" >&#10095;</button>
+    </div>
 
-                 {% for image in product.images.all %}
-                 <img src="{{ image.image.url }}" alt="{{ product.name }}" />
-                 {% endfor %}
-                </div>
-                {% endif %}
-            </div>
+    {% if product.images %}
+    <div class="related-images">
+        <!-- Add data-index attribute to track the index -->
+        <img class="related-image" data-index="0" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
+
+        {% for image in product.images.all %}
+        <img class="related-image" data-index="{{ forloop.counter }}" src="{{ image.image.url }}" alt="{{ product.name }}">
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+
             <div class="product-detail_side-bar">
-                <h1> {% blocktranslate with shopname=product.shop %} Dear Customer, Welcome to <strong>{{shopname}}</strong>{% endblocktranslate %}</h1>
+                <h1> {% blocktranslate with shopname=product.shop %} Dear Customer, Welcome to 
+                 <strong>{{shopname}}</strong>{% endblocktranslate %}</h1>
+                 <br/> <br/>
+
+
                 {% with shop=product.shop %}
 
                 {% if shop.social_media %}
