@@ -11,9 +11,7 @@
 {% endblock %}
 
 {% block style %}
- <style>
-
- </style>
+ 
 {% endblock %}
 
 
@@ -24,6 +22,8 @@
 
 <div class="sidebar-menu" >
     <h3>{% translate 'Categories'%} </h3>
+    {% if categories %}
+
     <ul>
       {% for c in categories %}
       <li class="category-item {% if category and category.slug == c.slug %}selected{% endif %}">
@@ -42,9 +42,11 @@
       </li>
       {% endfor %}
     </ul>
+    {% endif %}
   </div>
 </div>
 <div class="product-list-wrapper">
+{% if shops %}
 <div class="shop-logo">
   <div class="logo-image-slider">
     {% for shop in shops %}
@@ -59,7 +61,7 @@
   <button class="prev" onclick="prevSlide()">&#10094;</button>
   <button class="next" onclick="nextSlide()">&#10095;</button>
 </div>
-
+{% endif %}
 
 
 
@@ -74,7 +76,7 @@
       {% elif products and not search%}
       {% if shop %}
       {% blocktranslate with shop_name=shop.shopName %}
-     </span id="one-shop-pro"> Products from {{shop_name}}</span>
+     <span id="one-shop-pro"> Products from {{shop_name}}</span>
       {% endblocktranslate%}
       {% else %}
       <span id="all-pro">{% translate "Products from  All registered shops" %}</span>

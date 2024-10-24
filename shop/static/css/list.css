@@ -48,7 +48,8 @@
 
 .body-content {
   display: flex;
-  height: calc(100vh - 250px);
+  padding: 10px;
+  margin-bottom: auto;
 }
 
 .product-list-wrapper{
@@ -109,9 +110,64 @@ button.prev:hover, button.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#sidebar .sidebar-menu {
+  width: 200px;
+  padding: 0 20px 0 0;
+  float: left;
+  margin: 0 10px 20px 0;
+  top: 0;
+  
+}
+
+#sidebar .sidebar-menu ul {
+  border: 1px solid gray;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+#sidebar .sidebar-menu h3 {
+  background-color: green;
+  color: white;
+  padding: 10px 5px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid green;
+}
+
+#sidebar .sidebar-menu ul li {
+  margin: 0;
+  list-style: none;
+  padding: 10px 14px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid gray;
+}
+
+#sidebar .sidebar-menu ul li a {
+  display: block;
+}
+
+#sidebar ul li.selected {
+  background: #5993bb;
+  border-radius: 4px;
+}
+
+#sidebar ul li.selected a {
+  color: #fff;
+}
+
 #right-bar {
   width:200px;
-  background-color: red;
+  height: fit-content;
+ overflow: auto;
   background-color: hsla(0, 9%, 91%, 0.76);
 
 
@@ -148,4 +204,36 @@ h1,h2{
 
 #right-bar ul li.selected a {
   color:#fff;
+}
+
+#main {
+  float: left;
+  width: 100%;
+}
+.product-list #products-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-list .product-item {
+  width: 22%;
+  padding: 10px;
+  float: left;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.product-list .product-item img {
+  width: 100%;
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+.product-list .product-item img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10; 
 }

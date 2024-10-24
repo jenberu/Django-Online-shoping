@@ -8,68 +8,80 @@
 {% block shop-filter %}
 {% endblock %}
 {% block style %}
-<style>
- 
-</style>
+   <link href="{% static 'css/productdetail.css' %}" rel="stylesheet">
+
 {% endblock %}
 
 {% block shop-info %}
-{% with shop=product.shop %}
 
- {% if shop.social_media %}
-  <div class="shop-info-wrapper">
-
-{% translate 'Thank you for choice us, for more info contact us with' %}:&nbsp &nbsp 
- <div class="shop-info">
-{% if shop.social_media.facebook_url%}
-<a href="{{shop.social_media.facebook_url}}" target="_blank"><i class="fab fa-facebook-f" title="Facbook"></i></a> &nbsp 
-{% endif %}
-
-{% if shop.social_media.telegram_url%}
-<a href="{{ shop.social_media.telegram_url}}" target="_blank"><i class="fab fa-telegram-plane" title="Telegram"></i></a>&nbsp 
-{% endif %}
-
-{% if shop.social_media.twitter_url%}
-<a href="{{shop.social_media.twitter_url}}" target="_blank"><i class="fab fa-twitter" title="Twitter"></i></a>&nbsp 
-{% endif %}
-{% if shop.social_media.instagram_url%}
-<a href="{{shop.social_media.instagram_url}}" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a> </div>
-{% endif%}
- </div>
-  </div>
-
- {% endif %}
- {% endwith %}
  {% endblock %}
 
 {% block content %}
-<div class="product-detail-wrapper" >
  <div class="product-detail">
      <div class="product-detail_body">
            <div class="product-detail_image-container" >
                 <div  class="image-scroll">
                     <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
                 </div>
+                {% if product.images %}
+                <div class="related-iamges">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" 
+                    alt="{{ product.name }}">
+
+                 {% for image in product.images.all %}
+                 <img src="{{ image.image.url }}" alt="{{ product.name }}" />
+                 {% endfor %}
+                </div>
+                {% endif %}
             </div>
             <div class="product-detail_side-bar">
                 <h1> {% blocktranslate with shopname=product.shop %} Dear Customer, Welcome to <strong>{{shopname}}</strong>{% endblocktranslate %}</h1>
-                
-                <h2>
-                   {{ product.name }} => <a href="{{ product.category.get_absolute_url }}">
-                        {{ product.category }}
-                    </a>
-                </h2>
-                <h2 class="price">{{ product.price }} {% translate 'Birr' %}</h2>
+                {% with shop=product.shop %}
+
+                {% if shop.social_media %}
+                <div class="shop-info-wrapper">
+
+                    {% translate 'Thank you for choice us, for more info contact us with' %}:&nbsp &nbsp 
+                    <div class="shop-info">
+                        {% if shop.social_media.facebook_url%}
+                        <a href="{{shop.social_media.facebook_url}}" target="_blank"><i class="fab fa-facebook-f" title="Facbook"></i></a> &nbsp 
+                        {% endif %}
+
+                        {% if shop.social_media.telegram_url%}
+                        <a href="{{ shop.social_media.telegram_url}}" target="_blank"><i class="fab fa-telegram-plane" title="Telegram"></i></a>&nbsp 
+                        {% endif %}
+
+                        {% if shop.social_media.twitter_url%}
+                        <a href="{{shop.social_media.twitter_url}}" target="_blank"><i class="fab fa-twitter" title="Twitter"></i></a>&nbsp 
+                        {% endif %}
+                        {% if shop.social_media.instagram_url%}
+                        <a href="{{shop.social_media.instagram_url}}" target="_blank"><i class="fab fa-instagram" title="Instagram"></i></a> </div>
+                        {% endif%}
+                    </div>
+                 </div>
+
+                {% endif %}
+                {% endwith %}
+                    
+                    
                 <div class ="cart-product-form" >
-                <form action="{% url 'cart:cart_add' product.id %}" method="post">
-                    {% csrf_token %}
-                   {{ cart_product_form }}             
-                <input type="submit" value="{% translate 'Add to cart' %}" style="cursor: pointer;">
-                </form>
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                    {% csrf_token %}
+                                {{ cart_product_form }}             
+                        <input type="submit" value="{% translate 'Add to cart' %}" style="cursor: pointer;">
+                    </form>
+                    <div>
+                        <p>
+                        {{ product.name }} => <a href="{{ product.category.get_absolute_url }}">
+                                {{ product.category }}
+                            </a>
+                        </p>
+                        <h2 class="price">{{ product.price }} {% translate 'Birr' %}</h2>
+                    </div>
                 </div>
                 <p>{{ product.description|linebreaks }}</p>
             </div>
-     </div>
+        </div>
 
 
 {% if recommended_products %}
@@ -86,30 +98,7 @@
         </div>
          {% endif %}
 </div>
-<diV class="product-detail_advertize">
- <h1> {%translate 'ADVERTISEMENT' %} <h1>
 
-{% if adds %}
-   {% for ad in adds %}
-    <div class="ad-container" id="ad-container-{{ forloop.counter }}">
-     <button class="hide-ads-btn" class="btn btn-danger" onclick="handleAddsButtonClicked({{ forloop.counter }})" title='hide'>X</button>
-     {% if ad.images %}
-        {% for adimg in ad.images.all %}
-            <div class="add-item" id="ad-item-{{ forloop.counter }}">
-                <a href="{% if ad.url %}{{ ad.url }}{% else %}# {% endif %}">
-                    <img src="{% if adimg %}{{ adimg.image.url }}{% endif %}" class="ad-image" alt="Ad Image">
-                    <div class="ad-description">{{ ad.description }}</div>
-                </a>
-            </div>
-        {% endfor %}
-     {% endif %}
-    </div>
-   {% endfor %}
- 
- {% endif %}
-
-</diV>
-</div>
 <script src="{% static 'js/productdetail.js' %}"></script>
 
 

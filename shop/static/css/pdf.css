@@ -1,10 +1,5 @@
 @import url(//fonts.googleapis.com/css?family=Ubuntu);
 
-body {
-    margin:0;
-    padding:0;
-    font-family:helvetica, sans-serif;
-}
 
 h1, h2, h3, h4, h5 , h6 {
     font-family: 'Ubuntu', sans-serif; font-weight:normal;
@@ -142,10 +137,7 @@ ul.errorlist {
     padding-top:4px;
 }
 
-#content {
-    padding:0 100px;
-    overflow:hidden;
-}
+
 
 #sidebar {
     width:220px;

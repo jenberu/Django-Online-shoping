@@ -2,7 +2,7 @@ from typing import Any
 from django.contrib import admin,messages
 from django.db.models.query import QuerySet
 from django.http import HttpRequest
-from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation,SocialMedia
+from .models import Category,Product,SubCategory,Shop,ShopSubscrioptionPlan,ProductRecommandation,SocialMedia,ProductImages
 from django.utils.html import mark_safe,format_html ,urlencode
 from .forms import ProductAdminForm,SocialMediaForm
 from django.urls import reverse
@@ -139,9 +139,23 @@ class ShopAdmin(admin.ModelAdmin):
             messages.SUCCESS,
         )       
          
-      
+class ProductImageInline(admin.TabularInline):
+    model=ProductImages
+    extra=1
+    def get_max_num(self, request, obj=None, **kwargs):
+        max_images = 3
+        if obj:
+            image_count = obj.images.count()
+            if image_count >= max_images:
+                # Notify the user that no more images can be added
+                messages.warning(request, f'This product already has {image_count} images. You cannot add more than {max_images} images.')
+                return 0  # No more images can be added
+            return max_images - image_count
+        return max_images
+
 @admin.register(Product)
 class PrductAdmin(admin.ModelAdmin):
+    inlines=[ProductImageInline]
     actions=['disable_avaliablity','enable_avaliablity']
     #override the formfield_for_foreignkey method of ModelAdmin 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):

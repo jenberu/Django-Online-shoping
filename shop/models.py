@@ -116,7 +116,12 @@ class Product(models.Model):
         return self.name  
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
- 
+class ProductImages(models.Model) :
+    product=models.ForeignKey(Product,related_name="images",on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='product_images/%Y/%m/%d')
+    def __str__(self):
+        return f"Image for {self.product.name}"
+
 class ShopSubscrioptionPlan(models.Model):
     PLAN_CHOICE=[
         ('monthly','Monthly'),
