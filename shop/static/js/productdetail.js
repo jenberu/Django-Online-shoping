@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
  
-    // Get all related images and the main image
     const relatedImages = document.querySelectorAll('.related-image');
     const mainImage = document.getElementById('mainImage');
     const prevButton = document.querySelector('.previmg');
     const nextButton = document.querySelector('.nextimg');
    
-    // Variable to track the current index of the displayed image
     let currentImageIndex = 0;
    
-    // Function to update the main image
     function updateMainImage(index) {
-        currentImageIndex = index; // Update the current index
+        //add css styling
+        relatedImages.forEach(img => img.classList.remove('active'));
+        currentImageIndex = index; 
         mainImage.src = relatedImages[currentImageIndex].src; // Change the main image
+        //add active class currently displayed image
+        relatedImages[currentImageIndex].classList.add('active')
     }
    
-    // Function for the next button
     function nextSlide() {
         currentImageIndex = (currentImageIndex + 1) % relatedImages.length; // Loop to the next image
         updateMainImage(currentImageIndex);
@@ -33,6 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners for buttons
     prevButton.addEventListener('click', prevSlide);
     nextButton.addEventListener('click', nextSlide);
+
+    // for each image add event listner
+    
+    relatedImages.forEach((image,index) => {
+        image.addEventListener('click', function () {
+            updateMainImage(index)
+        })
+    })
     
    });
    

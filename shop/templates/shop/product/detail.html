@@ -20,23 +20,23 @@
  <div class="product-detail">
      <div class="product-detail_body">
            <div class="product-detail_image-container">
-    <div class="image-scroll">
-        <img id="mainImage" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
-        <button class="previmg" >&#10094;</button>
-         <button class="nextimg" >&#10095;</button>
-    </div>
+                <div class="image-scroll">
+                    <img id="mainImage" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
+                    <button class="previmg" >&#10094;</button>
+                    <button class="nextimg" >&#10095;</button>
+                </div>
 
-    {% if product.images %}
-    <div class="related-images">
-        <!-- Add data-index attribute to track the index -->
-        <img class="related-image" data-index="0" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
+                 {% if product.images %}
+                <div class="related-images">
+                    <!-- Add data-index attribute to track the index -->
+                    <img class="related-image" data-index="0" src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" alt="{{ product.name }}">
 
-        {% for image in product.images.all %}
-        <img class="related-image" data-index="{{ forloop.counter }}" src="{{ image.image.url }}" alt="{{ product.name }}">
-        {% endfor %}
-    </div>
-    {% endif %}
-</div>
+                    {% for image in product.images.all %}
+                    <img class="related-image" data-index="{{ forloop.counter }}" src="{{ image.image.url }}" alt="{{ product.name }}">
+                    {% endfor %}
+                </div>
+                 {% endif %}
+            </div>
 
             <div class="product-detail_side-bar">
                 <h1> {% blocktranslate with shopname=product.shop %} Dear Customer, Welcome to 
@@ -95,14 +95,19 @@
 {% if recommended_products %}
         <div class="recommendations">
             <h3>{% translate 'Poeple who bought this also bought' %}</h3>
+            <div class ="recommendations-items">
             {% for p in recommended_products %}
+             <a href="{{ p.get_absolute_url }}">
             <div class="item">
-                <a href="{{ p.get_absolute_url }}">
-                    <img src="{% if p.image %}{{ p.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width=200px height=200px>
-                </a>
-                <p><a href="{{ p.get_absolute_url }}">{{ p.name }}</a></p>
+               
+              <img src="{% if p.image %}{{ p.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" width=200px height=200px>
+               
+                <p>{{ p.name }}</p>
+                <p>{{p.price}} {% translate 'Birr' %}</p>
             </div>
+            </a>
             {% endfor %}
+            </div>
         </div>
          {% endif %}
 </div>

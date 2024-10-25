@@ -319,11 +319,20 @@ option {
 
 .recommendations {
   clear: both;
-  background-color: red;
+  margin: 10px 50px;
+  
 }
+.recommendations .recommendations-items{
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  text-align: center;
+} 
+.recommendations .recommendations-items .item {
+  border: 1px solid rgb(231, 210, 210);
+  color: #333
+  ;
 
-.recommendations div {
-  float: left;
 }
 
 .recommendations img {
