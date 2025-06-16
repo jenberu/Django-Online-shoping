@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-bl&b9ob%g-djl#+vh1mgeeqt-p9t9wht=36b0-kp1gbo%5*0+y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'hulugebaya.onrender.com', 'www.hulugebaya.onrender.com']
 
 
 # Application definition
