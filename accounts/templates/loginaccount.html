@@ -14,8 +14,8 @@ form .form-control {
 .form-body{
   display: flex;
   justify-content: center;
-  width:50%;
-  margin:0 10px 10px 10px;
+  width:60%;
+  margin:0 auto 10px auto;
 }
 .form-body .form-container{
   border: 1px solid #ddd;
@@ -29,15 +29,17 @@ form .form-control {
   background-color:lightblue;
   margin-bottom:10px;
 }
-
+.sinup-form{
+  width:500px !important;
+}
 .btn-primary  {
   background-color: #007bff;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
+  padding: 10px;
   color: white;
   cursor: pointer;
-  width: 50%;
+  width: 40% !important;
   margin-top:20px;
 }
 
@@ -48,7 +50,8 @@ form .form-control {
   display:flex;
   margin-bottom: 10px;
   margin-top:5px;
-  height:calc(100vh - 250px);
+  height:calc(100vh - 200px);
+  
 }
 .login_advertize{
   width:25%;
@@ -87,8 +90,7 @@ form .form-control {
 {% endblock %}
 {% block content %}
 <div class="login">
-<div class="login-left">
-</div>
+
 <div class="form-body">
 <div class="form-container">
     <h1>Login</h1>
@@ -101,7 +103,7 @@ form .form-control {
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Login</button>   
-          <a class="nav-link" href="{% url 'signupaccount' %}" onmouseover="hoverEffect(this, '#0056b3')" onmouseout="hoverEffect(this, '#007bff')">Sign Up</a>
+          <a class="link" href="{% url 'signupaccount' %}" >Sign Up</a>
 
     </form>
     <p> <a href ="{% url 'resset_passowrd' %}" class="forgot-pass">Forgot password?</a></p>
@@ -109,6 +111,8 @@ form .form-control {
 
 </div>
 </div>
+
+{% comment %} 
 <diV class="login_advertize">
           <h1> {%translate 'ADVERTISEMENT' %} <h1>
 {% if adds %}
@@ -132,7 +136,7 @@ form .form-control {
  {% endif %}
 
 
-</diV>
+</diV> {% endcomment %}
 
 </div>
 

@@ -1,4 +1,18 @@
 @media (max-width: 768px) {
+  
+  #header{
+    position: relative;
+  }
+  #header .site-logo{
+    position: absolute;
+    left:20px;
+    bottom: 0;
+  }
+  #header .languages{
+     left:60%;
+     top:10px;
+     width: fit-content;
+  }
   .navbar-menu {
     display: none; /* Hide menu by default */
     flex-direction: column;
@@ -176,15 +190,26 @@
   }
   
 }
+@media (min-width: 768px)  and (max-width:920px){
+  #header .site-logo{
+    position: absolute;
+    left:20px;
+    bottom: 0;
+  }
+  #header .languages{
+     left:20%;
+     top:5px;
+     width: fit-content;
+  }
+}
 @media (min-width: 768px)  and (max-width:959px){
   .shop-order-info{
     clear: both;
     width: 100%;
     display: flex;
   }
-  #header .site-logo{
-    display: none;
-  }
+ 
+
   .order-form {
     width: 50%;
     margin:10px;

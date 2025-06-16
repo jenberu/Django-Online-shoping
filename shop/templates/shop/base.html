@@ -19,89 +19,88 @@
       <!-- header start -->
    <div id="header">
      <!-- Language Switcher -->
-    {% get_current_language as LANGUAGE_CODE %}
-    {% get_available_languages as LANGUAGES %}
-    {% get_language_info_list for LANGUAGES as languages %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
     
-    <a href="/">
-   <div class="site-logo" >
-     <img src="{% static 'img/logo-image.jpeg' %}" width=50px height=50px style=" border-radius:10px;" /><h1>HuluGebeya </h1>
-   </div>
-  </a>
- <div class="languages">
-    <label for="language-select"></label>
-       <div class="flag-image">
-        {% if LANGUAGE_CODE == "am" %}
-        <img src="{% static 'img/ethiopia-flag.svg' %}" width=50px height=30px alt="Language"/>
-        {% else %}
-        <img src="{% static 'img/english-flag.svg' %}" width=50px height=30px alt="Language"/>
-        {% endif %}
-        </div>
-    <select id="language-select" onchange="changeLanguage(this)">
-        {% for language in languages %}
-            <option value="{{ language.code }}"
-                {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
-                {{ language.name_local }}
-            </option>
-        {% endfor %}
-    </select>
-</div>
+         <a href="/">
+            <div class="site-logo" >
+                <img src="{% static 'img/logo-image.jpeg' %}" width=50px height=50px style=" border-radius:10px;" /><h1>HuluGebeya </h1>
+            </div>
+          </a>
+          <div class="languages">
+              <label for="language-select"></label>
+               <div class="flag-image">
+                  {% if LANGUAGE_CODE == "am" %}
+                  <img src="{% static 'img/ethiopia-flag.svg' %}" width=50px height=30px alt="Language"/>
+                  {% else %}
+                  <img src="{% static 'img/english-flag.svg' %}" width=50px height=30px alt="Language"/>
+                  {% endif %}
+              </div>
+              <select id="language-select" onchange="changeLanguage(this)">
+                  {% for language in languages %}
+                      <option value="{{ language.code }}"
+                          {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+                          {{ language.name_local }}
+                      </option>
+                  {% endfor %}
+               </select>
+           </div>
 
       <!-- Navbar -->
-    <nav class="navbar">
-      <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
-      <div class="navbar-menu" >
-         <a href="/" class="nav-link">{% translate "Home " %}</a>
+          <nav class="navbar">
+            <button class="navbar-toggler" onclick="toggleNavbar()">☰</button>
+            <div class="navbar-menu" >
+               {% comment %} <a href="/" class="nav-link">{% translate "Home " %}</a> {% endcomment %}
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'shop:add_shop' %}" >{% translate "register your Business" %}</a>
+                {% if user.is_staff %}
+                  <a class="nav-link" href="{{ '/admin/' }}" > {% translate "admin page" %}</a>
+                {% endif %}
+                {% endif %}
+                {% if user.is_authenticated and user.onwer  %} 
+                <a class="nav-link" href="{% url 'shop:adminhome' %}" >{% translate "your shop"%}</a>
+                {% endif %}
+                  <!-- Anything between {% verbatim %} and {% endverbatim %} will not be executed, but rendered as output instead-->
+                {% verbatim %}
+                <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" >About Developer</a>
+                {% endverbatim %}
+                {% if not user.is_authenticated %}
+                      
+                <a class="nav-link" href="{% url 'loginaccount' %}" >{% translate "Login"%}</a>
+                  <a class="nav-link" href="{% url 'signupaccount' %}" >{% translate "Sign Up"%}</a>
+                {% endif %}
+             </div>
+          </nav>
           {% if user.is_authenticated %}
-          <a class="nav-link" href="{% url 'shop:add_shop' %}" >{% translate "register your Business" %}</a>
-           {% if user.is_staff %}
-             <a class="nav-link" href="{{ '/admin/' }}" > {% translate "admin page" %}</a>
-           {% endif %}
-          {% endif %}
-          {% if user.is_authenticated and user.onwer  %} 
-           <a class="nav-link" href="{% url 'shop:adminhome' %}" >{% translate "your shop"%}</a>
-          {% endif %}
-          <a class="nav-link" href="{% url 'news' %}" >{% translate "News"%}</a>
-            <!-- Anything between {% verbatim %} and {% endverbatim %} will not be executed, but rendered as output instead-->
-          {% verbatim %}
-          <a class="nav-link" href="https://jenberu.github.io/MyPortifolo" >About Developer</a>
-          {% endverbatim %}
-          {% if not user.is_authenticated %}
-                 
-           <a class="nav-link" href="{% url 'loginaccount' %}" >{% translate "Login"%}</a>
-            <a class="nav-link" href="{% url 'signupaccount' %}" >{% translate "Sign Up"%}</a>
-          {% endif %}
-        </div>
-    </nav>
-     {% if user.is_authenticated %}
-     <div id="profile-image" style="float: right;">
-        <a class="nav-link" href="#"  onclick="toggleDropdown(event)">
-         {% if user.profile.image %}
-           <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
-          {% else %}
-           <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
-          {% endif %}
-                            
-         </a>
-                            
-         <div id="dropdown-menu" class="dropdown-menu">
-            <P>  
-               {% if user.profile.image %}
-                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 150px; height: 100px; border-radius: 50%; cursor: pointer;" >
+          <div id="profile-image" style="float: right;">
+              <a class="nav-link-image" href="#"  onclick="toggleDropdown(event)">
+                {% if user.profile.image %}
+                <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;" >
                 {% else %}
-               <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 100px; height: 100px; border-radius: 50%; cursor: pointer;">
-               {% endif %}
-               </p>
-             <a href="#" class="dropdown-item" onclick="openModal()">
-                <i class="fas fa-user-edit"></i>{%translate 'Update Profile'%}</a>
-              <a href="{% url 'logoutaccount' %}" class="dropdown-item">
-                <i class="fas fa-sign-out-alt"></i>{%translate 'Logout'%}
+                <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 50px; height: 50px; border-radius: 50%; cursor: pointer;">
+                {% endif %}
+                                  
               </a>
+                                  
+              <div id="dropdown-menu" class="dropdown-menu">
+                  <P>  
+                    {% if user.profile.image %}
+                      <img id="profileImage" src="{{user.profile.image.url}}" alt="Profile Image " title="{{ user.username }}" style="width: 150px; height: 100px; border-radius: 50%; cursor: pointer;" >
+                      {% else %}
+                    <img id="profileImage" src="{% static 'img/default_profile_image.jpg' %}" alt="Default Profile Image" title="{{ user.username }}" style="width: 100px; height: 100px; border-radius: 50%; cursor: pointer;">
+                    {% endif %}
+                    </p>
+                   <a href="#" class="dropdown-item" onclick="openModal()">
+                      <i class="fas fa-user-edit"></i>{%translate 'Update Profile'%}</a>
+                    <a href="{% url 'logoutaccount' %}" class="dropdown-item">
+                      <i class="fas fa-sign-out-alt"></i>{%translate 'Logout'%}
+                    </a>
+                </div>
           </div>
-      </div>
-    {% endif %}
+          {% endif %}
    </div>    <!-- header end -->
-    {%block searchField%}
+     {%block searchField%}
     <div class="product-search">
       <form action="{% url 'shop:product_list' %}">
         <div class="mb-3 inline-form">
@@ -109,7 +108,7 @@
           <button type="submit" ><i class="fa fa-search"></i></button>
        </div>
      </form>
-     {% block product-sort  %}
+      {% block product-sort  %}
 
      <div class="product-sort">
        <label for="sort">{%translate 'Sort by'%}:</label>
@@ -125,22 +124,22 @@
      {% endblock %}
      {% block cart %}
      <div class="cart">
-     {% with total_items=cart|length %}
-     {% if total_items > 0 and user.is_authenticated %}
-     {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">
-     <!-- Add a 's' at the end of a value if the total_items value is not 1 -->
-     <!--The count keyword is used to specify the variable that should be used for pluralization. -->
-     {% blocktranslate count items=total_items with total=cart.get_total_price  %}
-       {{items}} item, {{total}} Birr
-       {% plural %}
-         {{items}} items,{{total}} Birr
-       {% endblocktranslate %}
+        {% with total_items=cart|length %}
+        {% if total_items > 0 and user.is_authenticated %}
+        {% translate "Your cart" %} :<a href="{% url 'cart:cart_detail' %}">
+        <!-- Add a 's' at the end of a value if the total_items value is not 1 -->
+        <!--The count keyword is used to specify the variable that should be used for pluralization. -->
+        {% blocktranslate count items=total_items with total=cart.get_total_price  %}
+          {{items}} item, {{total}} Birr
+          {% plural %}
+            {{items}} items,{{total}} Birr
+          {% endblocktranslate %}
 
-       <a>
-      {% elif not order and user.is_authenticated %}
-      {% translate "Your cart is empty." %}
-      {% endif %}
-      {% endwith %}
+          <a>
+          {% elif not order and user.is_authenticated %}
+          {% translate "Your cart is empty." %}
+          {% endif %}
+          {% endwith %}
      </div>
      {% endblock %}
 
@@ -156,25 +155,25 @@
    </div>
 
   <main class="content">
-   <div id="content">
-    {% block content %}
-    {% endblock %}
-   </div>
-   </main>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
     {% include 'updateprofile.html' %}
 
-   <footer >
-        <div class="footer-content">
-            <p>&copy; {% now "Y" %} My online shop App. All rights reserved.</p>
+  <footer >
+      <div class="footer-content">
+          <p>&copy; {% now "Y" %} HuluGebeya. All rights reserved.</p>
 
-            Developing by: Jemberu Kassie -- Contact me: <a href="mailto:jemberu0970@gmail.com">Send Email</a>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/jenberu" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://telegram.me/i_love_my_lovers" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                <a href="https://www.instagram.com/jemberu" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+          Developing by: Jemberu Kassie -- Contact me: <a href="mailto:jemberu0970@gmail.com">Send Email</a>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/jenberu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://telegram.me/i_love_my_lovers" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+              <a href="https://www.instagram.com/jemberu" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+      </div>
+  </footer>
    <script src="{% static 'js/base.js' %}"></script>
   
 

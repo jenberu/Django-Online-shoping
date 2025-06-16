@@ -1,0 +1,7081 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2024-06-12T12:07:42.492Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "1",
+      "object_repr": "Tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2024-06-12T12:08:12.739Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "2",
+      "object_repr": "Ethiopian Coffee",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2024-06-12T12:15:11.872Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Geeen Tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2024-06-12T12:16:34.878Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "red tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-06-12T13:50:40.046Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Geeen Tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-06-12T13:50:40.053Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "red tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2024-06-12T14:12:47.713Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "sedamo coffee",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2024-06-12T14:17:36.307Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "oromia coffee",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2024-06-15T18:05:28.669Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "clothes",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2024-06-15T18:06:28.399Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Food",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2024-06-15T18:13:50.598Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "jacket",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2024-06-15T18:14:48.190Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+      "action_time": "2024-06-15T18:16:16.067Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "trouser",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2024-06-15T18:24:44.914Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "clothes",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Has sub catagory\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2024-06-15T18:24:55.678Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Food",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2024-06-15T18:25:02.257Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Food",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Has sub catagory\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2024-06-15T19:18:42.584Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "kids",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2024-06-15T19:18:57.720Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "young",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2024-06-15T19:20:12.295Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "3",
+      "object_repr": "clothes",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2024-06-15T20:31:37.939Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "kidi kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2024-06-15T20:34:44.988Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "kids jacket",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2024-06-16T12:38:05.937Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "2",
+      "object_repr": "myshop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2024-06-16T12:38:05.949Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "1",
+      "object_repr": "bdu",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2024-06-16T12:47:30.396Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "3",
+      "object_repr": "bdu",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2024-06-16T13:23:24.641Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "5",
+      "object_repr": "myshop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2024-06-16T13:39:43.709Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "6",
+      "object_repr": "myshop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2024-06-16T13:40:36.323Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "4",
+      "object_repr": "bdu",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2024-06-16T13:50:56.752Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2024-06-16T13:51:23.711Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2024-06-16T14:00:39.650Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "8",
+      "object_repr": "myshop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2024-06-18T13:07:38.615Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "1",
+      "object_repr": "jemberu",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2024-06-19T19:11:01.658Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Geeen Tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2024-06-19T19:13:51.887Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "jacket",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2024-06-20T06:35:56.019Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "7",
+      "object_repr": "myshop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2024-06-20T06:37:04.852Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "10",
+      "object_repr": "663",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2024-06-20T06:54:10.525Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "12",
+      "object_repr": "564543",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2024-06-20T06:54:10.533Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "11",
+      "object_repr": "564543",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2024-06-21T08:28:23.064Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2024-06-21T18:44:20.116Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Dicount amount\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.755Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "kids jacket",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.755Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "kidi kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.755Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "trouser",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.755Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.766Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "jacket",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.767Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "oromia coffee",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.767Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "sedamo coffee",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.767Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "red tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2024-06-22T11:58:17.767Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Geeen Tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2024-06-22T12:58:44.185Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "red tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2024-06-22T13:07:08.778Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "red tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+      "action_time": "2024-06-22T13:12:02.507Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "red tea",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+      "action_time": "2024-06-22T19:21:28.405Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "14",
+      "object_repr": "software plc",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+      "action_time": "2024-06-22T19:35:18.400Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "3",
+      "object_repr": "jenbe",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 54,
+    "fields": {
+      "action_time": "2024-06-22T20:17:27.389Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Owner\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 55,
+    "fields": {
+      "action_time": "2024-06-23T10:59:03.470Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "8",
+      "object_repr": "Order 8",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 56,
+    "fields": {
+      "action_time": "2024-06-23T10:59:03.479Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "7",
+      "object_repr": "Order 7",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 57,
+    "fields": {
+      "action_time": "2024-06-23T10:59:03.479Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "6",
+      "object_repr": "Order 6",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 58,
+    "fields": {
+      "action_time": "2024-06-23T10:59:03.479Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "5",
+      "object_repr": "Order 5",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 59,
+    "fields": {
+      "action_time": "2024-06-23T10:59:03.479Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Order 4",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 60,
+    "fields": {
+      "action_time": "2024-06-23T18:14:09.614Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "9",
+      "object_repr": "Order 9",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 61,
+    "fields": {
+      "action_time": "2024-06-24T05:53:36.003Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 62,
+    "fields": {
+      "action_time": "2024-06-24T06:26:25.948Z",
+      "user": 3,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 63,
+    "fields": {
+      "action_time": "2024-06-24T08:11:06.963Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 64,
+    "fields": {
+      "action_time": "2024-06-24T17:50:04.405Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "4",
+      "object_repr": "Order 4",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}, {\"changed\": {\"name\": \"order item\", \"object\": \"5\", \"fields\": [\"Quantity\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 65,
+    "fields": {
+      "action_time": "2024-06-29T12:23:08.205Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "15",
+      "object_repr": "Order 15",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Paid\", \"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 66,
+    "fields": {
+      "action_time": "2024-06-29T12:23:38.123Z",
+      "user": 3,
+      "content_type": 10,
+      "object_id": "15",
+      "object_repr": "Order 15",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 67,
+    "fields": {
+      "action_time": "2024-06-29T12:33:08.581Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "16",
+      "object_repr": "Order 16",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 68,
+    "fields": {
+      "action_time": "2024-07-02T13:35:46.016Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "1",
+      "object_repr": "ShopSubscrioptionPlan object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 69,
+    "fields": {
+      "action_time": "2024-07-02T13:39:39.675Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "2",
+      "object_repr": "six_months",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 70,
+    "fields": {
+      "action_time": "2024-07-02T13:39:56.601Z",
+      "user": 1,
+      "content_type": 14,
+      "object_id": "3",
+      "object_repr": "yearly",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 71,
+    "fields": {
+      "action_time": "2024-07-02T13:48:26.154Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "16",
+      "object_repr": "ezra plc",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 72,
+    "fields": {
+      "action_time": "2024-07-02T15:28:05.929Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "17",
+      "object_repr": "ezra plc",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 73,
+    "fields": {
+      "action_time": "2024-07-02T15:34:21.278Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "6",
+      "object_repr": "ezra",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 74,
+    "fields": {
+      "action_time": "2024-07-02T15:47:03.537Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "19",
+      "object_repr": "ezra plc",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 75,
+    "fields": {
+      "action_time": "2024-07-02T16:02:38.280Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 76,
+    "fields": {
+      "action_time": "2024-07-02T16:02:51.743Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 77,
+    "fields": {
+      "action_time": "2024-07-02T16:03:10.247Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 78,
+    "fields": {
+      "action_time": "2024-07-06T11:14:25.079Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Geeen Tea",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 79,
+    "fields": {
+      "action_time": "2024-07-06T11:16:12.911Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Available\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 80,
+    "fields": {
+      "action_time": "2024-07-06T12:12:21.605Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 81,
+    "fields": {
+      "action_time": "2024-07-06T12:13:07.575Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 82,
+    "fields": {
+      "action_time": "2024-07-06T12:51:52.892Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 83,
+    "fields": {
+      "action_time": "2024-07-06T13:22:42.341Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 84,
+    "fields": {
+      "action_time": "2024-07-06T13:23:38.483Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 85,
+    "fields": {
+      "action_time": "2024-07-06T13:25:33.960Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 86,
+    "fields": {
+      "action_time": "2024-07-06T15:45:44.947Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 87,
+    "fields": {
+      "action_time": "2024-07-06T16:34:31.322Z",
+      "user": 3,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Available\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 88,
+    "fields": {
+      "action_time": "2024-07-06T16:39:40.706Z",
+      "user": 3,
+      "content_type": 12,
+      "object_id": "23",
+      "object_repr": "my shop",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 89,
+    "fields": {
+      "action_time": "2024-07-06T16:48:58.594Z",
+      "user": 3,
+      "content_type": 12,
+      "object_id": "23",
+      "object_repr": "my shop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 90,
+    "fields": {
+      "action_time": "2024-07-06T16:50:41.900Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 91,
+    "fields": {
+      "action_time": "2024-07-07T07:29:42.018Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 92,
+    "fields": {
+      "action_time": "2024-07-07T07:31:19.001Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 93,
+    "fields": {
+      "action_time": "2024-07-07T07:31:30.094Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 94,
+    "fields": {
+      "action_time": "2024-07-07T07:32:04.408Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 95,
+    "fields": {
+      "action_time": "2024-07-07T07:33:35.318Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 96,
+    "fields": {
+      "action_time": "2024-07-07T07:34:41.831Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 97,
+    "fields": {
+      "action_time": "2024-07-07T07:35:50.778Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 98,
+    "fields": {
+      "action_time": "2024-07-07T07:38:14.636Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 99,
+    "fields": {
+      "action_time": "2024-07-07T07:41:06.995Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+      "action_time": "2024-07-07T07:43:42.884Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+      "action_time": "2024-07-07T07:44:34.936Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+      "action_time": "2024-07-07T18:22:10.844Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+      "action_time": "2024-07-07T18:22:39.785Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+      "action_time": "2024-07-07T18:22:56.951Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+      "action_time": "2024-07-08T18:27:16.646Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "8",
+      "object_repr": "myname",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+      "action_time": "2024-07-08T20:19:56.268Z",
+      "user": 1,
+      "content_type": 16,
+      "object_id": "1",
+      "object_repr": "jemberukassie",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+      "action_time": "2024-07-11T12:03:10.113Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "25",
+      "object_repr": "Order 25",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Paid\", \"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+      "action_time": "2024-07-11T12:10:18.643Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "25",
+      "object_repr": "Order 25",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.519Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "32",
+      "object_repr": "Order 32",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.535Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "31",
+      "object_repr": "Order 31",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.541Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "30",
+      "object_repr": "Order 30",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.551Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "29",
+      "object_repr": "Order 29",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.560Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "28",
+      "object_repr": "Order 28",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.567Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "27",
+      "object_repr": "Order 27",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+      "action_time": "2024-07-11T12:30:21.580Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "26",
+      "object_repr": "Order 26",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+      "action_time": "2024-07-11T12:34:49.548Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "ProductRecommandation object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+      "action_time": "2024-07-11T13:01:15.253Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "2",
+      "object_repr": "ProductRecommandation object (2)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+      "action_time": "2024-07-12T18:54:26.972Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "3",
+      "object_repr": "6",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+      "action_time": "2024-07-12T19:22:27.956Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "1",
+      "object_repr": "5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+      "action_time": "2024-07-12T19:23:41.262Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "2",
+      "object_repr": "5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+      "action_time": "2024-07-13T05:35:11.666Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+      "action_time": "2024-07-13T05:35:28.667Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "5",
+      "object_repr": "5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+      "action_time": "2024-07-13T06:26:42.739Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "5",
+      "object_repr": "5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+      "action_time": "2024-07-13T06:26:42.754Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "4",
+      "object_repr": "5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+      "action_time": "2024-07-13T06:26:42.758Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "3",
+      "object_repr": "6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 126,
+    "fields": {
+      "action_time": "2024-07-13T07:14:54.757Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "11",
+      "object_repr": "6",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 127,
+    "fields": {
+      "action_time": "2024-07-13T07:14:54.780Z",
+      "user": 1,
+      "content_type": 17,
+      "object_id": "10",
+      "object_repr": "5",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 128,
+    "fields": {
+      "action_time": "2024-07-17T08:56:08.098Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "44",
+      "object_repr": "Order 44",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 129,
+    "fields": {
+      "action_time": "2024-07-17T08:56:08.111Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "43",
+      "object_repr": "Order 43",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 130,
+    "fields": {
+      "action_time": "2024-07-17T08:56:08.112Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "42",
+      "object_repr": "Order 42",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 131,
+    "fields": {
+      "action_time": "2024-07-17T08:56:08.112Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "41",
+      "object_repr": "Order 41",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 132,
+    "fields": {
+      "action_time": "2024-07-17T08:56:08.112Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "40",
+      "object_repr": "Order 40",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 133,
+    "fields": {
+      "action_time": "2024-07-17T18:48:09.150Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 134,
+    "fields": {
+      "action_time": "2024-07-17T18:50:43.944Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 135,
+    "fields": {
+      "action_time": "2024-07-17T20:22:32.461Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 136,
+    "fields": {
+      "action_time": "2024-07-17T20:23:44.273Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 137,
+    "fields": {
+      "action_time": "2024-07-17T21:33:53.935Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subcategory\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 138,
+    "fields": {
+      "action_time": "2024-07-17T21:40:47.427Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "13",
+      "object_repr": "yebahil kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 139,
+    "fields": {
+      "action_time": "2024-07-17T21:42:48.850Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "13",
+      "object_repr": "yebahil kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Subcategory\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 140,
+    "fields": {
+      "action_time": "2024-07-17T21:47:59.721Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "kidi kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 141,
+    "fields": {
+      "action_time": "2024-07-17T21:54:53.752Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "kidi kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 142,
+    "fields": {
+      "action_time": "2024-07-17T21:55:33.972Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "kidi kemis",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 143,
+    "fields": {
+      "action_time": "2024-07-18T08:33:31.558Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "1",
+      "object_repr": "1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 144,
+    "fields": {
+      "action_time": "2024-07-18T08:37:54.658Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Title\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 145,
+    "fields": {
+      "action_time": "2024-07-18T08:38:35.779Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "2",
+      "object_repr": "2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 146,
+    "fields": {
+      "action_time": "2024-07-18T08:41:47.747Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "3",
+      "object_repr": "3",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 147,
+    "fields": {
+      "action_time": "2024-07-18T08:42:11.522Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "4",
+      "object_repr": "4",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 148,
+    "fields": {
+      "action_time": "2024-07-18T08:43:43.337Z",
+      "user": 1,
+      "content_type": 19,
+      "object_id": "5",
+      "object_repr": "5",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 149,
+    "fields": {
+      "action_time": "2024-07-18T11:42:59.393Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 150,
+    "fields": {
+      "action_time": "2024-07-18T11:53:37.156Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 151,
+    "fields": {
+      "action_time": "2024-07-18T13:00:02.598Z",
+      "user": 1,
+      "content_type": 13,
+      "object_id": "1",
+      "object_repr": "ester",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 152,
+    "fields": {
+      "action_time": "2024-07-19T17:12:54.538Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "14",
+      "object_repr": "├ƒ├¬├ç├ƒ├½├í├ƒ├¬Ôòù ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 153,
+    "fields": {
+      "action_time": "2024-07-19T18:13:04.145Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "15",
+      "object_repr": "habesh kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 154,
+    "fields": {
+      "action_time": "2024-07-19T18:21:28.085Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "16",
+      "object_repr": "kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 155,
+    "fields": {
+      "action_time": "2024-07-19T20:48:47.993Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "shose",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 156,
+    "fields": {
+      "action_time": "2024-07-19T20:49:01.053Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "shose",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Shop\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 157,
+    "fields": {
+      "action_time": "2024-07-19T20:49:22.732Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "electronics",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 158,
+    "fields": {
+      "action_time": "2024-07-19T20:50:01.583Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Animal",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 159,
+    "fields": {
+      "action_time": "2024-07-19T20:52:00.607Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "8",
+      "object_repr": "construction material",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 160,
+    "fields": {
+      "action_time": "2024-07-19T20:52:20.482Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Food",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Has sub catagory\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 161,
+    "fields": {
+      "action_time": "2024-07-19T20:53:08.971Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "cosmotics",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 162,
+    "fields": {
+      "action_time": "2024-07-20T21:31:01.670Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 163,
+    "fields": {
+      "action_time": "2024-07-20T21:31:43.634Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 164,
+    "fields": {
+      "action_time": "2024-07-20T21:31:59.644Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 165,
+    "fields": {
+      "action_time": "2024-07-20T21:32:38.524Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 166,
+    "fields": {
+      "action_time": "2024-07-20T21:38:37.533Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 167,
+    "fields": {
+      "action_time": "2024-07-20T21:39:18.425Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "24",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 168,
+    "fields": {
+      "action_time": "2024-07-20T21:40:14.817Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 169,
+    "fields": {
+      "action_time": "2024-07-20T21:44:40.710Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 170,
+    "fields": {
+      "action_time": "2024-07-20T22:19:40.670Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "25",
+      "object_repr": "werftgy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 171,
+    "fields": {
+      "action_time": "2024-07-20T22:20:14.886Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 172,
+    "fields": {
+      "action_time": "2024-07-20T22:20:39.042Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 173,
+    "fields": {
+      "action_time": "2024-07-20T22:21:00.374Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 174,
+    "fields": {
+      "action_time": "2024-07-20T22:21:22.066Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 175,
+    "fields": {
+      "action_time": "2024-07-20T22:41:48.959Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 176,
+    "fields": {
+      "action_time": "2024-07-21T10:10:50.770Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 177,
+    "fields": {
+      "action_time": "2024-07-21T10:12:58.278Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\", \"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 178,
+    "fields": {
+      "action_time": "2024-07-21T12:04:15.203Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "Django",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Color\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 179,
+    "fields": {
+      "action_time": "2024-07-21T12:06:00.270Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "Django",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Color\", \"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 180,
+    "fields": {
+      "action_time": "2024-07-21T12:07:40.590Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "Django",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Favicon\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 181,
+    "fields": {
+      "action_time": "2024-07-21T12:24:24.130Z",
+      "user": 1,
+      "content_type": 20,
+      "object_id": "1",
+      "object_repr": "Django",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Color\", \"Display\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 182,
+    "fields": {
+      "action_time": "2024-07-21T18:09:16.221Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "45",
+      "object_repr": "Order 45",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 183,
+    "fields": {
+      "action_time": "2024-07-21T21:22:14.713Z",
+      "user": 1,
+      "content_type": 10,
+      "object_id": "47",
+      "object_repr": "Order 47",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 184,
+    "fields": {
+      "action_time": "2024-07-22T11:19:05.299Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 185,
+    "fields": {
+      "action_time": "2024-07-22T11:19:35.018Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 186,
+    "fields": {
+      "action_time": "2024-07-22T11:29:33.057Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 187,
+    "fields": {
+      "action_time": "2024-07-22T11:32:03.749Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 188,
+    "fields": {
+      "action_time": "2024-07-22T11:35:24.827Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 189,
+    "fields": {
+      "action_time": "2024-07-22T11:37:52.979Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 190,
+    "fields": {
+      "action_time": "2024-07-22T11:38:52.373Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 191,
+    "fields": {
+      "action_time": "2024-07-22T11:48:45.576Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 192,
+    "fields": {
+      "action_time": "2024-07-22T12:24:27.317Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 193,
+    "fields": {
+      "action_time": "2024-07-22T12:28:38.259Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 194,
+    "fields": {
+      "action_time": "2024-07-22T12:34:50.796Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 195,
+    "fields": {
+      "action_time": "2024-07-22T13:12:35.064Z",
+      "user": 3,
+      "content_type": 21,
+      "object_id": "1",
+      "object_repr": "SocialMedia object (1)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 196,
+    "fields": {
+      "action_time": "2024-07-22T13:51:25.240Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 197,
+    "fields": {
+      "action_time": "2024-08-30T14:35:21.953Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 198,
+    "fields": {
+      "action_time": "2024-08-30T14:35:48.368Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\", \"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 199,
+    "fields": {
+      "action_time": "2024-08-30T14:35:58.026Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 200,
+    "fields": {
+      "action_time": "2024-08-31T08:37:25.292Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid from\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 201,
+    "fields": {
+      "action_time": "2024-08-31T08:38:01.339Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 202,
+    "fields": {
+      "action_time": "2024-08-31T08:38:15.962Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 203,
+    "fields": {
+      "action_time": "2024-08-31T08:38:29.552Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 204,
+    "fields": {
+      "action_time": "2024-08-31T08:38:44.626Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 205,
+    "fields": {
+      "action_time": "2024-08-31T08:38:58.493Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 206,
+    "fields": {
+      "action_time": "2024-08-31T08:39:17.026Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "22",
+      "object_repr": "best sells",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 207,
+    "fields": {
+      "action_time": "2024-08-31T08:39:31.621Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "24",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 208,
+    "fields": {
+      "action_time": "2024-08-31T08:39:43.897Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "25",
+      "object_repr": "werftgy",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 209,
+    "fields": {
+      "action_time": "2024-10-01T15:02:34.350Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 210,
+    "fields": {
+      "action_time": "2024-10-01T15:03:06.594Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 211,
+    "fields": {
+      "action_time": "2024-10-01T15:03:31.816Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 212,
+    "fields": {
+      "action_time": "2024-10-01T15:03:53.293Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 213,
+    "fields": {
+      "action_time": "2024-10-13T17:46:18.851Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "ggfjkgnjf wvjgj",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 214,
+    "fields": {
+      "action_time": "2024-10-13T17:48:33.952Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "ggfjkgnjf wvjgj",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 215,
+    "fields": {
+      "action_time": "2024-10-13T17:49:00.881Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 216,
+    "fields": {
+      "action_time": "2024-10-13T17:49:24.753Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 217,
+    "fields": {
+      "action_time": "2024-10-13T17:49:45.467Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├½├ü├ƒ├½┬ó ├ƒ├½┬í├ƒ├¬├ü├ƒ├»├ü├ƒ├«├á├ƒ├½┬í├ƒ├«├á├ƒ├¬├ü├ƒ├»├ü ├ƒ├½┬í├ƒ├¿├▓├ƒ├¬├ü├ƒ├»├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 218,
+    "fields": {
+      "action_time": "2024-10-13T17:50:03.711Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├½├ü├ƒ├½┬ó ├ƒ├½┬í├ƒ├¬├ü├ƒ├»├ü├ƒ├«├á├ƒ├½┬í├ƒ├«├á├ƒ├¬├ü├ƒ├»├ü ├ƒ├½┬í├ƒ├¿├▓├ƒ├¬├ü├ƒ├»├ü",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 219,
+    "fields": {
+      "action_time": "2024-10-13T17:50:28.760Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "fsv fb jvnsdj",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 220,
+    "fields": {
+      "action_time": "2024-10-13T17:51:08.531Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "fsv fb jvnsdj",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 221,
+    "fields": {
+      "action_time": "2024-10-13T17:51:33.655Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "14",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├½├ü├ƒ├½┬ó ├ƒ├½┬í├ƒ├¬├ü├ƒ├»├ü├ƒ├«├á├ƒ├½┬í├ƒ├«├á├ƒ├¬├ü├ƒ├»├ü ├ƒ├½┬í├ƒ├¿├▓├ƒ├¬├ü├ƒ├»├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 222,
+    "fields": {
+      "action_time": "2024-10-13T17:51:56.042Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "15",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 223,
+    "fields": {
+      "action_time": "2024-10-13T17:52:17.540Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "14",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├½├ü├ƒ├½┬ó ├ƒ├½┬í├ƒ├¬├ü├ƒ├»├ü├ƒ├«├á├ƒ├½┬í├ƒ├«├á├ƒ├¬├ü├ƒ├»├ü ├ƒ├½┬í├ƒ├¿├▓├ƒ├¬├ü├ƒ├»├ü",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 224,
+    "fields": {
+      "action_time": "2024-10-13T17:52:17.551Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "15",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 225,
+    "fields": {
+      "action_time": "2024-10-13T18:02:38.876Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "16",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├»Ôöé├ƒ├¬├ü ├ƒ├¬├á├ƒ├»├ü├ƒ├¬├á├ƒ├¬Ôöé├ƒ├«├á",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 226,
+    "fields": {
+      "action_time": "2024-10-13T18:03:04.259Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "16",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├»Ôöé├ƒ├¬├ü ├ƒ├¬├á├ƒ├»├ü├ƒ├¬├á├ƒ├¬Ôöé├ƒ├«├á",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 227,
+    "fields": {
+      "action_time": "2024-10-13T18:08:30.347Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "17",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 228,
+    "fields": {
+      "action_time": "2024-10-13T18:14:39.352Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "17",
+      "object_repr": "hhhf fherfhe",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 229,
+    "fields": {
+      "action_time": "2024-10-13T18:25:01.279Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "18",
+      "object_repr": "jemberu shop",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 230,
+    "fields": {
+      "action_time": "2024-10-13T18:25:21.833Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "18",
+      "object_repr": "jemberu shop",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 231,
+    "fields": {
+      "action_time": "2024-10-13T18:30:19.358Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "18",
+      "object_repr": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 232,
+    "fields": {
+      "action_time": "2024-10-14T11:57:13.789Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 233,
+    "fields": {
+      "action_time": "2024-10-14T11:57:37.716Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 234,
+    "fields": {
+      "action_time": "2024-10-14T11:58:37.526Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\", \"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 235,
+    "fields": {
+      "action_time": "2024-10-14T11:59:00.471Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "1",
+      "object_repr": "ethio telecom",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\", \"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 236,
+    "fields": {
+      "action_time": "2024-10-14T13:38:43.485Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "best kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 237,
+    "fields": {
+      "action_time": "2024-10-14T13:39:22.536Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "14",
+      "object_repr": "├ƒ├¬├ç├ƒ├½├í├ƒ├¬Ôòù ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 238,
+    "fields": {
+      "action_time": "2024-10-14T13:58:37.372Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 239,
+    "fields": {
+      "action_time": "2024-10-14T13:59:07.355Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 240,
+    "fields": {
+      "action_time": "2024-10-14T13:59:38.370Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "bdu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 241,
+    "fields": {
+      "action_time": "2024-10-14T14:03:19.443Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "20",
+      "object_repr": "ezra plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 242,
+    "fields": {
+      "action_time": "2024-10-14T14:04:19.267Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "26",
+      "object_repr": "fjkfkmc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 243,
+    "fields": {
+      "action_time": "2024-10-15T07:35:02.221Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "shoponwer",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 244,
+    "fields": {
+      "action_time": "2024-10-15T07:41:13.711Z",
+      "user": 3,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Adress\", \"Valid to\", \"Is active\", \"Contact number\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 245,
+    "fields": {
+      "action_time": "2024-10-15T07:44:17.631Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "15",
+      "object_repr": "software plc",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\", \"Contact number\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 246,
+    "fields": {
+      "action_time": "2024-10-15T07:52:39.353Z",
+      "user": 1,
+      "content_type": 18,
+      "object_id": "2",
+      "object_repr": "ethio telecom1",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"End date\", \"Active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 247,
+    "fields": {
+      "action_time": "2024-10-23T13:26:39.238Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "30",
+      "object_repr": "e",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 248,
+    "fields": {
+      "action_time": "2024-10-23T13:26:39.256Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "29",
+      "object_repr": "j",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 249,
+    "fields": {
+      "action_time": "2024-10-23T13:26:39.263Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "28",
+      "object_repr": "r",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 250,
+    "fields": {
+      "action_time": "2024-10-23T13:26:39.270Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "27",
+      "object_repr": "m",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 251,
+    "fields": {
+      "action_time": "2024-10-24T09:11:02.432Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "sedamo coffee",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 252,
+    "fields": {
+      "action_time": "2024-10-24T09:21:04.913Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "15",
+      "object_repr": "habesh kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 253,
+    "fields": {
+      "action_time": "2024-10-24T09:22:29.065Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "15",
+      "object_repr": "habesh kemis",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 254,
+    "fields": {
+      "action_time": "2024-10-24T17:15:41.814Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "modern habesha kemis",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}, {\"added\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 255,
+    "fields": {
+      "action_time": "2024-10-24T17:37:07.946Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "modern habesha kemis",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 256,
+    "fields": {
+      "action_time": "2024-10-24T17:37:50.110Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "modern habesha kemis",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 257,
+    "fields": {
+      "action_time": "2024-10-24T17:44:07.506Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "modern habesha kemis",
+      "action_flag": 2,
+      "change_message": "[{\"deleted\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}, {\"deleted\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 258,
+    "fields": {
+      "action_time": "2024-10-24T17:46:10.326Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "19",
+      "object_repr": "modern habesha kemis",
+      "action_flag": 2,
+      "change_message": "[{\"added\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}, {\"added\": {\"name\": \"product images\", \"object\": \"Image for modern habesha kemis\"}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 259,
+    "fields": {
+      "action_time": "2024-11-02T13:58:41.725Z",
+      "user": 10,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 260,
+    "fields": {
+      "action_time": "2024-11-05T21:26:24.669Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 261,
+    "fields": {
+      "action_time": "2024-11-05T21:26:57.573Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 262,
+    "fields": {
+      "action_time": "2024-11-05T21:32:20Z",
+      "user": 10,
+      "content_type": 4,
+      "object_id": "10",
+      "object_repr": "jemb",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Superuser status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 263,
+    "fields": {
+      "action_time": "2024-11-05T21:38:30.074Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "2",
+      "object_repr": "jembe",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 264,
+    "fields": {
+      "action_time": "2025-06-13T02:07:27.833Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 265,
+    "fields": {
+      "action_time": "2025-06-13T02:08:03.639Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 266,
+    "fields": {
+      "action_time": "2025-06-13T02:08:57.931Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "13",
+      "object_repr": "myshop",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 267,
+    "fields": {
+      "action_time": "2025-06-13T02:12:05.646Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 268,
+    "fields": {
+      "action_time": "2025-06-13T02:13:47.280Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "1",
+      "object_repr": "jemberu",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 269,
+    "fields": {
+      "action_time": "2025-06-13T02:18:00.792Z",
+      "user": 3,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "www",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Valid to\", \"Is active\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 270,
+    "fields": {
+      "action_time": "2025-06-13T03:40:49.033Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "17",
+      "object_repr": "hhhf fherfhe",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 271,
+    "fields": {
+      "action_time": "2025-06-13T16:37:33.905Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "21",
+      "object_repr": "jenberu libis Boutique",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"ShopName\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 272,
+    "fields": {
+      "action_time": "2025-06-13T16:40:07.743Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "jenbe Cloth Boutique",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"ShopName\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 273,
+    "fields": {
+      "action_time": "2025-06-13T16:44:22.591Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "3",
+      "object_repr": "abel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Username\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 274,
+    "fields": {
+      "action_time": "2025-06-13T16:44:45.549Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "3",
+      "object_repr": "abel",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 275,
+    "fields": {
+      "action_time": "2025-06-13T16:45:16.312Z",
+      "user": 1,
+      "content_type": 12,
+      "object_id": "9",
+      "object_repr": "abel Cloth Boutique",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"ShopName\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add category",
+      "content_type": 7,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change category",
+      "content_type": 7,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete category",
+      "content_type": 7,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view category",
+      "content_type": 7,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add product",
+      "content_type": 8,
+      "codename": "add_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change product",
+      "content_type": 8,
+      "codename": "change_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete product",
+      "content_type": 8,
+      "codename": "delete_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view product",
+      "content_type": 8,
+      "codename": "view_product"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add order item",
+      "content_type": 9,
+      "codename": "add_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change order item",
+      "content_type": 9,
+      "codename": "change_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete order item",
+      "content_type": 9,
+      "codename": "delete_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view order item",
+      "content_type": 9,
+      "codename": "view_orderitem"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add order",
+      "content_type": 10,
+      "codename": "add_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change order",
+      "content_type": 10,
+      "codename": "change_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete order",
+      "content_type": 10,
+      "codename": "delete_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view order",
+      "content_type": 10,
+      "codename": "view_order"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add subcategory",
+      "content_type": 11,
+      "codename": "add_subcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change subcategory",
+      "content_type": 11,
+      "codename": "change_subcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete subcategory",
+      "content_type": 11,
+      "codename": "delete_subcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view subcategory",
+      "content_type": 11,
+      "codename": "view_subcategory"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add shop",
+      "content_type": 12,
+      "codename": "add_shop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change shop",
+      "content_type": 12,
+      "codename": "change_shop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete shop",
+      "content_type": 12,
+      "codename": "delete_shop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view shop",
+      "content_type": 12,
+      "codename": "view_shop"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add coupon",
+      "content_type": 13,
+      "codename": "add_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change coupon",
+      "content_type": 13,
+      "codename": "change_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete coupon",
+      "content_type": 13,
+      "codename": "delete_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view coupon",
+      "content_type": 13,
+      "codename": "view_coupon"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add shop subscrioption plan",
+      "content_type": 14,
+      "codename": "add_shopsubscrioptionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change shop subscrioption plan",
+      "content_type": 14,
+      "codename": "change_shopsubscrioptionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete shop subscrioption plan",
+      "content_type": 14,
+      "codename": "delete_shopsubscrioptionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view shop subscrioption plan",
+      "content_type": 14,
+      "codename": "view_shopsubscrioptionplan"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+      "name": "Can add news",
+      "content_type": 15,
+      "codename": "add_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+      "name": "Can change news",
+      "content_type": 15,
+      "codename": "change_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+      "name": "Can delete news",
+      "content_type": 15,
+      "codename": "delete_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+      "name": "Can view news",
+      "content_type": 15,
+      "codename": "view_news"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+      "name": "Can add new",
+      "content_type": 15,
+      "codename": "add_new"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+      "name": "Can change new",
+      "content_type": 15,
+      "codename": "change_new"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+      "name": "Can delete new",
+      "content_type": 15,
+      "codename": "delete_new"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+      "name": "Can view new",
+      "content_type": 15,
+      "codename": "view_new"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+      "name": "Can add user profile",
+      "content_type": 16,
+      "codename": "add_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+      "name": "Can change user profile",
+      "content_type": 16,
+      "codename": "change_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+      "name": "Can delete user profile",
+      "content_type": 16,
+      "codename": "delete_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+      "name": "Can view user profile",
+      "content_type": 16,
+      "codename": "view_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+      "name": "Can add product recommandation",
+      "content_type": 17,
+      "codename": "add_productrecommandation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+      "name": "Can change product recommandation",
+      "content_type": 17,
+      "codename": "change_productrecommandation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+      "name": "Can delete product recommandation",
+      "content_type": 17,
+      "codename": "delete_productrecommandation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+      "name": "Can view product recommandation",
+      "content_type": 17,
+      "codename": "view_productrecommandation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+      "name": "Can add advertisment",
+      "content_type": 18,
+      "codename": "add_advertisment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+      "name": "Can change advertisment",
+      "content_type": 18,
+      "codename": "change_advertisment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+      "name": "Can delete advertisment",
+      "content_type": 18,
+      "codename": "delete_advertisment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+      "name": "Can view advertisment",
+      "content_type": 18,
+      "codename": "view_advertisment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+      "name": "Can add adds image",
+      "content_type": 19,
+      "codename": "add_addsimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+      "name": "Can change adds image",
+      "content_type": 19,
+      "codename": "change_addsimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+      "name": "Can delete adds image",
+      "content_type": 19,
+      "codename": "delete_addsimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+      "name": "Can view adds image",
+      "content_type": 19,
+      "codename": "view_addsimage"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+      "name": "Can add Theme",
+      "content_type": 20,
+      "codename": "add_theme"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+      "name": "Can change Theme",
+      "content_type": 20,
+      "codename": "change_theme"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+      "name": "Can delete Theme",
+      "content_type": 20,
+      "codename": "delete_theme"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+      "name": "Can view Theme",
+      "content_type": 20,
+      "codename": "view_theme"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+      "name": "Can add social media",
+      "content_type": 21,
+      "codename": "add_socialmedia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+      "name": "Can change social media",
+      "content_type": 21,
+      "codename": "change_socialmedia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+      "name": "Can delete social media",
+      "content_type": 21,
+      "codename": "delete_socialmedia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+      "name": "Can view social media",
+      "content_type": 21,
+      "codename": "view_socialmedia"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+      "name": "Can add product images",
+      "content_type": 22,
+      "codename": "add_productimages"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+      "name": "Can change product images",
+      "content_type": 22,
+      "codename": "change_productimages"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+      "name": "Can delete product images",
+      "content_type": 22,
+      "codename": "delete_productimages"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+      "name": "Can view product images",
+      "content_type": 22,
+      "codename": "view_productimages"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "shoponwer",
+      "permissions": [
+        1, 2, 3, 4, 12, 6, 7, 8, 16, 17, 18, 19, 20, 49, 50, 51, 52, 37, 38, 39,
+        40, 33, 34, 35, 36, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 46,
+        48, 85, 86, 87, 88, 41, 42, 43, 44
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$0T6gaW1r6evHPdTwIetYwA$mCkwBJUAVJ79/lPPEgJW8LINtbyvG6jv9tXoGDE9qZg=",
+      "last_login": "2025-06-13T19:39:37.770Z",
+      "is_superuser": true,
+      "username": "jemberu",
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.co",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-12T11:59:57Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$AuGjHWDpgAFgdmDoSgdTae$xs6qhYkzl3Ih32PZh+6pDgiLV9Psjs/1CfDUM0OqrJI=",
+      "last_login": "2025-06-13T03:19:00.174Z",
+      "is_superuser": false,
+      "username": "jembe",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-16T08:51:05Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$r8uHMdMgeo62AdAe62JHAM$WK3j++raxek7Ve1RyL4HfNfCsIA/phU/a7k0+0PYJlE=",
+      "last_login": "2025-06-13T17:19:56.173Z",
+      "is_superuser": false,
+      "username": "abel",
+      "first_name": "abel",
+      "last_name": "gela",
+      "email": "jemberu@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-16T12:23:16Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$7zftxBwYEYzLegYpbkUHHk$gFoXLZIVuI9xahsHewPgjPF1b7FeI8DBw7ad03vdI/s=",
+      "last_login": "2024-06-20T06:40:27.347Z",
+      "is_superuser": false,
+      "username": "5768",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-06-20T06:40:26.314Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$M47fcf223qi3qsB85kYHQO$TKmgEcBSg/2lVl0EPiYiOezHldoXHw9gME6V/8PVuGo=",
+      "last_login": "2024-06-22T19:22:24.865Z",
+      "is_superuser": false,
+      "username": "fikiru",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-06-22T19:11:51.156Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$9NFOsRXkUPjHLRahDFok5B$m2Tn1+Ghk/uDiBx7IJoqJTUd7uEnQ/83/gmgGfbkWxo=",
+      "last_login": "2025-06-13T16:31:14.268Z",
+      "is_superuser": false,
+      "username": "ezira",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-07-02T15:36:10.445Z",
+      "groups": [1],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$KOn7bKlpy71h5eohl6DKGA$P0m1yuq6doNAhCwwpeN8VO7k3HY4a5CSD3nLGuyP+BM=",
+      "last_login": "2025-06-13T02:42:03.067Z",
+      "is_superuser": false,
+      "username": "aster",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-10-14T11:32:07.260Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$N1Mjh6buwZFuN96SFZKDT2$OW2QGERF9wEv+6wLULlvihH/u0a/VCHcs5rkLxTLQ78=",
+      "last_login": "2024-11-05T21:31:14Z",
+      "is_superuser": false,
+      "username": "jemb",
+      "first_name": "",
+      "last_name": "",
+      "email": "jemb09@gmail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-11-02T13:57:18Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "password": "",
+      "last_login": "2024-11-28T15:50:48.211Z",
+      "is_superuser": false,
+      "username": "mike",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-11-28T15:50:48.048Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "shop",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "shop",
+      "model": "product"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "orders",
+      "model": "orderitem"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "orders",
+      "model": "order"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "shop",
+      "model": "subcategory"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "shop",
+      "model": "shop"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "coupons",
+      "model": "coupon"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "shop",
+      "model": "shopsubscrioptionplan"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+      "app_label": "news",
+      "model": "new"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+      "app_label": "accounts",
+      "model": "userprofile"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+      "app_label": "shop",
+      "model": "productrecommandation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+      "app_label": "news",
+      "model": "advertisment"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+      "app_label": "news",
+      "model": "addsimage"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+      "app_label": "admin_interface",
+      "model": "theme"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+      "app_label": "shop",
+      "model": "socialmedia"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+      "app_label": "shop",
+      "model": "productimages"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 9,
+    "fields": {
+      "owner": 3,
+      "shopName": "abel Cloth Boutique",
+      "logo": "shop_logos/Shop_Addis_Top_Shops_-_2022-06-27T114211.030.png",
+      "address": "bahir dar",
+      "registration_date": "2024-06-17",
+      "valid_from": "2025-06-13T02:38:27.845Z",
+      "valid_to": "2025-12-10T02:38:27.845Z",
+      "is_active": true,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 13,
+    "fields": {
+      "owner": 2,
+      "shopName": "myshop",
+      "logo": "shop_logos/Shop_Addis_Top_Shops_-_2022-06-23T153546.925.png",
+      "address": "bahir dar",
+      "registration_date": "2024-06-22",
+      "valid_from": "2025-06-13T03:20:36.196Z",
+      "valid_to": "2025-07-13T03:20:36.196Z",
+      "is_active": true,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 15,
+    "fields": {
+      "owner": 5,
+      "shopName": "software plc",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-06-22",
+      "valid_from": "2024-09-14T22:19:57Z",
+      "valid_to": "2024-09-21T22:19:59Z",
+      "is_active": false,
+      "contact_number": "0923456778"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 20,
+    "fields": {
+      "owner": 7,
+      "shopName": "ezra plc",
+      "logo": "shop_logos/Electronics_Banner_Edited.png",
+      "address": "bahir dar",
+      "registration_date": "2024-07-02",
+      "valid_from": "2025-06-13T16:33:15.124Z",
+      "valid_to": "2025-12-10T16:33:15.124Z",
+      "is_active": true,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 21,
+    "fields": {
+      "owner": 1,
+      "shopName": "jenberu libis Boutique",
+      "logo": "shop_logos/Untitled_design_17.png",
+      "address": "bahir dar",
+      "registration_date": "2024-07-02",
+      "valid_from": "2025-06-13T03:16:20.145Z",
+      "valid_to": "2025-12-10T03:16:20.145Z",
+      "is_active": true,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 22,
+    "fields": {
+      "owner": 1,
+      "shopName": "best sells",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-07-06",
+      "valid_from": "2024-11-05T21:25:00.960Z",
+      "valid_to": "2025-05-04T21:25:00.960Z",
+      "is_active": false,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 24,
+    "fields": {
+      "owner": 1,
+      "shopName": "software plc",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-07-17",
+      "valid_from": "2024-10-15T07:45:36.817Z",
+      "valid_to": "2024-11-14T07:45:36.817Z",
+      "is_active": false,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 25,
+    "fields": {
+      "owner": 1,
+      "shopName": "werftgy",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-07-20",
+      "valid_from": "2024-07-20T22:19:28Z",
+      "valid_to": "2024-09-19T22:19:31Z",
+      "is_active": false,
+      "contact_number": null
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 26,
+    "fields": {
+      "owner": 1,
+      "shopName": "fjkfkmc",
+      "logo": "shop_logos/Shop_Addis_Top_Shops_15.png",
+      "address": "bahir dar",
+      "registration_date": "2024-10-14",
+      "valid_from": "2024-10-14T08:31:33Z",
+      "valid_to": "2025-04-12T08:31:33Z",
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 31,
+    "fields": {
+      "owner": 1,
+      "shopName": "trt",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-10-23",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0923456778"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 32,
+    "fields": {
+      "owner": 1,
+      "shopName": "trt",
+      "logo": "",
+      "address": "addis",
+      "registration_date": "2024-10-23",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0923456778"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 33,
+    "fields": {
+      "owner": 1,
+      "shopName": "myshoperes",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-10-23",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 34,
+    "fields": {
+      "owner": 1,
+      "shopName": "jemberu shop",
+      "logo": "",
+      "address": "addis abeba",
+      "registration_date": "2024-10-23",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 35,
+    "fields": {
+      "owner": 1,
+      "shopName": "my prof",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-10-23",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 36,
+    "fields": {
+      "owner": 1,
+      "shopName": "my prof",
+      "logo": "",
+      "address": "bahir dar",
+      "registration_date": "2024-10-23",
+      "valid_from": "2024-10-23T16:42:15.539Z",
+      "valid_to": "2024-11-22T16:42:15.539Z",
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 37,
+    "fields": {
+      "owner": 11,
+      "shopName": "mike plc",
+      "logo": "",
+      "address": "Ethiopia,bahir dar",
+      "registration_date": "2024-11-28",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 38,
+    "fields": {
+      "owner": 11,
+      "shopName": "mike plc",
+      "logo": "",
+      "address": "Ethiopia,bahir dar",
+      "registration_date": "2024-11-28",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 39,
+    "fields": {
+      "owner": 1,
+      "shopName": "jemb plc",
+      "logo": "",
+      "address": "Ethiopia,bahir dar",
+      "registration_date": "2025-01-16",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0970013586"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 40,
+    "fields": {
+      "owner": 1,
+      "shopName": "mike plc",
+      "logo": "",
+      "address": "Addis Abeba",
+      "registration_date": "2025-06-13",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0965744455"
+    }
+  },
+  {
+    "model": "shop.shop",
+    "pk": 41,
+    "fields": {
+      "owner": 1,
+      "shopName": "myshop",
+      "logo": "",
+      "address": "Ethiopia,bahir dar",
+      "registration_date": "2025-06-14",
+      "valid_from": null,
+      "valid_to": null,
+      "is_active": false,
+      "contact_number": "0923456778"
+    }
+  },
+  {
+    "model": "shop.socialmedia",
+    "pk": 1,
+    "fields": {
+      "shop": 9,
+      "facebook_url": "https://www.facebook.com/jenberu",
+      "twitter_url": null,
+      "instagram_url": null,
+      "telegram_url": "https://www.instagram.com/jemberu"
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 1,
+    "fields": {
+      "shop": null,
+      "name": "Tea",
+      "slug": "tea",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 2,
+    "fields": {
+      "shop": null,
+      "name": "Ethiopian Coffee",
+      "slug": "ethiopian-coffee",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 3,
+    "fields": {
+      "shop": null,
+      "name": "clothes",
+      "slug": "clothes",
+      "has_sub_catagory": true
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 4,
+    "fields": {
+      "shop": null,
+      "name": "Food",
+      "slug": "food",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 5,
+    "fields": {
+      "shop": 9,
+      "name": "shose",
+      "slug": "shose",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 6,
+    "fields": {
+      "shop": 9,
+      "name": "electronics",
+      "slug": "electronics",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 7,
+    "fields": {
+      "shop": 9,
+      "name": "Animal",
+      "slug": "animal",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 8,
+    "fields": {
+      "shop": 13,
+      "name": "construction material",
+      "slug": "construction-material",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 9,
+    "fields": {
+      "shop": 9,
+      "name": "cosmotics",
+      "slug": "cosmotics",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.category",
+    "pk": 17,
+    "fields": {
+      "shop": 9,
+      "name": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "slug": "category",
+      "has_sub_catagory": false
+    }
+  },
+  {
+    "model": "shop.subcategory",
+    "pk": 1,
+    "fields": {
+      "category": 3,
+      "name": "kids",
+      "slug": "kids"
+    }
+  },
+  {
+    "model": "shop.subcategory",
+    "pk": 2,
+    "fields": {
+      "category": 3,
+      "name": "young",
+      "slug": "young"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "subcategory": null,
+      "shop": 13,
+      "name": "Geeen Tea",
+      "slug": "geeen-tea",
+      "image": "products/24/06/12/green.jpeg",
+      "description": "Green tea comes from unoxidized leaves of the Camellia sinensis bush. It is one of the least processed types of tea, containing the most antioxidants and beneficial polyphenols. Some research suggests green tea may positively affect weight loss, liver disorders, type 2 diabetes, Alzheimer's disease, and more.",
+      "price": "50.00",
+      "available": true,
+      "created": "2024-06-12T12:15:11.867Z",
+      "updated": "2024-07-06T11:14:25.077Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 3,
+    "fields": {
+      "category": 2,
+      "subcategory": null,
+      "shop": 9,
+      "name": "sedamo coffee",
+      "slug": "sedamo-coffee",
+      "image": "products/24/06/12/coffe.jpg",
+      "description": "SIDAMO LEGENDARY  Organic Single Origin\r\nSourced from the Sidamo region in Ethiopia, this organic single origin coffee features a taste of delicious fruity flavors combined with a sweet, magical body. Each sip contains some chocolate hints, along with notes of lemon, jasmine and lavender. You will certainly discover even more flavors and tastes.",
+      "price": "250.00",
+      "available": true,
+      "created": "2024-06-12T14:12:47.710Z",
+      "updated": "2024-10-24T09:11:02.432Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "subcategory": null,
+      "shop": 9,
+      "name": "oromia coffee",
+      "slug": "oromia-coffee",
+      "image": "products/24/06/12/oromia.jpg",
+      "description": "Oromia Coffee Farmers' Cooperative Union is based in the Oromia region of Ethiopia ├ö├ç├┤ the birthplace of coffee. It has been Fairtrade certified since 2002, with around 90,000 of its members growing Fairtrade coffee. All six varieties of Oromia's coffee are forest-grown, organic and bird-friendly",
+      "price": "400.00",
+      "available": true,
+      "created": "2024-06-12T14:17:36.307Z",
+      "updated": "2024-06-22T11:58:17.767Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 5,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "shop": 9,
+      "name": "jacket",
+      "slug": "jacket",
+      "image": "products/24/06/15/kot.png",
+      "description": "Axel Arigato draws inspiration from collegiate style in this green varsity jacket. Crafted with a wool body and contrasting PU sleeves, it's decorated with two-tone ├ö├ç├┐A├ö├ç├û patches and embroidered at the chest with the address of the brand's flagship store in London.",
+      "price": "700.00",
+      "available": true,
+      "created": "2024-06-15T18:13:50.592Z",
+      "updated": "2024-06-22T11:58:17.755Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 6,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 9,
+      "name": "best kemis",
+      "slug": "best-kemis",
+      "image": "products/24/06/15/kemis.png",
+      "description": "gathered-twist flared midi dress\r\n\r\nGiambattista Valli showcases a romantic aesthetic with this orange silk dress, defined by intricate twist gathering at the front. The garment cinches in at the waist and flares out to a dramatic silhouette.",
+      "price": "2000.00",
+      "available": true,
+      "created": "2024-06-15T18:14:48.186Z",
+      "updated": "2024-10-14T13:38:43.480Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 7,
+    "fields": {
+      "category": 3,
+      "subcategory": null,
+      "shop": 13,
+      "name": "trouser",
+      "slug": "trouser",
+      "image": "products/24/06/15/sufi.jpg",
+      "description": "single-breasted wool suit\r\n\r\nThom Browne's famed tailoring is plain to see with this single-breasted suit. Cut from the finest wool, this single-breasted iteration has a lined jacket and sharply pressed creases at the straight-leg trousers.",
+      "price": "4000.00",
+      "available": true,
+      "created": "2024-06-15T18:16:16.062Z",
+      "updated": "2024-06-22T11:58:17.755Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 8,
+    "fields": {
+      "category": 3,
+      "subcategory": 1,
+      "shop": 13,
+      "name": "kidi kemis",
+      "slug": "kidi-kemis",
+      "image": "products/24/06/15/kids.png",
+      "description": "Product Description\r\n\r\nMade of 100% rayon challis Pullover style with elasticized  waistAllover floral printKeyhole cutout with nonfunctional bow at front\r\nCriss-cross back straps  High  low hem\r\nDesigned in an above-the-knee length Imported",
+      "price": "2000.00",
+      "available": true,
+      "created": "2024-06-15T20:31:37.933Z",
+      "updated": "2024-07-17T21:55:33.969Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 9,
+    "fields": {
+      "category": 3,
+      "subcategory": 1,
+      "shop": 13,
+      "name": "kids jacket",
+      "slug": "kids-jacket",
+      "image": "products/24/06/15/kidsjacket.png",
+      "description": "Product Description\r\n\r\nMade of 100% rayon challis\r\nPullover style with elasticized waist\r\nAllover floral print\r\nKeyhole cutout with non-functional bow at front\r\nCriss-cross back straps\r\nHigh low hem\r\nDesigned in an above-the-knee length\r\nImported",
+      "price": "1500.00",
+      "available": true,
+      "created": "2024-06-15T20:34:44.984Z",
+      "updated": "2024-06-22T11:58:17.751Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 13,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 21,
+      "name": "yebahil kemis",
+      "slug": "yebahil-kemis",
+      "image": "products/24/07/18/download_1.jpeg",
+      "description": "Yabesha libs ideas | ethiopian traditional dress, ethiopian dress, ethiopian clothing",
+      "price": "3000.00",
+      "available": true,
+      "created": "2024-07-17T21:40:47.418Z",
+      "updated": "2024-07-17T21:42:48.850Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 14,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 13,
+      "name": "├ƒ├¬├ç├ƒ├½├í├ƒ├¬Ôòù ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "slug": "product-2",
+      "image": "products/24/07/19/habesha_kemis.webp",
+      "description": "Order Today And Get It Between 23rd, Aug 2024 To 28th, Aug 2024\r\n Get It Before 6th, Aug 2024 In Addis Ababa And His Area (20kms) \r\n  Sheromeda.com office pick up before 2nd, Aug 2024 \r\n\r\n├ö├ç├│ Dress Shipped In 10 Days  \r\n├ö├ç├│ EMS Standard Shipping From Addis Ababa.  \r\n├ö├ç├│ Notification By Phone\r\n├ö├ç├│ Tracking Number Available And Sent To Your Mailbox.",
+      "price": "5000.00",
+      "available": true,
+      "created": "2024-07-19T17:12:54.516Z",
+      "updated": "2024-10-14T13:39:22.532Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 15,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 13,
+      "name": "habesh kemis",
+      "slug": "habesh-kemis",
+      "image": "products/24/07/19/bset_habesha_kemis.webp",
+      "description": "Order Today And Get It Between 23rd, Aug 2024 To 28th, Aug 2024  Get It Before 6th, Aug 2024 In Addis \r\nAbaba And His Area (20kms)  Sheromeda.com office pick up before 2nd, Aug 2024 \r\n\r\n├ö├ç├│ Dress Shipped In 10 Days  EMS Standard Shipping From Addis Ababa.  Notification By Phone\r\n├ö├ç├│ Tracking Number Available And Sent To Your Mailbox.",
+      "price": "6000.00",
+      "available": true,
+      "created": "2024-07-19T18:13:04.141Z",
+      "updated": "2024-10-24T09:22:29.050Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 16,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 13,
+      "name": "kemis",
+      "slug": "kemis",
+      "image": "products/24/07/19/kemi.jpeg",
+      "description": "- Explore Tigist Girma's board \"habesha kemis\" on Pinterest. See more ideas about habesha kemis, ethiopian dress, ethiopian traditional dress.",
+      "price": "7000.00",
+      "available": true,
+      "created": "2024-07-19T18:21:28.081Z",
+      "updated": "2024-07-19T18:21:28.081Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 17,
+    "fields": {
+      "category": 17,
+      "subcategory": null,
+      "shop": 9,
+      "name": "hhhf fherfhe",
+      "slug": "hhhf-fherfhe",
+      "image": "products/25/06/13/download_1.jpeg",
+      "description": "├ƒ├«├¼├ƒ├¬├ü├ƒ├¿├▓├ƒ├¼├¼├ƒ├¬├ü├ƒ├»├ü├ƒ├¬├ü ├ƒ├½┬í├ƒ├«├á├ƒ├¿├▓├ƒ├»├ü├ƒ├¼├¼├ƒ├«├á├ƒ├¿├▓├ƒ├¼├¼├ƒ├¿├▓├ƒ├½┬í ├ƒ├¿├▓├ƒ├«├á├ƒ├¿├▓├ƒ├¼├¼├ƒ├¿┬í├ƒ├¬├¬├ƒ├¬├ÿ├ƒ├½┬ó├ƒ├¿├▓",
+      "price": "2344.00",
+      "available": true,
+      "created": "2024-10-13T18:14:39.352Z",
+      "updated": "2025-06-13T03:40:49.028Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 18,
+    "fields": {
+      "category": 17,
+      "subcategory": null,
+      "shop": 9,
+      "name": "├ƒ├»┬┐├ƒ├¬├¼├ƒ├«├á ├ƒ├½├ç├ƒ├¬├£├ƒ├¬├ü",
+      "slug": "product",
+      "image": "products/24/10/13/kidsjacket.png",
+      "description": "├ƒ├¬┬ó├ƒ├½┬í├ƒ├½┬í ├ƒ├¬Ôöé├ƒ├¬┬ó├ƒ├¬├á├ƒ├½├æ ├ƒ├¬├á├ƒ├½├æ├ƒ├¬├ü├ƒ├¬├á├ƒ├¬┬ó",
+      "price": "2233.00",
+      "available": true,
+      "created": "2024-10-13T18:30:19.358Z",
+      "updated": "2024-10-13T18:30:19.358Z"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 19,
+    "fields": {
+      "category": 3,
+      "subcategory": 2,
+      "shop": 13,
+      "name": "modern habesha kemis",
+      "slug": "modern-habesha-kemis",
+      "image": "products/24/10/24/habesha.jpg",
+      "description": "Modern Habesha Kemis handwoven Ethiopian \r\nHabesha Dress Zuria Traditional Ethiopian Dress",
+      "price": "5000.00",
+      "available": true,
+      "created": "2024-10-24T17:15:41.802Z",
+      "updated": "2024-10-24T17:46:10.305Z"
+    }
+  },
+  {
+    "model": "shop.productimages",
+    "pk": 3,
+    "fields": {
+      "product": 19,
+      "image": "product_images/2024/10/24/habesh2_wFWtJo0.jpg"
+    }
+  },
+  {
+    "model": "shop.productimages",
+    "pk": 4,
+    "fields": {
+      "product": 19,
+      "image": "product_images/2024/10/24/habesh3_o9Ba0X4.jpg"
+    }
+  },
+  {
+    "model": "shop.shopsubscrioptionplan",
+    "pk": 1,
+    "fields": {
+      "plan_name": "monthly",
+      "price": "1000.00"
+    }
+  },
+  {
+    "model": "shop.shopsubscrioptionplan",
+    "pk": 2,
+    "fields": {
+      "plan_name": "six_months",
+      "price": "10000.00"
+    }
+  },
+  {
+    "model": "shop.shopsubscrioptionplan",
+    "pk": 3,
+    "fields": {
+      "plan_name": "yearly",
+      "price": "20000.00"
+    }
+  },
+  {
+    "model": "shop.productrecommandation",
+    "pk": 6,
+    "fields": {
+      "product_id": 5,
+      "purchased_with_product_id": 6,
+      "purchased_with_times": 3
+    }
+  },
+  {
+    "model": "shop.productrecommandation",
+    "pk": 7,
+    "fields": {
+      "product_id": 6,
+      "purchased_with_product_id": 5,
+      "purchased_with_times": 3
+    }
+  },
+  {
+    "model": "shop.productrecommandation",
+    "pk": 8,
+    "fields": {
+      "product_id": 5,
+      "purchased_with_product_id": 3,
+      "purchased_with_times": 1
+    }
+  },
+  {
+    "model": "shop.productrecommandation",
+    "pk": 9,
+    "fields": {
+      "product_id": 3,
+      "purchased_with_product_id": 5,
+      "purchased_with_times": 1
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jembeu",
+      "last_name": "kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-14T10:33:14.461Z",
+      "updated": "2024-06-19T19:07:37.274Z",
+      "paid": false,
+      "status": "pending",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 2,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jembeu",
+      "last_name": "kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-14T10:36:05.426Z",
+      "updated": "2024-06-18T12:59:31.462Z",
+      "paid": false,
+      "status": "pending",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 3,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "abel",
+      "last_name": "kassa",
+      "email": "ezirayallew@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-15T13:31:36.821Z",
+      "updated": "2024-06-18T13:12:46.606Z",
+      "paid": false,
+      "status": "pending",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 4,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yital",
+      "email": "get@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-19T16:24:09.299Z",
+      "updated": "2024-06-24T17:50:04.398Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 5,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-22T04:08:00.594Z",
+      "updated": "2024-06-23T10:59:03.479Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 6,
+    "fields": {
+      "coupon": 1,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-22T06:07:16.429Z",
+      "updated": "2024-06-23T10:59:03.479Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 7,
+    "fields": {
+      "coupon": 1,
+      "dicount": 0,
+      "first_name": "abel",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-22T06:27:07.231Z",
+      "updated": "2024-06-23T10:59:03.478Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 8,
+    "fields": {
+      "coupon": 1,
+      "dicount": 20,
+      "first_name": "abel",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-22T06:30:11.407Z",
+      "updated": "2024-07-17T10:57:16.265Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 10,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "muye",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-28T12:56:26.328Z",
+      "updated": "2024-06-28T12:56:26.328Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 11,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "muye",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-28T12:58:53.787Z",
+      "updated": "2024-06-28T12:58:53.787Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 12,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "muye",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-28T13:11:20.316Z",
+      "updated": "2024-06-28T13:11:20.316Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 13,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "muye",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-28T13:17:29.043Z",
+      "updated": "2024-06-28T13:17:29.043Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 14,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "muye",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-28T17:10:56.601Z",
+      "updated": "2024-06-28T17:10:56.601Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 17,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "Kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-29T12:33:34.177Z",
+      "updated": "2024-06-29T12:38:21.979Z",
+      "paid": true,
+      "status": "pending",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 18,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "Kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-29T13:03:24.303Z",
+      "updated": "2024-06-29T13:05:09.282Z",
+      "paid": true,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "pi_3PX0xfCmnWtBEz0p0kKEhyKi",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 19,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "Kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-06-29T19:52:30.047Z",
+      "updated": "2024-06-29T19:52:30.047Z",
+      "paid": false,
+      "status": "Pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 20,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "Kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-02T07:12:20.465Z",
+      "updated": "2024-07-06T17:57:37.774Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 21,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-06T18:04:28.759Z",
+      "updated": "2024-07-06T18:04:28.759Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 22,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-06T18:11:00.185Z",
+      "updated": "2024-07-06T18:11:00.185Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 23,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-06T18:12:01.126Z",
+      "updated": "2024-07-06T18:12:01.126Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": null,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 24,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "Solomon",
+      "last_name": "mulugeta",
+      "email": "abel@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-06T18:20:19.092Z",
+      "updated": "2024-07-06T18:20:19.092Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 33,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "edmialem",
+      "last_name": "kassie",
+      "email": "jember970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-11T12:33:09.539Z",
+      "updated": "2024-07-11T12:33:09.539Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 34,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-12T10:13:19.169Z",
+      "updated": "2024-07-12T10:13:19.169Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 35,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:30:30.251Z",
+      "updated": "2024-07-13T06:30:30.251Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 36,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:32:23.561Z",
+      "updated": "2024-07-13T06:32:23.561Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 37,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:39:16.718Z",
+      "updated": "2024-07-13T06:39:16.718Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 38,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:41:12.792Z",
+      "updated": "2024-07-13T06:41:12.792Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 39,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:43:00.444Z",
+      "updated": "2024-07-13T06:43:00.444Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 40,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T06:46:32.104Z",
+      "updated": "2024-07-17T08:56:08.112Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 41,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T07:00:53.756Z",
+      "updated": "2024-07-17T08:56:08.112Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 42,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T07:08:36.595Z",
+      "updated": "2024-07-17T08:56:08.112Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 43,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T07:13:59.871Z",
+      "updated": "2024-07-17T08:56:08.111Z",
+      "paid": false,
+      "status": "pending",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 44,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "gete",
+      "last_name": "yitayal",
+      "email": "gete@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": null,
+      "created": "2024-07-13T07:16:22.393Z",
+      "updated": "2024-07-17T08:56:08.098Z",
+      "paid": false,
+      "status": "out of delivery",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 45,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "rtyuio",
+      "last_name": "rtyuio",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahirdar",
+      "house_no": null,
+      "city": "bahirdar",
+      "phone_number": "0970013586",
+      "created": "2024-07-20T16:20:08.845Z",
+      "updated": "2024-07-21T18:09:16.211Z",
+      "paid": false,
+      "status": "out of delivery",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 46,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2024-07-21T21:08:30.538Z",
+      "updated": "2024-07-21T21:08:30.538Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 48,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "brother",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2024-07-22T08:44:46.304Z",
+      "updated": "2024-07-22T08:44:46.304Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": "2024-07-10"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 49,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "endeg",
+      "last_name": "moges",
+      "email": "jemberu0970@gmail.com",
+      "address": "amiarya",
+      "house_no": null,
+      "city": "estie",
+      "phone_number": "56uiop7o",
+      "created": "2024-10-01T15:06:32.193Z",
+      "updated": "2024-10-01T15:06:32.193Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": "2024-10-10"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 50,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2024-10-08T18:52:58.709Z",
+      "updated": "2024-10-08T18:52:58.709Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 51,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2024-10-08T19:38:58.735Z",
+      "updated": "2024-10-08T19:38:58.735Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 9,
+      "stripe_id": "",
+      "delivery_date": null
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 52,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2024-10-14T08:38:43.929Z",
+      "updated": "2024-10-14T08:38:43.929Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": "2024-10-03"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 53,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013586",
+      "created": "2025-06-13T03:26:28.851Z",
+      "updated": "2025-06-13T03:26:28.851Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": "2025-06-26"
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 54,
+    "fields": {
+      "coupon": null,
+      "dicount": 0,
+      "first_name": "jemberu",
+      "last_name": "kassie",
+      "email": "jemberu0970@gmail.com",
+      "address": "bahir dar",
+      "house_no": null,
+      "city": "bahir dar",
+      "phone_number": "0970013589",
+      "created": "2025-06-13T03:45:55.555Z",
+      "updated": "2025-06-13T03:45:55.555Z",
+      "paid": false,
+      "status": "('pending', 'Pending')",
+      "shop": 13,
+      "stripe_id": "",
+      "delivery_date": "2025-06-26"
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "product": 1,
+      "price": "15.00",
+      "quantity": 6
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 2,
+    "fields": {
+      "order": 3,
+      "product": 1,
+      "price": "15.00",
+      "quantity": 4
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 4,
+    "fields": {
+      "order": 3,
+      "product": 3,
+      "price": "250.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 5,
+    "fields": {
+      "order": 4,
+      "product": 5,
+      "price": "1000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 6,
+    "fields": {
+      "order": 4,
+      "product": 1,
+      "price": "15.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 7,
+    "fields": {
+      "order": 5,
+      "product": 1,
+      "price": "45.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 8,
+    "fields": {
+      "order": 6,
+      "product": 8,
+      "price": "2000.00",
+      "quantity": 5
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 9,
+    "fields": {
+      "order": 7,
+      "product": 7,
+      "price": "4000.00",
+      "quantity": 3
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 10,
+    "fields": {
+      "order": 8,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 4
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 12,
+    "fields": {
+      "order": 10,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 4
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 13,
+    "fields": {
+      "order": 11,
+      "product": 1,
+      "price": "45.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 14,
+    "fields": {
+      "order": 11,
+      "product": 8,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 15,
+    "fields": {
+      "order": 13,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 16,
+    "fields": {
+      "order": 14,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 19,
+    "fields": {
+      "order": 17,
+      "product": 1,
+      "price": "45.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 20,
+    "fields": {
+      "order": 18,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 21,
+    "fields": {
+      "order": 18,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 22,
+    "fields": {
+      "order": 19,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 23,
+    "fields": {
+      "order": 20,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 24,
+    "fields": {
+      "order": 21,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 25,
+    "fields": {
+      "order": 24,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 40,
+    "fields": {
+      "order": 33,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 41,
+    "fields": {
+      "order": 33,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 42,
+    "fields": {
+      "order": 34,
+      "product": 8,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 43,
+    "fields": {
+      "order": 34,
+      "product": 7,
+      "price": "4000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 44,
+    "fields": {
+      "order": 35,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 2
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 45,
+    "fields": {
+      "order": 35,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 46,
+    "fields": {
+      "order": 36,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 47,
+    "fields": {
+      "order": 36,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 48,
+    "fields": {
+      "order": 39,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 2
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 49,
+    "fields": {
+      "order": 39,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 50,
+    "fields": {
+      "order": 40,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 51,
+    "fields": {
+      "order": 40,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 52,
+    "fields": {
+      "order": 41,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 53,
+    "fields": {
+      "order": 41,
+      "product": 3,
+      "price": "250.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 54,
+    "fields": {
+      "order": 42,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 2
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 55,
+    "fields": {
+      "order": 42,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 56,
+    "fields": {
+      "order": 43,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 57,
+    "fields": {
+      "order": 43,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 58,
+    "fields": {
+      "order": 44,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 59,
+    "fields": {
+      "order": 44,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 60,
+    "fields": {
+      "order": 45,
+      "product": 15,
+      "price": "6000.00",
+      "quantity": 6
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 61,
+    "fields": {
+      "order": 45,
+      "product": 1,
+      "price": "50.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 62,
+    "fields": {
+      "order": 46,
+      "product": 3,
+      "price": "250.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 64,
+    "fields": {
+      "order": 48,
+      "product": 5,
+      "price": "700.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 65,
+    "fields": {
+      "order": 49,
+      "product": 15,
+      "price": "6000.00",
+      "quantity": 5
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 66,
+    "fields": {
+      "order": 49,
+      "product": 1,
+      "price": "50.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 67,
+    "fields": {
+      "order": 50,
+      "product": 1,
+      "price": "50.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 68,
+    "fields": {
+      "order": 50,
+      "product": 15,
+      "price": "6000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 69,
+    "fields": {
+      "order": 51,
+      "product": 6,
+      "price": "2000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 70,
+    "fields": {
+      "order": 52,
+      "product": 16,
+      "price": "7000.00",
+      "quantity": 2
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 71,
+    "fields": {
+      "order": 52,
+      "product": 1,
+      "price": "50.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 72,
+    "fields": {
+      "order": 53,
+      "product": 14,
+      "price": "5000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "orders.orderitem",
+    "pk": 73,
+    "fields": {
+      "order": 54,
+      "product": 15,
+      "price": "6000.00",
+      "quantity": 1
+    }
+  },
+  {
+    "model": "accounts.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "image": "",
+      "first_name": "jeffyugk",
+      "last_name": "cch",
+      "bio": "rjtjk fnkghwk ngjkvnjekwg nvnfnv",
+      "email": "jemberu0970@gmail.co"
+    }
+  },
+  {
+    "model": "accounts.userprofile",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "image": "profile/image/photo_2024-06-22_21-51-08.jpg",
+      "first_name": "jenberu",
+      "last_name": "gela",
+      "bio": "Engineer",
+      "email": "jemberu@gmail.com"
+    }
+  },
+  {
+    "model": "coupons.coupon",
+    "pk": 1,
+    "fields": {
+      "code": "ester",
+      "valid_from": "2024-06-21T00:00:00Z",
+      "valid_to": "2024-07-19T12:51:41Z",
+      "discount_amount": 20,
+      "active": true,
+      "shop": 13
+    }
+  },
+  {
+    "model": "news.advertisment",
+    "pk": 1,
+    "fields": {
+      "title": "ethio telecom",
+      "description": "for yours  realy choice  ethio telecom",
+      "url": "https://www.youtube.com/watch?v=67bo_ACZWMQ",
+      "image": "",
+      "start_date": "2024-07-17T18:47:47Z",
+      "end_date": "2024-11-14T11:58:51Z",
+      "active": false
+    }
+  },
+  {
+    "model": "news.advertisment",
+    "pk": 2,
+    "fields": {
+      "title": "ethio telecom1",
+      "description": "data tikil",
+      "url": "",
+      "image": "",
+      "start_date": "2024-07-17T18:50:30Z",
+      "end_date": "2024-10-15T11:58:33Z",
+      "active": false
+    }
+  },
+  {
+    "model": "news.addsimage",
+    "pk": 1,
+    "fields": {
+      "adds": 1,
+      "image": "advertisment/image/ethio_tel_tAbDIZu.jpeg"
+    }
+  },
+  {
+    "model": "news.addsimage",
+    "pk": 2,
+    "fields": {
+      "adds": 2,
+      "image": "advertisment/image/download_SEwuzbR.jpeg"
+    }
+  },
+  {
+    "model": "news.addsimage",
+    "pk": 3,
+    "fields": {
+      "adds": 1,
+      "image": "advertisment/image/abrivstion.png"
+    }
+  },
+  {
+    "model": "news.addsimage",
+    "pk": 4,
+    "fields": {
+      "adds": 2,
+      "image": "advertisment/image/compiler.png"
+    }
+  },
+  {
+    "model": "news.addsimage",
+    "pk": 5,
+    "fields": {
+      "adds": 1,
+      "image": "advertisment/image/download.jpg"
+    }
+  }
+]

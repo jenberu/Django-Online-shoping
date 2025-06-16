@@ -173,9 +173,9 @@ ul.errorlist {
 
 #header .site-logo{
   position: absolute;
-  top:5px;
   left: 30px;
   display: flex;
+  top: 40px;
 }
 #header .site-logo h1{
   font-family: impact, sans-serif;
@@ -290,6 +290,8 @@ option {
   font-size: 14px;
   margin: 10px 0;
   display: flex;
+  position: absolute;
+  left:30%;
 
 }
 
@@ -434,6 +436,7 @@ form div.field {
   justify-content: space-between;
   align-items: center;
   padding: 10px 10px;
+  margin-right: 10px;
 }
 
 .navbar .logo {
@@ -449,7 +452,7 @@ form div.field {
 
 .nav-link {
   line-height: 20px;
-  margin-right: 1.5rem;
+  margin-right: 5px;
   font-size: medium;
   color: white;
   font-weight: bold;

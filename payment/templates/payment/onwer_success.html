@@ -4,5 +4,9 @@
  {% endblock %}
 {% block content %}
 <h2> {% translate 'Payment Successful'%}</h2>
-<p>{% blocktranslate with shop_name=shop.shopName valid_to=shop.valid_to  %}Your shop "{{shop_name }}" is now active until {{ valid_to }}.{% endblocktranslate %}</p>
+<p style="text-align: center;">
+  {% blocktranslate with shop_name=shop.shopName valid_to=shop.valid_to %}
+    Your shop "{{shop_name}}" is now active until {{ valid_to }}.
+  {% endblocktranslate %}
+</p>
 {% endblock %}
